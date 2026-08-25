@@ -6,7 +6,7 @@
     <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -111,7 +111,27 @@
             <div class="bloque-dato"><label>Teléfono</label><p>+54 (11) 4321-5555</p></div>
             <div class="bloque-dato"><label>Email</label><p>contacto@rigantigeiler.com</p></div>
         </div>
-        <form class="formulario-contacto"><input type="text" placeholder="Nombre" required><input type="email" placeholder="Email corporativo" required><div class="campo-ancho"><input type="text" placeholder="Empresa"></div><div class="campo-ancho"><textarea rows="5" placeholder="Consulta..." required></textarea></div><button type="submit" class="boton-enviar">Enviar Requerimiento</button></form>
+        
+        <form class="formulario-contacto">
+            <div class="campo-flotante">
+                <input type="text" placeholder=" " id="nombre" required>
+                <label for="nombre">Nombre completo</label>
+            </div>
+            <div class="campo-flotante">
+                <input type="email" placeholder=" " id="email" required>
+                <label for="email">Email corporativo</label>
+            </div>
+            <div class="campo-flotante campo-ancho">
+                <input type="text" placeholder=" " id="empresa">
+                <label for="empresa">Empresa / Estudio</label>
+            </div>
+            <div class="campo-flotante campo-ancho">
+                <textarea rows="5" placeholder=" " id="consulta" required></textarea>
+                <label for="consulta">Describa su consulta</label>
+            </div>
+            <button type="submit" class="boton-enviar">Enviar Requerimiento</button>
+        </form>
+
     </div>
 </section>
 
