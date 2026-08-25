@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITULO DEL AREA | Riganti, Geiler & Márquez Alluralde</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* HEREDA EL DISEÑO DE TU HOME */
+        .hero-interno-premium{
+            position: relative;
+            padding: 180px 12% 110px 12%;
+            background: linear-gradient(90deg, rgba(7,14,27,0.95) 0%, rgba(7,14,27,0.75) 45%, rgba(7,14,27,0.3) 100%), url('deporte-imagen.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            overflow: hidden;
+        }
+        /* Diagonal blanca como en la home */
+        .hero-interno-premium::after{
+            content:"";
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 60px;
+            background: var(--color-fondo-claro, #f8f9fa);
+            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+        }
+        .linea-dorada{width:50px; height:2px; background:var(--color-secundario, #c5a880); margin-bottom:25px}
+        .hero-interno-premium h1{font-family:var(--fuente-titulos); font-size:2.8rem; color:#fff; font-weight:500; line-height:1.15; max-width:650px}
+        .hero-interno-premium h1 span{color:var(--color-secundario, #c5a880); font-weight:300; display:block; font-size:1.1rem; letter-spacing:3px; margin-bottom:15px; text-transform:uppercase}
+        .hero-interno-premium p{font-size:1.15rem; color:rgba(255,255,255,0.8); max-width:600px; line-height:1.7; font-weight:300; margin-top:20px}
+
+        /* TARJETAS IGUAL QUE HOME */
+        .contenedor-subareas{padding:90px 12%; background:#f8f9fa; display:grid; grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); gap:35px}
+        .tarjeta-subarea{background:#fff; padding:42px 35px; border:1px solid rgba(0,0,0,0.04); border-top:3px solid #0a1120; transition:.3s}
+        .tarjeta-subarea:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.06)}
+        .tarjeta-subarea h3{font-family:var(--fuente-titulos); color:#0a1120; margin-bottom:22px}
+
+        /* CTA FINAL CON LOGO COMO MARCA DISTINTIVA */
+        .cta-logo{
+            position:relative; padding:110px 12%; background:#070e1b; text-align:center; overflow:hidden;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .cta-logo::before{ /* Logo gigante de fondo */
+            content:""; position:absolute; width:500px; height:500px; 
+            background-image:url('logo-final.png'); /* PONE ACA TU LOGO PNG */
+            background-size:contain; background-repeat:no-repeat; background-position:center;
+            opacity:0.04; left:50%; top:50%; transform:translate(-50%,-50%); pointer-events:none;
+        }
+
+        @media (max-width:768px){
+            .hero-interno-premium{padding:140px 6% 100px 6%}
+            .hero-interno-premium h1{font-size:2.1rem}
+            .contenedor-subareas{padding:60px 6%; grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+<header style="position:fixed; top:0; left:0; width:100%; padding:18px 4%; background:rgba(10,17,32,0.96); display:flex; justify-content:space-between; align-items:center; z-index:1000; border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div style="display:flex; align-items:center; gap:15px">
+        <img src="nombre-logo-estudio.webp" alt="Logo RGMA" style="height:38px; width:auto">
+        <div style="border-left:1px solid rgba(197,168,128,0.3); padding-left:15px; color:#fff; font-family:var(--fuente-titulos); font-size:0.85rem; letter-spacing:1px; line-height:1.1">
+            RIGANTI, GEILER<br>& MÁRQUEZ ALLURALDE
+        </div>
+    </div>
+    <nav><ul style="display:flex; list-style:none; gap:25px; margin:0; padding:0">
+        <li><a href="index.html#inicio" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">INICIO</a></li>
+        <li><a href="index.html#practicas" style="color:var(--color-secundario); text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">ÁREAS</a></li>
+        <li><a href="index.html#contacto" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">CONTACTO</a></li>
+    </ul></nav>
+</header>
+
+<main>
+    <section class="hero-interno-premium">
+        <div class="linea-dorada"></div>
+        <h1><span>ÁREA DE PRÁCTICA</span>Derecho Deportivo</h1>
+        <p>Asesoramos a futbolistas, atletas, agentes y clubes en la gestión de sus contratos y transferencias en múltiples jurisdicciones.</p>
+    </section>
+
+    <section class="contenedor-subareas">
+        <div class="tarjeta-subarea"><h3>Fichajes y Transferencias</h3><ul><li>Contratos de transferencia</li><li>Derechos de Formación</li><li>Operaciones internacionales</li></ul></div>
+        <div class="tarjeta-subarea"><h3>Contratos y Representación</h3><ul><li>Contratos Ley 20.160</li><li>Explotación de imagen</li><li>Comisiones de intermediación</li></ul></div>
+        <div class="tarjeta-subarea"><h3>Defensa y Litigios</h3><ul><li>Tribunales AFA, Conmebol y TAS</li><li>Estatutos y auditorías</li></ul></div>
+    </section>
+
+    <section class="cta-logo">
+        <div style="position:relative; z-index:2; max-width:700px">
+            <img src="logo-final.png" style="height:42px; margin-bottom:30px; opacity:0.9">
+            <h2 style="color:var(--color-secundario); font-family:var(--fuente-titulos); font-weight:400; font-size:1.9rem; margin-bottom:20px">¿Requiere asesoramiento en esta área?</h2>
+            <p style="color:rgba(255,255,255,0.7); margin-bottom:35px">Agende una sesión confidencial con nuestro equipo.</p>
+            <a href="index.html#contacto" style="display:inline-block; padding:16px 40px; border:1px solid var(--color-secundario); color:var(--color-secundario); text-decoration:none; font-size:0.8rem; letter-spacing:2px">INICIAR CONSULTA</a>
+        </div>
+    </section>
+</main>
+</body>
+
+</html>
