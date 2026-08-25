@@ -325,3 +325,13 @@ section{padding:110px 12%}
   text-transform:none !important;
   color:#a0aec0 !important;
 }
+.campo-flotante textarea{
+  min-height: 120px !important;
+}
+.bloque-dato label{ margin-bottom:10px !important; }
+.bloque-dato p{ line-height:1.6 !important; }
+.barra-flotante-contacto{
+  right: 12px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
