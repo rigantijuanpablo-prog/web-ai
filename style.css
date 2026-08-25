@@ -557,89 +557,27 @@ textarea{
     margin-top: 20px !important;
   }
 }
-/* FIX LÍNEA DIAGONAL QUE CORTA EL BOTÓN */
 @media (max-width: 768px){
-  .hero, .portada, .hero-contenedor{
-    padding-bottom: 70px !important;
-    clip-path: none !important;
-  }
-  /* Bajamos la línea diagonal */
-  .hero::after, .separador-diagonal, .diagonal-gold{
-    bottom: -30px !important;
-  }
-  .hero-contenedor-texto{
-    padding-bottom: 20px !important;
-  }
-  .btn-premium-final{
-    margin-bottom: 25px !important;
-    transform: translateY(-15px) !important;
-  }
-}
-@media (max-width: 768px){
-  .btn-premium-final{
-    margin-bottom: 40px !important; /* un poco más de aire */
-  }
-}
-/* FIX LÍNEA NO ENCIME EL BOTÓN */
-@media (max-width: 768px){
-  /* Bajamos la franja dorada */
-  .hero::after,
-  .hero-contenedor::after,
-  div[style*="background: #c9a86a"],
-  div[style*="background:#c9a86a"]{
-    transform: translateY(30px) rotate(-4deg) !important;
-  }
-  
-  /* Le damos aire al hero */
-  .hero, .hero-contenedor{
-    padding-bottom: 65px !important;
-  }
-
-  .hero-contenedor-texto{
-    padding-bottom: 50px !important;
-  }
-}
-/* FIX DEFINITIVO TEXTO CENTRADO */
-a[href*="consulta"], button, .btn, .boton-hero, [class*="agendar"], [class*="consulta"]{
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
-}
-
-a[href*="consulta"]::after, 
-button::after{
-  margin: 0 !important;
-}
-}
-/* FIX FORMULARIO CONTACTO + BORRAR LETRAS LATERALES */
-@media (max-width: 768px){
-  /* Borra solo el texto vertical roto */
-  body > div[style*="writing-mode"], 
-  body > div[style*="vertical"]{
-    display: none !important;
-  }
-
-  /* Fuerza que el formulario aparezca */
-  form, .formulario, .contact-form, #form-contacto,
-  input, textarea, select, button[type="submit"]{
+  #contacto{
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: 100% !important;
-  }
-
-  #contacto, .seccion-contacto{
-    padding: 30px 15px !important;
+    padding: 60px 6% !important;
     overflow: visible !important;
   }
-  
-  /* Que las letras N C E / E no aparezcan más */
-  html{
-    overflow-x: hidden !important;
+  #contacto > div, #contacto > section, #contacto > form,
+  #contacto div[style*="grid"], #contacto div[style*="flex"]{
+    display: block !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    transform: none !important;
+    margin-left: 0 !important;
+  }
+  /* El form en sí */
+  #contacto form, .seccion-protocolo-premium form{
+    display: block !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-top: 40px !important;
   }
 }
