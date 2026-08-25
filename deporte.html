@@ -3,95 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO DEL AREA | Riganti, Geiler & Márquez Alluralde</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Derecho Deportivo | Riganti, Geiler & Márquez Alluralde</title>
+    <link rel="stylesheet" href="style.css"> 
     <style>
-        /* HEREDA EL DISEÑO DE TU HOME */
+        :root{
+            --color-primario:#070e1b;
+            --color-secundario:#c5a880;
+            --fuente-titulos:'Times New Roman', serif;
+            --fuente-cuerpo:'Inter', sans-serif;
+        }
+        body{margin:0; background:#f8f9fa}
+        /* HERO PREMIUM IGUAL A HOME */
         .hero-interno-premium{
             position: relative;
-            padding: 180px 12% 110px 12%;
-            background: linear-gradient(90deg, rgba(7,14,27,0.95) 0%, rgba(7,14,27,0.75) 45%, rgba(7,14,27,0.3) 100%), url('deporte-imagen.jpg');
+            padding: 180px 12% 130px 12%;
+            background: linear-gradient(90deg, rgba(7,14,27,0.97) 0%, rgba(7,14,27,0.85) 45%, rgba(7,14,27,0.4) 100%), url('deporte-imagen.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
             overflow: hidden;
         }
-        /* Diagonal blanca como en la home */
         .hero-interno-premium::after{
-            content:"";
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 100%; height: 60px;
-            background: var(--color-fondo-claro, #f8f9fa);
+            content:""; position:absolute; bottom:0; left:0;
+            width:100%; height:70px; background:#f8f9fa;
             clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
         }
-        .linea-dorada{width:50px; height:2px; background:var(--color-secundario, #c5a880); margin-bottom:25px}
-        .hero-interno-premium h1{font-family:var(--fuente-titulos); font-size:2.8rem; color:#fff; font-weight:500; line-height:1.15; max-width:650px}
-        .hero-interno-premium h1 span{color:var(--color-secundario, #c5a880); font-weight:300; display:block; font-size:1.1rem; letter-spacing:3px; margin-bottom:15px; text-transform:uppercase}
-        .hero-interno-premium p{font-size:1.15rem; color:rgba(255,255,255,0.8); max-width:600px; line-height:1.7; font-weight:300; margin-top:20px}
+        .linea-dorada{width:50px; height:2px; background:var(--color-secundario); margin-bottom:28px}
+        .hero-interno-premium h1{font-family:var(--fuente-titulos); font-size:2.9rem; color:#fff; font-weight:500; line-height:1.15; max-width:650px; margin:0}
+        .hero-interno-premium h1 span{color:var(--color-secundario); font-weight:300; display:block; font-size:0.95rem; letter-spacing:4px; margin-bottom:18px; text-transform:uppercase}
+        .hero-interno-premium p{font-size:1.15rem; color:rgba(255,255,255,0.82); max-width:620px; line-height:1.75; font-weight:300; margin-top:22px}
 
-        /* TARJETAS IGUAL QUE HOME */
-        .contenedor-subareas{padding:90px 12%; background:#f8f9fa; display:grid; grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); gap:35px}
-        .tarjeta-subarea{background:#fff; padding:42px 35px; border:1px solid rgba(0,0,0,0.04); border-top:3px solid #0a1120; transition:.3s}
-        .tarjeta-subarea:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.06)}
-        .tarjeta-subarea h3{font-family:var(--fuente-titulos); color:#0a1120; margin-bottom:22px}
+        /* TARJETAS */
+        .contenedor-subareas{padding:90px 12%; background:#f8f9fa; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:35px}
+        .tarjeta-subarea{background:#ffffff; padding:42px 38px; border-radius:2px; border:1px solid rgba(0,0,0,0.03); border-top:3px solid #0a1120; transition:all 0.3s ease}
+        .tarjeta-subarea:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.07)}
+        .tarjeta-subarea h3{font-family:var(--fuente-titulos); color:#0a1120; font-size:1.3rem; margin-bottom:24px; font-weight:500}
+        .tarjeta-subarea ul{list-style:none; padding:0; margin:0}
+        .tarjeta-subarea ul li{font-size:0.92rem; color:#4a5568; margin-bottom:16px; line-height:1.65; position:relative; padding-left:24px; font-weight:300}
+        .tarjeta-subarea ul li::before{content:"✓"; position:absolute; left:0; color:var(--color-secundario); font-weight:bold}
+        .tarjeta-subarea ul li strong{color:#1a202c; font-weight:500}
 
-        /* CTA FINAL CON LOGO COMO MARCA DISTINTIVA */
-        .cta-logo{
-            position:relative; padding:110px 12%; background:#070e1b; text-align:center; overflow:hidden;
-            display:flex; align-items:center; justify-content:center;
-        }
-        .cta-logo::before{ /* Logo gigante de fondo */
-            content:""; position:absolute; width:500px; height:500px; 
-            background-image:url('logo-final.png'); /* PONE ACA TU LOGO PNG */
-            background-size:contain; background-repeat:no-repeat; background-position:center;
-            opacity:0.04; left:50%; top:50%; transform:translate(-50%,-50%); pointer-events:none;
-        }
+        /* CTA CON LOGO DISTINTIVO */
+        .cta-final{position:relative; padding:120px 12%; background:#070e1b; text-align:center; overflow:hidden; display:flex; justify-content:center; align-items:center}
 
-        @media (max-width:768px){
-            .hero-interno-premium{padding:140px 6% 100px 6%}
+        @media (max-width: 768px){
+            .hero-interno-premium{padding:140px 6% 110px 6%}
             .hero-interno-premium h1{font-size:2.1rem}
             .contenedor-subareas{padding:60px 6%; grid-template-columns:1fr}
+            header nav{display:none !important} /* en interno simplificamos menú en móvil */
         }
     </style>
 </head>
 <body>
-<header style="position:fixed; top:0; left:0; width:100%; padding:18px 4%; background:rgba(10,17,32,0.96); display:flex; justify-content:space-between; align-items:center; z-index:1000; border-bottom:1px solid rgba(255,255,255,0.05);">
-    <div style="display:flex; align-items:center; gap:15px">
-        <img src="nombre-logo-estudio.webp" alt="Logo RGMA" style="height:38px; width:auto">
-        <div style="border-left:1px solid rgba(197,168,128,0.3); padding-left:15px; color:#fff; font-family:var(--fuente-titulos); font-size:0.85rem; letter-spacing:1px; line-height:1.1">
-            RIGANTI, GEILER<br>& MÁRQUEZ ALLURALDE
-        </div>
-    </div>
-    <nav><ul style="display:flex; list-style:none; gap:25px; margin:0; padding:0">
-        <li><a href="index.html#inicio" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">INICIO</a></li>
-        <li><a href="index.html#practicas" style="color:var(--color-secundario); text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">ÁREAS</a></li>
-        <li><a href="index.html#contacto" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">CONTACTO</a></li>
-    </ul></nav>
-</header>
 
-<main>
-    <section class="hero-interno-premium">
-        <div class="linea-dorada"></div>
-        <h1><span>ÁREA DE PRÁCTICA</span>Derecho Deportivo</h1>
-        <p>Asesoramos a futbolistas, atletas, agentes y clubes en la gestión de sus contratos y transferencias en múltiples jurisdicciones.</p>
-    </section>
+    <header style="position:fixed; top:0; left:0; width:100%; padding:16px 4%; background-color:rgba(10,17,32,0.97); display:flex; justify-content:space-between; align-items:center; z-index:1000; border-bottom:1px solid rgba(255,255,255,0.05); box-sizing:border-box;">
+        <a href="index.html" style="display:flex; align-items:center; gap:14px; text-decoration:none">
+            <img src="logo-dorado.webp" alt="RGMA" style="height:40px; width:auto;">
+            <div style="border-left:1px solid rgba(197,168,128,0.3); padding-left:14px; color:#fff; font-family:var(--fuente-titulos); font-size:0.8rem; letter-spacing:1px; line-height:1.1">
+                RIGANTI, GEILER<br>& MÁRQUEZ ALLURALDE
+                <span style="display:block; font-size:0.6rem; color:var(--color-secundario); letter-spacing:3px; margin-top:3px;">ABOGADOS</span>
+            </div>
+        </a>
+        <nav>
+            <ul style="display:flex; list-style:none; gap:28px; margin:0; padding:0">
+                <li><a href="index.html#inicio" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px; font-weight:300">INICIO</a></li>
+                <li><a href="index.html#practicas" style="color:var(--color-secundario); text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">ÁREAS</a></li>
+                <li><a href="index.html#contacto" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="contenedor-subareas">
-        <div class="tarjeta-subarea"><h3>Fichajes y Transferencias</h3><ul><li>Contratos de transferencia</li><li>Derechos de Formación</li><li>Operaciones internacionales</li></ul></div>
-        <div class="tarjeta-subarea"><h3>Contratos y Representación</h3><ul><li>Contratos Ley 20.160</li><li>Explotación de imagen</li><li>Comisiones de intermediación</li></ul></div>
-        <div class="tarjeta-subarea"><h3>Defensa y Litigios</h3><ul><li>Tribunales AFA, Conmebol y TAS</li><li>Estatutos y auditorías</li></ul></div>
-    </section>
+    <main>
+        <section class="hero-interno-premium">
+            <div class="linea-dorada"></div>
+            <h1><span>Derecho Deportivo</span>Fichajes, contratos y defensa ante tribunales internacionales</h1>
+            <p>Asesoramos a futbolistas, atletas de alto rendimiento, agentes e intermediarios y clubes en la gestión de sus contratos y transferencias. Aportamos claridad en un mercado con reglas muy específicas, tanto a nivel nacional como internacional.</p>
+        </section>
 
-    <section class="cta-logo">
-        <div style="position:relative; z-index:2; max-width:700px">
-            <img src="logo-final.png" style="height:42px; margin-bottom:30px; opacity:0.9">
-            <h2 style="color:var(--color-secundario); font-family:var(--fuente-titulos); font-weight:400; font-size:1.9rem; margin-bottom:20px">¿Requiere asesoramiento en esta área?</h2>
-            <p style="color:rgba(255,255,255,0.7); margin-bottom:35px">Agende una sesión confidencial con nuestro equipo.</p>
-            <a href="index.html#contacto" style="display:inline-block; padding:16px 40px; border:1px solid var(--color-secundario); color:var(--color-secundario); text-decoration:none; font-size:0.8rem; letter-spacing:2px">INICIAR CONSULTA</a>
-        </div>
-    </section>
-</main>
+        <section class="contenedor-subareas">
+            <div class="tarjeta-subarea">
+                <h3>Fichajes y Transferencias de Jugadores</h3>
+                <ul>
+                    <li><strong>Contratos de transferencia:</strong> Redactamos los acuerdos de cesión de derechos federativos y económicos entre clubes de la Liga Profesional, el ascenso y el exterior.</li>
+                    <li><strong>Derechos de Formación y Solidaridad:</strong> Calculamos, reclamamos y ejecutamos los montos que corresponden a los clubes formadores según FIFA.</li>
+                    <li><strong>Operaciones internacionales:</strong> Asesoramos en giros de divisas y retenciones impositivas en pases al exterior.</li>
+                </ul>
+            </div>
+            <div class="tarjeta-subarea">
+                <h3>Contratos de Trabajo y Representación</h3>
+                <ul>
+                    <li><strong>Contratos bajo la Ley 20.160:</strong> Diseñamos contratos que regulen sueldos, primas, premios y cláusulas de rescisión.</li>
+                    <li><strong>Explotación de imagen:</strong> Separamos el contrato laboral del club de los acuerdos por derechos de imagen personal.</li>
+                    <li><strong>Contratos de intermediación:</strong> Redactamos acuerdos entre representantes y clubes, asegurando el cobro de comisiones.</li>
+                </ul>
+            </div>
+            <div class="tarjeta-subarea">
+                <h3>Defensa Institucional y Litigios</h3>
+                <ul>
+                    <li><strong>Tribunales deportivos y TAS:</strong> Defendemos intereses ante AFA, Conmebol y el Tribunal de Arbitraje Deportivo en Suiza.</li>
+                    <li><strong>Estatutos y auditorías de clubes:</strong> Asesoramos a comisiones directivas en adecuación de reglamentos y cumplimiento institucional.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA FINAL CON LOGO -->
+        <section class="cta-final">
+            <img src="logo-dorado.webp" alt="" style="position:absolute; width:650px; opacity:0.04; left:50%; top:50%; transform:translate(-50%,-50%); pointer-events:none;">
+            <div style="position:relative; z-index:2; max-width:720px">
+                <img src="logo-dorado.webp" alt="RGMA Logo" style="height:58px; margin-bottom:32px;">
+                <h2 style="color:#c5a880; font-family:var(--fuente-titulos); font-weight:400; font-size:2rem; margin-bottom:18px;">¿Requiere asesoramiento en transferencias o contratos deportivos?</h2>
+                <div style="width:50px; height:2px; background:#c5a880; margin:0 auto 24px auto"></div>
+                <p style="color:rgba(255,255,255,0.72); margin-bottom:38px; font-size:1.05rem; font-weight:300; line-height:1.7">Agende una sesión de consultoría confidencial con nuestro equipo especializado en regulaciones de federaciones internacionales y transacciones en múltiples jurisdicciones.</p>
+                <a href="index.html#contacto" style="display:inline-block; padding:15px 42px; border:1px solid #c5a880; color:#c5a880; text-decoration:none; font-size:0.8rem; letter-spacing:2px; transition:0.3s" onmouseover="this.style.background='#c5a880'; this.style.color='#070e1b'" onmouseout="this.style.background='transparent'; this.style.color='#c5a880'">INICIAR CONSULTA</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:#070e1b; padding:30px 12%; border-top:1px solid rgba(255,255,255,0.06); text-align:center; color:rgba(255,255,255,0.35); font-size:0.8rem; font-weight:300">
+        © <script>document.write(new Date().getFullYear())</script> Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados.
+    </footer>
+
 </body>
-
 </html>
