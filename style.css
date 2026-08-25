@@ -453,3 +453,13 @@ textarea{
   height: 90px !important;
   margin-bottom: 0 !important;
 }
+/* FIX DEFINITIVO - LINEA PEGADA */
+textarea,
+.campo-flotante textarea,
+.input-premium-linea,
+.input-premium-linea-area {
+  min-height: 70px !important;
+  height: 70px !important;
+  max-height: 70px !important;
+  padding-bottom: 8px !important;
+}
