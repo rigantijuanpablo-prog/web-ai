@@ -557,3 +557,21 @@ textarea{
     margin-top: 20px !important;
   }
 }
+/* FIX LÍNEA DIAGONAL QUE CORTA EL BOTÓN */
+@media (max-width: 768px){
+  .hero, .portada, .hero-contenedor{
+    padding-bottom: 70px !important;
+    clip-path: none !important;
+  }
+  /* Bajamos la línea diagonal */
+  .hero::after, .separador-diagonal, .diagonal-gold{
+    bottom: -30px !important;
+  }
+  .hero-contenedor-texto{
+    padding-bottom: 20px !important;
+  }
+  .btn-premium-final{
+    margin-bottom: 25px !important;
+    transform: translateY(-15px) !important;
+  }
+}
