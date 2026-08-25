@@ -581,3 +581,33 @@ textarea{
     margin-top: 40px !important;
   }
 }
+/* FIX HERO - A PISADA Y DIAGONAL */
+@media (max-width: 768px){
+  .hero-contenedor-texto{
+    padding-bottom: 100px !important; /* le damos aire para que la diagonal baje */
+  }
+
+  .btn-premium-final{
+    width: fit-content !important; /* que no sea 100% ancho así no se aplasta la A */
+    min-width: 220px !important;
+    padding: 16px 32px !important;
+    margin-top: 35px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    line-height: 1 !important;
+    letter-spacing: 2px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /* Baja la diagonal para que no pise el botón */
+  .hero-diagonal, .diagonal-dorada, div[style*="clip-path"], 
+  div[style*="transform: rotate"]{
+    margin-top: 30px !important;
+    bottom: -20px !important;
+  }
+}
