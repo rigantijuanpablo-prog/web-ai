@@ -180,60 +180,95 @@ section{padding:110px 12%}
 .seccion-cierre-premium p{color:rgba(255,255,255,.6);margin-bottom:35px;font-size:16px;font-weight:300}
 .btn-premium-borde{border:1px solid rgba(255,255,255,.35);color:#fff;padding:16px 40px;letter-spacing:2.5px;font-size:11px;text-transform:uppercase;text-decoration:none;transition:.4s;display:inline-block}
 .btn-premium-borde:hover{background:var(--dorado);border-color:var(--dorado);color:var(--navy)}
-/* === FORMULARIO - CONSULTA RESERVADA === */
+/* === FIX DEFINITIVO FORMULARIO - REEMPLAZA TODO === */
 .contenedor-contacto{
-  display:grid;
-  grid-template-columns:1fr 1.3fr;
-  gap:70px;
-  align-items:start;
+  display:grid !important;
+  grid-template-columns: 1fr 1.3fr !important;
+  gap:80px !important;
 }
-.bloque-dato{margin-bottom:26px}
-.bloque-dato label{
-  color:var(--dorado);
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  display:block;
-  margin-bottom:6px;
-}
-.bloque-dato p{color:var(--navy);font-weight:500}
 
-/* FIX 1: AIRE ENTRE NOMBRE Y EMAIL */
 .formulario-contacto{
-  gap: 48px 32px !important; /* antes tenias 42x24, ahora respira */
+  display:grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 50px 32px !important;
 }
+.campo-ancho{grid-column: span 2 !important;}
 
-/* FIX 2: ETIQUETA ASFIXIADA + CONSULTA QUE NO RESPIRA */
-.campo-flotante label{
-  top: 18px !important; /* baja 2px la etiqueta gris */
+.campo-flotante{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+}
+.campo-flotante input,
+.campo-flotante textarea{
+  -webkit-appearance:none !important;
+  appearance:none !important;
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  border:0 !important;
+  border-bottom:1.5px solid #C8B090 !important;
+  background:transparent !important;
+  padding: 18px 0 12px 0 !important;
+  margin:0 !important;
+  font-family:'Inter', sans-serif !important;
+  font-size:15px !important;
+  color:#0D121E !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
 }
 .campo-flotante textarea{
-  min-height: 110px !important; /* antes 80px, ahora solemne */
-  padding-top: 22px !important; /* aire interno */
-  line-height: 1.7 !important;
-}
-.campo-flotante input:not(:placeholder-shown) + label,
-.campo-flotante textarea:not(:placeholder-shown) + label{
-  top: -14px !important; /* sube más cuando flota, no queda pegada */
+  min-height:130px !important;
+  resize:none !important;
 }
 
-/* FIX 3: BOTON ALTA COSTURA - UNIFICADO CON PORTADA */
+.campo-flotante label{
+  position:absolute !important;
+  left:0 !important;
+  top:18px !important;
+  color:#a0aec0 !important;
+  font-size:14px !important;
+  pointer-events:none !important;
+  transition:all .3s ease !important;
+  background:transparent !important;
+  width:auto !important;
+}
+
+.campo-flotante input:focus + label,
+.campo-flotante input:not(:placeholder-shown) + label,
+.campo-flotante textarea:focus + label,
+.campo-flotante textarea:not(:placeholder-shown) + label{
+  top:-12px !important;
+  font-size:10px !important;
+  letter-spacing:2px !important;
+  text-transform:uppercase !important;
+  color:#C8B090 !important;
+}
+
+.campo-flotante input:focus,
+.campo-flotante textarea:focus{
+  border-bottom-color:#0D121E !important;
+  outline:none !important;
+}
+
 .boton-enviar{
-  background: transparent !important;
-  border: 1.5px solid var(--dorado) !important;
-  color: var(--navy) !important;
-  padding: 22px 48px !important;
-  letter-spacing: 3.2px !important;
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 500 !important;
-  font-size: 12px !important;
-  transition: all .4s ease !important;
+  grid-column: span 2 !important;
+  background:transparent !important;
+  border:1.5px solid #C8B090 !important;
+  color:#0D121E !important;
+  padding:22px 40px !important;
+  letter-spacing:3px !important;
+  text-transform:uppercase !important;
+  font-size:12px !important;
+  font-family:'Playfair Display', serif !important;
+  cursor:pointer !important;
+  transition: all .3s ease !important;
+  width:100% !important;
 }
 .boton-enviar:hover{
-  background: var(--dorado) !important;
-  color: #fff !important;
-  transform: translateY(-3px) !important;
-  box-shadow: 0 12px 30px rgba(200,176,144,0.25) !important;
+  background:#0D121E !important;
+  color:#C8B090 !important;
+  transform: translateY(-2px) !important;
 }
 .footer-premium{background:var(--navy);padding:90px 12% 40px 12%;border-top:1px solid rgba(200,176,144,.15)}
 .bloques-footer-fijo{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:70px;margin-bottom:60px}
