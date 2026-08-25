@@ -85,7 +85,7 @@ section{padding:110px 12%}
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/facultad-azul-etereo.webp');
+  background-image: url('boceto.webp');
   background-size: cover;
   background-position: center 35%;
   opacity: 0.35;
