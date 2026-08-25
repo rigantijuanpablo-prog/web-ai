@@ -381,3 +381,41 @@ div.input-premium-linea-area{
   border: none !important;
   border-bottom: 1.5px solid #0D121E !important;
 }
+/* MATA LINEA FANTASMA DEL FORM */
+form,
+form > div,
+form > div > div{
+  border: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* Solo los inputs tienen línea, nada más */
+form *{
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* La única línea permitida */
+form input,
+form textarea{
+  border: none !important;
+  border-bottom: 1.5px solid #C8B090 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Elimina cualquier hr o separador que meta el tema */
+form hr,
+form .divisor,
+form .separador{
+  display: none !important;
+}
+/* AJUSTE FINAL ALTURA CONSULTA */
+.campo-flotante textarea,
+.input-premium-linea-area,
+textarea.input-premium-linea{
+  min-height: 90px !important;
+  padding-bottom: 12px !important;
+}
