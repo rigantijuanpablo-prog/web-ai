@@ -17,37 +17,33 @@
     <a href="#contacto" class="item-flotante"><span>UBICACIÓN</span><div class="icono-flotante">◉</div></a>
 </div>
 
-<header>
-    <a href="#" class="marca-estudio">
-        <img src="nombre-logo-estudio.webp" alt="RGM">
-        <div class="nombre-estudio">
-            <span class="apellido-principal">RIGANTI, GEILER</span>
-            <span class="apellido-secundario"><span style="font-family: 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 1.1em; margin-right: 5px;">&</span> MÁRQUEZ ALLURALDE</span>
-        </div>
+<header class="header-rgm">
+  <div class="header-inner">
+    <a href="/" class="logo-rgm">
+      <span class="logo-icon">A</span>
+      <span class="logo-text">RIGANTI, GEILER<br>& MÁRQUEZ ALLURALDE</span>
     </a>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#estudio">El Estudio</a></li>
-            <li><a href="#practicas">Prácticas</a></li>
-            <li><a href="#contacto" class="btn-nav">Contacto</a></li>
-        </ul>
+    <nav class="nav-rgm">
+      <a href="#inicio">INICIO</a>
+      <a href="#estudio">EL ESTUDIO</a>
+      <a href="#practicas">PRÁCTICAS</a>
+      <a href="#contacto" class="btn-header">CONTACTO</a>
     </nav>
+  </div>
 </header>
 
-<section class="hero-principal">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="hero-acuarela-12s.mp4" type="video/mp4">
+<!-- HERO UNICO - CON OVERLAY Y DIAGONAL -->
+<section class="hero-principal" id="inicio">
+  <video autoplay muted loop playsinline class="hero-bg" poster="hero-fallback.jpg">
+    <source src="hero-acuarela-12s-FULLHD.mp4" type="video/mp4">
   </video>
-  <div class="hero-contenedor-texto">
-    <h1>Trayectoria Legal con una Perspectiva de Vanguardia</h1>
+  <div class="hero-overlay"></div>
+  <div class="hero-contenido">
+    <h1 class="hero-titulo">Trayectoria Legal<br>con una Perspectiva<br>de Vanguardia</h1>
+    <a href="#estudio" class="btn-dorado">CONOCE AL ESTUDIO</a>
   </div>
+  <div class="hero-diagonal"></div>
 </section>
-
-<style>
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-principal::after{background:rgba(13,18,30,0.15)}
-</style>
 
 <section id="estudio">
     <div class="encabezado-seccion">
@@ -98,13 +94,16 @@
     </div>
 </section>
 
-<section class="seccion-cierre-premium">
-    <div class="contenido-cierre">
-        <span class="subtitulo-cierre">Carrera en RGM</span>
-        <h2>Únete al Equipo</h2>
-        <p>Buscamos profesionales que desafíen los límites de la práctica tradicional.</p>
-        <a href="#contacto" class="btn-premium-borde">Ver oportunidades</a>
-    </div>
+<!-- SECCION EQUIPO - UNICA -->
+<section class="seccion-equipo">
+  <div class="equipo-bg"></div>
+  <div class="equipo-overlay"></div>
+  <div class="equipo-contenido">
+    <span class="equipo-label">CARRERA EN RGM</span>
+    <h2 class="equipo-titulo">Únete al Equipo</h2>
+    <p class="equipo-sub">Buscamos profesionales que desafíen los límites de la práctica tradicional.</p>
+    <a href="#contacto" class="btn-outline-dorado">VER OPORTUNIDADES</a>
+  </div>
 </section>
 
 <section id="contacto">
@@ -116,27 +115,13 @@
             <div class="bloque-dato"><label>Teléfono</label><p>+54 (11) 4321-5555</p></div>
             <div class="bloque-dato"><label>Email</label><p>contacto@rigantigeiler.com</p></div>
         </div>
-        
         <form class="formulario-contacto">
-            <div class="campo-flotante">
-                <input type="text" placeholder=" " id="nombre" required>
-                <label for="nombre">Nombre completo</label>
-            </div>
-            <div class="campo-flotante">
-                <input type="email" placeholder=" " id="email" required>
-                <label for="email">Email corporativo</label>
-            </div>
-            <div class="campo-flotante campo-ancho">
-                <input type="text" placeholder=" " id="empresa">
-                <label for="empresa">Empresa / Estudio</label>
-            </div>
-            <div class="campo-flotante campo-ancho">
-                <textarea rows="5" placeholder=" " id="consulta" required></textarea>
-                <label for="consulta">Describa su consulta</label>
-            </div>
+            <div class="campo-flotante"><input type="text" placeholder=" " id="nombre" required><label for="nombre">Nombre completo</label></div>
+            <div class="campo-flotante"><input type="email" placeholder=" " id="email" required><label for="email">Email corporativo</label></div>
+            <div class="campo-flotante campo-ancho"><input type="text" placeholder=" " id="empresa"><label for="empresa">Empresa / Estudio</label></div>
+            <div class="campo-flotante campo-ancho"><textarea rows="5" placeholder=" " id="consulta" required></textarea><label for="consulta">Describa su consulta</label></div>
             <button type="submit" class="boton-enviar">Enviar Requerimiento</button>
         </form>
-
     </div>
 </section>
 
@@ -150,7 +135,7 @@
 </footer>
 
 <script>
-window.addEventListener('scroll',()=>{document.querySelector('header').classList.toggle('scrolled',window.scrollY>50)});
+window.addEventListener('scroll',()=>{document.querySelector('.header-rgm').classList.toggle('scrolled',window.scrollY>50)});
 const cards=document.querySelectorAll('.tarjeta-corporativa');
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:0.15});
 cards.forEach(c=>obs.observe(c));
