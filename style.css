@@ -522,3 +522,38 @@ textarea{
     textarea{ height: 85px !important; min-height: 85px !important; }
     .btn-formulario-final { width: 100% !important; padding: 18px 0 !important; }
 }
+/* FIX CRÍTICO 320px - HEADER Y BOTÓN */
+@media (max-width: 768px){
+  header nav,
+  header ul,
+  .nav-links{
+    display: none !important;
+  }
+  
+  /* Botón hamburguesa visible */
+  .hamburger, .menu-toggle, .icon-menu{
+    display: block !important;
+  }
+
+  header{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 5% !important;
+  }
+  header img{
+    max-width: 150px !important;
+  }
+
+  /* Hero - que no se corte el botón */
+  .hero-contenedor-texto{
+    padding-top: 8vh !important;
+    padding-bottom: 30px !important;
+  }
+  .btn-premium-final{
+    position: relative !important;
+    z-index: 2 !important;
+    margin-top: 20px !important;
+  }
+}
