@@ -419,3 +419,31 @@ textarea.input-premium-linea{
   min-height: 90px !important;
   padding-bottom: 12px !important;
 }
+/* UNIFICACION ABSOLUTA TEXTAREA - 1 SOLO TRAZO */
+.campo-flotante:has(textarea),
+.input-premium-linea-area,
+div:has(> textarea){
+  height: 90px !important;
+  min-height: 90px !important;
+  border: none !important;
+  border-bottom: 1.5px solid #C8B090 !important;
+  padding: 0 !important;
+  margin-bottom: 32px !important;
+  overflow: hidden !important;
+}
+
+.campo-flotante textarea,
+.input-premium-linea-area textarea,
+textarea.input-premium-linea,
+textarea{
+  height: 90px !important;
+  min-height: 90px !important;
+  max-height: 90px !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  resize: none !important;
+  padding: 10px 0 0 0 !important;
+  line-height: 1.2 !important;
+}
