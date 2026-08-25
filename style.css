@@ -580,3 +580,22 @@ textarea{
     margin-bottom: 40px !important; /* un poco más de aire */
   }
 }
+/* FIX LÍNEA NO ENCIME EL BOTÓN */
+@media (max-width: 768px){
+  /* Bajamos la franja dorada */
+  .hero::after,
+  .hero-contenedor::after,
+  div[style*="background: #c9a86a"],
+  div[style*="background:#c9a86a"]{
+    transform: translateY(30px) rotate(-4deg) !important;
+  }
+  
+  /* Le damos aire al hero */
+  .hero, .hero-contenedor{
+    padding-bottom: 65px !important;
+  }
+
+  .hero-contenedor-texto{
+    padding-bottom: 50px !important;
+  }
+}
