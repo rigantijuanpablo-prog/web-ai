@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap');
 :root{--navy:#0D121E;--dorado:#C8B090;--texto:#2C3E50;--fondo:#F8F9FB;--blanco:#fff}
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--texto);background:var(--blanco);line-height:1.8;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;color:var(--texto);background:var(--blanco);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3{font-family:'Playfair Display',serif;color:var(--navy)}
 header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(13,18,30,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,0.12);transition:all.3s}
 header.scrolled{padding:15px 8%;background:rgba(13,18,30,0.99)}
 
-/* LOGO */
 .marca-estudio{display:flex;align-items:center;gap:16px;text-decoration:none}
 .marca-estudio img{height:48px;width:auto}
 .nombre-estudio{display:flex;flex-direction:column;gap:2px;line-height:1}
@@ -19,12 +18,12 @@ nav a{color:rgba(255,255,255,.85);font-size:13px;letter-spacing:1.5px;text-trans
 nav a:hover{color:var(--dorado)}
 .btn-nav{border:1px solid var(--dorado);padding:9px 20px;background:rgba(200,176,144,.1);border-radius:2px}
 
-/* === FIX 1: HERO CON AIRE PREMIUM - Ya no colisiona === */
-.hero-principal{min-height:100vh;display:flex;align-items:center;padding:0 12%;position:relative;overflow:hidden;background:var(--navy)}
+/* HERO - FIX AIRE Y BOTON NO PISA DIAGONAL */
+.hero-principal{min-height:100vh;display:flex;align-items:center;padding:0 12% 100px 12%;position:relative;overflow:hidden;background:var(--navy)}
 .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,18,30,0.96) 0%, rgba(13,18,30,0.78) 45%, rgba(13,18,30,0.35) 100%);z-index:2}
-.hero-principal::after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:180px;background:var(--blanco);clip-path:polygon(0 45%, 100% 100%, 100% 100%, 0 100%);z-index:4}
-.hero-principal::before{content:"";position:absolute;bottom:178px;left:0;width:100%;height:2.5px;background:#C8B090!important;transform:skewY(3.8deg);transform-origin:left;z-index:10;opacity:1;box-shadow:0 0 12px rgba(200,176,144,0.5)}
+.hero-principal::after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:140px;background:var(--blanco);clip-path:polygon(0 35%, 100% 100%, 100% 100%, 0 100%);z-index:4}
+.hero-principal::before{content:"";position:absolute;bottom:138px;left:0;width:100%;height:2px;background:#C8B090!important;transform:skewY(2.5deg);transform-origin:left;z-index:10;opacity:1;box-shadow:0 0 12px rgba(200,176,144,0.5)}
 .hero-contenedor-texto{position:relative;z-index:3;max-width:680px;padding-top:14vh!important;margin-top:0;transform:none}
 .hero-contenedor-texto h1{font-size:54px;line-height:1.12;color:var(--blanco);font-weight:400;margin-bottom:36px;max-width:520px}
 .btn-premium-final{display:inline-block;border:1.5px solid var(--dorado);color:#fff;padding:22px 48px;font-size:12px;letter-spacing:3.2px;text-transform:uppercase;font-family:'Playfair Display',serif!important;font-weight:500!important;transition:all.3s;text-decoration:none;background:rgba(200,176,144,0.08)}
@@ -42,7 +41,6 @@ section{padding:110px 12%}
 .tarjeta-valor h4{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-weight:600}
 .tarjeta-valor p{font-size:14.5px;line-height:1.7}
 
-/* === FIX 2: FICHAS MONOCROMATICAS PREMIUM === */
 #practicas{background:var(--fondo)}
 .grid-corporativo{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .tarjeta-corporativa{background:#FFFFFF;border:1px solid #e2e8f0;border-top:1px solid rgba(200,176,144,.4);box-shadow:0 10px 40px rgba(13,18,30,.03);padding:36px;opacity:0;transform:translateY(28px);transition:all.8s ease,transform.4s ease,box-shadow.4s ease}
@@ -60,7 +58,6 @@ section{padding:110px 12%}
 .tarjeta-corporativa.destacada ul li{color:rgba(255,255,255,.6)!important;justify-content:center;padding-left:0}
 .tarjeta-corporativa.destacada ul li::before{display:none}
 
-/* === FIX 3: PROTOCOLO DE VINCULACION - ACORDEON MINIMALISTA === */
 .seccion-faq{background:var(--fondo);border-top:1px solid rgba(13,18,30,.04)}
 .contenedor-faq{max-width:820px;margin:0 auto}
 .acordeon-premium{display:flex;flex-direction:column;gap:12px}
@@ -72,10 +69,9 @@ section{padding:110px 12%}
 .acordeon-premium details[open] summary::after{transform:rotate(45deg)}
 .acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300;color:var(--texto)}
 
-/* === CIERRE PREMIUM CON BOCETO === */
-.seccion-cierre-premium{position:relative;overflow:hidden;background:#0D121E;text-align:center;padding:120px 12%;isolation:isolate}
-.seccion-cierre-premium::before{content:"";position:absolute;inset:0;background-image:url('../boceto.webp');background-size:cover;background-position:center 35%;opacity:0.38;z-index:1;pointer-events:none}
-.seccion-cierre-premium::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, rgba(200,176,144,.18) 0%, transparent 70%);z-index:1;pointer-events:none}
+.seccion-cierre-premium{position:relative;overflow:hidden;background:#0D121E url('../boceto.webp') no-repeat center 35% / cover;text-align:center;padding:120px 12%;isolation:isolate}
+.seccion-cierre-premium::before{content:"";position:absolute;inset:0;background:rgba(13,18,30,0.65);z-index:1;pointer-events:none}
+.seccion-cierre-premium::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, rgba(200,176,144,.22) 0%, transparent 70%);z-index:1;pointer-events:none}
 .contenido-cierre{position:relative;z-index:3;max-width:700px;margin:0 auto}
 .subtitulo-cierre{color:var(--dorado);letter-spacing:3.5px;font-size:11px;text-transform:uppercase;display:block;margin-bottom:18px}
 .seccion-cierre-premium h2{color:#fff;font-size:50px;margin-bottom:20px}
@@ -83,7 +79,6 @@ section{padding:110px 12%}
 .btn-premium-borde{border:1px solid rgba(255,255,255,.35);color:#fff;padding:16px 40px;letter-spacing:2.5px;font-size:11px;text-transform:uppercase;text-decoration:none;transition:.4s;display:inline-block}
 .btn-premium-borde:hover{background:var(--dorado);border-color:var(--dorado);color:var(--navy)}
 
-/* === FIX 4: FORMULARIO LINEA MINIMALISTA - SOLEMNIDAD === */
 .contenedor-contacto{display:grid;grid-template-columns:1fr 1.3fr;gap:70px}
 .bloque-dato{margin-bottom:26px}
 .bloque-dato label{color:var(--dorado);font-size:11px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px}
@@ -108,10 +103,12 @@ section{padding:110px 12%}
 .columna-footer-fija a:hover{color:#fff}
 .copyright-premium{border-top:1px solid rgba(255,255,255,.07);padding-top:26px;text-align:center}
 .copyright-premium p{color:rgba(255,255,255,.35);font-size:12px}
-.barra-flotante-contacto{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:9999;display:flex;flex-direction:column;gap:1px}
-.item-flotante{display:flex;align-items:center;justify-content:flex-end;background:var(--navy);color:#fff;height:52px;min-width:52px;border-left:2px solid var(--dorado);padding:0 16px;text-decoration:none;transition:all.35s}
-.item-flotante span{font-size:10px;letter-spacing:2px;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;transition:all.35s}
-.item-flotante:hover{background:var(--dorado);color:var(--navy)}
+
+.barra-flotante-contacto{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:9999;display:flex;flex-direction:column;gap:1px;width:auto;overflow:visible}
+.item-flotante{display:flex;align-items:center;justify-content:flex-end;background:var(--navy);color:#fff;height:48px;min-width:48px;width:48px;border-left:2px solid var(--dorado);border-radius:4px 0 0 4px;padding:0 14px;text-decoration:none;transition:all.35s ease;box-shadow:-4px 4px 15px rgba(0,0,0,.25)}
+.item-flotante span{font-size:10px;letter-spacing:2px;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;transition:all.35s ease}
+.item-flotante:hover{width:165px;background:var(--dorado);color:var(--navy)}
 .item-flotante:hover span{max-width:120px;opacity:1;padding-right:12px}
+
 @media(max-width:1024px){.contenedor-estudio,.contenedor-contacto,.bloques-footer-fijo{grid-template-columns:1fr}.grid-corporativo{grid-template-columns:1fr 1fr}.tarjeta-corporativa.destacada{grid-column:span 2}}
-@media(max-width:640px){.grid-corporativo{grid-template-columns:1fr}.tarjeta-corporativa.destacada{grid-column:span 1}section{padding:80px 6%}.barra-flotante-contacto{display:none}header{padding:15px 6%}nav ul{gap:18px}.hero-contenedor-texto h1{font-size:38px;max-width:100%}.hero-contenedor-texto{padding-top:18vh!important;margin-top:0;transform:none}.hero-principal::after{height:120px;clip-path:polygon(0 75%,100% 100%,100% 100%,0 100%)}.hero-principal::before{bottom:118px}}
+@media(max-width:640px){.grid-corporativo{grid-template-columns:1fr}.tarjeta-corporativa.destacada{grid-column:span 1}section{padding:80px 6%}.barra-flotante-contacto{display:none}header{padding:15px 6%}nav ul{gap:18px}.hero-contenedor-texto h1{font-size:38px;max-width:100%}.hero-contenedor-texto{padding-top:18vh!important;margin-top:0;transform:none}.hero-principal{padding:0 6% 80px 6%}.hero-principal::after{height:100px;clip-path:polygon(0 60%,100% 100%,100% 100%,0 100%)}.hero-principal::before{bottom:98px}}
