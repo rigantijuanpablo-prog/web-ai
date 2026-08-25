@@ -489,3 +489,10 @@ textarea{
   resize: none !important;
   margin-bottom: 40px !important;
 }
+/* LINEA DORADA PARA CONSULTA - PEGADA */
+textarea{
+  border-bottom: 1.5px solid #C9B896 !important;
+  min-height: 80px !important;
+  height: 80px !important;
+  margin-bottom: 35px !important;
+}
