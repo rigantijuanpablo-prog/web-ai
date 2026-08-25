@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap');
 :root{--navy:#0D121E;--dorado:#C8B090;--texto:#2C3E50;--fondo:#F8F9FB;--blanco:#fff}
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;color:var(--texto);background:var(--blanco);line-height:1.8;-webkit-font-smoothing:antialiased}
@@ -17,30 +17,30 @@ nav a:hover{color:var(--dorado)}
 .hero-principal{min-height:100vh;display:flex;align-items:center;padding:0 12%;position:relative;overflow:hidden;background:var(--navy)}
 .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,18,30,.85) 0%,rgba(13,18,30,.45) 60%,rgba(13,18,30,.15) 100%);z-index:2}
-/* DIAGONAL PREMIUM - CORTE BOUTIQUE ABAJO DEL HERO */
+/* DIAGONAL PREMIUM - DESCENDENTE IZQ A DER \ */
 .hero-principal::after{
   content:"";
   position:absolute;
   bottom:-1px;
   left:0;
   width:100%;
-  height:85px;
+  height:120px;
   background:var(--blanco);
-  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+  clip-path: polygon(0 75%, 100% 100%, 100% 100%, 0 100%);
   z-index:4;
 }
 .hero-principal::before{
   content:"";
   position:absolute;
-  bottom:83px;
+  bottom:115px;
   left:0;
   width:100%;
   height:1px;
   background:var(--dorado);
-  transform: skewY(-2.8deg);
+  transform: skewY(4.2deg);
   transform-origin: left;
   z-index:5;
-  opacity:0.8;
+  opacity:0.9;
 }
 .hero-contenedor-texto{position:relative;z-index:3;max-width:680px;padding-top:22vh!important}
 .hero-contenedor-texto h1{font-size:52px;line-height:1.15;color:var(--blanco);font-weight:400;margin-bottom:36px}
@@ -51,35 +51,54 @@ section{padding:110px 12%}
 .encabezado-seccion h2{font-size:40px;margin-bottom:14px}
 .linea-decorativa{width:60px;height:2px;background:var(--dorado);margin:0 auto 20px auto}
 .encabezado-seccion p{color:var(--texto);opacity:.85}
-.contenedor-estudio{display:grid;grid-template-columns:1.1fr.9fr;gap:80px}
-.texto-estudio p{font-weight:300;font-size:16px;margin-bottom:26px;line-height:1.9}
-.tarjeta-valor{border-left:2px solid rgba(200,176,144,.35);padding-left:22px;margin-bottom:34px}
-.tarjeta-valor h4{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-weight:600}
+
+/* === 1. EL ESTUDIO - RITMO EDITORIAL ELITE === */
+.contenedor-estudio{display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px}
+.texto-estudio p{font-weight:300;font-size:16px;margin-bottom:26px;line-height:1.9;color:var(--texto)}
+.texto-estudio p:first-child{
+  font-family:'Lora', serif;
+  font-size:1.65rem;
+  font-weight:300;
+  line-height:1.35;
+  color:var(--navy);
+  margin-bottom:42px;
+}
+.tarjeta-valor{border-left:1px solid var(--dorado);padding-left:22px;margin-bottom:38px;transition:border-color.3s}
+.tarjeta-valor:hover{border-left-color:var(--navy)}
+.tarjeta-valor h4{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-weight:600}
 .tarjeta-valor p{font-size:14.5px;line-height:1.7}
+
 #practicas{background:var(--fondo)}
 .grid-corporativo{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.tarjeta-corporativa{background:#fff;border-top:3px solid var(--dorado);box-shadow:0 10px 40px rgba(13,18,30,.06);padding:36px;opacity:0;transform:translateY(28px);transition:all.8s ease,transform.4s ease,box-shadow.4s ease}
+/* === 2. AREAS - FICHAS MONOCROMATICAS === */
+.tarjeta-corporativa{background:#F9F7F4;border:none;border-top:1px solid rgba(200,176,144,.4);box-shadow:0 10px 40px rgba(13,18,30,.04);padding:36px;opacity:0;transform:translateY(28px);transition:all.8s ease,transform.4s ease,box-shadow.4s ease}
 .tarjeta-corporativa.visible{opacity:1;transform:translateY(0)}
-.tarjeta-corporativa:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(13,18,30,.1)}
-.tarjeta-corporativa h3 a{font-size:17px;color:var(--navy);text-decoration:none}
-.tarjeta-corporativa h3 a:hover{color:var(--dorado)}
+.tarjeta-corporativa:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(13,18,30,.08)}
+.tarjeta-corporativa:hover h3 a{color:var(--dorado)}
+.tarjeta-corporativa h3 a{font-size:17px;color:var(--navy);text-decoration:none;transition:color.3s}
 .tarjeta-corporativa p{font-size:14px;margin:14px 0 18px 0;line-height:1.7}
 .tarjeta-corporativa ul{list-style:none}
-.tarjeta-corporativa li{display:flex;gap:10px;font-size:13px;margin-bottom:10px;line-height:1.5}
-.tarjeta-corporativa li span{color:var(--dorado);font-weight:700}
+.tarjeta-corporativa li{position:relative;padding-left:18px;font-size:13px;margin-bottom:10px;line-height:1.5}
+.tarjeta-corporativa li::before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--dorado)}
+.tarjeta-corporativa li span{display:none}
 .tarjeta-corporativa.destacada{background:var(--navy);grid-column:span 3;text-align:center;padding:60px}
 .tarjeta-corporativa.destacada h3 a,.tarjeta-corporativa.destacada p{color:#fff!important}
-.tarjeta-corporativa.destacada ul li{color:rgba(255,255,255,.6)!important;justify-content:center}
+.tarjeta-corporativa.destacada ul li{color:rgba(255,255,255,.6)!important;justify-content:center;padding-left:0}
+.tarjeta-corporativa.destacada ul li::before{display:none}
+
+/* === 3. FAQ - ACORDEON LIQUIDO === */
 .seccion-faq{background:var(--fondo);border-top:1px solid rgba(13,18,30,.04)}
 .contenedor-faq{max-width:820px;margin:0 auto}
 .acordeon-premium{display:flex;flex-direction:column;gap:12px}
-.acordeon-premium details{background:#fff;border:1px solid rgba(13,18,30,.08);border-left:3px solid transparent;transition:.3s}
+.acordeon-premium details{background:#fff;border:1px solid rgba(13,18,30,.08);border-left:3px solid transparent;transition:.3s;overflow:hidden}
 .acordeon-premium details[open]{border-left-color:var(--dorado);box-shadow:0 8px 30px rgba(13,18,30,.05)}
 .acordeon-premium summary{padding:22px 28px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--navy);font-weight:500}
 .acordeon-premium summary::-webkit-details-marker{display:none}
-.acordeon-premium summary::after{content:"+";color:var(--dorado);font-size:22px}
-.acordeon-premium details[open] summary::after{content:"—"}
-.acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300}
+.acordeon-premium summary::after{content:"+";color:var(--dorado);font-size:22px;transition:transform.35s ease}
+.acordeon-premium details[open] summary::after{transform:rotate(45deg)}
+.acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300;animation:fadeIn.4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
 .seccion-cierre-premium{background:var(--navy);text-align:center;padding:120px 12%;position:relative;overflow:hidden}
 .seccion-cierre-premium::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(200,176,144,.16) 0%,transparent 65%)}
 .contenido-cierre{position:relative;z-index:2;max-width:700px;margin:0 auto}
@@ -92,11 +111,28 @@ section{padding:110px 12%}
 .bloque-dato{margin-bottom:26px}
 .bloque-dato label{color:var(--dorado);font-size:11px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px}
 .bloque-dato p{color:var(--navy);font-weight:500}
-.formulario-contacto{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* === 4. CONTACTO - LINEA MINIMALISTA PREMIUM === */
+.formulario-contacto{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px}
 .campo-ancho{grid-column:span 2}
-.formulario-contacto input,.formulario-contacto textarea{width:100%;border:1px solid rgba(13,18,30,.14);padding:16px;background:#fff;font-family:'Inter',sans-serif;font-size:14px;border-radius:2px;transition:.3s}
-.formulario-contacto input:focus,.formulario-contacto textarea:focus{border-color:var(--dorado);outline:none}
-.boton-enviar{grid-column:span 2;background:var(--navy);color:var(--dorado);padding:18px;border:1px solid var(--navy);letter-spacing:3px;text-transform:uppercase;font-size:12px;cursor:pointer;transition:.3s}
+.formulario-contacto input,.formulario-contacto textarea{
+  width:100%;
+  border:none!important;
+  border-bottom:1px solid var(--dorado)!important;
+  background:transparent!important;
+  padding:14px 0!important;
+  font-family:'Inter',sans-serif;
+  font-size:14px;
+  border-radius:0!important;
+  transition:all.3s
+}
+.formulario-contacto input::placeholder,.formulario-contacto textarea::placeholder{color:#a0aec0;font-weight:300}
+.formulario-contacto input:focus,.formulario-contacto textarea:focus{
+  border-bottom:1.5px solid var(--navy)!important;
+  outline:none!important;
+  box-shadow:none!important;
+}
+.boton-enviar{grid-column:span 2;background:var(--navy);color:var(--dorado);padding:18px;border:1px solid var(--navy);letter-spacing:3px;text-transform:uppercase;font-size:12px;cursor:pointer;transition:.3s;margin-top:10px}
 .boton-enviar:hover{background:var(--dorado);color:var(--navy)}
 .footer-premium{background:var(--navy);padding:90px 12% 40px 12%;border-top:1px solid rgba(200,176,144,.15)}
 .bloques-footer-fijo{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:70px;margin-bottom:60px}
@@ -114,4 +150,18 @@ section{padding:110px 12%}
 .item-flotante:hover{background:var(--dorado);color:var(--navy)}
 .item-flotante:hover span{max-width:120px;opacity:1;padding-right:12px}
 @media(max-width:1024px){.contenedor-estudio,.contenedor-contacto,.bloques-footer-fijo{grid-template-columns:1fr}.grid-corporativo{grid-template-columns:1fr 1fr}.tarjeta-corporativa.destacada{grid-column:span 2}}
-@media(max-width:640px){.grid-corporativo{grid-template-columns:1fr}.tarjeta-corporativa.destacada{grid-column:span 1}section{padding:80px 6%}.barra-flotante-contacto{display:none}header{padding:15px 6%}nav ul{gap:18px}.hero-contenedor-texto h1{font-size:38px}}
+@media(max-width:640px){
+ .grid-corporativo{grid-template-columns:1fr}
+ .tarjeta-corporativa.destacada{grid-column:span 1}
+  section{padding:80px 6%}
+ .barra-flotante-contacto{display:none}
+  header{padding:15px 6%}
+  nav ul{gap:18px}
+ .hero-contenedor-texto h1{font-size:38px}
+ .formulario-contacto input,.formulario-contacto textarea{
+    background:#F8F9FB!important;
+    border:1px solid rgba(13,18,30,.14)!important;
+    border-radius:2px!important;
+    padding:16px!important;
+  }
+}
