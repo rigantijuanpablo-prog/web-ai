@@ -74,7 +74,7 @@ section{padding:110px 12%}
 .acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300}
 .seccion-cierre-premium{background:var(--navy);text-align:center;padding:120px 12%;position:relative;overflow:hidden}
 .seccion-cierre-premium::before{
-  background-image: url('boceto-sutil.webp');
+  background-image: url('facultad-azul-etereo.webp');
   background-size: cover;
   background-position: center 35%;
   opacity: 0.40; /* como ya es muy fina, la podés dejar más visible */
