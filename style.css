@@ -463,3 +463,29 @@ textarea,
   max-height: 70px !important;
   padding-bottom: 8px !important;
 }
+/* 4 INPUTS IDENTICOS - 1 SOLA LINEA CADA UNO */
+input[type="text"],
+input[type="email"],
+textarea{
+  display: block !important;
+  width: 100% !important;
+  border: none !important;
+  border-bottom: 1.5px solid #C9B896 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  padding: 8px 0 !important;
+}
+
+input[type="text"],
+input[type="email"]{
+  height: 42px !important;
+}
+
+textarea{
+  height: 110px !important;
+  min-height: 110px !important;
+  resize: none !important;
+  margin-bottom: 40px !important;
+}
