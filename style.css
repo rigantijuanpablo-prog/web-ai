@@ -198,77 +198,42 @@ section{padding:110px 12%}
 }
 .bloque-dato p{color:var(--navy);font-weight:500}
 
+/* FIX 1: AIRE ENTRE NOMBRE Y EMAIL */
 .formulario-contacto{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:42px 24px;
+  gap: 48px 32px !important; /* antes tenias 42x24, ahora respira */
 }
-.campo-ancho{grid-column:span 2}
 
-.campo-flotante{position:relative}
-.campo-flotante input,
-.campo-flotante textarea{
-  width:100%;
-  border:none!important;
-  border-bottom:1.5px solid rgba(200,176,144,.6)!important;
-  background:transparent!important;
-  padding:16px 0 10px 0!important;
-  font-family:'Inter',sans-serif;
-  font-size:15px;
-  font-weight:300;
-  color:var(--navy);
-  border-radius:0!important;
-  box-shadow:none!important;
-  outline:none!important;
-  transition: border-color .3s ease;
-}
-.campo-flotante textarea{resize:none;min-height:80px}
-
+/* FIX 2: ETIQUETA ASFIXIADA + CONSULTA QUE NO RESPIRA */
 .campo-flotante label{
-  position:absolute;
-  left:0;
-  top:16px;
-  color:#a0aec0;
-  font-size:14px;
-  font-weight:300;
-  pointer-events:none;
-  transition: all .3s ease;
-  letter-spacing:.3px;
+  top: 18px !important; /* baja 2px la etiqueta gris */
 }
-.campo-flotante input:focus + label,
+.campo-flotante textarea{
+  min-height: 110px !important; /* antes 80px, ahora solemne */
+  padding-top: 22px !important; /* aire interno */
+  line-height: 1.7 !important;
+}
 .campo-flotante input:not(:placeholder-shown) + label,
-.campo-flotante textarea:focus + label,
 .campo-flotante textarea:not(:placeholder-shown) + label{
-  top:-10px;
-  font-size:10px;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
-  color:var(--dorado);
-  font-weight:500;
-}
-.campo-flotante input:focus,
-.campo-flotante textarea:focus{
-  border-bottom:1.5px solid var(--dorado)!important;
+  top: -14px !important; /* sube más cuando flota, no queda pegada */
 }
 
+/* FIX 3: BOTON ALTA COSTURA - UNIFICADO CON PORTADA */
 .boton-enviar{
-  grid-column:span 2;
-  background:var(--navy);
-  color:var(--dorado);
-  padding:20px;
-  border:1px solid var(--navy);
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:11px;
-  cursor:pointer;
-  transition: all .3s ease;
-  margin-top:10px;
-  font-family:'Inter',sans-serif;
+  background: transparent !important;
+  border: 1.5px solid var(--dorado) !important;
+  color: var(--navy) !important;
+  padding: 22px 48px !important;
+  letter-spacing: 3.2px !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  transition: all .4s ease !important;
 }
 .boton-enviar:hover{
-  background:var(--dorado);
-  color:var(--navy);
-  border-color:var(--dorado);
+  background: var(--dorado) !important;
+  color: #fff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(200,176,144,0.25) !important;
 }
 .footer-premium{background:var(--navy);padding:90px 12% 40px 12%;border-top:1px solid rgba(200,176,144,.15)}
 .bloques-footer-fijo{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:70px;margin-bottom:60px}
