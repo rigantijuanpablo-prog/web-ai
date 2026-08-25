@@ -616,3 +616,30 @@ button::after{
   margin: 0 !important;
 }
 }
+/* FIX FORMULARIO CONTACTO + BORRAR LETRAS LATERALES */
+@media (max-width: 768px){
+  /* Borra solo el texto vertical roto */
+  body > div[style*="writing-mode"], 
+  body > div[style*="vertical"]{
+    display: none !important;
+  }
+
+  /* Fuerza que el formulario aparezca */
+  form, .formulario, .contact-form, #form-contacto,
+  input, textarea, select, button[type="submit"]{
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+  }
+
+  #contacto, .seccion-contacto{
+    padding: 30px 15px !important;
+    overflow: visible !important;
+  }
+  
+  /* Que las letras N C E / E no aparezcan más */
+  html{
+    overflow-x: hidden !important;
+  }
+}
