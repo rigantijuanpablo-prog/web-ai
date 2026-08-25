@@ -351,3 +351,33 @@ section{padding:110px 12%}
   border: 0 !important;
   border-bottom: 1.5px solid #0D121E !important;
 }
+/* FIX UNIFICADO - MATA DOBLE LINEA 100% */
+.input-premium-linea,
+.input-premium-linea-area,
+.campo-flotante,
+.campo-flotante textarea,
+.campo-flotante input{
+  border: none !important;
+  border-bottom: 1.5px solid #C8B090 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Contenedor sin bordes */
+div.campo-flotante,
+div.input-premium-linea,
+div.input-premium-linea-area{
+  border: none !important;
+  border-bottom: 1.5px solid #C8B090 !important;
+}
+
+/* Focus solo cambia color */
+.input-premium-linea:focus,
+.input-premium-linea-area:focus,
+.campo-flotante input:focus,
+.campo-flotante textarea:focus{
+  border: none !important;
+  border-bottom: 1.5px solid #0D121E !important;
+}
