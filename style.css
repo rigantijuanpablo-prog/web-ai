@@ -336,3 +336,18 @@ section{padding:110px 12%}
   overflow: hidden !important;
 }
 .bloque-dato{margin-bottom:28px !important;}
+/* ELIMINA DOBLE TRAZO DEFINITIVO */
+.campo-flotante textarea{
+  border: 0 !important;
+  border-bottom: 1.5px solid #C8B090 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Quita el borde fantasma del navegador */
+.campo-flotante textarea:focus{
+  border: 0 !important;
+  border-bottom: 1.5px solid #0D121E !important;
+}
