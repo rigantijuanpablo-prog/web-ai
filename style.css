@@ -6,7 +6,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;color:var(--navy)}
 header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(13,18,30,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,0.12);transition:all.3s}
 header.scrolled{padding:15px 8%;background:rgba(13,18,30,0.99)}
 
-/* === LOGO FIX - LINEAS PEGADAS BOUTIQUE === */
+/* === LOGO FIX - PEGADO BOUTIQUE === */
 .marca-estudio{display:flex;align-items:center;gap:14px;text-decoration:none}
 .marca-estudio img{height:42px;width:auto}
 .nombre-estudio{display:flex;flex-direction:column;gap:1px;line-height:1}
@@ -21,10 +21,12 @@ nav a:hover{color:var(--dorado)}
 .hero-principal{min-height:100vh;display:flex;align-items:center;padding:0 12%;position:relative;overflow:hidden;background:var(--navy)}
 .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,18,30,.85) 0%,rgba(13,18,30,.45) 60%,rgba(13,18,30,.15) 100%);z-index:2}
-/* DIAGONAL DESCENDENTE 75% \ - FIJA */
+/* DIAGONAL DESCENDENTE 75% \ */
 .hero-principal::after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:120px;background:var(--blanco);clip-path: polygon(0 75%, 100% 100%, 100% 100%, 0 100%);z-index:4}
 .hero-principal::before{content:"";position:absolute;bottom:118px;left:0;width:100%;height:1px;background:var(--dorado);transform: skewY(4.2deg);transform-origin: left;z-index:5;opacity:0.9}
-.hero-contenedor-texto{position:relative;z-index:3;max-width:680px;padding-top:22vh!important}
+
+/* === HERO ALTURA CORREGIDA - SUBIDO === */
+.hero-contenedor-texto{position:relative;z-index:3;max-width:680px;padding-top:0!important;margin-top:-40px;transform:translateY(-2vh)}
 .hero-contenedor-texto h1{font-size:52px;line-height:1.15;color:var(--blanco);font-weight:400;margin-bottom:36px}
 .btn-premium-final{display:inline-block;border:1.5px solid var(--dorado);color:#fff;padding:16px 38px;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-family:'Playfair Display',serif!important;font-weight:500!important;transition:all.3s;text-decoration:none}
 .btn-premium-final:hover{background:var(--dorado);color:var(--navy);transform:translateY(-2px)}
@@ -77,8 +79,6 @@ section{padding:110px 12%}
 .bloque-dato{margin-bottom:26px}
 .bloque-dato label{color:var(--dorado);font-size:11px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px}
 .bloque-dato p{color:var(--navy);font-weight:500}
-
-/* CONTACTO LABEL FLOTANTE BOUTIQUE */
 .formulario-contacto{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px}
 .campo-ancho{grid-column:span 2}
 .campo-flotante{position:relative}
@@ -104,4 +104,4 @@ section{padding:110px 12%}
 .item-flotante:hover{background:var(--dorado);color:var(--navy)}
 .item-flotante:hover span{max-width:120px;opacity:1;padding-right:12px}
 @media(max-width:1024px){.contenedor-estudio,.contenedor-contacto,.bloques-footer-fijo{grid-template-columns:1fr}.grid-corporativo{grid-template-columns:1fr 1fr}.tarjeta-corporativa.destacada{grid-column:span 2}}
-@media(max-width:640px){.grid-corporativo{grid-template-columns:1fr}.tarjeta-corporativa.destacada{grid-column:span 1}section{padding:80px 6%}.barra-flotante-contacto{display:none}header{padding:15px 6%}nav ul{gap:18px}.hero-contenedor-texto h1{font-size:38px}}
+@media(max-width:640px){.grid-corporativo{grid-template-columns:1fr}.tarjeta-corporativa.destacada{grid-column:span 1}section{padding:80px 6%}.barra-flotante-contacto{display:none}header{padding:15px 6%}nav ul{gap:18px}.hero-contenedor-texto h1{font-size:38px}.hero-contenedor-texto{margin-top:0;transform:none;padding-top:18vh!important}}
