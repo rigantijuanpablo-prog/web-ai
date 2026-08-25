@@ -17,7 +17,7 @@ nav a:hover{color:var(--dorado)}
 .hero-principal{min-height:100vh;display:flex;align-items:center;padding:0 12%;position:relative;overflow:hidden;background:var(--navy)}
 .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,18,30,.85) 0%,rgba(13,18,30,.45) 60%,rgba(13,18,30,.15) 100%);z-index:2}
-/* DIAGONAL PREMIUM - DESCENDENTE IZQ A DER \ */
+/* DIAGONAL DESCENDENTE 75% \ - FIJA */
 .hero-principal::after{
   content:"";
   position:absolute;
@@ -32,7 +32,7 @@ nav a:hover{color:var(--dorado)}
 .hero-principal::before{
   content:"";
   position:absolute;
-  bottom:115px;
+  bottom:118px;
   left:0;
   width:100%;
   height:1px;
@@ -51,26 +51,14 @@ section{padding:110px 12%}
 .encabezado-seccion h2{font-size:40px;margin-bottom:14px}
 .linea-decorativa{width:60px;height:2px;background:var(--dorado);margin:0 auto 20px auto}
 .encabezado-seccion p{color:var(--texto);opacity:.85}
-
-/* === 1. EL ESTUDIO - RITMO EDITORIAL ELITE === */
 .contenedor-estudio{display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px}
 .texto-estudio p{font-weight:300;font-size:16px;margin-bottom:26px;line-height:1.9;color:var(--texto)}
-.texto-estudio p:first-child{
-  font-family:'Lora', serif;
-  font-size:1.65rem;
-  font-weight:300;
-  line-height:1.35;
-  color:var(--navy);
-  margin-bottom:42px;
-}
-.tarjeta-valor{border-left:1px solid var(--dorado);padding-left:22px;margin-bottom:38px;transition:border-color.3s}
-.tarjeta-valor:hover{border-left-color:var(--navy)}
+.texto-estudio p:first-child{font-family:'Lora',serif;font-size:1.65rem;font-weight:300;line-height:1.35;color:var(--navy);margin-bottom:42px}
+.tarjeta-valor{border-left:1px solid var(--dorado);padding-left:22px;margin-bottom:38px}
 .tarjeta-valor h4{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-weight:600}
 .tarjeta-valor p{font-size:14.5px;line-height:1.7}
-
 #practicas{background:var(--fondo)}
 .grid-corporativo{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-/* === 2. AREAS - FICHAS MONOCROMATICAS === */
 .tarjeta-corporativa{background:#F9F7F4;border:none;border-top:1px solid rgba(200,176,144,.4);box-shadow:0 10px 40px rgba(13,18,30,.04);padding:36px;opacity:0;transform:translateY(28px);transition:all.8s ease,transform.4s ease,box-shadow.4s ease}
 .tarjeta-corporativa.visible{opacity:1;transform:translateY(0)}
 .tarjeta-corporativa:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(13,18,30,.08)}
@@ -85,8 +73,6 @@ section{padding:110px 12%}
 .tarjeta-corporativa.destacada h3 a,.tarjeta-corporativa.destacada p{color:#fff!important}
 .tarjeta-corporativa.destacada ul li{color:rgba(255,255,255,.6)!important;justify-content:center;padding-left:0}
 .tarjeta-corporativa.destacada ul li::before{display:none}
-
-/* === 3. FAQ - ACORDEON LIQUIDO === */
 .seccion-faq{background:var(--fondo);border-top:1px solid rgba(13,18,30,.04)}
 .contenedor-faq{max-width:820px;margin:0 auto}
 .acordeon-premium{display:flex;flex-direction:column;gap:12px}
@@ -96,9 +82,7 @@ section{padding:110px 12%}
 .acordeon-premium summary::-webkit-details-marker{display:none}
 .acordeon-premium summary::after{content:"+";color:var(--dorado);font-size:22px;transition:transform.35s ease}
 .acordeon-premium details[open] summary::after{transform:rotate(45deg)}
-.acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300;animation:fadeIn.4s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-
+.acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300}
 .seccion-cierre-premium{background:var(--navy);text-align:center;padding:120px 12%;position:relative;overflow:hidden}
 .seccion-cierre-premium::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(200,176,144,.16) 0%,transparent 65%)}
 .contenido-cierre{position:relative;z-index:2;max-width:700px;margin:0 auto}
@@ -112,25 +96,55 @@ section{padding:110px 12%}
 .bloque-dato label{color:var(--dorado);font-size:11px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px}
 .bloque-dato p{color:var(--navy);font-weight:500}
 
-/* === 4. CONTACTO - LINEA MINIMALISTA PREMIUM === */
-.formulario-contacto{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px}
+/* === CONTACTO CON LABEL FLOTANTE BOUTIQUE === */
+.formulario-contacto{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px}
 .campo-ancho{grid-column:span 2}
-.formulario-contacto input,.formulario-contacto textarea{
+.campo-flotante{position:relative}
+.campo-flotante input,.campo-flotante textarea{
   width:100%;
   border:none!important;
-  border-bottom:1px solid var(--dorado)!important;
+  border-bottom:1px solid rgba(200,176,144,.6)!important;
   background:transparent!important;
-  padding:14px 0!important;
+  padding:16px 0 10px 0!important;
   font-family:'Inter',sans-serif;
-  font-size:14px;
+  font-size:15px;
   border-radius:0!important;
-  transition:all.3s
+  transition:all.3s;
 }
-.formulario-contacto input::placeholder,.formulario-contacto textarea::placeholder{color:#a0aec0;font-weight:300}
-.formulario-contacto input:focus,.formulario-contacto textarea:focus{
-  border-bottom:1.5px solid var(--navy)!important;
+.campo-flotante label{
+  position:absolute;
+  left:0;
+  top:16px;
+  color:#a0aec0;
+  font-size:14px;
+  font-weight:300;
+  pointer-events:none;
+  transition:all.3s ease;
+  letter-spacing:.3px;
+}
+.campo-flotante input:focus + label,
+.campo-flotante input:not(:placeholder-shown) + label,
+.campo-flotante textarea:focus + label,
+.campo-flotante textarea:not(:placeholder-shown) + label{
+  top:-8px;
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--dorado);
+  font-weight:500;
+}
+.campo-flotante input:focus,.campo-flotante textarea:focus{
+  border-bottom:1.5px solid var(--dorado)!important;
   outline:none!important;
   box-shadow:none!important;
+}
+/* Fallback si no usas campo-flotante */
+.formulario-contacto input,.formulario-contacto textarea{
+  width:100%;
+  border:none;
+  border-bottom:1px solid var(--dorado);
+  background:transparent;
+  padding:14px 0;
 }
 .boton-enviar{grid-column:span 2;background:var(--navy);color:var(--dorado);padding:18px;border:1px solid var(--navy);letter-spacing:3px;text-transform:uppercase;font-size:12px;cursor:pointer;transition:.3s;margin-top:10px}
 .boton-enviar:hover{background:var(--dorado);color:var(--navy)}
@@ -150,18 +164,4 @@ section{padding:110px 12%}
 .item-flotante:hover{background:var(--dorado);color:var(--navy)}
 .item-flotante:hover span{max-width:120px;opacity:1;padding-right:12px}
 @media(max-width:1024px){.contenedor-estudio,.contenedor-contacto,.bloques-footer-fijo{grid-template-columns:1fr}.grid-corporativo{grid-template-columns:1fr 1fr}.tarjeta-corporativa.destacada{grid-column:span 2}}
-@media(max-width:640px){
- .grid-corporativo{grid-template-columns:1fr}
- .tarjeta-corporativa.destacada{grid-column:span 1}
-  section{padding:80px 6%}
- .barra-flotante-contacto{display:none}
-  header{padding:15px 6%}
-  nav ul{gap:18px}
- .hero-contenedor-texto h1{font-size:38px}
- .formulario-contacto input,.formulario-contacto textarea{
-    background:#F8F9FB!important;
-    border:1px solid rgba(13,18,30,.14)!important;
-    border-radius:2px!important;
-    padding:16px!important;
-  }
-}
+@media(max-width:640px){.grid-corporativo{grid-template-columns:1fr}.tarjeta-corporativa.destacada{grid-column:span 1}section{padding:80px 6%}.barra-flotante-contacto{display:none}header{padding:15px 6%}nav ul{gap:18px}.hero-contenedor-texto h1{font-size:38px}}
