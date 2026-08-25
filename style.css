@@ -63,16 +63,66 @@ section{padding:110px 12%}
 .tarjeta-corporativa.destacada h3 a,.tarjeta-corporativa.destacada p{color:#fff!important}
 .tarjeta-corporativa.destacada ul li{color:rgba(255,255,255,.6)!important;justify-content:center;padding-left:0}
 .tarjeta-corporativa.destacada ul li::before{display:none}
-.seccion-faq{background:var(--fondo);border-top:1px solid rgba(13,18,30,.04)}
-.contenedor-faq{max-width:820px;margin:0 auto}
-.acordeon-premium{display:flex;flex-direction:column;gap:12px}
-.acordeon-premium details{background:#fff;border:1px solid rgba(13,18,30,.08);border-left:3px solid transparent;transition:.3s;overflow:hidden}
-.acordeon-premium details[open]{border-left-color:var(--dorado);box-shadow:0 8px 30px rgba(13,18,30,.05)}
-.acordeon-premium summary{padding:22px 28px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--navy);font-weight:500}
-.acordeon-premium summary::-webkit-details-marker{display:none}
-.acordeon-premium summary::after{content:"+";color:var(--dorado);font-size:22px;transition:transform.35s ease}
-.acordeon-premium details[open] summary::after{transform:rotate(45deg)}
-.acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300}
+/* === PROTOCOLO DE VINCULACION - PAUTAS === */
+.seccion-faq{
+  background: var(--fondo);
+  border-top: 1px solid rgba(13,18,30,.04);
+}
+.contenedor-faq{
+  max-width: 820px;
+  margin: 0 auto;
+}
+.acordeon-premium{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.acordeon-premium details{
+  background: #fff;
+  border: 1px solid rgba(13,18,30,.08);
+  border-left: 3px solid transparent;
+  transition: all.3s ease;
+  overflow: hidden;
+}
+.acordeon-premium details[open]{
+  border-left-color: var(--dorado);
+  box-shadow: 0 8px 30px rgba(13,18,30,.05);
+}
+.acordeon-premium summary{
+  padding: 22px 28px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--navy);
+  font-weight: 500;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  letter-spacing:.2px;
+}
+.acordeon-premium summary::-webkit-details-marker{
+  display: none;
+}
+.acordeon-premium summary::after{
+  content: "+";
+  color: var(--dorado);
+  font-size: 22px;
+  font-weight: 300;
+  transition: transform.35s ease;
+  font-family: 'Inter', sans-serif;
+  margin-left: 20px;
+}
+.acordeon-premium details[open] summary::after{
+  transform: rotate(45deg);
+}
+.acordeon-premium details div{
+  padding: 0 28px 28px 28px;
+  font-size: 14.5px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--texto);
+}
 /* === CIERRE PREMIUM FINAL - CORREGIDO === */
 .seccion-cierre-premium{
   position: relative;
