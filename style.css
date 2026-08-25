@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap');
 :root{--navy:#0D121E;--dorado:#C8B090;--texto:#2C3E50;--fondo:#F8F9FB;--blanco:#fff}
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--texto);background:var(--blanco);line-height:1.8;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;color:var(--texto);background:var(--blanco);line-height:1.8;-webkit-font-smoothing:antialiased} 
 h1,h2,h3{font-family:'Playfair Display',serif;color:var(--navy)}
 header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(13,18,30,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,0.12);transition:all.3s}
 header.scrolled{padding:15px 8%;background:rgba(13,18,30,0.99)}
