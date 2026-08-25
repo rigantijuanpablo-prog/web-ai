@@ -73,7 +73,24 @@ section{padding:110px 12%}
 .acordeon-premium details[open] summary::after{transform:rotate(45deg)}
 .acordeon-premium details div{padding:0 28px 28px 28px;font-size:14.5px;line-height:1.8;font-weight:300}
 .seccion-cierre-premium{background:var(--navy);text-align:center;padding:120px 12%;position:relative;overflow:hidden}
-.seccion-cierre-premium::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(200,176,144,.16) 0%,transparent 65%)}
+.seccion-cierre-premium::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url('boceto-blanco-azul.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08; /* 8% para que no parezca plano de arquitecto */
+  z-index: 1;
+}
+.seccion-cierre-premium::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(200,176,144,.16) 0%,transparent 65%);
+  z-index: 1;
+}
+.contenido-cierre{z-index: 3;} /* subilo por encima del boceto */
 .contenido-cierre{position:relative;z-index:2;max-width:700px;margin:0 auto}
 .subtitulo-cierre{color:var(--dorado);letter-spacing:3.5px;font-size:11px;text-transform:uppercase;display:block;margin-bottom:18px}
 .seccion-cierre-premium h2{color:#fff;font-size:50px;margin-bottom:20px}
