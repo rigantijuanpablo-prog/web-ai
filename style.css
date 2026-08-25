@@ -496,3 +496,29 @@ textarea{
   height: 80px !important;
   margin-bottom: 35px !important;
 }
+/* VERSIÓN FINAL - PEGAR ESTE SOLO AL FINAL */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 6% !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+    header img{ max-width: 130px !important; }
+    .hero-contenedor-texto {
+        margin: 0 6% !important;
+        padding-top: 14vh !important;
+    }
+    .hero-contenedor-texto h1 { font-size: 1.9rem !important; line-height: 1.2 !important; }
+    .btn-premium-final { width: 100% !important; padding: 16px 0 !important; }
+    #estudio { padding: 60px 6% !important; }
+    #estudio p { font-size: 1.05rem !important; }
+    #estudio div[style*="display: grid"]{ grid-template-columns: 1fr !important; gap: 28px !important; }
+    .seccion-practicas-premium { padding: 60px 6% !important; }
+    .grilla-practicas-premium { grid-template-columns: 1fr !important; gap: 18px !important; }
+    .tarjeta-practica-premium { padding: 26px 20px !important; }
+    #contacto, .seccion-protocolo-premium { padding: 60px 6% !important; }
+    .fila-inputs-doble { flex-direction: column !important; gap: 0 !important; width: 100% !important; }
+    .caja-input-lineal { margin-bottom: 28px !important; width: 100% !important; }
+    textarea{ height: 85px !important; min-height: 85px !important; }
+    .btn-formulario-final { width: 100% !important; padding: 18px 0 !important; }
+}
