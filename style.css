@@ -447,3 +447,9 @@ textarea{
   padding: 10px 0 0 0 !important;
   line-height: 1.2 !important;
 }
+/* SUBIR LINEA DE CONSULTA */
+textarea{
+  min-height: 90px !important;
+  height: 90px !important;
+  margin-bottom: 0 !important;
+}
