@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startups y Negocios Digitales | Riganti, Geiler & Márquez Allurialde</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root{--color-primario:#070e1b;--color-secundario:#c5a880;--fuente-titulos:'Times New Roman', serif;--fuente-cuerpo:'Inter', sans-serif;}
         body{margin:0; background:#f8f9fa; font-family:var(--fuente-cuerpo);}
-        .hero-interno-premium{position:relative; padding:180px 12% 130px 12%; background: linear-gradient(90deg, rgba(7,14,27,0.97) 0%, rgba(7,14,27,0.85) 45%, rgba(7,14,27,0.4) 100%), url('startup-imagen.jpg'); background-size:cover; background-position:center; color:#fff; overflow:hidden;}
-        .hero-interno-premium::after{content:""; position:absolute; bottom:0; left:0; width:100%; height:70px; background:#f8f9fa; clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);}
+        .hero-interno-premium{
+            position:relative; 
+            padding:180px 12% 130px 12%; 
+            background: linear-gradient(90deg, rgba(7,14,27,1) 0%, rgba(7,14,27,0.92) 40%, rgba(7,14,27,0.65) 65%, rgba(7,14,27,0.2) 100%), url('startups-imagen.jpg'); 
+            background-size:cover; 
+            background-position:center right; 
+            color:#fff; 
+            overflow:hidden;
+        }
+        .hero-interno-premium::after{
+            content:""; position:absolute; bottom:0; left:0; width:100%; height:70px; 
+            background:#f8f9fa; 
+            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+            z-index:3;
+        }
+        .contenido-hero{position:relative; z-index:2; max-width:700px}
         .linea-dorada{width:50px; height:2px; background:var(--color-secundario); margin-bottom:28px}
-        .hero-interno-premium h1{font-family:var(--fuente-titulos); font-size:2.9rem; max-width:650px; margin:0; line-height:1.15; font-weight:500}
-        .hero-interno-premium h1 span{color:var(--color-secundario); display:block; font-size:0.95rem; letter-spacing:4px; margin-bottom:18px; text-transform:uppercase; font-weight:300}
-        .hero-interno-premium p{font-size:1.15rem; color:rgba(255,255,255,0.82); max-width:620px; line-height:1.75; font-weight:300; margin-top:22px}
+        .hero-interno-premium h1{
+            font-family:var(--fuente-titulos); 
+            font-size:3.1rem; 
+            color:#ffffff !important; 
+            font-weight:500; 
+            line-height:1.15; 
+            margin:0;
+            opacity:1;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+        .hero-interno-premium h1 span{
+            color:var(--color-secundario); 
+            font-weight:400; 
+            display:block; 
+            font-size:0.95rem; 
+            letter-spacing:4px; 
+            margin-bottom:22px; 
+            text-transform:uppercase;
+            opacity:1;
+        }
+        .hero-interno-premium p{
+            font-size:1.15rem; 
+            color:rgba(255,255,255,0.92); 
+            max-width:620px; 
+            line-height:1.75; 
+            font-weight:300; 
+            margin-top:28px
+        }
         .contenedor-subareas{padding:90px 12%; background:#f8f9fa; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:35px}
         .tarjeta-subarea{background:#ffffff; padding:42px 38px; border:1px solid rgba(0,0,0,0.03); border-top:3px solid #0a1120; transition:all 0.3s ease}
         .tarjeta-subarea:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.07)}
@@ -22,7 +62,7 @@
         .tarjeta-subarea ul li::before{content:"✓"; position:absolute; left:0; color:var(--color-secundario); font-weight:bold}
         .tarjeta-subarea ul li strong{color:#1a202c; font-weight:500}
         .cta-final{position:relative; padding:120px 12%; background:#070e1b; text-align:center; display:flex; justify-content:center; align-items:center}
-        @media (max-width:768px){.hero-interno-premium{padding:140px 6% 110px 6%}.hero-interno-premium h1{font-size:2.1rem}.contenedor-subareas{padding:60px 6%; grid-template-columns:1fr}}
+        @media (max-width:768px){.hero-interno-premium{padding:140px 6% 110px 6%}.hero-interno-premium h1{font-size:2.2rem}.contenedor-subareas{padding:60px 6%; grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -32,12 +72,14 @@
 </header>
 <main>
     <section class="hero-interno-premium">
-        <div class="linea-dorada"></div>
-        <h1><span>Startups y Negocios Digitales</span>Estructura legal para escalar desde el día uno</h1>
-        <p>Acompañamos a fundadores desde el día uno para escalar. Diseñamos la estructura societaria, contractual y fiscal para levantar capital y exportar servicios sin fricciones.</p>
+        <div class="contenido-hero">
+            <div class="linea-dorada"></div>
+            <h1><span>Startups y Negocios Digitales</span>Estructura para escalar desde el día uno</h1>
+            <p>Acompañamos a fundadores desde el día uno para escalar. Diseñamos la estructura societaria, contractual y fiscal para levantar capital y exportar servicios sin fricciones.</p>
+        </div>
     </section>
     <section class="contenedor-subareas">
-        <div class="tarjeta-subarea"><h3>SAS, SRL y Vesting</h3><ul><li><strong>Constitución:</strong> Armado de SAS y SRL a medida para founders y primeros empleados.</li><li><strong>Vesting:</strong> Acuerdos con cliff y aceleración.</li><li><strong>Pactos de socios:</strong> Drag along, tag along y no competencia.</li></ul></div>
+        <div class="tarjeta-subarea"><h3>SAS, SRL y Vesting</h3><ul><li><strong>Constitución:</strong> Armado de SAS y SRL a medida para founders.</li><li><strong>Vesting:</strong> Acuerdos con cliff y aceleración para equipo fundador.</li><li><strong>Pactos de socios:</strong> Drag along, tag along y no competencia.</li></ul></div>
         <div class="tarjeta-subarea"><h3>SAFEs y Rondas</h3><ul><li><strong>Instrumentos:</strong> SAFEs, convertible notes y rondas Seed bajo ley argentina y Delaware.</li><li><strong>Cap Table:</strong> Limpieza y preparación para due diligence de VCs.</li></ul></div>
         <div class="tarjeta-subarea"><h3>Flips y Exportación</h3><ul><li><strong>Flip a US:</strong> Reorganización a LLC / C-Corp para facturar al exterior.</li><li><strong>Divisas:</strong> Esquemas para cobrar en USD y repatriar.</li></ul></div>
     </section>
@@ -51,6 +93,6 @@
         </div>
     </section>
 </main>
-<footer style="background:#070e1b; padding:30px 12%; border-top:1px solid rgba(255,255,255,0.06); text-align:center; color:rgba(255,255,255,0.35); font-size:0.8rem;">© <script>document.write(new Date().getFullYear())</script> Riganti, Geiler & Márquez Allurialde</footer>
+<footer style="background:#070e1b; padding:30px 12%; border-top:1px solid rgba(255,255,255,0.06); text-align:center; color:rgba(255,255,255,0.35); font-size:0.8rem;">© <script>document.write(new Date().getFullYear())</script> Riganti, Geiler & Márquez Allurialde - Abogados. Todos los derechos reservados.</footer>
 </body>
 </html>
