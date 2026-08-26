@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud y Amparos | Riganti, Geiler & Márquez Allurialde</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{margin:0; background:#f8f9fa; font-family:'Inter', sans-serif;}
+        .hero-interno-premium{padding:180px 12% 130px 12%; background: linear-gradient(90deg, rgba(7,14,27,0.97) 0%, rgba(7,14,27,0.85) 45%, rgba(7,14,27,0.4) 100%), url('salud-imagen.jpg'); background-size:cover; background-position:center; color:#fff; position:relative;}
+        .hero-interno-premium::after{content:""; position:absolute; bottom:0; left:0; width:100%; height:70px; background:#f8f9fa; clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);}
+        .linea-dorada{width:50px; height:2px; background:#c5a880; margin-bottom:28px}
+        .hero-interno-premium h1{font-family:'Times New Roman', serif; font-size:2.9rem; max-width:650px; margin:0}
+        .hero-interno-premium h1 span{color:#c5a880; display:block; font-size:0.95rem; letter-spacing:4px; margin-bottom:18px; text-transform:uppercase; font-weight:300}
+        .hero-interno-premium p{font-size:1.15rem; color:rgba(255,255,255,0.82); max-width:620px; line-height:1.75; font-weight:300; margin-top:22px}
+        .contenedor-subareas{padding:90px 12%; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:35px}
+        .tarjeta-subarea{background:#fff; padding:42px 38px; border-top:3px solid #0a1120}
+        .tarjeta-subarea h3{font-family:'Times New Roman', serif; font-size:1.3rem; margin-bottom:24px}
+        .tarjeta-subarea ul{list-style:none; padding:0; margin:0}
+        .tarjeta-subarea ul li{font-size:0.92rem; color:#4a5568; margin-bottom:16px; padding-left:24px; position:relative}
+        .tarjeta-subarea ul li::before{content:"✓"; position:absolute; left:0; color:#c5a880}
+        .tarjeta-subarea ul li strong{color:#1a202c}
+    </style>
+</head>
+<body>
+<header style="position:fixed; top:0; left:0; width:100%; height:85px; padding:0 4%; background:#0a1120; display:flex; justify-content:space-between; align-items:center; z-index:1000;">
+    <a href="index.html" style="text-decoration:none; color:#fff; font-family:'Times New Roman', serif; font-size:0.85rem; letter-spacing:1.8px;">RIGANTI, GEILER & MÁRQUEZ ALLURIALDE</a>
+    <nav><ul style="display:flex; list-style:none; gap:28px; margin:0; padding:0">
+        <li><a href="index.html#inicio" style="color:#fff; text-decoration:none; font-size:0.75rem;">INICIO</a></li>
+        <li><a href="index.html#practicas" style="color:#c5a880; text-decoration:none; font-size:0.75rem;">ÁREAS</a></li>
+        <li><a href="index.html#contacto" style="color:#fff; text-decoration:none; font-size:0.75rem;">CONTACTO</a></li>
+    </ul></nav>
+</header>
+<main>
+    <section class="hero-interno-premium">
+        <div class="linea-dorada"></div>
+        <h1><span>Salud y Amparos</span>Litigios contra obras sociales y prepagas</h1>
+        <p>Acciones de amparo para garantizar el acceso inmediato a tratamientos, medicamentos de alto costo y prestaciones para discapacidad bajo la Ley 24.901.</p>
+    </section>
+    <section class="contenedor-subareas">
+        <div class="tarjeta-subarea">
+            <h3>Alto Costo</h3>
+            <ul>
+                <li><strong>Medicamentos:</strong> Oncológicos, fertilidad y cirugías denegadas</li>
+                <li><strong>Cautelares:</strong> Cobertura en 24/48hs</li>
+            </ul>
+        </div>
+        <div class="tarjeta-subarea">
+            <h3>Ley 24.901</h3>
+            <ul>
+                <li><strong>Discapacidad:</strong> Terapias, transporte, acompañantes y educación</li>
+                <li><strong>CUD:</strong> Amparos por negativa de Certificado Único</li>
+            </ul>
+        </div>
+        <div class="tarjeta-subarea">
+            <h3>Telemedicina</h3>
+            <ul>
+                <li><strong>Cobertura:</strong> Consultas virtuales y salud mental</li>
+                <li><strong>Cannabis:</strong> Acceso vía REPROCANN</li>
+            </ul>
+        </div>
+    </section>
+</main>
+<footer style="background:#070e1b; padding:30px 12%; text-align:center; color:rgba(255,255,255,0.35); font-size:0.8rem;">© 2026 Riganti, Geiler & Márquez Allurialde</footer>
+</body>
+</html>
