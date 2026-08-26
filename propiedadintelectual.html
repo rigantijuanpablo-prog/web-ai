@@ -6,30 +6,30 @@
     <title>Propiedad Intelectual | Riganti, Geiler & Márquez Allurialde</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body{margin:0; background:#f8f9fa; font-family:'Inter', sans-serif;}
-        .hero-interno-premium{padding:180px 12% 130px 12%; background: linear-gradient(90deg, rgba(7,14,27,0.97) 0%, rgba(7,14,27,0.85) 45%, rgba(7,14,27,0.4) 100%), url('pi-imagen.jpg'); background-size:cover; background-position:center; color:#fff; position:relative;}
+        :root{--color-primario:#070e1b;--color-secundario:#c5a880;--fuente-titulos:'Times New Roman', serif;--fuente-cuerpo:'Inter', sans-serif;}
+        body{margin:0; background:#f8f9fa; font-family:var(--fuente-cuerpo);}
+        .hero-interno-premium{position:relative; padding:180px 12% 130px 12%; background: linear-gradient(90deg, rgba(7,14,27,0.97) 0%, rgba(7,14,27,0.85) 45%, rgba(7,14,27,0.4) 100%), url('pi-imagen.jpg'); background-size:cover; background-position:center; color:#fff; overflow:hidden;}
         .hero-interno-premium::after{content:""; position:absolute; bottom:0; left:0; width:100%; height:70px; background:#f8f9fa; clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);}
-        .linea-dorada{width:50px; height:2px; background:#c5a880; margin-bottom:28px}
-        .hero-interno-premium h1{font-family:'Times New Roman', serif; font-size:2.9rem; max-width:650px; margin:0}
-        .hero-interno-premium h1 span{color:#c5a880; display:block; font-size:0.95rem; letter-spacing:4px; margin-bottom:18px; text-transform:uppercase; font-weight:300}
+        .linea-dorada{width:50px; height:2px; background:var(--color-secundario); margin-bottom:28px}
+        .hero-interno-premium h1{font-family:var(--fuente-titulos); font-size:2.9rem; max-width:650px; margin:0; line-height:1.15; font-weight:500}
+        .hero-interno-premium h1 span{color:var(--color-secundario); display:block; font-size:0.95rem; letter-spacing:4px; margin-bottom:18px; text-transform:uppercase; font-weight:300}
         .hero-interno-premium p{font-size:1.15rem; color:rgba(255,255,255,0.82); max-width:620px; line-height:1.75; font-weight:300; margin-top:22px}
-        .contenedor-subareas{padding:90px 12%; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:35px}
-        .tarjeta-subarea{background:#fff; padding:42px 38px; border-top:3px solid #0a1120}
-        .tarjeta-subarea h3{font-family:'Times New Roman', serif; font-size:1.3rem; margin-bottom:24px}
+        .contenedor-subareas{padding:90px 12%; background:#f8f9fa; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:35px}
+        .tarjeta-subarea{background:#ffffff; padding:42px 38px; border:1px solid rgba(0,0,0,0.03); border-top:3px solid #0a1120; transition:all 0.3s ease}
+        .tarjeta-subarea:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.07)}
+        .tarjeta-subarea h3{font-family:var(--fuente-titulos); color:#0a1120; font-size:1.3rem; margin-bottom:24px; font-weight:500}
         .tarjeta-subarea ul{list-style:none; padding:0; margin:0}
-        .tarjeta-subarea ul li{font-size:0.92rem; color:#4a5568; margin-bottom:16px; padding-left:24px; position:relative}
-        .tarjeta-subarea ul li::before{content:"✓"; position:absolute; left:0; color:#c5a880}
-        .tarjeta-subarea ul li strong{color:#1a202c}
+        .tarjeta-subarea ul li{font-size:0.92rem; color:#4a5568; margin-bottom:16px; line-height:1.65; position:relative; padding-left:24px; font-weight:300}
+        .tarjeta-subarea ul li::before{content:"✓"; position:absolute; left:0; color:var(--color-secundario); font-weight:bold}
+        .tarjeta-subarea ul li strong{color:#1a202c; font-weight:500}
+        .cta-final{position:relative; padding:120px 12%; background:#070e1b; text-align:center; display:flex; justify-content:center; align-items:center}
+        @media (max-width:768px){.hero-interno-premium{padding:140px 6% 110px 6%}.hero-interno-premium h1{font-size:2.1rem}.contenedor-subareas{padding:60px 6%; grid-template-columns:1fr}}
     </style>
 </head>
 <body>
-<header style="position:fixed; top:0; left:0; width:100%; height:85px; padding:0 4%; background:#0a1120; display:flex; justify-content:space-between; align-items:center; z-index:1000;">
+<header style="position:fixed; top:0; left:0; width:100%; height:85px; padding:0 4%; background:#0a1120; display:flex; justify-content:space-between; align-items:center; z-index:1000; border-bottom:1px solid rgba(255,255,255,0.06);">
     <a href="index.html" style="text-decoration:none; color:#fff; font-family:'Times New Roman', serif; font-size:0.85rem; letter-spacing:1.8px;">RIGANTI, GEILER & MÁRQUEZ ALLURIALDE</a>
-    <nav><ul style="display:flex; list-style:none; gap:28px; margin:0; padding:0">
-        <li><a href="index.html#inicio" style="color:#fff; text-decoration:none; font-size:0.75rem;">INICIO</a></li>
-        <li><a href="index.html#practicas" style="color:#c5a880; text-decoration:none; font-size:0.75rem;">ÁREAS</a></li>
-        <li><a href="index.html#contacto" style="color:#fff; text-decoration:none; font-size:0.75rem;">CONTACTO</a></li>
-    </ul></nav>
+    <nav><ul style="display:flex; list-style:none; gap:28px; margin:0; padding:0"><li><a href="index.html#inicio" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px;">INICIO</a></li><li><a href="index.html#practicas" style="color:#c5a880; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">ÁREAS</a></li><li><a href="index.html#contacto" style="color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:1.5px">CONTACTO</a></li></ul></nav>
 </header>
 <main>
     <section class="hero-interno-premium">
@@ -38,29 +38,20 @@
         <p>Registramos y defendemos sus activos intangibles. Marcas, software y contenidos digitales ante INPI, DNDA y plataformas internacionales.</p>
     </section>
     <section class="contenedor-subareas">
-        <div class="tarjeta-subarea">
-            <h3>INPI</h3>
-            <ul>
-                <li><strong>Registro:</strong> Oposiciones y renovaciones en todas las clases</li>
-                <li><strong>Vigilancia:</strong> Monitoreo y cese de uso indebido</li>
-            </ul>
-        </div>
-        <div class="tarjeta-subarea">
-            <h3>DNDA</h3>
-            <ul>
-                <li><strong>Software:</strong> Registro de software, obras y cesión de derechos</li>
-                <li><strong>Licencias:</strong> Contratos SaaS y EULA</li>
-            </ul>
-        </div>
-        <div class="tarjeta-subarea">
-            <h3>DMCA</h3>
-            <ul>
-                <li><strong>Bajas:</strong> Defensa por infracción en YouTube, App Store, GitHub</li>
-                <li><strong>Dominios:</strong> Recuperación de .com y .com.ar</li>
-            </ul>
+        <div class="tarjeta-subarea"><h3>INPI</h3><ul><li><strong>Registro:</strong> Oposiciones y renovaciones de marcas en todas las clases.</li><li><strong>Vigilancia:</strong> Monitoreo y cese de uso indebido.</li></ul></div>
+        <div class="tarjeta-subarea"><h3>DNDA</h3><ul><li><strong>Software:</strong> Registro de software, obras y contratos de cesión de derechos.</li><li><strong>Licencias:</strong> Contratos de licencia SaaS y EULA.</li></ul></div>
+        <div class="tarjeta-subarea"><h3>DMCA</h3><ul><li><strong>Bajas:</strong> Defensa por infracción en YouTube, App Store, GitHub y marketplaces.</li><li><strong>Dominios:</strong> Recuperación de dominios .com y .com.ar.</li></ul></div>
+    </section>
+    <section class="cta-final">
+        <div style="max-width:720px; width:100%">
+            <img src="logo-final.webp" alt="Riganti, Geiler & Márquez Allurialde" style="height:56px; width:auto; margin:0 auto 32px auto; display:block;">
+            <h2 style="color:#c5a880; font-family:'Times New Roman', serif; font-weight:400; font-size:2rem; margin-bottom:18px;">¿Necesita proteger su marca o software?</h2>
+            <div style="width:50px; height:2px; background:#c5a880; margin:0 auto 24px auto"></div>
+            <p style="color:rgba(255,255,255,0.72); margin-bottom:38px; font-size:1.05rem; font-weight:300;">Agende una consulta confidencial para registro y defensa de activos intangibles.</p>
+            <a href="index.html#contacto" style="display:inline-block; padding:15px 42px; border:1px solid #c5a880; color:#c5a880; text-decoration:none; font-size:0.8rem; letter-spacing:2px;">INICIAR CONSULTA</a>
         </div>
     </section>
 </main>
-<footer style="background:#070e1b; padding:30px 12%; text-align:center; color:rgba(255,255,255,0.35); font-size:0.8rem;">© 2026 Riganti, Geiler & Márquez Allurialde</footer>
+<footer style="background:#070e1b; padding:30px 12%; border-top:1px solid rgba(255,255,255,0.06); text-align:center; color:rgba(255,255,255,0.35); font-size:0.8rem;">© <script>document.write(new Date().getFullYear())</script> Riganti, Geiler & Márquez Allurialde - Abogados. Todos los derechos reservados.</footer>
 </body>
 </html>
