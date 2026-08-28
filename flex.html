@@ -1,142 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGMA Área FLEX - Flex Counsel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-    :root{--flex-bg:#102821; --flex-card:#17332C; --flex-gold:#D6C3A0;}
-    .hero-flex{min-height:70vh; background:var(--flex-bg); display:flex; align-items:center; padding:150px 12% 90px 12%; position:relative;}
-    .hero-flex::before{content:""; position:absolute; inset:0; background: radial-gradient(circle at 75% 20%, rgba(214,195,160,0.12) 0%, transparent 60%);}
-    .flex-tag{display:inline-block; border:1px solid var(--flex-gold); color:var(--flex-gold); font-size:10px; letter-spacing:3px; text-transform:uppercase; padding:6px 14px; margin-bottom:22px; position:relative; z-index:2;}
-    .hero-flex h1{color:#fff; font-size:54px; line-height:1.1; font-weight:400; max-width:720px; margin-bottom:12px; position:relative; z-index:2;}
-    .hero-flex h1 span{color:var(--flex-gold); font-style:italic; font-weight:300;}
-    .hero-flex p{color:rgba(255,255,255,.72); max-width:700px; font-size:17px; font-weight:300; line-height:1.8; position:relative; z-index:2; margin-top:22px;}
-    .sello-latam{display:flex; align-items:center; gap:14px; position:relative; z-index:2; margin-top:8px; margin-bottom:6px; animation: preText .8s ease 1.8s both;}
-    .sello-latam .rayita{height:1px; width:32px; background:var(--flex-gold);}
-    .sello-latam span{color:#fff; font-family:'Inter', sans-serif; font-size:11px; letter-spacing:5px; text-transform:uppercase; font-weight:500; opacity:.9;}
-    .seccion-flex-cards{background:var(--flex-bg); padding:0 12% 110px 12%;}
-    .grid-flex{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(214,195,160,.15); border:1px solid rgba(214,195,160,.15);}
-    .card-flex{background:var(--flex-card); padding:38px 32px; transition:.3s;}
-    .card-flex:hover{background:#1B3A32;}
-    .card-flex svg{width:26px; height:26px; stroke:var(--flex-gold); stroke-width:1.2; fill:none; margin-bottom:20px; display:block;}
-    .card-flex h3{color:#F5F1E9; font-size:18px; font-weight:400; font-family:'Playfair Display';}
-    .card-flex p{color:rgba(255,255,255,.6); font-size:14px; line-height:1.7; margin-top:10px;}
-    .flex-bottom{display:grid; grid-template-columns:1fr 1.15fr; gap:28px; margin-top:48px;}
-    .box-incluye{border:1px solid rgba(214,195,160,.25); background:#17332C; padding:38px;}
-    .box-incluye h4{color:var(--flex-gold); font-family:'Playfair Display'; font-size:20px; margin-bottom:20px;}
-    .box-incluye li{color:rgba(255,255,255,.78); font-size:14.5px; margin-bottom:14px; list-style:none; padding-left:18px; position:relative;}
-    .box-incluye li::before{content:"—"; position:absolute; left:0; color:var(--flex-gold);}
-    .box-cta{background:#F5F1E9; padding:40px; border:1px solid #C8B090;}
-    .box-cta h4{color:#102821; font-size:22px; font-family:'Playfair Display'; margin-bottom:12px;}
-    .box-cta p{font-size:14px; opacity:.7; margin-bottom:26px;}
-    .box-cta a{background:#102821; color:#fff; text-align:center; padding:18px; text-decoration:none; letter-spacing:2px; font-size:11px; text-transform:uppercase; display:block;}
-    #preloader-flex{position:fixed; inset:0; background:#102821; z-index:99999; display:flex; align-items:center; justify-content:center; transition: opacity .8s ease, visibility .8s ease;}
-    #preloader-flex.oculto{opacity:0; visibility:hidden;}
-    .preloader-inner{text-align:center;}
-    .pre-logo{height:52px; filter: brightness(0) invert(1); margin:0 auto 22px auto; display:block;}
-    .pre-line{width:0; height:1px; background:var(--flex-gold); margin:0 auto 14px auto; animation: preLine 1.1s ease .3s forwards;}
-    .pre-text{color:#fff; font-family:'Playfair Display'; font-size:11px; letter-spacing:4px; text-transform:uppercase; opacity:0; animation: preText .6s ease .8s forwards; display:block;}
-    @keyframes preLine{ to{ width:80px; } }
-    @keyframes preText{ from{opacity:0; transform:translateY(6px);} to{opacity:.7; transform:translateY(0);} }
-    @media(max-width:900px){.grid-flex,.flex-bottom{grid-template-columns:1fr;} .hero-flex h1{font-size:34px;} .hero-flex{padding:120px 6% 60px 6%;} .seccion-flex-cards{padding:0 6% 70px 6%;}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGMA Área FLEX - Ahora en LATAM</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--flex-bg:#102821; --flex-card:#17332C; --gold:#D6C3A0; --beige:#F5F1E9;}
+.hero-flex{min-height:78vh; background:var(--flex-bg); padding:150px 12% 80px 12%; position:relative; display:flex; align-items:center;}
+.hero-flex h1{color:#fff; font-size:58px; line-height:1.05; font-weight:300; max-width:620px;}
+.hero-flex h1 i{color:var(--gold); font-family:'Playfair Display'; font-weight:300;}
+.sello-latam{display:flex; align-items:center; gap:14px; margin:18px 0 22px 0;}
+.sello-latam .rayita{width:32px; height:1px; background:var(--gold);}
+.sello-latam span{color:#fff; font-size:11px; letter-spacing:5px; text-transform:uppercase;}
+.hero-flex .sub{color:rgba(255,255,255,.65); max-width:560px; line-height:1.8; font-weight:300; font-size:16px;}
+.btn-flex{margin-top:28px; display:inline-block; background:var(--beige); color:var(--flex-bg); padding:16px 28px; text-decoration:none; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; border:1px solid var(--gold);}
+
+.sec-claro{background:var(--beige); padding:90px 12%;}
+.sec-oscuro{background:var(--flex-bg); padding:90px 12%;}
+.eyebrow{color:var(--gold); font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom:14px; display:block;}
+.titulo-sec{font-family:'Playfair Display'; font-size:36px; font-weight:300; line-height:1.2; margin-bottom:40px;}
+.titulo-sec.osc{color:var(--flex-bg);} .titulo-sec.claro{color:#fff;}
+
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(16,40,33,.12); border:1px solid rgba(16,40,33,.12);}
+.grid3 .card{background:#fff; padding:36px 30px;}
+.grid3 .card svg{width:24px; height:24px; stroke:var(--flex-bg); stroke-width:1.2; fill:none; margin-bottom:18px;}
+.grid3 .card h3{font-family:'Playfair Display'; font-size:19px; color:var(--flex-bg); margin-bottom:10px;}
+.grid3 .card p{font-size:14px; line-height:1.7; opacity:.7;}
+
+.tabla-comp{display:grid; grid-template-columns:1fr 1fr; border:1px solid rgba(214,195,160,.25);}
+.col-comp{padding:32px;}
+.col-comp.trad{background:transparent;} .col-comp.flex{background:#17332C; border-left:1px solid rgba(214,195,160,.2);}
+.col-comp h4{font-family:'Playfair Display'; margin-bottom:18px; font-size:18px;}
+.col-comp.trad h4{color:rgba(255,255,255,.5);} .col-comp.flex h4{color:var(--gold);}
+.col-comp li{list-style:none; font-size:14px; margin-bottom:12px; padding-left:20px; position:relative; line-height:1.5;}
+.col-comp.trad li{color:rgba(255,255,255,.55);} .col-comp.trad li::before{content:"✕"; position:absolute; left:0; opacity:.4;}
+.col-comp.flex li{color:#fff;} .col-comp.flex li::before{content:"✓"; position:absolute; left:0; color:var(--gold);}
+
+.plans{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:20px;}
+.plan{border:1px solid #C8B090; padding:30px; background:#fff;}
+.plan.destacado{background:var(--flex-bg); border-color:var(--gold); color:#fff;}
+.plan h5{font-size:11px; letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; opacity:.6;}
+.plan .price{font-family:'Playfair Display'; font-size:28px; margin-bottom:12px;}
+.plan ul{margin-top:18px;} .plan li{list-style:none; font-size:13px; margin-bottom:10px; opacity:.8; padding-left:16px; position:relative;}
+.plan li::before{content:"—"; position:absolute; left:0;}
+
+@media(max-width:900px){.grid3,.tabla-comp,.plans{grid-template-columns:1fr;} .hero-flex h1{font-size:38px;} .hero-flex,.sec-claro,.sec-oscuro{padding-left:6%; padding-right:6%;}}
+#preloader-flex{position:fixed; inset:0; background:#102821; z-index:99999; display:flex; align-items:center; justify-content:center; transition:.8s;}
+#preloader-flex.oculto{opacity:0; visibility:hidden;}
+.pre-line{width:0; height:1px; background:var(--gold); margin:0 auto 14px; animation: preLine 1.1s .3s forwards;}
+@keyframes preLine{to{width:80px;}}
+</style>
 </head>
 <body>
-<div id="preloader-flex">
-  <div class="preloader-inner">
-    <img src="nombre-logo-estudio.webp" alt="RGMA" class="pre-logo">
-    <div class="pre-line"></div>
-    <span class="pre-text">RGMA — ÁREA FLEX</span>
-  </div>
-</div>
+<div id="preloader-flex"><div style="text-align:center;"><img src="nombre-logo-estudio.webp" style="height:48px; filter:brightness(0) invert(1); margin-bottom:18px;"><div class="pre-line"></div><span style="color:#fff; font-size:10px; letter-spacing:4px; text-transform:uppercase; opacity:.6;">RGMA — ÁREA FLEX</span></div></div>
 <header>
-    <a href="index.html" class="marca-estudio">
-        <img src="nombre-logo-estudio.webp" alt="RGM">
-        <div class="nombre-estudio">
-            <span class="apellido-principal">RIGANTI, GEILER</span>
-            <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
-        </div>
-    </a>
-    <nav>
-        <ul>
-            <li><a href="index.html#inicio">Inicio</a></li>
-            <li><a href="index.html#estudio">El Estudio</a></li>
-            <li><a href="index.html#practicas">Prácticas</a></li>
-            <li><a href="flex.html" style="color:#D6C3A0;">Área FLEX</a></li>
-            <li><a href="index.html#contacto" class="btn-nav">Contacto</a></li>
-        </ul>
-    </nav>
+<a href="index.html" class="marca-estudio"><img src="nombre-logo-estudio.webp" alt="RGM"><div class="nombre-estudio"><span class="apellido-principal">RIGANTI, GEILER</span><span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span></div></a>
+<nav><ul><li><a href="index.html">Inicio</a></li><li><a href="flex.html" style="color:#D6C3A0;">Área FLEX</a></li><li><a href="index.html#contacto" class="btn-nav">Contacto</a></li></ul></nav>
 </header>
-    <section class="hero-flex">
-    <div style="position:relative; z-index:2;">
-        <div class="flex-tag">Área • Fractional GC • GCaaS</div>
-        <h1>RGMA Área FLEX <br><span>Flex Counsel</span></h1>
-        
-        <div class="sello-latam">
-            <div class="rayita"></div>
-            <span>AHORA EN LATAM</span>
-        </div>
-
-        <p><strong style="color:#fff;">Fractional General Counsel</strong> — asesoría legal flexible y a la carta para empresas en crecimiento. Un asesor jurídico senior dedicado, sin los costos de un equipo legal interno full-time. Modelo anglosajón ampliamente probado en USA.</p>
-    </div>
+<section class="hero-flex">
+<div>
+<span style="border:1px solid #D6C3A0; color:#D6C3A0; font-size:10px; letter-spacing:3px; padding:6px 14px; text-transform:uppercase;">Fractional GC • GCaaS</span>
+<h1 style="margin-top:22px;">Tu departamento legal externo.<br><i>Sin el costo fijo.</i></h1>
+<div class="sello-latam"><div class="rayita"></div><span>AHORA EN LATAM</span></div>
+<p class="sub">Modelo probado en USA. Un socio senior de RGMA como tu General Counsel fraccional. Para rondas, contratación masiva y expansión regional.</p>
+<a href="#planes" class="btn-flex">Ver planes →</a>
+</div>
+    <section class="sec-claro">
+<span class="eyebrow">Modelo</span>
+<h2 class="titulo-sec osc">Legal operativo, no solo consultivo.</h2>
+<div class="grid3">
+<div class="card"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg><h3>On-Demand</h3><p>Usanos cuando nos necesites. Pausá cuando no. Sin retainer eterno.</p></div>
+<div class="card"><svg viewBox="0 0 24 24"><path d="M16 21V19A4 4 0 0 0 12 15H8A4 4 0 0 0 4 19V21"/><circle cx="12" cy="7" r="4"/></svg><h3>Seniority Real</h3><p>Socio de RGMA dedicado. No un junior tercerizado ni chatbot legal.</p></div>
+<div class="card"><svg viewBox="0 0 24 24"><path d="M12 2V22M17 5H9.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 14.5 19H6"/></svg><h3>Fee Predecible</h3><p>Una cuota mensual fija. Hasta 60% menos que un GC interno full-time.</p></div>
+</div>
 </section>
 
-<section class="seccion-flex-cards">
-    <div class="grid-flex">
-        <div class="card-flex">
-            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
-            <h3>Flexibilidad</h3>
-            <p>Apoyo legal según demanda. Escala sin compromisos.</p>
-        </div>
-        <div class="card-flex">
-            <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M9 7V17M15 7V17"/></svg>
-            <h3>Escalabilidad</h3>
-            <p>Estructura legal que crece con tu negocio.</p>
-        </div>
-        <div class="card-flex">
-            <svg viewBox="0 0 24 24"><path d="M12 2V22M17 5H9.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 14.5 19H6"/></svg>
-            <h3>Ahorro de Costos</h3>
-            <p>Modelo GCaaS predecible. Hasta 60% de ahorro.</p>
-        </div>
-    </div>
-
-    <div class="flex-bottom">
-        <div class="box-incluye">
-            <h4>Incluye:</h4>
-            <ul>
-                <li>Contratos comerciales y revisión legal</li>
-                <li>Compliance & gobierno corporativo</li>
-                <li>Negociaciones M&A y due diligence</li>
-                <li>Políticas internas y protección de datos</li>
-            </ul>
-        </div>
-        <div class="box-cta">
-            <h4>¿Listo para incorporar tu General Counsel flexible?</h4>
-            <p>Agenda una consulta estratégica de 30 min sin costo.</p>
-            <a href="index.html#contacto">» Agenda tu consulta ahora</a>
-        </div>
-    </div>
+<section class="sec-oscuro">
+<span class="eyebrow">Diferencial</span>
+<h2 class="titulo-sec claro">Estudio tradicional vs RGMA FLEX</h2>
+<div class="tabla-comp">
+<div class="col-comp trad"><h4>Estudio Tradicional</h4><ul><li>Facturación por hora impredecible</li><li>Respuesta en 48/72hs</li><li>Cada consulta es un presupuesto</li><li>Sin contexto de tu negocio</li></ul></div>
+<div class="col-comp flex"><h4>RGMA FLEX</h4><ul><li>Fee mensual fijo y predecible</li><li>Slack / WhatsApp directo con tu GC</li><li>Todo incluido en el plan</li><li>Inmersión en tu compañía</li></ul></div>
+</div>
 </section>
 
-<footer class="footer-premium" style="background:#102821;">
-    <div class="bloques-footer-fijo">
-        <div class="columna-footer-fija"><h4>La Firma</h4><p>Estudio boutique - Área FLEX.</p></div>
-        <div class="columna-footer-fija"><h4>Áreas Clave</h4><ul><li><a href="flex.html">Área FLEX</a></li><li><a href="index.html#practicas">Prácticas</a></li></ul></div>
-        <div class="columna-footer-fija"><h4>Mercosur</h4><p>Red de corresponsalías.</p></div>
-    </div>
-    <div class="copyright-premium"><p>© 2026 Riganti, Geiler & Márquez Alluralde — Área FLEX</p></div>
-</footer>
+<section class="sec-claro" id="planes">
+<span class="eyebrow">Planes</span>
+<h2 class="titulo-sec osc">Escalá sin contratar.</h2>
+<div class="plans">
+<div class="plan"><h5>Starter</h5><div class="price">Para validar</div><p style="font-size:13px; opacity:.7;">Hasta 15hs / mes. Ideal pre-seed / seed.</p><ul><li>Contratos y NDAs ilimitados</li><li>Consultas diarias</li><li>1 workshop mensual</li></ul></div>
+<div class="plan destacado"><h5>Growth — Más elegido</h5><div class="price">Para crecer</div><p style="font-size:13px; opacity:.8;">Hasta 35hs / mes. Ideal Serie A + contratación.</p><ul><li>Todo de Starter +</li><li>M&A / Due diligence light</li><li>Políticas internas y RRHH</li><li>Presencia en directorio (1x mes)</li></ul></div>
+<div class="plan"><h5>Scale</h5><div class="price">Para expandir</div><p style="font-size:13px; opacity:.7;">Hasta 60hs / mes. LATAM expansion.</p><ul><li>Todo de Growth +</li><li>Expansión Mercosur</li><li>GC dedicado casi full-time</li><li>Prioridad absoluta</li></ul></div>
+</div>
+<div style="text-align:center; margin-top:36px;"><a href="index.html#contacto" class="btn-flex" style="background:#102821; color:#fff;">Agenda tu consulta estratégica →</a></div>
+</section>
 
-<script>
-  window.addEventListener('load', ()=>{
-    setTimeout(()=>{
-      document.getElementById('preloader-flex').classList.add('oculto');
-    }, 1400);
-  });
-</script>
-
+<footer class="footer-premium" style="background:#102821; padding:40px 12%;"><p style="color:rgba(255,255,255,.5); font-size:12px; text-align:center;">© 2026 RGMA — Área FLEX | AHORA EN LATAM</p></footer>
+<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader-flex').classList.add('oculto');},1200);});</script>
 </body>
 </html>
+</section>
