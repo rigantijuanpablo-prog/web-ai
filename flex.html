@@ -51,6 +51,14 @@
 #preloader-flex.oculto{opacity:0; visibility:hidden;}
 .pre-line{width:0; height:1px; background:var(--gold); margin:0 auto 14px; animation: preLine 1.1s .3s forwards;}
 @keyframes preLine{to{width:80px;}}
+    /* PARCHE FINAL - PEGA ESTO AL FINAL DEL STYLE */
+.hero-flex{z-index:1; padding-bottom:120px;}
+.sec-claro{position:relative; z-index:2; margin-top:0 !important; padding-top:90px !important; clear:both;}
+.grid3{position:relative; z-index:3;}
+.grid3 .card svg{width:28px !important; height:28px !important; stroke:#102821 !important; stroke-width:1.3 !important; display:block !important; opacity:1 !important; font-size:unset !important;}
+.grid3 .card svg path, .grid3 .card svg circle, .grid3 .card svg rect{stroke:#102821 !important;}
+/* Evita que tu style.css rompa los iconos con font icons */
+.grid3 .card::before{content:none !important;}
 </style>
 </head>
 <body>
