@@ -718,24 +718,34 @@ a[href="flex.html"]:hover{
 .nav-links a:hover{
   color: #C8B090 !important;
 }
-/* ARREGLO FINAL - 3 COLUMNAS REALES */
+/* FIX DEFINITIVO CIRCULO - SIN TOCAR HTML */
 header{
-  display:grid !important;
-  grid-template-columns:auto 1fr auto !important;
+  display:flex !important;
+  justify-content:flex-start !important;
   align-items:center !important;
-  padding:0 24px 0 32px !important;
+  padding:0 20px 0 32px !important;
 }
-.marca-estudio{
-  justify-self:start !important;
+header nav{
+  margin:0 auto !important;
+  flex:0 0 auto !important;
 }
-nav{
-  flex:none !important;
-  justify-self:center !important;
-  justify-content:center !important;
-}
-.right-group{
-  justify-self:end !important;
+header .right-group{
+  margin-left:0 !important;
+  gap:16px !important;
   display:flex !important;
   align-items:center !important;
-  gap:12px !important;
+}
+header .right-group .circle-link,
+.circle-link{
+  border:1.2px solid #C8B090 !important;
+  box-shadow:none !important;
+  outline:none !important;
+  filter:none !important;
+  width:58px !important;
+  height:58px !important;
+  margin-left:8px !important;
+  background:transparent !important;
+}
+.circle-link *{
+  box-shadow:none !important;
 }
