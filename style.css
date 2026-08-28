@@ -3,20 +3,34 @@
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;color:var(--texto);background:var(--blanco);line-height:1.8;-webkit-font-smoothing:antialiased} 
 h1,h2,h3{font-family:'Playfair Display',serif;color:var(--navy)}
-header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(13,18,30,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,0.12);transition:all.3s}
-header.scrolled{padding:15px 8%;background:rgba(13,18,30,0.99)}
+header{
+  position:fixed; top:0; left:0; width:100%; z-index:1000;
+  padding:0 24px !important;
+  height:88px;
+  display:flex; justify-content:space-between; align-items:center;
+  background:rgba(13,18,30,0.96); backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(200,176,144,0.12); transition:all .3s
+}
+header.scrolled{ height:72px; background:rgba(13,18,30,0.99) }
 
-/* LOGO 15PX */
-.marca-estudio{display:flex;align-items:center;gap:16px;text-decoration:none}
+/* LOGO 15PX - Parte 1 */
+.marca-estudio{display:flex;align-items:center;gap:16px;text-decoration:none; flex:0 0 auto;}
 .marca-estudio img{height:48px;width:auto}
 .nombre-estudio{display:flex;flex-direction:column;gap:2px;line-height:1}
 .apellido-principal{color:#fff;font-size:15px;letter-spacing:.16em;display:block;font-weight:500;text-transform:uppercase;font-family:'Playfair Display',serif;line-height:1.1}
 .apellido-secundario{color:var(--dorado);font-size:15px;letter-spacing:.12em;display:block;margin-top:0!important;text-transform:uppercase;font-family:'Playfair Display',serif;font-weight:300;line-height:1.1;opacity:0.95}
 .apellido-secundario i{font-size:.9em;position:relative;top:0px;margin-right:4px;font-style:normal}
 
-nav ul{display:flex;list-style:none;gap:38px;align-items:center}
+/* Parte 2 - Centro */
+nav{ flex:1; display:flex; justify-content:center; }
+nav ul{display:flex;list-style:none;gap:32px;align-items:center; margin:0;}
 nav a{color:rgba(255,255,255,.85);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-decoration:none;position:relative}
 nav a:hover{color:var(--dorado)}
+
+/* Parte 3 - Derecha */
+.right-group{
+  display:flex; align-items:center; gap:24px; flex:0 0 auto;
+}
 .btn-area-flex{
   border:1px solid var(--dorado) !important;
   padding:9px 20px !important;
@@ -37,7 +51,22 @@ nav a:hover{color:var(--dorado)}
   color:#0D121E !important;
   box-shadow: 0 0 20px rgba(200,176,144,0.6) !important;
 }
-
+.circle-link{
+  width:62px !important; height:62px !important;
+  border:1px solid #C8B090 !important;
+  background:transparent !important;
+  color:#C8B090 !important;
+  border-radius:50% !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  text-align:center !important; font-size:8px !important; line-height:1.1 !important;
+  text-decoration:none !important; font-weight:600 !important; letter-spacing:0.5px !important;
+  box-shadow:0 0 10px rgba(200,176,144,0.25) !important;
+  transition:all 0.3s ease !important;
+}
+.circle-link:hover{
+  background:rgba(200,176,144,0.08) !important;
+  box-shadow:0 0 18px rgba(200,176,144,0.4) !important;
+}
 .hero-principal{min-height:100vh;display:flex;align-items:center;padding:0 12%;position:relative;overflow:hidden;background:var(--navy)}
 .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
 
