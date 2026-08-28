@@ -78,23 +78,35 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 </style>
 </head>
 <body>
-
-<div id="preloader-flex">
-  <img src="isologo-dorado-transparente.png" alt="RGMA" style="height:38px; width:auto; margin-bottom:22px; display:block;">
-  <span style="color:#C8B090; letter-spacing:6px; font-size:10px; font-family:'Inter';">RGMA FLEX</span>
+<div id="preloader-flex" style="position:fixed; inset:0; background:#0A1410; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+  <img src="isologo-dorado-transparente.png" alt="RGMA" style="height:54px; width:auto; display:block;">
+  <span style="color:#C8B090; letter-spacing:6px; font-size:10px; font-family:'Inter',sans-serif; margin-top:22px; display:block; text-transform:uppercase;">RGMA FLEX</span>
+  <span style="width:32px; height:1px; background:#C8B090; display:block; margin-top:18px; opacity:0.6;"></span>
 </div>
+
+<style>
+#preloader-flex{ transition: opacity 0.6s ease; }
+</style>
+
+<script>
+// para que desaparezca cuando carga
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader-flex');
+  setTimeout(() => {
+    pre.style.opacity = '0';
+    setTimeout(() => pre.style.display = 'none', 600);
+  }, 800);
+});
+</script>
 <header style="position:fixed; top:0; left:0; width:100%; height:72px; background:#0A1410; display:flex; align-items:center; justify-content:space-between; padding:0 3%; z-index:1000; border-bottom:1px solid rgba(255,255,255,.08);">
-
-<a href="index.html" class="marca-estudio" style="display:flex; align-items:center; gap:18px; text-decoration:none;">
-  <span style="font-family:'Inter', sans-serif; font-weight:700; font-size:16px; letter-spacing:3px; color:#7a5cff;">RGMA</span>
-  <span style="width:1px; height:22px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
-  <span style="width:1px; height:22px; background:rgba(255,255,255,0.2); display:inline-block; margin-left:-10px;"></span>
-  <span style="font-family:'Inter', sans-serif; font-size:10px; letter-spacing:2.8px; line-height:1.2; color:#C8B090; font-weight:400;">
-    RIGANTI, GEILER <span style="font-family:'Times New Roman',serif; font-style:italic; font-weight:400; font-size:1.3em; text-transform:lowercase;">&</span><br>
-    MÁRQUEZ ALLURALDE
-  </span>
-</a>
-
+  <a href="index.html" style="display:flex; align-items:center; gap:18px; text-decoration:none;">
+    <span style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; letter-spacing:3px; color:#7a5cff;">RGMA</span>
+    <span style="width:1px; height:22px; background:rgba(255,255,255,0.2);"></span>
+    <span style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2.8px; line-height:1.5; color:#C8B090; text-transform:uppercase;">
+      <span style="display:block;">RIGANTI, GEILER</span>
+      <span style="display:block;">& MÁRQUEZ ALLURALDE</span>
+    </span>
+  </a>
   <nav style="display:flex; align-items:center; gap:28px;">
     <a href="index.html" style="color:#fff; text-decoration:none; font-size:10px; letter-spacing:2.5px;">INICIO</a>
     <a href="index.html#estudio" style="color:#fff; text-decoration:none; font-size:10px; letter-spacing:2.5px;">EL ESTUDIO</a>
@@ -103,7 +115,6 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
     <a href="index.html#contacto" style="border:1px solid rgba(200,176,144,.6); color:#fff; padding:9px 18px; text-decoration:none; font-size:10px; letter-spacing:2px;">CONTACTO</a>
   </nav>
 </header>
-
 <section class="hero-flex">
 <div>
 <span class="eyebrow-mini">Fractional GC • GCAAS</span>
