@@ -174,14 +174,60 @@
   </div>
 </section>
 
-<footer class="footer-premium">
-  <div class="bloques-footer-fijo">
-    <div class="columna-footer-fija"><h4>LA FIRMA</h4><p>Estudio boutique nacional con proyección regional.</p></div>
-    <div class="columna-footer-fija"><h4>ÁREAS CLAVE</h4><ul><li><a href="#">Startups</a></li><li><a href="#">Creadores</a></li><li><a href="#">Deportivo</a></li><li><a href="#">IA</a></li><li><a href="#">IP Digital</a></li><li><a href="#">Salud</a></li><li><a href="#">Real Estate</a></li></ul></div>
-    <div class="columna-footer-fija"><h4>MERCOSUR</h4><p>Red de corresponsalías en principales centros del país y región.</p></div>
+<footer class="footer-rgm">
+  <div class="footer-inner">
+    <div class="f-col brand">
+      <img src="isologo-dorado-transparente.png" alt="RGM Abogados" class="footer-isologo">
+      <p class="f-claim">Trayectoria legal con<br>perspectiva de vanguardia.</p>
+      <div class="f-line"></div>
+      <p class="f-copy-brand">RIGANTI, GEILER<br>& MÁRQUEZ ALLURALDE</p>
+    </div>
+    <div class="f-col">
+      <span class="f-title">ÁREAS CLAVE</span>
+      <a href="#">Startups</a>
+      <a href="#">Creadores</a>
+      <a href="#">Deportivo</a>
+      <a href="#">IA</a>
+      <a href="#">IP Digital</a>
+      <a href="#">Salud</a>
+      <a href="#">Real Estate</a>
+    </div>
+    <div class="f-col">
+      <span class="f-title">MERCOSUR</span>
+      <p>Red de corresponsalías en principales centros del país y región.</p>
+      <div class="f-contact">
+        <p>CABA · Buenos Aires</p>
+        <p>+54 11 4321-5555</p>
+        <p>contacto@rgmabogados.com.ar</p>
+      </div>
+    </div>
+    <div class="f-col">
+      <span class="f-title">CONSULTA</span>
+      <p class="f-consulta-txt">Atención personalizada,<br>confidencial y estratégica.</p>
+      <a href="#contacto" class="f-btn">AGENDAR CONSULTA →</a>
+    </div>
   </div>
-  <div class="copyright-premium"><p>© 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — CABA · MERCOSUR</p></div>
+  <div class="f-bottom">
+    <p>© 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — CABA · MERCOSUR</p>
+  </div>
 </footer>
+
+<style>
+.footer-rgm{ background:#070b14; padding:75px 5% 0; border-top:1px solid rgba(200,176,144,0.15); font-family:'Inter',sans-serif; }
+.footer-inner{ max-width:1400px; margin:0 auto; display:grid; grid-template-columns:1.6fr 0.8fr 1fr 1fr; gap:50px; }
+.footer-isologo{ height:72px; width:auto; }
+.f-claim{ font-family:'Lora',serif; font-style:italic; font-size:15px; color:#d8dce4; line-height:1.4; margin-top:18px; }
+.f-line{ width:36px; height:1px; background:#C8B090; margin:20px 0; }
+.f-copy-brand{ font-family:'Playfair Display'; font-size:11px; letter-spacing:2px; color:#E8DCC8; line-height:1.6; margin-top:10px; }
+.f-title{ display:block; font-size:10px; letter-spacing:3px; color:#C8B090; margin-bottom:22px; font-weight:600; }
+.f-col a{ display:block; color:#a8aebb; text-decoration:none; font-size:13px; margin-bottom:11px; }
+.f-col a:hover{ color:#E8DCC8; }
+.f-col p{ font-size:13px; line-height:1.7; color:#8a90a0; margin:0; }
+.f-contact{ margin-top:16px; }
+.f-btn{ border:1px solid #C8B090; padding:12px 22px; display:inline-block !important; font-size:11px !important; letter-spacing:1.8px; color:#E8DCC8 !important; margin-top:12px; text-decoration:none; }
+.f-btn:hover{ background:#C8B090; color:#070b14 !important; }
+.f-bottom{ max-width:1400px; margin:65px auto 0; padding:24px 0; border-top:1px solid rgba(255,255,255,0.06); text-align:center; font-size:10px; letter-spacing:1.2px; color:#4e5463; }
+</style>
 
 <script>
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
