@@ -9,7 +9,6 @@
 *{margin:0; padding:0; box-sizing:border-box;}
 body{font-family:'Inter', sans-serif; background:#0F2A20; overflow-x:hidden; color:#fff;} 
 
-/* HEADER NUEVO */
 .nav-link{
   color:#fff; text-decoration:none; font-size:10px; letter-spacing:2.5px;
   transition: color 0.25s ease; margin-left:32px; text-transform:uppercase;
@@ -21,6 +20,10 @@ body{font-family:'Inter', sans-serif; background:#0F2A20; overflow-x:hidden; col
   transition: all 0.25s ease; margin-left:32px; text-transform:uppercase;
 }
 .nav-btn:hover{ background:#C8B090; color:#0A1410; }
+.nav-btn.activo{
+  border-color:rgba(200,176,144,.4); color:#C8B090;
+  opacity:0.7; pointer-events:none; cursor:default;
+}
 
 .hero-flex{
   min-height:100vh;
@@ -28,16 +31,16 @@ body{font-family:'Inter', sans-serif; background:#0F2A20; overflow-x:hidden; col
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
   gap:60px;
-  padding:170px 8% 120px 8%;
+  padding:110px 8% 80px 8%;
   align-items:center;
 }
 
-.eyebrow-mini{border:1px solid rgba(200,176,144,.4); color:#C8B090; font-size:9px; letter-spacing:4px; text-transform:uppercase; padding:8px 14px; display:inline-block; margin-bottom:32px;}
+.eyebrow-mini{border:1px solid rgba(200,176,144,.4); color:#C8B090; font-size:9px; letter-spacing:4px; text-transform:uppercase; padding:8px 14px; display:inline-block; margin-bottom:22px;}
 .hero-flex h1{font-family:'Playfair Display'; font-size:62px; line-height:0.95; font-weight:300; color:#fff;}
 .hero-flex h1 i{color:#C8B090; font-style:italic; font-weight:300;}
-.sub-latam{margin-top:28px; display:flex; align-items:center; gap:14px; color:#fff; font-size:10px; letter-spacing:4px; text-transform:uppercase;}
+.sub-latam{margin-top:20px; display:flex; align-items:center; gap:14px; color:#fff; font-size:10px; letter-spacing:4px; text-transform:uppercase;}
 .sub-latam::before{content:''; width:32px; height:1px; background:#C8B090; display:block;}
-.hero-desc{margin-top:22px; color:rgba(255,255,255,.6); font-size:14px; line-height:1.7; max-width:420px;}
+.hero-desc{margin-top:18px; color:rgba(255,255,255,.6); font-size:14px; line-height:1.7; max-width:420px;}
 
 .sec-claro{background:#F7F3EB; padding:100px 8%; color:#102821;}
 .sec-claro .eyebrow{color:#C8B090; font-size:10px; letter-spacing:4px; text-transform:uppercase; display:block; margin-bottom:16px;}
@@ -72,14 +75,15 @@ body{font-family:'Inter', sans-serif; background:#0F2A20; overflow-x:hidden; col
 .plan li{font-size:12px; line-height:1.6; margin-bottom:8px; opacity:.7;}
 .plan.destacado li{opacity:.85;}
 
-.btn-flex{background:#C8B090; color:#102821; padding:16px 28px; text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; display:inline-block; font-weight:500;}
+.btn-flex{background:#C8B090; color:#102821; padding:16px 28px; text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; display:inline-block; font-weight:500; transition: all .25s ease;}
+.btn-flex:hover{background:#d6c2a3;}
 
 #preloader-flex{position:fixed; inset:0; background:#0A1410; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:opacity .6s ease;}
 #preloader-flex.oculto{opacity:0; pointer-events:none;}
 footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,255,255,.4); font-size:11px; letter-spacing:2px;}
 
 @media(max-width:900px){
-.hero-flex{grid-template-columns:1fr; padding:120px 6% 60px 6%;}
+.hero-flex{grid-template-columns:1fr; padding:110px 6% 60px 6%;}
 .grid3, .plans, .tabla-comp{grid-template-columns:1fr;}
 .hero-flex h1{font-size:44px;}
 }
@@ -94,10 +98,9 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 </div>
 
 <header style="position:fixed; top:0; left:0; width:100%; height:72px; background:#0A1410; display:flex; align-items:center; justify-content:space-between; padding:0 3%; z-index:1000; border-bottom:1px solid rgba(255,255,255,.08);">
-  <a href="index.html" style="display:flex; align-items:center; gap:14px; text-decoration:none;">
-    <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:28px; width:auto; display:block;">
-    <span style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; letter-spacing:3px; color:#7a5cff;">RGMA</span>
-    <span style="width:1px; height:22px; background:rgba(255,255,255,0.2); display:inline-block; margin-left:6px;"></span>
+  <a href="index.html" style="display:flex; align-items:center; gap:16px; text-decoration:none;">
+    <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:34px; width:auto; display:block;">
+    <span style="width:1px; height:22px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
     <span style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2.8px; line-height:1.5; color:#C8B090; text-transform:uppercase;">
       <span style="display:block;">RIGANTI, GEILER</span>
       <span style="display:block;">& MÁRQUEZ ALLURALDE</span>
@@ -107,7 +110,7 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
     <a href="index.html" class="nav-link">INICIO</a>
     <a href="index.html#estudio" class="nav-link">EL ESTUDIO</a>
     <a href="index.html#practicas" class="nav-link">PRÁCTICAS</a>
-    <a href="flex.html" class="nav-btn">ÁREA FLEX</a>
+    <a href="flex.html" class="nav-btn activo">ÁREA FLEX</a>
     <a href="index.html#contacto" class="nav-btn">CONTACTO</a>
   </nav>
 </header>
@@ -118,7 +121,10 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 <h1>Tu departamento<br>legal externo.<br><i>Sin el costo<br>fijo.</i></h1>
 <div class="sub-latam">AHORA EN LATAM</div>
 <p class="hero-desc">Modelo probado en USA. Un socio senior de RGMA opera como tu Gerente Legal interno, dentro de tu Slack / Teams, con fee fijo y predecible.</p>
-<div style="margin-top:36px;"><a href="index.html#contacto" class="btn-flex">Agenda tu consulta estratégica →</a></div>
+<div style="margin-top:32px; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+  <a href="index.html#contacto" class="btn-flex">Solicitá tu propuesta Flex →</a>
+  <span style="font-size:9px; letter-spacing:2px; color:rgba(255,255,255,.45); text-transform:uppercase;">Respuesta en 24hs</span>
+</div>
 </div>
 
 <div class="sec-claro" style="border-radius:2px;">
@@ -149,7 +155,7 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 <div class="plan destacado"><h5>Growth — Más elegido</h5><div class="price">Para crecer</div><p style="font-size:13px; opacity:.8;">Hasta 35hs / mes. Ideal Serie A + contratación.</p><ul><li>— Todo de Starter +</li><li>— M&A / Due diligence light</li><li>— Políticas internas y RRHH</li><li>— Presencia en directorio (1x mes)</li></ul></div>
 <div class="plan"><h5>Scale</h5><div class="price">Para expandir</div><p style="font-size:13px; opacity:.7;">Hasta 60hs / mes. LATAM expansion.</p><ul><li>— Todo de Growth +</li><li>— Expansión Mercosur</li><li>— GC dedicado casi full-time</li><li>— Prioridad absoluta</li></ul></div>
 </div>
-<div style="text-align:center; margin-top:40px;"><a href="index.html#contacto" class="btn-flex" style="background:#102821; color:#fff;">Agenda tu consulta estratégica →</a></div>
+<div style="text-align:center; margin-top:40px;"><a href="index.html#contacto" class="btn-flex" style="background:#102821; color:#fff;">Cotizá tu plan Flex →</a></div>
 </section>
 
 <footer>© 2026 RGMA — Área FLEX | AHORA EN LATAM</footer>
