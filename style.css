@@ -718,3 +718,18 @@ a[href="flex.html"]:hover{
 .nav-links a:hover{
   color: #C8B090 !important;
 }
+/* MOVER CIRCULO A LA IZQUIERDA Y SACAR CELESTE */
+header{
+  padding-right: 10px !important;
+}
+header .right-group{
+  gap: 14px !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+header .right-group .circle-link{
+  transform: translateX(-28px) !important;
+  border: 1px solid #C8B090 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
