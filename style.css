@@ -629,4 +629,16 @@ textarea{
     margin-top: 30px !important;
     bottom: -20px !important;
   }
+...todo tu css anterior...
+
+.apellido-secundario i{
+  font-family: 'Lora', serif !important;
+  font-style: italic !important;
+  font-weight: 300 !important;
+  font-size: 14px !important;
+  color: #C8B090 !important;
+  margin-right: 6px !important;
+  display: inline-block !important;
+}
+a[href="flex.html"]{border:0 !important; background:transparent !important; box-shadow:none !important; padding:0 !important;}
 }
