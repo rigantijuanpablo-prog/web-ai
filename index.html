@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGMA RIGANTI, GEILER & MÁRQUEZ ALLURALDE</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* NAV IGUAL A TU CAPTURA */
+      header nav ul{ gap:32px !important; align-items:center !important; }
+      header nav ul li a{ font-size:12px !important; letter-spacing:2.2px !important; font-weight:500 !important; color:#E8E8E8 !important; }
+
+      /* AREA FLEX - MISMO TAMAÑO QUE EL RESTO */
+      .btn-area-flex{
+        border:1px solid #C8B090 !important;
+        padding:0 22px !important;
+        height:36px !important;
+        display:inline-flex !important;
+        align-items:center !important;
+        color:#E8DCC8 !important;
+        font-size:12px !important;
+        letter-spacing:2.2px !important;
+        text-decoration:none !important;
+        background:transparent !important;
+      }
+      .btn-area-flex:hover{ color:#C8B090 !important; }
+
+      /* CONTACTO - SOLO SE ILUMINA LA PALABRA */
+      .btn-nav{
+        border:1px solid #C8B090 !important;
+        padding:0 22px !important;
+        height:36px !important;
+        display:inline-flex !important;
+        align-items:center !important;
+        color:#E8DCC8 !important;
+        font-size:12px !important;
+        letter-spacing:2.2px !important;
+        text-decoration:none !important;
+        background:transparent !important;
+        transition: all 0.3s ease !important;
+      }
+      .btn-nav:hover{ color:#C8B090 !important; }
+    </style>
 </head>
-<script>
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-</script>
-</body>
-</html>  
 <body>
 
-<header>
-  <a href="#inicio" class="marca-estudio">
-    <img src="nombre-logo-estudio.webp" alt="RGMA" style="height:42px">
-    <div class="nombre-estudio">
-      <span class="apellido-principal">RIGANTI, GEILER</span>
-     <div class="logo-text">
-    <span class="apellido-secundario"><i>&amp;</i> MÁRQUEZ ALLURRALDE</span>
-    </div>
-  </a>
-  <nav>
-    <ul>
-      <li><a href="#inicio">INICIO</a></li>
-      <li><a href="#estudio">EL ESTUDIO</a></li>
-      <li><a href="#practicas">PRÁCTICAS</a></li>
-      <li><a href="flex.html" class="btn-area-flex">ÁREA FLEX</a></li>
-      <li><a href="#contacto" class="btn-nav">CONTACTO</a></li>
-    </ul>
-  </nav>
-</header>
-
 <div class="barra-flotante-contacto">
-  <a href="mailto:contacto@rigantigeiler.com" class="item-flotante"><span>EMAIL</span>✉</a>
-  <a href="tel:+541143215555" class="item-flotante"><span>TEL</span>☎</a>
-  <a href="#contacto" class="item-flotante"><span>MAPA</span>◉</a>
+    <a href="#contacto" class="item-flotante"><span>CONTACTO</span><div class="icono-flotante">✉</div></a>
+    <a href="tel:+541143215555" class="item-flotante"><span>LLAMAR</span><div class="icono-flotante">☎</div></a>
+    <a href="#contacto" class="item-flotante"><span>UBICACIÓN</span><div class="icono-flotante">◉</div></a>
 </div>
 
+<header>
+    <a href="#" class="marca-estudio">
+        <img src="nombre-logo-estudio.webp" alt="RGM">
+        <div class="nombre-estudio">
+            <span class="apellido-principal">RIGANTI, GEILER</span>
+            <span class="apellido-secundario"><span style="font-family:'Times New Roman',serif;font-style:italic;font-weight:400;font-size:1.1em;margin-right:5px;">&</span> MÁRQUEZ ALLURALDE</span>
+        </div>
+    </a>
+    <nav>
+        <ul>
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#estudio">EL ESTUDIO</a></li>
+            <li><a href="#practicas">PRÁCTICAS</a></li>
+            <li><a href="flex.html" class="btn-area-flex">ÁREA FLEX</a></li>
+            <li><a href="#contacto" class="btn-nav">CONTACTO</a></li>
+        </ul>
+    </nav>
+</header>
+
 <section id="inicio" class="hero-principal">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="hero-acuarela-12s.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-contenedor-texto">
-    <h1>Trayectoria Legal<br>con una Perspectiva<br>de Vanguardia</h1>
-    <a href="#contacto" class="btn-premium-final">AGENDAR CONSULTA</a>
-  </div>
+    <video autoplay muted loop playsinline class="hero-video"><source src="hero-acuarela-12s.mp4" type="video/mp4"></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-contenedor-texto">
+        <h1>Trayectoria Legal con una Perspectiva de Vanguardia</h1>
+        <a href="#contacto" class="btn-premium-final">Agendar Consulta</a>
+    </div>
 </section>
 
 
