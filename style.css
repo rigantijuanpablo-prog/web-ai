@@ -728,7 +728,7 @@ header .right-group{
   padding-right: 0 !important;
 }
 header .right-group .circle-link{
-  transform: translateX(-28px) !important;
+  transform: translateX(-32px) !important;
   border: 1px solid #C8B090 !important;
   box-shadow: none !important;
   outline: none !important;
