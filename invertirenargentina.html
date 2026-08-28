@@ -4,58 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inversiones en Argentina | Riganti, Geiler & Márquez Alluralde</title>
-    <!-- Tailwind CSS para diseño ágil y responsive -->
-    <script src="https://tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair Display (Estilo Sastre Tradicional) e Inter (Vanguardia Digital) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .font-serif { font-family: 'Playfair Display', serif; }
-        /* Variación cromática exclusiva de la sección */
-        .bg-rgm-dark { background-color: #1D2D44; }
-        .text-rgm-gold { color: #C5A059; }
-        .border-rgm-gold { border-color: #C5A059; }
-        .bg-rgm-gold { background-color: #C5A059; }
-        .hover-rgm-gold:hover { background-color: #A3803B; }
+       .font-serif { font-family: 'Playfair Display', serif; }
+       .bg-rgm-dark { background-color: #101828; }
+       .text-rgm-gold { color: #C8B090; }
+       .border-rgm-gold { border-color: #C8B090; }
+       .bg-rgm-gold { background-color: #C8B090; }
+       .hover-rgm-gold:hover { background-color: #B89F7A; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- 1. MENÚ DE NAVEGACIÓN -->
+    <!-- 1. MENÚ -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Identidad visual / Logo -->
             <div class="flex flex-col">
                 <span class="font-serif font-semibold text-lg tracking-wider text-gray-900">RGM</span>
                 <span class="text-[9px] uppercase tracking-[0.25em] text-gray-500 font-medium -mt-1">Riganti, Geiler & Márquez</span>
             </div>
-            
-            <!-- Enlaces de navegación principal -->
             <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium text-gray-600">
-                <a href="#" class="hover:text-gray-900 transition-colors">Inicio</a>
-                <a href="#" class="hover:text-gray-900 transition-colors">El Estudio</a>
-                <a href="#" class="hover:text-gray-900 transition-colors">Prácticas</a>
-                <!-- Pestaña activa con el color diferencial de inversión -->
+                <a href="#" class="hover:text-gray-900">Inicio</a>
+                <a href="#" class="hover:text-gray-900">El Estudio</a>
+                <a href="#" class="hover:text-gray-900">Prácticas</a>
                 <a href="#" class="text-rgm-gold font-semibold border-b border-rgm-gold pb-1">Inversiones AR</a>
-                <a href="#" class="hover:text-gray-900 transition-colors">Contacto</a>
+                <a href="#contacto" class="hover:text-gray-900">Contacto</a>
             </div>
-
-            <!-- Selector de Idioma / Selector Internacional -->
             <div class="flex items-center space-x-3 text-xs font-semibold tracking-wider text-gray-400">
-                <span class="text-gray-900 cursor-pointer">ESP</span>
-                <span>|</span>
-                <span class="hover:text-gray-900 cursor-pointer transition-colors">ENG</span>
+                <span class="text-gray-900">ESP</span><span>|</span><span>ENG</span>
             </div>
         </div>
     </nav>
-      <!-- 2. HERO SECTION / PRESENTACIÓN PREMIUM -->
+
+    <!-- 2. HERO -->
     <header class="bg-rgm-dark text-white relative overflow-hidden py-24 md:py-32">
-        <!-- Detalle de fondo sutil que evoca solidez -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C8B090_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <span class="text-xs uppercase tracking-[0.3em] font-semibold text-rgm-gold block mb-4">Área de Práctica Internacional</span>
             <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6 max-w-4xl">
@@ -64,36 +52,32 @@
             <p class="text-gray-300 text-base md:text-lg max-w-2xl font-light leading-relaxed mb-10">
                 Traducimos la complejidad del entorno regulatorio y cambiario en una estrategia de desembarco clara, combinando la rigurosidad técnica del bufete clásico con la agilidad digital global.
             </p>
-            <div>
-                <a href="#contacto" class="inline-block bg-rgm-gold text-white text-xs uppercase tracking-[0.2em] font-medium px-8 py-4 transition-all duration-300 hover-rgm-gold shadow-lg">
-                    Agendar Auditoría de Inversión
-                </a>
-            </div>
+            <a href="#contacto" class="inline-block bg-rgm-gold text-[#101828] text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 transition-all hover:bg-white">
+                Agendar Auditoría de Inversión
+            </a>
         </div>
     </header>
 
-    <!-- 3. IDENTIDAD ARTESANAL (Sastre Legal RGMA) -->
+    <!-- 3. FRASE -->
     <section class="bg-white border-b border-gray-100 py-16">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="font-serif text-xl md:text-2xl text-rgm-dark font-light italic leading-relaxed mb-4">
+            <p class="font-serif text-xl md:text-2xl text-[#101828] font-light italic leading-relaxed mb-4">
                 "Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas."
             </p>
             <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Filosofía Corporativa RGMA</span>
         </div>
     </section>
 
-    <!-- 4. VEHÍCULOS SOCIETARIOS Y ESTRUCTURACIÓN -->
+    <!-- 4. TABLA -->
     <section class="py-24 max-w-7xl mx-auto px-6">
         <div class="mb-12">
             <h2 class="font-serif text-3xl text-gray-900 font-light mb-2">Vehículos Societarios y de Estructuración</h2>
-            <p class="text-gray-500 text-sm max-w-xl">Análisis comparativo para el establecimiento seguro de operaciones comerciales en jurisdicción argentina.</p>
+            <p class="text-gray-500 text-sm max-w-xl">Análisis comparativo para el establecimiento seguro de operaciones en jurisdicción argentina.</p>
         </div>
-
-        <!-- Tabla Responsive -->
         <div class="overflow-x-auto bg-white border border-gray-100 shadow-sm rounded-sm">
-            <table class="w-full text-left border-collapse text-sm">
+            <table class="w-full text-left text-sm">
                 <thead>
-                    <tr class="bg-rgm-dark text-white uppercase text-[11px] tracking-wider font-semibold">
+                    <tr class="bg-rgm-dark text-white uppercase text-[11px] tracking-wider">
                         <th class="p-5 font-medium">Estructura Legal</th>
                         <th class="p-5 font-medium">Atributos y Responsabilidad</th>
                         <th class="p-5 font-medium">Gobernanza y Capital</th>
@@ -101,306 +85,63 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 text-gray-600">
-                    <!-- Fila SA -->
-                    <tr class="hover:bg-gray-50/50 transition-colors">
-                        <td class="p-5 font-serif text-base text-rgm-dark font-semibold whitespace-nowrap">Sociedad Anónima (S.A.)</td>
-                        <td class="p-5 leading-relaxed">Responsabilidad circunscrita al capital suscrito. Personería jurídica completamente independiente de los accionistas.</td>
-                        <td class="p-5">Dirección a cargo de un Directorio. Capital representado mediante acciones transferibles.</td>
-                        <td class="p-5 font-medium text-gray-900">Estructuras de escala corporativa mediana a grande con esquemas de socios dinámicos.</td>
-                    </tr>
-                    <!-- Fila SRL -->
-                    <tr class="hover:bg-gray-50/50 transition-colors">
-                        <td class="p-5 font-serif text-base text-rgm-dark font-semibold whitespace-nowrap">Sociedad de Resp. Limitada (S.R.L.)</td>
-                        <td class="p-5 leading-relaxed">Responsabilidad limitada a la integración de las cuotas. Constitución ágil y costos operativos optimizados.</td>
-                        <td class="p-5">Administración a cargo de una Gerencia. Máximo estricto de 50 socios. Cesión de cuotas regulada.</td>
-                        <td class="p-5 font-medium text-gray-900">Unidades de negocios operativas cerradas, filiales corporativas o empresas de control familiar.</td>
-                    </tr>
-                    <!-- Fila Sucursal -->
-                    <tr class="hover:bg-gray-50/50 transition-colors">
-                        <td class="p-5 font-serif text-base text-rgm-dark font-semibold whitespace-nowrap">Sucursal Extranjera</td>
-                        <td class="p-5 leading-relaxed">No conforma una nueva entidad jurídica legal en el país. La responsabilidad final recae de forma directa en la Casa Matriz internacional.</td>
-                        <td class="p-5">Representante legal debidamente apoderado en el país. Consolidación contable directa en la matriz global.</td>
-                        <td class="p-5 font-medium text-gray-900">Corporaciones globales multinacionales que ejecutan contratos específicos o licitaciones de gran escala.</td>
-                    </tr>
-                    <!-- Fila Nativos Digitales / Real Estate Tokenizado -->
-                    <tr class="hover:bg-gray-50/50 transition-colors">
-                        <td class="p-5 font-serif text-base text-rgm-dark font-semibold whitespace-nowrap">Vehículos Flex y Tokenización</td>
-                        <td class="p-5 leading-relaxed">Contratos asociativos avanzados, fideicomisos comerciales a medida y esquemas ágiles estructurados digitalmente.</td>
-                        <td class="p-5">Gobernanza adaptativa mediante contratos específicos o contratos inteligentes validados jurídicamente.</td>
-                        <td class="p-5 font-medium text-gray-900">Desarrollos inmobiliarios de vanguardia, esquemas de crowdfunding y proyectos de base tecnológica nativa digital.</td>
-                    </tr>
+                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">Sociedad Anónima (S.A.)</td><td class="p-5">Responsabilidad circunscrita al capital suscrito. Personería jurídica independiente.</td><td class="p-5">Dirección a cargo de Directorio. Acciones transferibles.</td><td class="p-5 font-medium text-gray-900">Estructuras de escala mediana a grande.</td></tr>
+                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">S.R.L.</td><td class="p-5">Responsabilidad limitada. Constitución ágil y costos optimizados.</td><td class="p-5">Gerencia. Máximo 50 socios.</td><td class="p-5 font-medium text-gray-900">Filiales y empresas familiares.</td></tr>
+                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">Sucursal Extranjera</td><td class="p-5">No conforma nueva entidad. Responsabilidad en Casa Matriz.</td><td class="p-5">Representante legal apoderado en el país.</td><td class="p-5 font-medium text-gray-900">Multinacionales y licitaciones.</td></tr>
+                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">Vehículos Flex</td><td class="p-5">Fideicomisos, contratos asociativos y esquemas digitales.</td><td class="p-5">Gobernanza adaptativa y contratos inteligentes.</td><td class="p-5 font-medium text-gray-900">Real Estate tokenizado y Tech.</td></tr>
                 </tbody>
             </table>
         </div>
     </section>
-    <!-- 5. MARCOS REGULADOS E INCENTIVOS ESTRATÉGICOS -->
-    <section class="bg-gray-100/60 py-24 border-t border-b border-gray-200/50">
+
+    <!-- 5. INCENTIVOS -->
+    <section class="bg-gray-100/60 py-24 border-y border-gray-200/50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 text-center md:text-left">
+            <div class="mb-16">
                 <h2 class="font-serif text-3xl text-gray-900 font-light mb-2">Marcos Regulados con Incentivos Legales</h2>
-                <p class="text-gray-500 text-sm max-w-xl">Asesoramiento de alta especialización para la aplicación a regímenes de promoción económica y tecnológica.</p>
+                <p class="text-gray-500 text-sm max-w-xl">Alta especialización para regímenes de promoción económica.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Bloque RIGI -->
-                <div class="bg-white p-8 border border-gray-200/60 shadow-sm rounded-sm transition-transform duration-300 hover:-translate-y-1">
-                    <div class="text-rgm-gold text-2xl mb-6">⚡</div>
-                    <h3 class="font-serif text-xl text-rgm-dark font-semibold mb-4">Régimen RIGI</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Asesoramiento integral y estructuración de proyectos elegibles para el Régimen de Incentivo para Grandes Inversiones. Garantizamos estabilidad fiscal de largo plazo, exenciones aduaneras críticas y esquemas de libre disponibilidad cambiaria para la protección de grandes capitales.
-                    </p>
-                </div>
-                <!-- Bloque Economía del Conocimiento -->
-                <div class="bg-white p-8 border border-gray-200/60 shadow-sm rounded-sm transition-transform duration-300 hover:-translate-y-1">
-                    <div class="text-rgm-gold text-2xl mb-6">🧠</div>
-                    <h3 class="font-serif text-xl text-rgm-dark font-semibold mb-4">Economía del Conocimiento</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Acompañamiento estratégico a firmas tecnológicas, de software y biociencias para la obtención de los beneficios de la Ley de Economía del Conocimiento. Optimizamos su estructura impositiva mediante reducciones en Ganancias y bonificaciones en contribuciones patronales.
-                    </p>
-                </div>
-                <!-- Bloque Real Estate y Startups -->
-                <div class="bg-white p-8 border border-gray-200/60 shadow-sm rounded-sm transition-transform duration-300 hover:-translate-y-1">
-                    <div class="text-rgm-gold text-2xl mb-6">🏢</div>
-                    <h3 class="font-serif text-xl text-rgm-dark font-semibold mb-4">Ecosistemas &amp; Real Estate</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Fusión de nuestra práctica de Real Estate tradicional con herramientas de vanguardia: desde la ingeniería del Due Diligence y fideicomisos ordinarios hasta la Tokenización legal de activos inmobiliarios y estructuración transfronteriza de Startups (SAFEs, Flips y Vesting).
-                    </p>
-                </div>
+                <div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">⚡</div><h3 class="font-serif text-xl text-[#101828] font-semibold mb-4">Régimen RIGI</h3><p class="text-gray-600 text-sm leading-relaxed">Estabilidad fiscal de largo plazo, exenciones aduaneras y libre disponibilidad cambiaria para grandes capitales.</p></div>
+                <div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">🧠</div><h3 class="font-serif text-xl text-[#101828] font-semibold mb-4">Economía del Conocimiento</h3><p class="text-gray-600 text-sm leading-relaxed">Reducción en Ganancias y bonificación en contribuciones patronales para software y biociencias.</p></div>
+                <div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">🏢</div><h3 class="font-serif text-xl text-[#101828] font-semibold mb-4">Real Estate & Startups</h3><p class="text-gray-600 text-sm leading-relaxed">Due Diligence, fideicomisos, tokenización de activos y estructuración de Startups (SAFEs, Flips).</p></div>
             </div>
         </div>
     </section>
 
-    <!-- 6. MITIGACIÓN DE RIESGO Y CONTROL CAMBIARIO -->
+    <!-- 6. CAMBIARIO -->
     <section class="py-24 max-w-5xl mx-auto px-6">
         <div class="border-l-2 border-rgm-gold pl-8 md:pl-12 py-2">
-            <h3 class="font-serif text-2xl text-rgm-dark font-medium mb-4">Mitigación del Riesgo Cambiario y Planificación Fiscal</h3>
-            <p class="text-gray-600 text-base leading-relaxed mb-4">
-                Entendemos que el manejo regulatorio del Banco Central de la República Argentina (BCRA) y las normativas sobre el flujo de divisas son las variables más críticas para el inversor internacional. Nuestra práctica se especializa en diseñar la ingeniería jurídica para optimizar el ingreso legítimo de fondos de inversión, asegurar el cumplimiento en el repago de financiamientos y estructurar los canales óptimos para la repatriación de utilidades y dividendos.
-            </p>
-            <p class="text-gray-500 text-sm italic">
-                Asimismo, aplicamos de forma activa la red de convenios internacionales para evitar la doble imposición firmados por Argentina, blindando el rendimiento neto de sus activos corporativos.
-            </p>
+            <h3 class="font-serif text-2xl md:text-3xl text-[#101828] font-light mb-6">Mitigación del Riesgo Cambiario y Estructura Fiscal</h3>
+            <p class="text-gray-600 text-base leading-relaxed mb-4">Diseñamos la ingeniería jurídica para optimizar el ingreso de fondos, el repago de financiamientos y la repatriación de utilidades bajo normativa BCRA.</p>
+            <p class="text-gray-500 text-sm italic">Aplicación de convenios para evitar doble imposición para blindar el rendimiento neto.</p>
         </div>
     </section>
 
-    <!-- 7. PROTOCOLO Y FORMULARIO DE ADMISIÓN -->
+    <!-- 7. CONTACTO -->
     <section id="contacto" class="bg-rgm-dark text-white py-24 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                
-                <!-- Columna Izquierda: Protocolo de Vinculación -->
-                <div class="space-y-8">
-                    <div>
-                        <span class="text-xs uppercase tracking-[0.25em] text-rgm-gold font-semibold block mb-2">Protocolo de Admisión</span>
-                        <h3 class="font-serif text-3xl font-light">Vinculación de Proyectos Corporativos</h3>
-                        <p class="text-gray-400 text-sm mt-3 leading-relaxed">
-                            Fieles al carácter de un bufete boutique clásico, no operamos bajo consultas aisladas ni atomizadas. Garantizamos una dedicación exhaustiva a través de nuestro riguroso proceso de admisión de inversiones extranjeras.
-                        </p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <!-- Paso 1 -->
-                        <div class="flex gap-4">
-                            <span class="font-serif text-xl italic text-rgm-gold font-medium">01</span>
-                            <div>
-                                <h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Auditoría Diagnóstica Inicial</h4>
-                                <p class="text-gray-400 text-xs mt-1">Analizamos exhaustivamente la viabilidad del encuadre legal, cambiario y tributario primario del proyecto.</p>
-                            </div>
-                        </div>
-                        <!-- Paso 2 -->
-                        <div class="flex gap-4">
-                            <span class="font-serif text-xl italic text-rgm-gold font-medium">02</span>
-                            <div>
-                                <h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Confidencialidad Absoluta</h4>
-                                <p class="text-gray-400 text-xs mt-1">Toda la documentación y el modelo de negocio compartido quedan blindados de inmediato bajo estricto secreto profesional.</p>
-                            </div>
-                        </div>
-                        <!-- Paso 3 -->
-                        <div class="flex gap-4">
-                            <span class="font-serif text-xl italic text-rgm-gold font-medium">03</span>
-                            <div>
-                                <h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Asignación de Consultoría Senior</h4>
-                                <p class="text-gray-400 text-xs mt-1">Un socio especialista de la práctica internacional evaluará los datos para coordinar la sesión diagnóstica presencial o remota.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div class="space-y-8">
+                <div><span class="text-xs uppercase tracking-[0.3em] text-rgm-gold font-semibold block mb-2">Protocolo de Admisión</span><h3 class="font-serif text-3xl font-light">Vinculación Estratégica</h3><p class="text-gray-400 text-sm mt-3">Bufete boutique. No operamos consultas aisladas. Proceso de admisión riguroso.</p></div>
+                <div class="space-y-6">
+                    <div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">01</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Auditoría Diagnóstica</h4><p class="text-gray-400 text-xs mt-1">Factibilidad legal, regulatoria y cambiaria.</p></div></div>
+                    <div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">02</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Confidencialidad Absoluta</h4><p class="text-gray-400 text-xs mt-1">Secreto profesional inquebrantable.</p></div></div>
+                    <div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">03</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Evaluación Senior</h4><p class="text-gray-400 text-xs mt-1">Un socio revisa y coordina la sesión inicial.</p></div></div>
                 </div>
-
-                <!-- Columna Derecha: Formulario Premium de Captación -->
-                <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-sm">
-                    <form action="#" method="POST" class="space-y-6 text-sm">
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-medium">Nombre Completo / Representación Legal</label>
-                            <input type="text" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-rgm-gold text-xs transition-colors">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-medium">Email Corporativo</label>
-                                <input type="email" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-rgm-gold text-xs transition-colors">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-medium">País de Origen de los Fondos</label>
-                                <input type="text" placeholder="Ej. España, EE.UU., Chile" class="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-rgm-gold text-xs transition-colors placeholder:text-gray-600">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-medium">Sector de Interés Destino</label>
-                            <select class="w-full bg-rgm-dark border border-white/10 p-3 text-gray-300 focus:outline-none focus:border-rgm-gold text-xs transition-colors">
-                                <option value="rigi">Minería / Energía / Régimen RIGI</option>
-                                <option value="tecnologia">Economía del Conocimiento / Tecnología</option>
-                                <option value="realestate">Desarrollos Inmobiliarios / Tokenización</option>
-                                <option value="corporativo">Otras Inversiones / M&amp;A</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-medium">Resumen Ejecutivo del Proyecto de Desembarco</label>
-    <!-- 5. INCENTIVOS SECTORIALES Y REGÍMENES DE PROMOCIÓN -->
-    <section class="bg-gray-100/60 border-y border-gray-200/50 py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 text-center md:text-left">
-                <h2 class="font-serif text-3xl text-gray-900 font-light mb-2">Sectores Estratégicos con Incentivos Legales</h2>
-                <p class="text-gray-500 text-sm max-w-xl">Asesoramiento de alta especialización en regímenes de promoción económica y tecnológica vigentes en Argentina.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tarjeta RIGI -->
-                <div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="text-2xl mb-6 text-rgm-gold">⚡</div>
-                        <h3 class="font-serif text-xl text-rgm-dark font-medium mb-4">Régimen RIGI</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Asesoramiento integral y estructuración de proyectos elegibles para el Régimen de Incentivo para Grandes Inversiones. Seguridad jurídica perenne, estabilidad fiscal de largo plazo, exenciones aduaneras y esquemas de disponibilidad cambiaria garantizada para grandes capitales.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta Economía del Conocimiento -->
-                <div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="text-2xl mb-6 text-rgm-gold">🧠</div>
-                        <h3 class="font-serif text-xl text-rgm-dark font-medium mb-4">Economía del Conocimiento</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Acompañamiento a firmas tecnológicas, de software y científicas para aplicar a los beneficios de la Ley de Economía del Conocimiento. Reducciones sustanciales en el Impuesto a las Ganancias y bonificaciones exclusivas en contribuciones de la seguridad social corporativa.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta Real Estate / Startups -->
-                <div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="text-2xl mb-6 text-rgm-gold">🏢</div>
-                        <h3 class="font-serif text-xl text-rgm-dark font-medium mb-4">Ecosistemas e Innovación</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Fusión de la práctica corporativa tradicional con herramientas de vanguardia: desde la ingeniería del Due Diligence y fideicomisos inmobiliarios, hasta la estructuración transfronteriza de Startups (SAFEs, Flips y Vesting) y la validación jurídica de Tokenización de activos.
-                        </p>
-                    </div>
-                </div>
+            <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-sm">
+                <form class="space-y-6 text-sm" onsubmit="event.preventDefault(); alert('Enviado con éxito');">
+                    <div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Nombre Completo</label><input type="text" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:border-rgm-gold focus:outline-none"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Email Corporativo</label><input type="email" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:border-rgm-gold focus:outline-none"></div><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">País de Origen</label><input type="text" placeholder="Ej. España" class="w-full bg-white/5 border border-white/10 p-3 text-white placeholder-gray-600 focus:border-rgm-gold focus:outline-none"></div></div>
+                    <div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Resumen del Proyecto</label><textarea rows="4" class="w-full bg-white/5 border border-white/10 p-3 text-white placeholder-gray-600 focus:border-rgm-gold focus:outline-none"></textarea></div>
+                    <button type="submit" class="w-full bg-rgm-gold text-[#101828] text-xs uppercase tracking-[0.2em] font-semibold py-4 hover:bg-white transition-all">Enviar Requerimiento</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- 6. DERECHO CAMBIARIO Y PLANIFICACIÓN FISCAL -->
-    <section class="py-24 max-w-5xl mx-auto px-6">
-        <div class="border-l-2 border-rgm-gold pl-8 md:pl-12 py-2">
-            <h3 class="font-serif text-2xl md:text-3xl text-rgm-dark font-light mb-6">Mitigación del Riesgo Cambiario y Estructura Fiscal</h3>
-            <p class="text-gray-600 text-base leading-relaxed mb-4">
-                Entendemos que el manejo regulatorio del Banco Central de la República Argentina (BCRA) y el régimen de flujo de divisas son las variables más críticas para el inversor transfronterizo. Nuestra práctica se especializa en diseñar la ingeniería legal y corporativa necesaria para optimizar el ingreso legítimo de fondos de inversión, asegurar el repago de financiamientos internacionales y estructurar los mecanismos de repatriación de utilidades y dividendos.
-            </p>
-            <p class="text-gray-600 text-base leading-relaxed">
-                Asimismo, aplicamos activamente convenios internacionales para evitar la doble imposición internacional, blindando la rentabilidad y el valor de sus activos globales.
-            </p>
-        </div>
-    </section>
-
-    <!-- 7. PROTOCOLO Y FORMULARIO DE ADMISIÓN PREMIUM -->
-    <section id="contacto" class="bg-rgm-dark text-white py-24 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                
-                <!-- Columna Izquierda: Protocolo de Vinculación -->
-                <div class="space-y-8">
-                    <div>
-                        <span class="text-xs uppercase tracking-[0.3em] font-semibold text-rgm-gold block mb-2">Protocolo de Admisión</span>
-                        <h3 class="font-serif text-3xl font-light mb-6">Vinculación Estratégica</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Fieles al carácter de bufete boutique, no operamos bajo consultas aisladas ni atomizadas. Garantizamos una dedicación exhaustiva a través de nuestro riguroso proceso de admisión corporativa.
-                        </p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <!-- Paso 1 -->
-                        <div class="flex gap-4">
-                            <span class="font-serif text-xl md:text-2xl text-rgm-gold font-light italic">01</span>
-                            <div>
-                                <h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200 mb-1">Auditoría Diagnóstica Integral</h4>
-                                <p class="text-gray-400 text-xs leading-relaxed">Analizamos de forma pormenorizada la factibilidad legal, regulatoria y el encuadre cambiario inicial del proyecto propuesto.</p>
-                            </div>
-                        </div>
-                        <!-- Paso 2 -->
-                        <div class="flex gap-4">
-                            <span class="font-serif text-xl md:text-2xl text-rgm-gold font-light italic">02</span>
-                            <div>
-                                <h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200 mb-1">Confidencialidad y Reserva Absoluta</h4>
-                                <p class="text-gray-400 text-xs leading-relaxed">Toda la información suministrada durante las etapas previas y de desarrollo permanece sujeta a estricto secreto profesional bajo estándares éticos inquebrantables.</p>
-                            </div>
-                        </div>
-                        <!-- Paso 3 -->
-                        <div class="flex gap-4">
-                            <span class="font-serif text-xl md:text-2xl text-rgm-gold font-light italic">03</span>
-                            <div>
-                                <h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200 mb-1">Evaluación de Admisión</h4>
-                                <p class="text-gray-400 text-xs leading-relaxed">Un socio de la práctica internacional del estudio revisará minuciosamente los datos ingresados para coordinar la sesión inicial de diagnóstico estructurado.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Columna Derecha: Formulario de Pre-Admisión -->
-                <div class="bg-white/5 border border-white/10 p-8 md:p-10 shadow-xl rounded-sm">
-                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Requerimiento de Admisión enviado con éxito al departamento internacional de RGMA.');">
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest font-semibold text-gray-400 mb-2">Nombre Completo / Representante Legal</label>
-                            <input type="text" required class="w-full bg-white/5 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-rgm-gold transition-colors rounded-sm">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest font-semibold text-gray-400 mb-2">Email Corporativo de Contacto</label>
-                            <input type="email" required class="w-full bg-white/5 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-rgm-gold transition-colors rounded-sm">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-[10px] uppercase tracking-widest font-semibold text-gray-400 mb-2">País Origen de los Fondos</label>
-                                <input type="text" placeholder="Ej. España, EE.UU." class="w-full bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-rgm-gold transition-colors rounded-sm">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] uppercase tracking-widest font-semibold text-gray-400 mb-2">Sector de Destino</label>
-                                <select class="w-full bg-rgm-dark border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-rgm-gold transition-colors rounded-sm">
-                                    <option value="rigi">Energía / Minería / RIGI</option>
-                                    <option value="tech">Economía del Conocimiento</option>
-<option value="prop">Real Estate / Tokenización</option>
-                                    <option value="corp">Corporativo General</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest font-semibold text-gray-400 mb-2">Resumen Ejecutivo del Proyecto de Inversión</label>
-                            <textarea rows="4" placeholder="Describa brevemente el encuadre o los objetivos de su desembarco legal..." class="w-full bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-rgm-gold transition-colors rounded-sm"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-rgm-gold text-white text-xs uppercase tracking-[0.2em] font-medium py-4 transition-all duration-300 hover-rgm-gold shadow-md">
-                            Enviar Requerimiento de Admisión
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. FOOTER CORPORATIVO -->
-    <footer class="bg-[#0f172a] text-gray-500 py-12 text-xs border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="tracking-wide">&copy; 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — CABA &middot; MERCOSUR. Todos los derechos reservados.</p>
-        </div>
+    <footer class="bg-[#0f172a] text-gray-500 py-12 text-xs border-t border-white/5 text-center">
+        <p>&copy; 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — Todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>
