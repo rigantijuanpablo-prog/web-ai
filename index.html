@@ -1,95 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGMA RIGANTI, GEILER & MÁRQUEZ ALLURALDE</title>
-<link rel="stylesheet" href="style.css">
-<style>
-/* BOTONES TAMAÑO FOTO FINAL */
-.btn-flex{
-  border:1px solid #C8B090;
-  height:30px; padding:0 18px;
-  display:inline-flex; align-items:center;
-  background:transparent; border-radius:2px;
-  color:#C8B090 !important;
-  font-size:9px; letter-spacing:2px; font-weight:500;
-  transition: all 0.3s ease;
-}
-.btn-flex:hover{ background:rgba(200,176,144,.12); }
-
-.btn-contacto{
-  border:1px solid #C8B090;
-  height:30px; padding:0 18px;
-  display:inline-flex; align-items:center;
-  background:transparent; border-radius:2px;
-  color:#E8DCC8 !important;
-  font-size:9px; letter-spacing:2px; font-weight:500;
-  transition: all 0.3s ease;
-}
-.btn-contacto:hover{ background:#C8B090 !important; color:#0D1628 !important; }
-
-#contacto .encabezado-seccion{ margin-bottom:28px !important; padding-bottom:0 !important; }
-#contacto .encabezado-seccion .linea-decorativa{ margin:14px auto 0 !important; }
-.contenedor-contacto{ gap:48px !important; padding-top:30px !important; align-items:start !important; }
-
-/* HEADER QUE SE ACHATA */
-#mainHeader{ transition: all 0.35s ease !important; }
-#mainHeader.scrolled{ height:52px !important; background:rgba(13,22,40,0.96) !important; backdrop-filter:blur(10px); }
-#mainHeader.scrolled img{ height:21px !important; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
- <script>
-window.addEventListener('scroll', function(){
-  const h = document.getElementById('mainHeader');
-  if(window.scrollY > 30){ h.classList.add('scrolled'); } 
-  else { h.classList.remove('scrolled'); }
-});
-</script> 
 <body>
 
-<header id="mainHeader" style="background:#0A1931 !important; height:56px !important; min-height:56px !important; display:flex !important; align-items:center !important; justify-content:space-between !important; padding:0 32px !important; position:fixed !important; top:0 !important; left:0 !important; width:100% !important; z-index:99999 !important; transition: all 0.3s ease !important; border:none !important;">
-  <a href="#inicio" style="display:flex !important; align-items:center !important; line-height:0 !important; text-decoration:none !important;">
-    <img src="logo-nombres.webp?v=2" alt="RGMA" style="height:22px !important; width:auto !important; display:block !important; object-fit:contain !important;">
-  </a>
-  <nav style="display:flex !important;">
-    <ul style="display:flex !important; gap:32px !important; align-items:center !important; list-style:none !important; margin:0 !important; padding:0 !important;">
-      <li><a href="#inicio" style="color:#CBD5E1 !important; font-size:10px !important; letter-spacing:2.5px !important; text-decoration:none !important; font-weight:400 !important;">INICIO</a></li>
-      <li><a href="#estudio" style="color:#CBD5E1 !important; font-size:10px !important; letter-spacing:2.5px !important; text-decoration:none !important; font-weight:400 !important;">EL ESTUDIO</a></li>
-      <li><a href="#practicas" style="color:#CBD5E1 !important; font-size:10px !important; letter-spacing:2.5px !important; text-decoration:none !important; font-weight:400 !important;">PRÁCTICAS</a></li>
-      <li><a href="flex.html" style="border:1px solid #8B7355 !important; padding:7px 20px !important; color:#D9C5A0 !important; font-size:10px !important; letter-spacing:2px !important; text-decoration:none !important; line-height:1 !important;">ÁREA FLEX</a></li>
-      <li><a href="#contacto" class="btnContactoFinal" style="border:1px solid #8B7355 !important; padding:7px 20px !important; color:#fff !important; font-size:10px !important; letter-spacing:2px !important; text-decoration:none !important; line-height:1 !important; transition:all 0.3s !important;">CONTACTO</a></li>
-    </ul>
-  </nav>
-</header>
-<style>
-.btnContactoFinal:hover{ background:#D9C5A0 !important; color:#0A1931 !important; border-color:#D9C5A0 !important; }
-#mainHeader.scrolled{ height:46px !important; min-height:46px !important; }
-#mainHeader.scrolled img{ height:18px !important; }
-</style>
-<script>
-window.addEventListener('scroll', function(){
- const h=document.getElementById('mainHeader');
- if(window.scrollY>20) h.classList.add('scrolled'); else h.classList.remove('scrolled');
-});
-</script>
-
 <div class="barra-flotante-contacto">
-  <a href="mailto:contacto@rigantigeiler.com" class="item-flotante"><span>EMAIL</span>✉</a>
-  <a href="tel:+541143215555" class="item-flotante"><span>TEL</span>☎</a>
-  <a href="#contacto" class="item-flotante"><span>MAPA</span>◉</a>
+    <a href="#contacto" class="item-flotante"><span>CONTACTO</span><div class="icono-flotante">✉</div></a>
+    <a href="tel:+541143215555" class="item-flotante"><span>LLAMAR</span><div class="icono-flotante">☎</div></a>
+    <a href="#contacto" class="item-flotante"><span>UBICACIÓN</span><div class="icono-flotante">◉</div></a>
 </div>
 
+<header>
+    <a href="#" class="marca-estudio">
+        <img src="nombre-logo-estudio.webp" alt="RGM">
+        <div class="nombre-estudio">
+            <span class="apellido-principal">RIGANTI, GEILER</span>
+            <span class="apellido-secundario"><span style="font-family: 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 1.1em; margin-right: 5px;">&</span> MÁRQUEZ ALLURALDE</span>
+        </div>
+    </a>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#estudio">El Estudio</a></li>
+            <li><a href="#practicas">Prácticas</a></li>
+            <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
 <section id="inicio" class="hero-principal">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="hero-acuarela-12s.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-contenedor-texto">
-    <h1>Trayectoria Legal<br>con una Perspectiva<br>de Vanguardia</h1>
-    <a href="#contacto" class="btn-premium-final">AGENDAR CONSULTA</a>
-  </div>
+    <video autoplay muted loop playsinline class="hero-video"><source src="hero-acuarela-12s.mp4" type="video/mp4"></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-contenedor-texto">
+        <h1>Trayectoria Legal con una Perspectiva de Vanguardia</h1>
+        <a href="#contacto" class="btn-premium-final">Agendar Consulta</a>
+    </div>
 </section>
 
 <section id="estudio">
