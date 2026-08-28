@@ -10,12 +10,9 @@
 body{font-family:'Inter', sans-serif; background:#0F2A20; overflow-x:hidden; color:#fff;}
 
 header{position:fixed; top:0; left:0; width:100%; height:78px; background:#0A1410; display:flex; align-items:center; justify-content:space-between; padding:0 5%; z-index:100; border-bottom:1px solid rgba(200,176,144,.15);}
-header img{height:36px; filter: brightness(0) invert(1);}
-header nav{display:flex; align-items:center;}
-header nav a{color:rgba(255,255,255,.7); text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; margin-left:32px; transition:.3s;}
-header nav a:hover{color:#fff;}
+header img{height:36px;}
+header nav a{color:rgba(255,255,255,.7); text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; margin-left:32px;}
 header nav a.btn{border:1px solid #C8B090; padding:10px 18px; color:#C8B090;}
-header nav a.btn:hover{background:#D8C0A1; color:#0A1410; border-color:#D8C0A1;}
 
 .hero-flex{
   min-height:100vh;
@@ -26,6 +23,7 @@ header nav a.btn:hover{background:#D8C0A1; color:#0A1410; border-color:#D8C0A1;}
   padding:170px 8% 120px 8%;
   align-items:center;
 }
+
 .eyebrow-mini{border:1px solid rgba(200,176,144,.4); color:#C8B090; font-size:9px; letter-spacing:4px; text-transform:uppercase; padding:8px 14px; display:inline-block; margin-bottom:32px;}
 .hero-flex h1{font-family:'Playfair Display'; font-size:62px; line-height:0.95; font-weight:300; color:#fff;}
 .hero-flex h1 i{color:#C8B090; font-style:italic; font-weight:300;}
@@ -68,10 +66,8 @@ header nav a.btn:hover{background:#D8C0A1; color:#0A1410; border-color:#D8C0A1;}
 
 .btn-flex{background:#C8B090; color:#102821; padding:16px 28px; text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; display:inline-block; font-weight:500;}
 
-/* PRELOADER ARREGLADO */
-#preloader-flex{position:fixed; inset:0; background:#0A1410; z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; transition:opacity .6s ease;}
+#preloader-flex{position:fixed; inset:0; background:#0A1410; z-index:9999; display:flex; align-items:center; justify-content:center; transition:opacity .6s ease;}
 #preloader-flex.oculto{opacity:0; pointer-events:none;}
-
 footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,255,255,.4); font-size:11px; letter-spacing:2px;}
 
 @media(max-width:900px){
@@ -83,52 +79,64 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 </head>
 <body>
 
-<div id="preloader-flex">
-  <img src="nombre-logo-estudio.webp" alt="RGMA" style="height:42px; width:auto; filter: brightness(0) invert(1);">
-  <span style="color:#C8B090; letter-spacing:6px; font-size:10px;">RGMA FLEX</span>
-</div>
+<div id="preloader-flex"><span style="color:#C8B090; letter-spacing:5px; font-size:10px;">RGMA FLEX</span></div>
 
 <header>
-  <a href="index.html"><img src="nombre-logo-estudio.webp" alt="RGMA"></a>
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="flex.html" class="btn">Área Flex</a>
-  </nav>
+<a href="index.html"><img src="nombre-logo-estudio.webp" alt="RGMA"></a>
+<nav>
+<a href="index.html#inicio">Inicio</a>
+<a href="index.html#estudio">El Estudio</a>
+<a href="#" style="color:#C8B090;">Área FLEX</a>
+<a href="index.html#contacto" class="btn">Contacto</a>
+</nav>
 </header>
 
 <section class="hero-flex">
-  <div>
-    <span class="eyebrow-mini">Fractional GC para Latam</span>
-    <h1>Gobierno Corporativo <i>flexible</i> para escalar</h1>
-    <div class="sub-latam">Latam Ready</div>
-    <p class="hero-desc">Tu área legal externa bajo modelo fraccional. La estructura de un estudio grande, con la agilidad de un equipo dedicado.</p>
-  </div>
-  <div>
-    <!-- acá va tu contenido/visual del hero -->
-  </div>
+<div>
+<span class="eyebrow-mini">Fractional GC • GCAAS</span>
+<h1>Tu departamento<br>legal externo.<br><i>Sin el costo<br>fijo.</i></h1>
+<div class="sub-latam">AHORA EN LATAM</div>
+<p class="hero-desc">Modelo probado en USA. Un socio senior de RGMA opera como tu Gerente Legal interno, dentro de tu Slack / Teams, con fee fijo y predecible.</p>
+<div style="margin-top:36px;"><a href="index.html#contacto" class="btn-flex">Agenda tu consulta estratégica →</a></div>
+</div>
+
+<div class="sec-claro" style="border-radius:2px;">
+<span class="eyebrow">Modelo</span>
+<h2 class="titulo-sec osc">Legal operativo,<br>no solo consultivo.</h2>
+<div class="grid3">
+<div class="card"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg><h3>On-Demand</h3><p>Usanos cuando nos necesites. Pausá cuando no. Sin retainer eterno.</p></div>
+<div class="card"><svg viewBox="0 0 24 24"><path d="M16 21V19A4 4 0 0 0 12 15H8A4 4 0 0 0 4 19V21"/><circle cx="12" cy="7" r="4"/></svg><h3>Seniority Real</h3><p>Socio de RGMA dedicado. No un junior tercerizado ni chatbot legal.</p></div>
+<div class="card"><svg viewBox="0 0 24 24"><path d="M12 2V22M17 5H9.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 14.5 19H6"/></svg><h3>Fee Predecible</h3><p>Una cuota mensual fija. Hasta 60% menos que un GC interno full-time.</p></div>
+</div>
+</div>
 </section>
 
-<footer>RGMA — ESTUDIO JURÍDICO</footer>
+<section class="sec-oscuro">
+<span class="eyebrow" style="color:#C8B090;">Diferencial</span>
+<h2 class="titulo-sec claro">Estudio tradicional<br>vs RGMA FLEX</h2>
+<div class="tabla-comp">
+<div class="col-comp trad"><h4>Estudio Tradicional</h4><ul><li>✕ Facturación por hora impredecible</li><li>✕ Respuesta en 48/72hs</li><li>✕ Cada consulta es un presupuesto</li><li>✕ Sin contexto de tu negocio</li></ul></div>
+<div class="col-comp flex"><h4>RGMA FLEX</h4><ul><li>✓ Fee mensual fijo y predecible</li><li>✓ Slack / WhatsApp directo con tu GC</li><li>✓ Todo incluido en el plan</li><li>✓ Inmersión en tu compañía</li></ul></div>
+</div>
+</section>
+
+<section class="sec-claro" id="planes">
+<span class="eyebrow">Planes</span>
+<h2 class="titulo-sec osc">Escalá sin contratar.</h2>
+<div class="plans">
+<div class="plan"><h5>Starter</h5><div class="price">Para validar</div><p style="font-size:13px; opacity:.7;">Hasta 15hs / mes. Ideal pre-seed / seed.</p><ul><li>— Contratos y NDAs ilimitados</li><li>— Consultas diarias</li><li>— 1 workshop mensual</li></ul></div>
+<div class="plan destacado"><h5>Growth — Más elegido</h5><div class="price">Para crecer</div><p style="font-size:13px; opacity:.8;">Hasta 35hs / mes. Ideal Serie A + contratación.</p><ul><li>— Todo de Starter +</li><li>— M&A / Due diligence light</li><li>— Políticas internas y RRHH</li><li>— Presencia en directorio (1x mes)</li></ul></div>
+<div class="plan"><h5>Scale</h5><div class="price">Para expandir</div><p style="font-size:13px; opacity:.7;">Hasta 60hs / mes. LATAM expansion.</p><ul><li>— Todo de Growth +</li><li>— Expansión Mercosur</li><li>— GC dedicado casi full-time</li><li>— Prioridad absoluta</li></ul></div>
+</div>
+<div style="text-align:center; margin-top:40px;"><a href="index.html#contacto" class="btn-flex" style="background:#102821; color:#fff;">Agenda tu consulta estratégica →</a></div>
+</section>
+
+<footer>© 2026 RGMA — Área FLEX | AHORA EN LATAM</footer>
 
 <script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const pre = document.getElementById('preloader-flex');
-      pre.classList.add('oculto');
-      setTimeout(() => pre.style.display='none', 700);
-    }, 1000);
-  });
+window.addEventListener('load',()=>{
+  setTimeout(()=>{document.getElementById('preloader-flex').classList.add('oculto');},900);
+});
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
