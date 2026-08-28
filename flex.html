@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGMA División FLEX - Flex Counsel | Fractional General Counsel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* ====== OVERRIDE IDENTIDAD FLEX - DIFERENCIADO PERO MISMA FAMILIA ====== */
+    :root{
+      --flex-bg: #071612;
+      --flex-card: #102822;
+      --flex-gold: #C8B090;
+      --flex-gold-soft: #be9b46;
+    }
+    .hero-flex{
+      min-height: 72vh;
+      background: var(--flex-bg);
+      display:flex;
+      align-items:center;
+      padding: 140px 12% 80px 12%;
+      position:relative;
+      border-bottom: 2px solid var(--flex-gold);
+    }
+    .hero-flex::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 75% 20%, rgba(200,176,144,0.12) 0%, transparent 60%);
+    }
+    .flex-tag{
+      display:inline-block;
+      border:1px solid var(--flex-gold);
+      color: var(--flex-gold);
+      font-size:10px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      padding:6px 14px;
+      margin-bottom:22px;
+    }
+    .hero-flex h1{
+      color:#fff;
+      font-size:52px;
+      line-height:1.1;
+      font-weight:400;
+      max-width:720px;
+      margin-bottom:18px;
+    }
+    .hero-flex h1 span{color:var(--flex-gold); font-style:italic; font-weight:300;}
+    .hero-flex p{
+      color: rgba(255,255,255,.72);
+      max-width:680px;
+      font-size:17px;
+      font-weight:300;
+      line-height:1.7;
+    }
+    /* Cards */
+    .seccion-flex-cards{
+      background: var(--flex-bg);
+      padding: 0 12% 110px 12%;
+    }
+    .grid-flex{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:28px;
+      margin-top: -10px;
+    }
+    .card-flex{
+      background: var(--flex-card);
+      border:1px solid rgba(200,176,144,.18);
+      border-top:1px solid var(--flex-gold);
+      padding:36px 32px;
+      text-align:left;
+      transition:.3s;
+    }
+    .card-flex:hover{transform:translateY(-5px); border-color:var(--flex-gold);}
+    .card-flex h3{color:var(--flex-gold); font-size:19px; margin:14px 0 12px 0; font-weight:400;}
+    .card-flex p{color:rgba(255,255,255,.6); font-size:14px; line-height:1.7; font-weight:300;}
+    .card-flex .icon{color:var(--flex-gold); font-size:26px;}
+    
+    /* Footer de sección */
+    .flex-bottom{
+      display:grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap:32px;
+      margin-top:56px;
+    }
+    .box-incluye{
+      border:1px solid rgba(200,176,144,.2);
+      padding:38px;
+    }
+    .box-incluye h4{color:var(--flex-gold); font-family:'Playfair Display'; font-weight:400; font-size:20px; margin-bottom:20px;}
+    .box-incluye li{color:rgba(255,255,255,.75); font-size:14.5px; margin-bottom:14px; list-style:none; position:relative; padding-left:18px;}
+    .box-incluye li::before{content:"—"; position:absolute; left:0; color:var(--flex-gold);}
+
+    .box-cta{
+      background:#F9F7F4;
+      padding:40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .box-cta h4{color:var(--navy); font-size:22px; line-height:1.3; margin-bottom:12px;}
+    .box-cta p{font-size:14px; opacity:.7; margin-bottom:26px;}
+    .box-cta a{background:var(--navy); color:#fff; text-align:center; padding:18px; text-decoration:none; letter-spacing:2px; font-size:11px; text-transform:uppercase; border:1px solid var(--flex-gold);}
+    .box-cta a:hover{background:var(--flex-gold); color:var(--navy);}
+    
+    @media(max-width:900px){
+      .grid-flex, .flex-bottom{grid-template-columns:1fr;}
+      .hero-flex h1{font-size:34px;}
+      .hero-flex{padding: 120px 6% 60px 6%;}
+      .seccion-flex-cards{padding:0 6% 70px 6%;}
+    }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="marca-estudio">
+        <img src="nombre-logo-estudio.webp" alt="RGM">
+        <div class="nombre-estudio">
+            <span class="apellido-principal">RIGANTI, GEILER</span>
+            <span class="apellido-secundario"><span style="font-family: 'Times New Roman', serif; font-style: italic;">&</span> MÁRQUEZ ALLURALDE</span>
+        </div>
+    </a>
+    <nav>
+        <ul>
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#estudio">El Estudio</a></li>
+            <li><a href="index.html#practicas">Prácticas</a></li>
+            <li><a href="division-flex.html" style="color:#C8B090;">División FLEX</a></li>
+            <li><a href="index.html#contacto" class="btn-nav">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero-flex">
+    <div style="position:relative; z-index:2;">
+        <div class="flex-tag">División • Servicio Especializado • GCaaS</div>
+        <h1>RGMA División FLEX <br><span>Flex Counsel</span></h1>
+        <p><strong style="color:#fff;">Fractional General Counsel</strong> — asesoría legal flexible y a la carta para empresas en crecimiento. Un asesor jurídico senior dedicado a tu empresa, sin los costos de un equipo legal interno full-time. Modelo anglosajón ampliamente probado en USA.</p>
+    </div>
+</section>
+
+<section class="seccion-flex-cards">
+    <div class="grid-flex">
+        <div class="card-flex">
+            <div class="icon">↗↙</div>
+            <h3>Flexibilidad</h3>
+            <p>Apoyo legal según demanda. Escala el servicio al alza o a la baja sin compromisos a largo plazo. On-demand.</p>
+        </div>
+        <div class="card-flex">
+            <div class="icon">◧</div>
+            <h3>Escalabilidad</h3>
+            <p>Estructura legal que crece con tu negocio. Desde startup hasta scale-up, acompañándote en cada etapa.</p>
+        </div>
+        <div class="card-flex">
+            <div class="icon">$</div>
+            <h3>Ahorro de Costos</h3>
+            <p>Modelo GCaaS predecible y transparente. Reduce hasta 60% vs. asesoría tradicional full-time. Fee mensual fijo.</p>
+        </div>
+    </div>
+
+    <div class="flex-bottom">
+        <div class="box-incluye">
+            <h4>Incluye:</h4>
+            <ul>
+                <li>Contratos comerciales y revisión legal continua</li>
+                <li>Compliance & gobierno corporativo</li>
+                <li>Negociaciones M&A y due diligence</li>
+                <li>Políticas internas y protección de datos (AAIP)</li>
+            </ul>
+        </div>
+        <div class="box-cta">
+            <h4>¿Listo para incorporar tu General Counsel flexible?</h4>
+            <p>Agenda una consulta estratégica de 30 min sin costo para evaluar tus necesidades legales. Respuesta en 24h.</p>
+            <a href="index.html#contacto">» Agenda tu consulta ahora</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-premium">
+    <div class="bloques-footer-fijo">
+        <div class="columna-footer-fija"><h4>La Firma</h4><p>Estudio boutique nacional con proyección regional. División FLEX.</p></div>
+        <div class="columna-footer-fija"><h4>Áreas Clave</h4><ul><li><a href="index.html#practicas">Startups</a></li><li><a href="#">Creadores</a></li><li><a href="#">Deportivo</a></li><li><a href="division-flex.html">FLEX Counsel</a></li></ul></div>
+        <div class="columna-footer-fija"><h4>Mercosur</h4><p>Red de corresponsalías en principales centros del país y región.</p></div>
+    </div>
+    <div class="copyright-premium"><p>© 2026 Riganti, Geiler & Márquez Alluralde — RGMA División FLEX</p></div>
+</footer>
+
+</body>
+</html>
