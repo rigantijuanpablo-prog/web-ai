@@ -3,149 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RIGANTI, GEILER & MÁRQUEZ ALLURALDE</title>
+<title>RGMA RIGANTI, GEILER & MÁRQUEZ ALLURALDE</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-  <a href="#inicio" class="logo">
-    <img src="logo-rgm.svg" alt="RGMA">
-    <span>RIGANTI, GEILER<br>& MÁRQUEZ ALLURALDE</span>
+  <a href="#inicio" class="marca-estudio">
+    <img src="nombre-logo-estudio.webp" alt="RGMA">
+    <div class="nombre-estudio">
+      <span class="apellido-principal">RGMA RIGANTI, GEILER</span>
+      <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
+    </div>
   </a>
   <nav>
     <ul>
       <li><a href="#inicio">INICIO</a></li>
       <li><a href="#estudio">EL ESTUDIO</a></li>
       <li><a href="#practicas">PRÁCTICAS</a></li>
-      <li><a href="flex.html" class="btn-borde-dorado">ÁREA FLEX</a></li>
-      <li><a href="#contacto" class="btn-borde-blanco">CONTACTO</a></li>
+      <li><a href="flex.html">ÁREA FLEX</a></li>
+      <li><a href="#contacto" class="btn-nav">CONTACTO</a></li>
     </ul>
   </nav>
 </header>
 
-<div class="barra-flotante">
-  <a href="mailto:contacto@rigantigeiler.com">✉</a>
-  <a href="tel:+541143215555">☎</a>
-  <a href="#contacto">◉</a>
+<div class="barra-flotante-contacto">
+  <a href="mailto:contacto@rigantigeiler.com" class="item-flotante"><span>CONTACTO</span>✉</a>
+  <a href="tel:+541143215555" class="item-flotante"><span>LLAMAR</span>☎</a>
+  <a href="#contacto" class="item-flotante"><span>UBICACIÓN</span>◉</a>
 </div>
 
-<!-- HERO -->
-<section id="inicio" class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
+<section id="inicio" class="hero-principal">
+  <video class="hero-video" autoplay muted loop playsinline><source src="hero-acuarela-12s.mp4" type="video/mp4"></video>
+  <div class="hero-overlay"></div>
+  <div class="hero-contenedor-texto">
     <h1>Trayectoria Legal<br>con una Perspectiva<br>de Vanguardia</h1>
-    <a href="#contacto" class="btn-hero">AGENDAR CONSULTA</a>
+    <a href="#contacto" class="btn-premium-final">AGENDAR CONSULTA</a>
   </div>
 </section>
 
-<!-- MANIFIESTO -->
-<section id="estudio" class="manifiesto">
-  <div class="manifiesto-header">
-    <span class="label-dorado">MANIFIESTO</span>
-    <h2>Devolverle a la abogacía<br><i>su carácter artesanal.</i></h2>
-    <div class="linea-dorada"></div>
-  </div>
-  <div class="manifiesto-grid">
-    <div class="manifiesto-texto">
-      <p class="lead">RGMA nace y se consolida con la fusión original de tres estudios jurídicos que, marcados por la vocación de la profesión, buscaron devolver a la actividad jurídica su carácter artesanal de atención personalizada y especializada.</p>
+<section id="estudio">
+  <span style="color:var(--dorado);font-size:11px;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:12px">MANIFIESTO</span>
+  <div class="contenedor-estudio">
+    <div class="texto-estudio">
+      <p>RGMA nace y se consolida con la fusión original de tres estudios jurídicos que, marcados por la vocación de la profesión, buscaron devolver a la actividad jurídica su carácter artesanal de atención personalizada y especializada.</p>
+      <h2 style="font-size:38px;line-height:1.15;margin:10px 0 28px">Devolverle a la abogacía<br><i style="color:var(--dorado);font-weight:300">su carácter artesanal.</i></h2>
       <p>Convencidos de que la ciencia jurídica pierde su identidad y eficacia cuando se la asfixia bajo las grandes estructuras corporativas del mega estudio, donde el cliente suele convertirse en una mera cifra. <strong>En RGMA priorizamos el conocimiento individual, la problemática real y la solución más efectiva.</strong></p>
-      <blockquote>"Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas"</blockquote>
+      <div style="border-left:1.5px solid var(--dorado);padding-left:20px;margin:34px 0;font-family:'Playfair Display';font-style:italic;font-size:20px;color:var(--navy)">"Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas"</div>
       <p>Somos herederos de las tradiciones del clásico "bufete" y aprendimos el arte de la abogacía de nuestros mayores. Sin embargo, al ser una generación joven, conjugamos el saber jurídico tradicional con las nuevas herramientas tecnológicas para responder a la compleja dinámica de los escenarios actuales.</p>
-      <p class="cierre">Lo invitamos a volver a tener a alguien que realmente lo conozca y lo defienda.</p>
     </div>
-    <div class="manifiesto-valores">
-      <div class="valor"><h4>RIGUROSIDAD TÉCNICA</h4><p>Cada dictamen es analizado al máximo detalle.</p></div>
-      <div class="valor"><h4>TRANSICIÓN DIGITAL</h4><p>Guiamos a Pymes en adopción segura de IA.</p></div>
-      <div class="valor"><h4>MÚLTIPLES JURISDICCIONES</h4><p>Soluciones Mercosur y provinciales.</p></div>
-      <div class="valor oscuro"><h4>TRANSPARENCIA</h4><p>Confidencialidad absoluta y ética inquebrantable.</p></div>
+    <div>
+      <div class="tarjeta-valor"><h4>RIGUROSIDAD TÉCNICA</h4><p>Cada dictamen es analizado al máximo detalle.</p></div>
+      <div class="tarjeta-valor"><h4>TRANSICIÓN DIGITAL</h4><p>Guiamos a Pymes en adopción segura de IA.</p></div>
+      <div class="tarjeta-valor"><h4>MÚLTIPLES JURISDICCIONES</h4><p>Soluciones Mercosur y provinciales.</p></div>
+      <div class="tarjeta-valor" style="background:var(--navy);padding:22px"><h4 style="color:var(--dorado)">TRANSPARENCIA</h4><p style="color:rgba(255,255,255,.6)">Confidencialidad absoluta y ética inquebrantable.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PRACTICAS -->
-<section id="practicas" class="practicas">
-  <div class="seccion-titulo-centrado">
+<section id="practicas">
+  <div class="encabezado-seccion">
     <h2>Áreas de Práctica</h2>
-    <div class="linea-dorada-centrada"></div>
+    <div class="linea-decorativa"></div>
     <p>Asesoramiento de vanguardia en tecnología, innovación, salud y ecosistema digital.</p>
   </div>
+  <div class="grid-corporativo">
+    <div class="tarjeta-corporativa visible"><h3><a href="flex.html">Área FLEX - Flex Counsel</a></h3><p>Fractional General Counsel GCaaS - asesoría flexible on-demand sin costo full-time.</p><ul><li>GCaaS mensual</li><li>On-demand</li><li>Hasta 60% ahorro</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Startups y Negocios Digitales</a></h3><p>Acompañamos a fundadores desde el día uno para escalar.</p><ul><li>SAS, SRL y Vesting</li><li>SAFEs y rondas</li><li>Flips y exportación</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Creadores de Contenido</a></h3><p>Negociación y monetización para creadores y agencias.</p><ul><li>Patrocinio e imagen</li><li>YouTube y cobros exterior</li><li>Defensa ante strikes</li></ul></div>
 
-  <div class="grid-practicas">
-    <div class="card-practica dark">
-      <h3>Área FLEX - Flex Counsel</h3>
-      <p>Fractional General Counsel GCaaS - asesoría flexible on-demand sin costo full-time.</p>
-      <ul><li>GCaaS mensual</li><li>On-demand</li><li>Hasta 60% ahorro</li></ul>
-    </div>
-    <div class="card-practica"><h3>Startups y Negocios Digitales</h3><p>Acompañamos a fundadores desde el día uno para escalar.</p><ul><li>SAS, SRL y Vesting</li><li>SAFEs y rondas</li><li>Flips y exportación</li></ul></div>
-    <div class="card-practica"><h3>Creadores de Contenido</h3><p>Negociación y monetización para creadores y agencias.</p><ul><li>Patrocinio e imagen</li><li>YouTube y cobros exterior</li><li>Defensa ante strikes</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Derecho Deportivo</a></h3><p>Contratos, transferencias y regulaciones.</p><ul><li>Fichajes Ley 20.160</li><li>FIFA Solidaridad</li><li>TAS</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Inteligencia Artificial</a></h3><p>Marco legal para algoritmos y automatización.</p><ul><li>Responsabilidad autónoma</li><li>Bases de entrenamiento</li><li>AAIP</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Propiedad Intelectual</a></h3><p>Protección de software y marcas.</p><ul><li>INPI</li><li>DNDA</li><li>DMCA</li></ul></div>
 
-    <div class="card-practica"><h3>Derecho Deportivo</h3><p>Contratos, transferencias y regulaciones.</p><ul><li>Fichajes Ley 20.160</li><li>FIFA Solidaridad</li><li>TAS</li></ul></div>
-    <div class="card-practica"><h3>Inteligencia Artificial</h3><p>Marco legal para algoritmos y automatización.</p><ul><li>Responsabilidad autónoma</li><li>Bases de entrenamiento</li><li>AAIP</li></ul></div>
-    <div class="card-practica"><h3>Propiedad Intelectual</h3><p>Protección de software y marcas.</p><ul><li>INPI</li><li>DNDA</li><li>DMCA</li></ul></div>
-
-    <div class="card-practica salud"><h3>Salud y Amparos</h3><p>Litigios contra obras sociales.</p><ul><li>Alto costo</li><li>Ley 24.901</li><li>Telemedicina</li></ul></div>
-    <div class="card-practica dark real-estate"><h3>Real Estate y Desarrollos</h3><p>Arquitectura jurídica de proyectos inmobiliarios.</p><div class="tags"><span>Fideicomisos</span><span>Tokenización</span><span>Due Diligence</span></div></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Salud y Amparos</a></h3><p>Litigios contra obras sociales.</p><ul><li>Alto costo</li><li>Ley 24.901</li><li>Telemedicina</li></ul></div>
+    <div class="tarjeta-corporativa visible" style="background:var(--navy)"><h3><a href="#" style="color:#fff">Real Estate y Desarrollos</a></h3><p style="color:rgba(255,255,255,.7)">Arquitectura jurídica de proyectos inmobiliarios.</p><ul><li style="color:rgba(255,255,255,.5)">Fideicomisos</li><li style="color:rgba(255,255,255,.5)">Tokenización</li><li style="color:rgba(255,255,255,.5)">Due Diligence</li></ul></div>
   </div>
 </section>
 
-<!-- PROTOCOLO -->
-<section id="protocolo" class="protocolo">
-  <div class="seccion-titulo-centrado">
+<section class="seccion-faq" id="protocolo">
+  <div class="encabezado-seccion">
     <h2>Protocolo de Vinculación</h2>
-    <div class="linea-dorada-centrada"></div>
+    <div class="linea-decorativa"></div>
     <p>Criterios esenciales para el inicio de la representación legal.</p>
   </div>
-  <div class="acordeon">
-    <div class="acordeon-item abierto"><div class="acordeon-header"><h4>1. Modalidad de Trabajo y Auditoría Inicial</h4><span>×</span></div><div class="acordeon-body"><p>No operamos bajo consultas aisladas o trámites puntuales. Todo vínculo profesional inicia con una <strong>Auditoría Diagnóstica Integral</strong>. Evaluamos la viabilidad jurídica, riesgos contingentes y arquitectura societaria para determinar la estrategia más eficiente. Este diagnóstico es el único punto de entrada a nuestros servicios.</p></div></div>
-    <div class="acordeon-item"><div class="acordeon-header"><h4>2. Confidencialidad y Reserva Absoluta</h4><span>+</span></div></div>
-    <div class="acordeon-item"><div class="acordeon-header"><h4>3. Esquema de Honorarios</h4><span>+</span></div></div>
-    <div class="acordeon-item"><div class="acordeon-header"><h4>4. Selección y Admisión de Casos</h4><span>+</span></div></div>
-    <div class="acordeon-item"><div class="acordeon-header"><h4>5. Canales Institucionales</h4><span>+</span></div></div>
+  <div class="contenedor-faq">
+    <div class="acordeon-premium">
+      <details open><summary>1. Modalidad de Trabajo y Auditoría Inicial</summary><div>No operamos bajo consultas aisladas o trámites puntuales. Todo vínculo profesional inicia con una <strong>Auditoría Diagnóstica Integral</strong>. Evaluamos la viabilidad jurídica, riesgos contingentes y arquitectura societaria para determinar la estrategia más eficiente.</div></details>
+      <details><summary>2. Confidencialidad y Reserva Absoluta</summary><div>Todos los casos se tratan bajo estricta confidencialidad profesional.</div></details>
+      <details><summary>3. Esquema de Honorarios</summary><div>Honorarios transparentes y acordados previamente según complejidad.</div></details>
+      <details><summary>4. Selección y Admisión de Casos</summary><div>Evaluamos cada caso para garantizar representación efectiva.</div></details>
+      <details><summary>5. Canales Institucionales</summary><div>Contacto exclusivamente por canales institucionales verificados.</div></details>
+    </div>
   </div>
 </section>
 
-<!-- CARRERA -->
-<section id="carrera" class="carrera">
-  <div class="carrera-bg"></div>
-  <div class="carrera-content">
-    <span class="label-dorado">CARRERA EN RGM</span>
+<section class="seccion-cierre-premium">
+  <div class="contenido-cierre">
+    <span class="subtitulo-cierre">CARRERA EN RGM</span>
     <h2>Únete al Equipo</h2>
     <p>Buscamos profesionales que desafíen los límites de la práctica tradicional.</p>
-    <a href="#contacto" class="btn-borde-blanco">VER OPORTUNIDADES</a>
+    <a href="#contacto" class="btn-premium-borde">VER OPORTUNIDADES</a>
   </div>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="contacto">
-  <div class="seccion-titulo-centrado">
-    <h2>Contacto</h2>
-    <div class="linea-dorada-centrada"></div>
-    <p>Canales institucionales para consultas corporativas.</p>
-  </div>
-  <div class="contacto-grid">
-    <div class="contacto-datos">
-      <div class="dato"><h4>Sede Central</h4><span>Ubicación</span><p>Av. Corrientes 450, Piso 10, CABA</p></div>
-      <div class="dato"><span>Teléfono</span><p>+54 (11) 4321-5555</p></div>
-      <div class="dato"><span>Email</span><p>contacto@rigantigeiler.com</p></div>
+<section id="contacto" style="background:#fff">
+  <div class="encabezado-seccion"><h2>Contacto</h2><div class="linea-decorativa"></div><p>Canales institucionales para consultas corporativas.</p></div>
+  <div class="contenedor-contacto">
+    <div>
+      <div class="bloque-dato" style="margin-bottom:28px"><label style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--dorado)">Sede Central</label><p style="font-weight:600">Av. Corrientes 450, Piso 10, CABA</p><p style="font-size:13px;opacity:.6">Ubicación</p></div>
+      <div class="bloque-dato" style="margin-bottom:28px"><label style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--dorado)">Teléfono</label><p>+54 (11) 4321-5555</p></div>
+      <div class="bloque-dato"><label style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--dorado)">Email</label><p>contacto@rigantigeiler.com</p></div>
     </div>
-    <form class="contacto-form">
-      <div class="form-fila"><input type="text" placeholder="Nombre completo"><input type="email" placeholder="Email corporativo"></div>
-      <div class="form-fila"><input type="text" placeholder="Empresa / Estudio"></div>
-      <div class="form-fila"><textarea placeholder="Describa su consulta"></textarea></div>
-      <button type="submit" class="btn-enviar">ENVIAR REQUERIMIENTO</button>
+    <form class="formulario-contacto">
+      <div class="campo-flotante"><input type="text" placeholder=" " required><label>Nombre completo</label></div>
+      <div class="campo-flotante"><input type="email" placeholder=" " required><label>Email corporativo</label></div>
+      <div class="campo-flotante campo-ancho"><input type="text" placeholder=" "><label>Empresa / Estudio</label></div>
+      <div class="campo-flotante campo-ancho"><textarea placeholder=" "></textarea><label>Describa su consulta</label></div>
+      <button type="submit" class="boton-enviar">ENVIAR REQUERIMIENTO</button>
     </form>
   </div>
 </section>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-col"><h4>LA FIRMA</h4><p>Estudio boutique nacional con proyección regional.</p></div>
-    <div class="footer-col"><h4>ÁREAS CLAVE</h4><ul><li>Startups</li><li>Creadores</li><li>Deportivo</li><li>IA</li><li>IP Digital</li><li>Salud</li><li>Real Estate</li></ul></div>
-    <div class="footer-col"><h4>MERCOSUR</h4><p>Red de corresponsalías en principales centros del país y región.</p></div>
+<footer class="footer-premium">
+  <div class="bloques-footer-fijo">
+    <div class="columna-footer-fija"><h4>LA FIRMA</h4><p>Estudio boutique nacional con proyección regional.</p></div>
+    <div class="columna-footer-fija"><h4>ÁREAS CLAVE</h4><ul><li><a href="#practicas">Startups</a></li><li><a href="#practicas">Creadores</a></li><li><a href="#practicas">Deportivo</a></li><li><a href="#practicas">IA</a></li><li><a href="#practicas">IP Digital</a></li><li><a href="#practicas">Salud</a></li><li><a href="#practicas">Real Estate</a></li></ul></div>
+    <div class="columna-footer-fija"><h4>MERCOSUR</h4><p>Red de corresponsalías en principales centros del país y región.</p></div>
   </div>
+  <div class="copyright-premium"><p>© 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — CABA · MERCOSUR</p></div>
 </footer>
+
+<script>
+// activa animación de tarjetas
+const obs = new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.tarjeta-corporativa').forEach(c=>obs.observe(c));
+</script>
 
 </body>
 </html>
