@@ -717,3 +717,34 @@ a[href="flex.html"]:hover{
 .nav-links a:hover{
   color: #C8B090 !important;
 }
+
+/* FIX CIRCULO PERDIDO */
+header{
+  padding:0 32px !important;
+  gap:20px !important;
+}
+nav{
+  flex:1 !important;
+  justify-content:center !important;
+}
+nav ul{
+  gap:26px !important;
+}
+.right-group{
+  gap:14px !important;
+  margin-left:0 !important;
+}
+.circle-link{
+  width:58px !important;
+  height:58px !important;
+  margin-left:6px !important;
+}
+.circle-link{
+  border:1px solid #C8B090 !important;
+  background:transparent !important;
+  box-shadow:0 0 10px rgba(200,176,144,0.25) !important;
+}
+.circle-invest span:first-child{ color:#E8DCC8 !important; }
+.circle-invest span:last-child{ color:#C8B090 !important; }
+
+  
