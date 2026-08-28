@@ -9,15 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-    <style>
   /* NAV IGUAL A TU CAPTURA */
   header nav ul{ gap:32px !important; align-items:center !important; }
   header nav ul li a{ font-size:12px !important; letter-spacing:2.2px !important; font-weight:500 !important; color:#E8E8E8 !important; }
-
-  /* ESTE ES EL QUE FALTABA - Ilumina INICIO, EL ESTUDIO, PRACTICAS */
   header nav ul li a:hover{ color:#C8B090 !important; }
 
-  /* AREA FLEX - lo dejamos como está */
+  /* AREA FLEX */
   .btn-area-flex{
     border:1px solid #C8B090 !important;
     padding:0 22px !important;
@@ -32,7 +29,7 @@
   }
   .btn-area-flex:hover{ color:#C8B090 !important; background:transparent !important; }
 
-  /* CONTACTO - ahora sí se ilumina y NO desaparece */
+  /* CONTACTO */
   .btn-nav{
     border:1px solid #C8B090 !important;
     padding:0 22px !important;
@@ -46,11 +43,51 @@
     background:transparent !important;
     transition: all 0.3s ease !important;
   }
-  .btn-nav:hover{ 
-    background:#C8B090 !important; 
-    color:#101828 !important; 
+  .btn-nav:hover{ background:#C8B090 !important; color:#101828 !important; }
+
+  /* HEADER QUE SE ACHICA */
+  header{
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    height:84px !important;
   }
-</style>
+  header.shrink{
+    height:62px !important;
+    background:rgba(10,20,16,0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow:0 4px 20px rgba(0,0,0,.3);
+  }
+  header.shrink .marca-estudio img{ height:28px !important; }
+  header.shrink .circle-invest{ width:54px !important; height:54px !important; }
+
+  /* CIRCULO CELESTE */
+  .circle-invest{
+    width:64px; height:64px;
+    border:1px solid #7DD3E0;
+    border-radius:50%;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    background:transparent;
+    box-shadow:0 0 12px rgba(125,211,224,.35), inset 0 0 8px rgba(125,211,224,.15);
+    transition: all 0.4s ease;
+  }
+  .circle-invest span:first-child{
+    font-size:8px; font-weight:700;
+    letter-spacing:1.5px; color:#7DD3E0;
+    display:block; line-height:1;
+  }
+  .circle-invest span:last-child{
+    font-size:6.5px; line-height:1.15;
+    color:#AEE8F0; margin-top:2px;
+    font-family:'Inter', sans-serif; font-weight:500;
+  }
+  .circle-invest:hover{
+    border-color:#B8F0FA;
+    box-shadow:0 0 20px rgba(125,211,224,.6), inset 0 0 12px rgba(125,211,224,.25);
+    transform:scale(1.05);
+  }
+  .circle-link{ margin-left:56px; text-decoration:none; display:inline-flex; align-items:center; }
+    </style>
 </head>
 <body>
 
@@ -60,7 +97,7 @@
     <a href="#contacto" class="item-flotante"><span>UBICACIÓN</span><div class="icono-flotante">◉</div></a>
 </div>
 
-<header>
+<header id="mainHeader">
     <a href="#" class="marca-estudio">
         <img src="nombre-logo-estudio.webp" alt="RGM">
         <div class="nombre-estudio">
@@ -75,6 +112,14 @@
             <li><a href="#practicas">PRÁCTICAS</a></li>
             <li><a href="flex.html" class="btn-area-flex">ÁREA FLEX</a></li>
             <li><a href="#contacto" class="btn-nav">CONTACTO</a></li>
+            <li>
+              <a href="invertirenargentina.html" class="circle-link">
+                <div class="circle-invest">
+                  <span>NEW</span>
+                  <span>Investment<br>in Argentina</span>
+                </div>
+              </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -233,6 +278,15 @@
 <script>
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
 document.querySelectorAll('.tarjeta-corporativa').forEach(c=>obs.observe(c));
+
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('mainHeader');
+  if (window.scrollY > 80) {
+    header.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+  }
+});
 </script>
 </body>
 </html>
