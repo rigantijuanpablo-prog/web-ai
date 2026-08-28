@@ -717,34 +717,24 @@ a[href="flex.html"]:hover{
 .nav-links a:hover{
   color: #C8B090 !important;
 }
-
-/* FIX CIRCULO PERDIDO */
+/* ARREGLO FINAL - 3 COLUMNAS REALES */
 header{
-  padding:0 32px !important;
-  gap:20px !important;
+  display:grid !important;
+  grid-template-columns:auto 1fr auto !important;
+  align-items:center !important;
+  padding:0 24px 0 32px !important;
+}
+.marca-estudio{
+  justify-self:start !important;
 }
 nav{
-  flex:1 !important;
+  flex:none !important;
+  justify-self:center !important;
   justify-content:center !important;
 }
-nav ul{
-  gap:26px !important;
-}
 .right-group{
-  gap:10px !important;
-  margin-left:0 !important;
+  justify-self:end !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
 }
-.circle-link{
-  width:58px !important;
-  height:58px !important;
-  margin-left:6px !important;
-}
-.circle-link{
-  border:1px solid #C8B090 !important;
-  background:transparent !important;
-  box-shadow:0 0 10px rgba(200,176,144,0.25) !important;
-}
-.circle-invest span:first-child{ color:#E8DCC8 !important; }
-.circle-invest span:last-child{ color:#C8B090 !important; }
-
-  
