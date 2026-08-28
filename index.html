@@ -5,15 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RGMA RIGANTI, GEILER & MÁRQUEZ ALLURALDE</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* === PARCHES MODELO FINAL === */
+.btn-flex{
+  border:1px solid #C8B090;
+  padding:9px 20px;
+  background:transparent;
+  border-radius:2px;
+  color:#C8B090 !important;
+  font-size:12px;
+  letter-spacing:2.2px;
+  font-weight:500;
+}
+.btn-flex:hover{ background:rgba(200,176,144,.12); }
+.btn-contacto{
+  border:1px solid rgba(255,255,255,.65);
+  padding:9px 22px;
+  background:#1E293B;
+  border-radius:2px;
+  color:#fff !important;
+  font-size:12px;
+  letter-spacing:2.2px;
+  font-weight:500;
+}
+.btn-contacto:hover{ border-color:#fff; background:#243447; }
+
+/* ACHICAR CONTACTO */
+#contacto .encabezado-seccion{ margin-bottom:28px !important; padding-bottom:0 !important; }
+#contacto .encabezado-seccion .linea-decorativa{ margin:14px auto 0 !important; }
+.contenedor-contacto{ gap:48px !important; padding-top:30px !important; align-items:start !important; }
+.formulario-contacto{ gap:18px !important; }
+.formulario-contacto textarea{ min-height:88px !important; height:88px !important; }
+.boton-enviar{ margin-top:12px !important; padding:18px 32px !important; }
+</style>
 </head>
 <body>
 
 <header>
-  <a href="#inicio" class="marca-estudio">
-    <img src="nombre-logo-estudio.webp" alt="RGMA" style="height:42px">
+  <a href="#inicio" class="marca-estudio" style="gap:18px">
+    <img src="logo-rgma-header.webp" alt="RGMA" style="height:42px;width:auto">
+    <div style="width:1px;height:36px;background:rgba(200,176,144,0.4)"></div>
     <div class="nombre-estudio">
       <span class="apellido-principal">RIGANTI, GEILER</span>
-      <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
+      <span class="apellido-secundario" style="display:flex;align-items:center;gap:6px">
+        <i style="font-family:'Playfair Display',serif;font-style:italic;color:#C8B090;font-size:19px;position:relative;top:-1px">&</i> MÁRQUEZ ALLURALDE
+      </span>
     </div>
   </a>
   <nav>
@@ -21,8 +57,8 @@
       <li><a href="#inicio">INICIO</a></li>
       <li><a href="#estudio">EL ESTUDIO</a></li>
       <li><a href="#practicas">PRÁCTICAS</a></li>
-      <li><a href="flex.html" class="btn-nav">ÁREA FLEX</a></li>
-      <li><a href="#contacto" class="btn-nav">CONTACTO</a></li>
+      <li><a href="flex.html" class="btn-flex">ÁREA FLEX</a></li>
+      <li><a href="#contacto" class="btn-contacto">CONTACTO</a></li>
     </ul>
   </nav>
 </header>
@@ -45,22 +81,14 @@
 </section>
 
 <section id="estudio">
-  <div style="margin-bottom:26px">
-    <span style="color:var(--dorado);font-size:11px;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:10px">NUESTRA ESENCIA</span>
-  </div>
+  <div style="margin-bottom:26px"><span style="color:var(--dorado);font-size:11px;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:10px">NUESTRA ESENCIA</span></div>
   <div class="contenedor-estudio">
     <div class="texto-estudio">
       <p>RGMA nace y se consolida con la fusión original de tres estudios jurídicos que, marcados por la vocación de la profesión, buscaron devolver a la actividad jurídica su carácter artesanal de atención personalizada y especializada.</p>
-      
       <h2 style="font-size:40px;line-height:1.15;margin:8px 0 28px;font-weight:400">Devolverle a la abogacía<br><i style="color:var(--dorado);font-family:'Lora',serif;font-weight:300">su carácter artesanal.</i></h2>
       <div class="linea-decorativa" style="margin:0 0 28px 0"></div>
-
       <p>Convencidos de que la ciencia jurídica pierde su identidad y eficacia cuando se la asfixia bajo las grandes estructuras corporativas del mega estudio, donde el cliente suele convertirse en una mera cifra. <strong>En RGMA priorizamos el conocimiento individual, la problemática real y la solución más efectiva.</strong></p>
-
-      <div style="border-left:2px solid var(--dorado);padding-left:22px;margin:36px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:22px;line-height:1.35;color:var(--navy)">
-        "Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas"
-      </div>
-
+      <div style="border-left:2px solid var(--dorado);padding-left:22px;margin:36px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:22px;line-height:1.35;color:var(--navy)">"Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas"</div>
       <p>Somos herederos de las tradiciones del clásico "bufete" y aprendimos el arte de la abogacía de nuestros mayores. Sin embargo, al ser una generación joven, conjugamos el saber jurídico tradicional con las nuevas herramientas tecnológicas para responder a la compleja dinámica de los escenarios actuales.</p>
       <p><strong>Lo invitamos a volver a tener a alguien que realmente lo conozca y lo defienda.</strong></p>
     </div>
@@ -79,60 +107,22 @@
     <div class="linea-decorativa"></div>
     <p>Asesoramiento de vanguardia en tecnología, innovación, salud y ecosistema digital.</p>
   </div>
-
   <div class="grid-corporativo">
-    <!-- FILA 1 -->
     <div class="tarjeta-corporativa visible" style="background:var(--navy)">
       <h3><a href="flex.html" style="color:var(--dorado)">Área FLEX - Flex Counsel</a></h3>
-      <p style="color:rgba(255,255,255,.75)">Fractional General Counsel GCaaS - asesoría flexible on-demand sin costo full-time.</p>
-      <ul>
-        <li style="color:rgba(255,255,255,.55)">GCaaS mensual</li>
-        <li style="color:rgba(255,255,255,.55)">On-demand</li>
-        <li style="color:rgba(255,255,255,.55)">Hasta 60% ahorro</li>
-      </ul>
+      <p style="color:rgba(255,255,255,.75)">Fractional General Counsel GCaaS - asesoría flexible on-demand.</p>
+      <ul><li style="color:rgba(255,255,255,.55)">GCaaS mensual</li><li style="color:rgba(255,255,255,.55)">On-demand</li><li style="color:rgba(255,255,255,.55)">Hasta 60% ahorro</li></ul>
     </div>
-    <div class="tarjeta-corporativa visible">
-      <h3><a href="#">Startups y Negocios Digitales</a></h3>
-      <p>Acompañamos a fundadores desde el día uno para escalar.</p>
-      <ul><li>SAS, SRL y Vesting</li><li>SAFEs y rondas</li><li>Flips y exportación</li></ul>
-    </div>
-    <div class="tarjeta-corporativa visible">
-      <h3><a href="#">Creadores de Contenido</a></h3>
-      <p>Negociación y monetización para creadores y agencias.</p>
-      <ul><li>Patrocinio e imagen</li><li>YouTube y cobros exterior</li><li>Defensa ante strikes</li></ul>
-    </div>
-
-    <!-- FILA 2 -->
-    <div class="tarjeta-corporativa visible">
-      <h3><a href="#">Derecho Deportivo</a></h3>
-      <p>Contratos, transferencias y regulaciones.</p>
-      <ul><li>Fichajes Ley 20.160</li><li>FIFA Solidaridad</li><li>TAS</li></ul>
-    </div>
-    <div class="tarjeta-corporativa visible">
-      <h3><a href="#">Inteligencia Artificial</a></h3>
-      <p>Marco legal para algoritmos y automatización.</p>
-      <ul><li>Responsabilidad autónoma</li><li>Bases de entrenamiento</li><li>AAIP</li></ul>
-    </div>
-    <div class="tarjeta-corporativa visible">
-      <h3><a href="#">Propiedad Intelectual</a></h3>
-      <p>Protección de software y marcas.</p>
-      <ul><li>INPI</li><li>DNDA</li><li>DMCA</li></ul>
-    </div>
-
-    <!-- FILA 3 -->
-    <div class="tarjeta-corporativa visible">
-      <h3><a href="#">Salud y Amparos</a></h3>
-      <p>Litigios contra obras sociales.</p>
-      <ul><li>Alto costo</li><li>Ley 24.901</li><li>Telemedicina</li></ul>
-    </div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Startups y Negocios Digitales</a></h3><p>Acompañamos a fundadores desde el día uno.</p><ul><li>SAS, SRL y Vesting</li><li>SAFEs y rondas</li><li>Flips y exportación</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Creadores de Contenido</a></h3><p>Negociación y monetización para creadores.</p><ul><li>Patrocinio e imagen</li><li>YouTube y cobros exterior</li><li>Defensa ante strikes</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Derecho Deportivo</a></h3><p>Contratos, transferencias y regulaciones.</p><ul><li>Fichajes Ley 20.160</li><li>FIFA Solidaridad</li><li>TAS</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Inteligencia Artificial</a></h3><p>Marco legal para algoritmos y automatización.</p><ul><li>Responsabilidad autónoma</li><li>Bases de entrenamiento</li><li>AAIP</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Propiedad Intelectual</a></h3><p>Protección de software y marcas.</p><ul><li>INPI</li><li>DNDA</li><li>DMCA</li></ul></div>
+    <div class="tarjeta-corporativa visible"><h3><a href="#">Salud y Amparos</a></h3><p>Litigios contra obras sociales.</p><ul><li>Alto costo</li><li>Ley 24.901</li><li>Telemedicina</li></ul></div>
     <div class="tarjeta-corporativa visible" style="background:var(--navy);grid-column:span 2;text-align:center;padding:50px 36px">
       <h3><a href="#" style="color:#fff">Real Estate y Desarrollos</a></h3>
       <p style="color:rgba(255,255,255,.7);margin:14px auto 18px">Arquitectura jurídica de proyectos inmobiliarios.</p>
-      <ul style="display:flex;gap:28px;justify-content:center">
-        <li style="color:rgba(255,255,255,.5)">Fideicomisos</li>
-        <li style="color:rgba(255,255,255,.5)">Tokenización</li>
-        <li style="color:rgba(255,255,255,.5)">Due Diligence</li>
-      </ul>
+      <ul style="display:flex;gap:28px;justify-content:center"><li style="color:rgba(255,255,255,.5)">Fideicomisos</li><li style="color:rgba(255,255,255,.5)">Tokenización</li><li style="color:rgba(255,255,255,.5)">Due Diligence</li></ul>
     </div>
   </div>
 </section>
@@ -145,17 +135,7 @@
       <details><summary>2. Confidencialidad y Reserva Absoluta</summary><div>Todos los casos se tratan bajo estricta confidencialidad.</div></details>
       <details><summary>3. Esquema de Honorarios</summary><div>Honorarios transparentes según complejidad.</div></details>
       <details><summary>4. Selección y Admisión de Casos</summary><div>Evaluamos cada caso para garantizar representación efectiva.</div></details>
-      <details><summary>5. Canales Institucionales</summary><div>Contacto por canales verificados.</div></details>
     </div>
-  </div>
-</section>
-
-<section class="seccion-cierre-premium">
-  <div class="contenido-cierre">
-    <span class="subtitulo-cierre">CARRERA EN RGM</span>
-    <h2>Únete al Equipo</h2>
-    <p>Buscamos profesionales que desafíen los límites de la práctica tradicional.</p>
-    <a href="#contacto" class="btn-premium-borde">VER OPORTUNIDADES</a>
   </div>
 </section>
 
