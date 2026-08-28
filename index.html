@@ -9,41 +9,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-      /* NAV IGUAL A TU CAPTURA */
-      header nav ul{ gap:32px !important; align-items:center !important; }
-      header nav ul li a{ font-size:12px !important; letter-spacing:2.2px !important; font-weight:500 !important; color:#E8E8E8 !important; }
+    <style>
+  /* NAV IGUAL A TU CAPTURA */
+  header nav ul{ gap:32px !important; align-items:center !important; }
+  header nav ul li a{ font-size:12px !important; letter-spacing:2.2px !important; font-weight:500 !important; color:#E8E8E8 !important; }
 
-      /* AREA FLEX - MISMO TAMAÑO QUE EL RESTO */
-      .btn-area-flex{
-        border:1px solid #C8B090 !important;
-        padding:0 22px !important;
-        height:36px !important;
-        display:inline-flex !important;
-        align-items:center !important;
-        color:#E8DCC8 !important;
-        font-size:12px !important;
-        letter-spacing:2.2px !important;
-        text-decoration:none !important;
-        background:transparent !important;
-      }
-      .btn-area-flex:hover{ color:#C8B090 !important; }
+  /* ESTE ES EL QUE FALTABA - Ilumina INICIO, EL ESTUDIO, PRACTICAS */
+  header nav ul li a:hover{ color:#C8B090 !important; }
 
-      /* CONTACTO - SOLO SE ILUMINA LA PALABRA */
-      .btn-nav{
-        border:1px solid #C8B090 !important;
-        padding:0 22px !important;
-        height:36px !important;
-        display:inline-flex !important;
-        align-items:center !important;
-        color:#E8DCC8 !important;
-        font-size:12px !important;
-        letter-spacing:2.2px !important;
-        text-decoration:none !important;
-        background:transparent !important;
-        transition: all 0.3s ease !important;
-      }
-      .btn-nav:hover{ color:#C8B090 !important; }
-    </style>
+  /* AREA FLEX - lo dejamos como está */
+  .btn-area-flex{
+    border:1px solid #C8B090 !important;
+    padding:0 22px !important;
+    height:36px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    color:#E8DCC8 !important;
+    font-size:12px !important;
+    letter-spacing:2.2px !important;
+    text-decoration:none !important;
+    background:transparent !important;
+  }
+  .btn-area-flex:hover{ color:#C8B090 !important; background:transparent !important; }
+
+  /* CONTACTO - ahora sí se ilumina y NO desaparece */
+  .btn-nav{
+    border:1px solid #C8B090 !important;
+    padding:0 22px !important;
+    height:36px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    color:#E8DCC8 !important;
+    font-size:12px !important;
+    letter-spacing:2.2px !important;
+    text-decoration:none !important;
+    background:transparent !important;
+    transition: all 0.3s ease !important;
+  }
+  .btn-nav:hover{ 
+    background:#C8B090 !important; 
+    color:#101828 !important; 
+  }
+</style>
 </head>
 <body>
 
