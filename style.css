@@ -645,3 +645,7 @@ a[href="flex.html"]:hover{
   color: #101828 !important;
   box-shadow: 0 0 20px rgba(200, 176, 144, 0.6) !important;
 }
+/* Iluminar INICIO, EL ESTUDIO, PRACTICAS */
+.nav-links a:hover{
+  color: #C8B090 !important;
+}
