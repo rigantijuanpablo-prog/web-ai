@@ -628,4 +628,20 @@ textarea{
     margin-top: 30px !important;
     bottom: -20px !important;
   }
+/* Hover para el menú normal */
+.nav-links a:hover{
+  color: #C8B090 !important;
+}
 
+/* Hover para ÁREA FLEX - que solo cambie el color del texto, no que se pinte */
+a[href="flex.html"]:hover{
+  color: #C8B090 !important;
+  background: transparent !important;
+  border-color: #C8B090 !important;
+}
+  /* Arreglo botón CONTACTO */
+.btn-contacto:hover{
+  background: #C8B090 !important;
+  color: #101828 !important;
+  box-shadow: 0 0 20px rgba(200, 176, 144, 0.6) !important;
+}
