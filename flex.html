@@ -113,9 +113,70 @@
       .hero-flex{padding: 120px 6% 60px 6%;}
       .seccion-flex-cards{padding:0 6% 70px 6%;}
     }
+        #preloader-flex{
+  position:fixed;
+  inset:0;
+  background:#102821;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: opacity .8s ease, visibility .8s ease;
+}
+#preloader-flex.oculto{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.preloader-inner{
+  text-align:center;
+  animation: preFadeUp .9s ease forwards;
+}
+.pre-logo{
+  height:52px;
+  width:auto;
+  display:block;
+  margin:0 auto 22px auto;
+  filter: brightness(0) invert(1);
+  opacity:.95;
+}
+.pre-line{
+  width:0;
+  height:1px;
+  background:#D6C3A0;
+  margin:0 auto 14px auto;
+  animation: preLine 1.1s ease .3s forwards;
+}
+.pre-text{
+  display:block;
+  color:#fff;
+  font-family:'Playfair Display', serif;
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  opacity:0;
+  animation: preText .6s ease .8s forwards;
+}
+@keyframes preLine{ to{ width:80px; } }
+@keyframes preText{ from{opacity:0; transform:translateY(6px);} to{opacity:.7; transform:translateY(0);} }
+@keyframes preFadeUp{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
     </style>
 </head>
+    <script>
+  window.addEventListener('load', ()=>{
+    setTimeout(()=>{
+      document.getElementById('preloader-flex').classList.add('oculto');
+    }, 1400); // dura 1.4s como Novoflex
+  });
+</script>
 <body>
+    <div id="preloader-flex">
+  <div class="preloader-inner">
+    <img src="nombre-logo-estudio.webp" alt="RGMA" class="pre-logo">
+    <div class="pre-line"></div>
+    <span class="pre-text">RGMA <i style="color:#D6C3A0;">—</i> ÁREA FLEX</span>
+  </div>
+</div>
 
 <header>
     <a href="index.html" class="marca-estudio">
