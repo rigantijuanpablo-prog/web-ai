@@ -1,189 +1,90 @@
-/* ===== SISTEMA SELLO + PASTILLA RGM - VERSIÓN FINAL ===== */
+:root{
+  --navy:#0A1120;
+  --dorado:#C8B090;
+  --dorado-claro:#E8DCC8;
+  --blanco:#ffffff;
+  --gris:#f5f4f1;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--navy);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
 
-/* SELLO DORADO EN HERO - FIJO, ELEVADO, CON BRILLO EXTERIOR */
-.investment-seal-link{
-  position:absolute;
-  bottom:78px;
-  right:42px;
-  z-index:4;
-  text-decoration:none;
-  transition: all 0.6s cubic-bezier(0.2,0.8,0.2,1);
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:88px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 3.5%;background:rgba(10,17,32,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(200,176,144,0.15);transition:height 0.3s ease;
 }
-.investment-seal{
-  width:124px;
-  height:124px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background: radial-gradient(circle at 35% 35%, #E8DCC8 0%, #C8B090 38%, #A68B6A 72%, #8B7355 100%);
-  box-shadow: 
-    0 0 0 1px rgba(200,176,144,0.5),
-    0 0 20px rgba(200,176,144,0.35),
-    0 0 45px rgba(200,176,144,0.15),
-    0 10px 30px rgba(0,0,0,0.35),
-    inset 0 1px 1px rgba(255,255,255,0.6),
-    inset 0 -1px 1px rgba(0,0,0,0.2);
-}
-.seal-ring{
-  position:absolute;
-  inset:7px;
-  border:1px solid rgba(255,255,255,0.35);
-  border-radius:50%;
-}
-.seal-ring-2{
-  position:absolute;
-  inset:13px;
-  border:1px dashed rgba(255,255,255,0.25);
-  border-radius:50%;
-}
-.seal-ring-3{
-  position:absolute;
-  inset:-6px;
-  border:1px solid rgba(200,176,144,0.35);
-  border-radius:50%;
-  box-shadow: 0 0 20px rgba(200,176,144,0.35);
-  opacity:0.6;
-}
-.seal-content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  line-height:1;
-}
-.seal-year{
-  display:block;
-  font-family:'Inter',sans-serif;
-  font-size:8.5px;
-  letter-spacing:2.5px;
-  color:rgba(13,18,30,0.55);
-  margin-bottom:4px;
-  font-weight:600;
-}
-.seal-new{
-  display:block;
-  font-family:'Playfair Display',serif;
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:2px;
-  color:#0D121E;
-  line-height:1;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
-}
-.seal-text{
-  display:block;
-  font-family:'Inter',sans-serif;
-  font-size:8.2px;
-  letter-spacing:1.2px;
-  line-height:1.35;
-  color:#0D121E;
-  font-weight:600;
-  margin-top:5px;
-  text-transform:uppercase;
-}
-.investment-seal-link:hover{
-  transform: translateY(-3px) scale(1.03);
-}
-.investment-seal-link:hover .investment-seal{
-  box-shadow: 
-    0 0 0 1px rgba(200,176,144,0.7),
-    0 0 28px rgba(200,176,144,0.55),
-    0 0 60px rgba(200,176,144,0.25),
-    0 14px 36px rgba(0,0,0,0.4),
-    inset 0 1px 1px rgba(255,255,255,0.7);
-}
-.investment-seal-link:hover .seal-ring-3{
-  box-shadow: 0 0 30px rgba(200,176,144,0.6), 0 0 50px rgba(200,176,144,0.25);
-  opacity:0.9;
-}
+header.shrink{height:68px}
+.marca-estudio{display:flex;align-items:center;gap:14px}
+.marca-estudio img{height:42px;width:auto}
+.nombre-estudio{display:flex;flex-direction:column;line-height:1}
+.apellido-principal{font-size:11px;letter-spacing:3px;color:#fff;font-weight:500}
+.apellido-secundario{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.6);font-weight:300}
+header nav ul{display:flex;gap:28px;list-style:none}
+header nav a{font-size:10.5px;letter-spacing:2.5px;color:rgba(255,255,255,0.7);font-weight:500}
+header nav a:hover{color:var(--dorado)}
+.right-group{display:flex;align-items:center;gap:14px}
+.btn-area-flex{font-size:10px;letter-spacing:1.5px;color:var(--dorado);border:1px solid rgba(200,176,144,0.35);padding:8px 14px;border-radius:4px}
+.btn-nav{font-size:10px;letter-spacing:2px;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:10px 18px}
 
-/* PASTILLA EN HEADER - CON PUNTO DORADO PULSANTE */
-.investment-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  height:34px;
-  padding:0 16px 0 12px;
-  border:1px solid rgba(200,176,144,0.45);
-  border-radius:24px;
-  background: rgba(13,18,30,0.65);
-  backdrop-filter: blur(8px);
-  text-decoration:none;
-  opacity:0;
-  transform: translateX(15px);
-  pointer-events:none;
-  transition: all 0.5s cubic-bezier(0.2,0.8,0.2,1);
-  white-space:nowrap;
-}
-.pill-dot{
-  width:6px;
-  height:6px;
-  background:#C8B090;
-  border-radius:50%;
-  flex-shrink:0;
-  box-shadow: 0 0 0 0 rgba(200,176,144,0.6);
-  animation: pulseGold 2s infinite;
-}
-.pill-new{
-  font-family:'Inter',sans-serif;
-  font-size:8.5px;
-  font-weight:700;
-  letter-spacing:1.2px;
-  color:#0D121E;
-  background:#C8B090;
-  padding:4px 8px;
-  border-radius:12px;
-  line-height:1;
-}
-.pill-text{
-  font-size:11px;
-  letter-spacing:0.8px;
-  color:#E8DCC8;
-  font-weight:500;
-}
-.investment-pill:hover{
-  background: rgba(200,176,144,0.12);
-  border-color:#C8B090;
-  box-shadow:0 0 20px rgba(200,176,144,0.25);
-  transform: translateX(0) translateY(-1px);
-}
-.investment-pill:hover .pill-new{
-  background:#E8DCC8;
-}
+/* BARRA FLOTANTE */
+.barra-flotante-contacto{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:12px;padding:10px}
+.item-flotante{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:2px;color:var(--navy);background:#fff;border:1px solid rgba(0,0,0,0.08);padding:8px 10px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.icono-flotante{width:28px;height:28px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:12px}
 
-/* ESTADOS AL HACER SCROLL */
-body.pill-visible .investment-pill{
-  opacity:1;
-  transform: translateX(0);
-  pointer-events:auto;
-}
-body.pill-visible .investment-seal-link{
-  opacity:0;
-  transform: translateY(20px) scale(0.9);
-  pointer-events:none;
-}
+/* HERO */
+.hero-principal{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;padding:0 6%;overflow:hidden;background:#0A1120}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.65}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,17,32,0.85) 0%, rgba(10,17,32,0.4) 60%, rgba(10,17,32,0.2) 100%)}
+.hero-contenedor-texto{position:relative;z-index:2;max-width:620px;margin-top:80px}
+.hero-contenedor-texto h1{font-family:'Playfair Display',serif;font-size:56px;line-height:1.05;color:#fff;font-weight:300;margin-bottom:32px}
+.btn-premium-final{display:inline-block;background:var(--dorado);color:#0A1120;padding:18px 36px;font-size:11px;letter-spacing:3px;font-weight:600}
 
-/* ANIMACIÓN PULSO DORADO */
-@keyframes pulseGold{
-  0%{ box-shadow:0 0 0 0 rgba(200,176,144,0.6); }
-  70%{ box-shadow:0 0 0 7px rgba(200,176,144,0); }
-  100%{ box-shadow:0 0 0 0 rgba(200,176,144,0); }
-}
+/* SECCIONES GENERICAS */
+section{padding:90px 6%}
+#estudio > div{display:grid;grid-template-columns:1.2fr 0.8fr;gap:60px;max-width:1300px;margin:0 auto}
+.texto-estudio p{font-family:'Lora',serif;font-size:16px;line-height:1.7;color:#3a4455;margin-bottom:18px}
+.linea-decorativa{width:48px;height:2px;background:var(--dorado)}
+.tarjeta-valor{border-left:1.5px solid rgba(200,176,144,0.4);padding:18px 20px;margin-bottom:16px;background:#faf8f5}
+.tarjeta-valor h4{font-size:10px;letter-spacing:2px;margin-bottom:8px}
+.tarjeta-valor p{font-size:13px;line-height:1.5;color:#5a6575}
+.encabezado-seccion{text-align:center;max-width:700px;margin:0 auto 56px}
+.encabezado-seccion h2{font-family:'Playfair Display',serif;font-size:44px;font-weight:400;margin-bottom:16px}
+.encabezado-seccion .linea-decorativa{margin:0 auto 18px}
+.grid-corporativo{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1300px;margin:0 auto}
+.tarjeta-corporativa{background:#f7f5f1;padding:28px;border:1px solid rgba(0,0,0,0.04);opacity:0;transform:translateY(18px);transition:0.6s}
+.tarjeta-corporativa.visible{opacity:1;transform:translateY(0)}
+.tarjeta-corporativa h3{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:10px}
+.tarjeta-corporativa p{font-size:13px;color:#5a6575;line-height:1.5;margin-bottom:14px}
+.tarjeta-corporativa ul{list-style:none}
+.tarjeta-corporativa li{font-size:11px;color:#7a8595;margin-bottom:6px}
+.acordeon-premium details{border-bottom:1px solid rgba(0,0,0,0.08);padding:22px 0}
+.acordeon-premium summary{font-family:'Playfair Display',serif;font-size:18px;cursor:pointer;list-style:none}
+.contenedor-contacto{display:grid;grid-template-columns:0.8fr 1.2fr;gap:60px;max-width:1100px;margin:0 auto}
+.formulario-contacto{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.campo-flotante{position:relative}
+.campo-flotante.campo-ancho{grid-column:span 2}
+.campo-flotante input,.campo-flotante textarea{width:100%;padding:16px 12px;border:1px solid rgba(0,0,0,0.12);background:#fff;font-size:14px}
+.campo-flotante textarea{min-height:120px}
+.boton-enviar{grid-column:span 2;background:var(--navy);color:#fff;border:none;padding:18px;font-size:11px;letter-spacing:3px;margin-top:10px}
 
-/* RESPONSIVE */
-@media(max-width: 1100px){
-  .investment-seal-link{ right:28px; bottom:68px; }
-  .investment-seal{ width:110px; height:110px; }
-  .seal-new{ font-size:16px; }
-}
-@media(max-width:768px){
-  .investment-seal-link{ 
-    bottom:22px; 
-    right:50%; 
-    transform:translateX(50%);
-  }
-  .investment-seal-link:hover{ transform:translateX(50%) translateY(-2px); }
-  .investment-pill{ display:none; }
-  body.pill-visible .investment-seal-link{ opacity:0; pointer-events:none; }
-}
+/* ===== SISTEMA SELLO + PASTILLA FINAL ===== */
+.investment-seal-link{position:absolute;bottom:78px;right:42px;z-index:4;transition:all 0.6s cubic-bezier(0.2,0.8,0.2,1)}
+.investment-seal{width:124px;height:124px;position:relative;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 35% 35%, #E8DCC8 0%, #C8B090 38%, #A68B6A 72%, #8B7355 100%);box-shadow:0 0 0 1px rgba(200,176,144,0.5),0 0 20px rgba(200,176,144,0.35),0 10px 30px rgba(0,0,0,0.35),inset 0 1px 1px rgba(255,255,255,0.6)}
+.seal-ring{position:absolute;inset:7px;border:1px solid rgba(255,255,255,0.35);border-radius:50%}
+.seal-ring-2{position:absolute;inset:13px;border:1px dashed rgba(255,255,255,0.25);border-radius:50%}
+.seal-ring-3{position:absolute;inset:-6px;border:1px solid rgba(200,176,144,0.35);border-radius:50%;box-shadow:0 0 20px rgba(200,176,144,0.35);opacity:0.6}
+.seal-content{text-align:center;line-height:1;position:relative;z-index:2}
+.seal-year{display:block;font-size:8.5px;letter-spacing:2.5px;color:rgba(13,18,30,0.55);margin-bottom:4px;font-weight:600}
+.seal-new{display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;letter-spacing:2px;color:#0D121E;line-height:1}
+.seal-text{display:block;font-size:8.2px;letter-spacing:1.2px;line-height:1.35;color:#0D121E;font-weight:600;margin-top:5px;text-transform:uppercase}
+.investment-pill{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px 0 12px;border:1px solid rgba(200,176,144,0.45);border-radius:24px;background:rgba(13,18,30,0.65);backdrop-filter:blur(8px);opacity:0;transform:translateX(15px);pointer-events:none;transition:all 0.5s cubic-bezier(0.2,0.8,0.2,1);white-space:nowrap}
+.pill-dot{width:6px;height:6px;background:#C8B090;border-radius:50%;animation:pulseGold 2s infinite}
+.pill-new{font-size:8.5px;font-weight:700;letter-spacing:1.2px;color:#0D121E;background:#C8B090;padding:4px 8px;border-radius:12px;line-height:1}
+.pill-text{font-size:11px;letter-spacing:0.8px;color:#E8DCC8;font-weight:500}
+body.pill-visible .investment-pill{opacity:1;transform:translateX(0);pointer-events:auto}
+body.pill-visible .investment-seal-link{opacity:0;transform:translateY(20px) scale(0.9);pointer-events:none}
+@keyframes pulseGold{0%{box-shadow:0 0 0 0 rgba(200,176,144,0.6)}70%{box-shadow:0 0 0 7px rgba(200,176,144,0)}100%{box-shadow:0 0 0 0 rgba(200,176,144,0)}}
+@media(max-width:768px){.investment-seal-link{bottom:22px;right:50%;transform:translateX(50%)}.investment-pill{display:none}header nav{display:none}#estudio > div{grid-template-columns:1fr}.grid-corporativo{grid-template-columns:1fr}.contenedor-contacto{grid-template-columns:1fr}}
