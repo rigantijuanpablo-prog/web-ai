@@ -173,3 +173,61 @@ section{padding:110px 12%}
 .hero-principal::after{height:120px;clip-path:polygon(0 75%,100% 100%,100% 100%,0 100%)}
 .hero-principal::before{bottom:118px}
 }
+/* PASTILLA EN BARRA - OCULTA AL INICIO */
+.investment-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  height:32px;
+  padding:0 14px;
+  border:1px solid #C8B090;
+  border-radius:20px;
+  background: rgba(200,176,144,0.08);
+  text-decoration:none;
+  opacity:0;
+  transform: translateX(15px);
+  pointer-events:none;
+  transition: all 0.5s cubic-bezier(0.2,0.8,0.2,1);
+  white-space:nowrap;
+}
+.pill-new{
+  font-family:'Playfair Display',serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  color:#C8B090;
+  background: rgba(200,176,144,0.15);
+  padding:2px 6px;
+  border-radius:3px;
+}
+.pill-text{
+  font-size:10px;
+  letter-spacing:1px;
+  color:#E8DCC8;
+  font-weight:500;
+}
+.investment-pill:hover{
+  background:#C8B090;
+  box-shadow:0 0 18px rgba(200,176,144,0.4);
+}
+.investment-pill:hover .pill-new{ background: rgba(13,18,30,0.15); color:#0D121E; }
+.investment-pill:hover .pill-text{ color:#0D121E; }
+
+/* CUANDO SE ACTIVA */
+body.pill-visible .investment-pill{
+  opacity:1;
+  transform: translateX(0);
+  pointer-events:auto;
+}
+body.pill-visible .investment-seal-link{
+  opacity:0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events:none;
+}
+.investment-seal-link{
+  transition: all 0.6s cubic-bezier(0.2,0.8,0.2,1);
+}
+
+@media(max-width:768px){
+  .investment-pill{ display:none; } /* en mobile no aparece pastilla, queda limpio */
+}
