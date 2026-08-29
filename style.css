@@ -18,12 +18,10 @@ header.shrink.marca-estudio img{height:32px}
 .nombre-estudio{display:flex;flex-direction:column;gap:2px;line-height:1}
 .apellido-principal{color:#fff;font-size:15px;letter-spacing:.16em;display:block;font-weight:500;text-transform:uppercase;font-family:'Playfair Display',serif;line-height:1.1}
 .apellido-secundario{color:var(--dorado);font-size:15px;letter-spacing:.12em;display:block;text-transform:uppercase;font-family:'Playfair Display',serif;font-weight:300;line-height:1.1;opacity:0.95}
-
 nav{ flex:1; display:flex; justify-content:center; }
 nav ul{display:flex;list-style:none;gap:32px;align-items:center; margin:0;}
 nav a{color:#E8E8E8;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;font-weight:500;text-decoration:none;position:relative}
 nav a:hover{color:var(--dorado)}
-
 .right-group{ display:flex; align-items:center; gap:18px; flex:0 0 auto; }
 .btn-area-flex,.btn-nav{
   border:1px solid var(--dorado); padding:0 22px; height:36px;
@@ -46,19 +44,20 @@ nav a:hover{color:var(--dorado)}
 .btn-premium-final{display:inline-block;border:1.5px solid var(--dorado);color:#fff;padding:22px 48px;font-size:12px;letter-spacing:3.2px;text-transform:uppercase;font-family:'Playfair Display',serif;font-weight:500;transition:all.3s;text-decoration:none;background:rgba(200,176,144,0.08)}
 .btn-premium-final:hover{background:var(--dorado);color:var(--navy);transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,176,144,0.2)}
 
-/* SELLO ABAJO DERECHA SOBRE DIAGONAL */
+/* SELLO FINAL - SUBIDO + CON BRILLO */
 .barra-flotante-contacto{ top:42%!important; }
-.investment-seal-link{ position:absolute; right:2.5%; bottom:10%; z-index:15; text-decoration:none; }
+.investment-seal-link{ position:absolute; right:2.5%; bottom:16%; z-index:15; text-decoration:none; }
 .investment-seal{ width:148px; height:148px; position:relative; display:flex; align-items:center; justify-content:center; transition:all.4s ease; }
-.seal-content{ width:108px; height:108px; background:#0F172B; border:1px solid #C8B090; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,.45); z-index:3; }
+.seal-content{ width:108px; height:108px; background:#0F172B; border:1px solid #C8B090; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,.45), 0 0 18px rgba(200,176,144,0.25); z-index:3; }
 .seal-year{ font-family:'Playfair Display',serif; font-size:9px; letter-spacing:2px; color:#C8B090; }
 .seal-new{ font-family:'Playfair Display',serif; font-size:26px; font-weight:600; color:#C8B090; line-height:1; margin:2px 0; }
 .seal-text{ font-family:'Inter',sans-serif; font-size:8.5px; line-height:1.15; color:#E8DCC8; }
 .seal-ring,.seal-ring-2,.seal-ring-3{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); border:1px solid #C8B090; border-radius:50%; }
-.seal-ring{ width:126px; height:126px; opacity:0.7; }
-.seal-ring-2{ width:138px; height:138px; opacity:0.32; }
-.seal-ring-3{ width:148px; height:148px; opacity:0.15; }
+.seal-ring{ width:126px; height:126px; opacity:0.85; box-shadow: 0 0 12px rgba(200,176,144,0.35); }
+.seal-ring-2{ width:138px; height:138px; opacity:0.45; box-shadow: 0 0 15px rgba(200,176,144,0.20); }
+.seal-ring-3{ width:148px; height:148px; opacity:0.28; border-color: rgba(200,176,144,0.9); box-shadow: 0 0 20px rgba(200,176,144,0.45), 0 0 35px rgba(200,176,144,0.15); }
 .investment-seal-link:hover.investment-seal{ transform:scale(1.07); }
+.investment-seal-link:hover.seal-ring-3{ box-shadow: 0 0 28px rgba(200,176,144,0.65), 0 0 45px rgba(200,176,144,0.25); }
 
 /* SECCIONES */
 section{padding:110px 12%}
@@ -74,19 +73,18 @@ section{padding:110px 12%}
 .tarjeta-valor p{font-size:14.5px;line-height:1.7}
 #practicas{background:var(--fondo)}
 .grid-corporativo{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.tarjeta-corporativa{background:#F9F7F4;border:none;border-top:1px solid rgba(200,176,144,.4);box-shadow:0 10px 40px rgba(13,18,30,.04);padding:36px;opacity:0;transform:translateY(28px);transition:all.8s ease,transform.4s ease,box-shadow.4s ease}
+.tarjeta-corporativa{background:#F9F7F4;border-top:1px solid rgba(200,176,144,.4);box-shadow:0 10px 40px rgba(13,18,30,.04);padding:36px;opacity:0;transform:translateY(28px);transition:all.8s ease,transform.4s ease,box-shadow.4s ease}
 .tarjeta-corporativa.visible{opacity:1;transform:translateY(0)}
 .tarjeta-corporativa:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(13,18,30,.08)}
-.tarjeta-corporativa:hover h3 a{color:var(--dorado)}
 .tarjeta-corporativa h3 a{font-size:17px;color:var(--navy);text-decoration:none;transition:color.3s}
+.tarjeta-corporativa:hover h3 a{color:var(--dorado)}
 .tarjeta-corporativa p{font-size:14px;margin:14px 0 18px 0;line-height:1.7}
 .tarjeta-corporativa ul{list-style:none}
 .tarjeta-corporativa li{position:relative;padding-left:18px;font-size:13px;margin-bottom:10px;line-height:1.5}
 .tarjeta-corporativa li::before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--dorado)}
 .tarjeta-corporativa.destacada{background:var(--navy);grid-column:span 3;text-align:center;padding:60px}
 .tarjeta-corporativa.destacada h3 a,.tarjeta-corporativa.destacada p{color:#fff!important}
-.tarjeta-corporativa.destacada ul li{color:rgba(255,255,255,.6)!important;justify-content:center;padding-left:0}
-.tarjeta-corporativa.destacada ul li::before{display:none}
+.tarjeta-corporativa.destacada ul li{color:rgba(255,255,255,.6)!important}
 
 /* FAQ */
 .seccion-faq{ background: var(--fondo); border-top: 1px solid rgba(13,18,30,.04); }
@@ -117,7 +115,6 @@ section{padding:110px 12%}
 .campo-ancho{ grid-column:span 2; }
 .bloque-dato{ margin-bottom:28px; }
 .bloque-dato label{ display:block; margin-bottom:10px; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--dorado); }
-.bloque-dato p{ line-height:1.6; }
 .campo-flotante{ position:relative; display:block; width:100%; }
 .campo-flotante input,.campo-flotante textarea{
   display:block; width:100%; border:none; border-bottom:1.5px solid #C8B090;
@@ -130,17 +127,12 @@ section{padding:110px 12%}
 .campo-flotante textarea:focus + label,.campo-flotante textarea:not(:placeholder-shown) + label{
   top:-12px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#C8B090;
 }
-.campo-flotante input:placeholder-shown + label,.campo-flotante textarea:placeholder-shown + label{
-  top:22px; font-size:14px; letter-spacing:0; text-transform:none; color:#a0aec0;
-}
-.campo-flotante input:focus,.campo-flotante textarea:focus{ border-bottom-color:#0D121E; }
 .boton-enviar{
   grid-column:span 2; width:100%; background:transparent; border:1.5px solid #C8B090; color:#0D121E;
   padding:22px 40px; margin-top:16px; letter-spacing:3px; text-transform:uppercase; font-size:12px;
   font-family:'Playfair Display',serif; cursor:pointer; transition:all.3s ease;
 }
 .boton-enviar:hover{ background:#0D121E; color:#C8B090; transform:translateY(-2px); }
-form hr,.divisor,.separador{ display:none; }
 
 /* FOOTER */
 .footer-premium{background:var(--navy);padding:90px 12% 40px 12%;border-top:1px solid rgba(200,176,144,.15)}
@@ -164,22 +156,20 @@ form hr,.divisor,.separador{ display:none; }
 /* RESPONSIVE */
 @media(max-width:1024px){.contenedor-estudio,.contenedor-contacto,.bloques-footer-fijo{grid-template-columns:1fr}.grid-corporativo{grid-template-columns:1fr 1fr}.tarjeta-corporativa.destacada{grid-column:span 2}}
 @media(max-width:768px){
-  header{padding:12px 5%; justify-content:space-between;}
-  header img{max-width:150px}
+  header{padding:12px 5%}
   header nav{ display:none; }
- .hero-contenedor-texto{margin:0 6%; padding-top:8vh; padding-bottom:100px; transform:none;}
- .hero-contenedor-texto h1{font-size:32px; line-height:1.2;}
- .btn-premium-final{width:fit-content; min-width:220px; padding:16px 32px; margin-top:35px; display:inline-flex; justify-content:center;}
+.hero-contenedor-texto{margin:0 6%; padding-top:8vh; padding-bottom:100px; transform:none;}
+.hero-contenedor-texto h1{font-size:32px; line-height:1.2;}
+.btn-premium-final{width:fit-content; min-width:220px; padding:16px 32px; margin-top:35px; display:inline-flex; justify-content:center;}
   section{padding:80px 6%}
-  #contacto{display:block}
- .barra-flotante-contacto{display:none}
- .investment-seal-link{ right:5%; bottom:12%; }
- .investment-seal{ width:110px; height:110px; }
- .seal-content{ width:82px; height:82px; }
- .seal-new{ font-size:19px; }
- .seal-ring{ width:96px; height:96px; }
- .seal-ring-2{ width:104px; height:104px; }
- .seal-ring-3{ width:112px; height:112px; }
- .hero-principal::after{height:120px;clip-path:polygon(0 75%,100% 100%,100% 100%,0 100%)}
- .hero-principal::before{bottom:118px}
+.barra-flotante-contacto{display:none}
+.investment-seal-link{ right:5%; bottom:18%; }
+.investment-seal{ width:110px; height:110px; }
+.seal-content{ width:82px; height:82px; }
+.seal-new{ font-size:19px; }
+.seal-ring{ width:96px; height:96px; }
+.seal-ring-2{ width:104px; height:104px; }
+.seal-ring-3{ width:112px; height:112px; }
+.hero-principal::after{height:120px;clip-path:polygon(0 75%,100% 100%,100% 100%,0 100%)}
+.hero-principal::before{bottom:118px}
 }
