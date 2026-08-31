@@ -196,32 +196,164 @@
             </tbody></table>
         </div>
     </section>
+<!-- ================== ÁREAS - SLIDER LENTO ================== -->
+<section id="areas" class="bg-[#0A1931] py-24 relative overflow-hidden">
+<style>
+.area-wrapper{max-width:1280px;margin:0 auto;position:relative}
+.area-slide{display:none;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:center;padding:0 40px;animation:fadeArea 0.8s ease}
+.area-slide.active{display:grid}
+@keyframes fadeArea{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.area-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);padding:40px;backdrop-filter:blur(8px)}
+.area-dot{width:32px;height:2px;background:rgba(255,255,255,0.18);cursor:pointer;transition:all 0.5s}
+.area-dot.active{background:#C8B090;width:52px}
+@media(max-width:1024px){.area-slide{grid-template-columns:1fr;gap:40px}}
+</style>
 
-    <!-- PESCA DETALLE -->
-    <section id="pesca" class="bg-rgm-dark text-white py-28">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-[10px] uppercase tracking-[0.35em] text-rgm-gold font-semibold block mb-6">03 — Exclusivo RGM</span>
-                <h2 class="font-serif text-[38px] md:text-[44px] font-light leading-[0.95] mb-6">Pesca: la última<br>frontera RIGI que<br>nadie mira.</h2>
-                <p class="text-gray-400 text-[14px] leading-relaxed max-w-md mb-8">SPVs pesqueros con cuota ITQ transferible, JV con armadores locales y plantas RIGI Mar del Plata / Madryn con 0% retenciones.</p>
-                <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
-                    <div><div class="font-serif text-2xl text-rgm-gold">USD 2.1B</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Export 2024</div></div>
-                    <div><div class="font-serif text-2xl text-rgm-gold">0%</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Retenciones RIGI</div></div>
-                    <div><div class="font-serif text-2xl text-rgm-gold">ITQ</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Cuota</div></div>
-                </div>
-            </div>
-            <div class="bg-white/5 border border-white/10 p-10">
-                <h3 class="font-serif text-lg mb-8">Estructura tipo Pesca SPV</h3>
-                <div class="space-y-6 text-[12px]">
-                    <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Vehículo</span><span>S.A.U. + Fideicomiso Cuota</span></div>
-                    <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Cuota</span><span>Langostino / Merluza</span></div>
-                    <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Planta</span><span class="text-rgm-gold">RIGI 30 años</span></div>
-                    <div class="flex justify-between"><span class="text-gray-400">Salida</span><span>Venta cuota + M&A</span></div>
-                </div>
-                <a href="#contacto" class="mt-10 block text-center bg-rgm-gold text-[#0A1931] text-[10px] uppercase tracking-[0.2em] font-bold py-4 hover:bg-white transition-all">Solicitar Teaser Pesca</a>
-            </div>
-        </div>
-    </section>
+<!-- 01 ENERGIA -->
+<div class="area-wrapper area-slide active" data-area="energia">
+  <div>
+    <span class="text-[10px] uppercase tracking-[0.35em] text-[#C8B090] font-semibold block mb-6">01 — ÁREAS / ENERGÍA</span>
+    <h2 class="font-serif text-[38px] md:text-[46px] font-light leading-[0.95] text-white mb-6">Energía: Vaca Muerta<br>con RIGI 30 años.</h2>
+    <p class="text-gray-400 text-[13.5px] leading-relaxed max-w-md mb-8">SPV energético con libre disponibilidad cambiaria, midstream propio y contratos de exportación en USD. El corazón del RIGI.</p>
+    <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+      <div><div class="font-serif text-2xl text-[#C8B090]">30 años</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Estabilidad RIGI</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">100%</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Divisas Libres</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">USD 2B</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Mínimo RIGI</div></div>
+    </div>
+  </div>
+  <div class="area-card">
+    <h3 class="font-serif text-[18px] text-white mb-8">Estructura tipo Energía SPV</h3>
+    <div class="space-y-6 text-[12px]">
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Vehículo</span><span class="text-white">S.A.U. + RIGI</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Activo</span><span class="text-white">Bloque VM / Gasoducto</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Beneficio</span><span class="text-[#C8B090]">0% derechos exportación</span></div>
+      <div class="flex justify-between"><span class="text-gray-400">Salida</span><span class="text-white">M&A / IPO</span></div>
+    </div>
+    <a href="#contacto" class="mt-10 block text-center bg-[#C8B090] text-[#0A1931] text-[10px] uppercase tracking-[0.2em] font-bold py-4">Solicitar Teaser Energía</a>
+  </div>
+</div>
+
+<!-- 02 AGRO -->
+<div class="area-wrapper area-slide" data-area="agro">
+  <div>
+    <span class="text-[10px] uppercase tracking-[0.35em] text-[#C8B090] font-semibold block mb-6">02 — ÁREAS / AGRO</span>
+    <h2 class="font-serif text-[38px] md:text-[46px] font-light leading-[0.95] text-white mb-6">Agro: de Delaware<br>a Rosario en USD.</h2>
+    <p class="text-gray-400 text-[13.5px] leading-relaxed max-w-md mb-8">Fideicomisos agrícolas, acopio en zona portuaria y forward con cobertura. Due diligence 48hs y blanqueo Ley 27.743.</p>
+    <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+      <div><div class="font-serif text-2xl text-[#C8B090]">48M Tn</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Soja 24/25</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">Fideicomiso</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Vehículo</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">USD</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Renta dolarizada</div></div>
+    </div>
+  </div>
+  <div class="area-card">
+    <h3 class="font-serif text-[18px] text-white mb-8">Estructura tipo Agro SPV</h3>
+    <div class="space-y-6 text-[12px]">
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Vehículo</span><span class="text-white">Fideicomiso + S.R.L.</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Activo</span><span class="text-white">Campo / Silos / Puerto</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Beneficio</span><span class="text-[#C8B090]">Blanqueo + Renta</span></div>
+      <div class="flex justify-between"><span class="text-gray-400">Salida</span><span class="text-white">Venta + Lease</span></div>
+    </div>
+    <a href="#contacto" class="mt-10 block text-center bg-[#C8B090] text-[#0A1931] text-[10px] uppercase tracking-[0.2em] font-bold py-4">Solicitar Teaser Agro</a>
+  </div>
+</div>
+
+<!-- 03 MINERIA -->
+<div class="area-wrapper area-slide" data-area="mineria">
+  <div>
+    <span class="text-[10px] uppercase tracking-[0.35em] text-[#C8B090] font-semibold block mb-6">03 — ÁREAS / MINERÍA</span>
+    <h2 class="font-serif text-[38px] md:text-[46px] font-light leading-[0.95] text-white mb-6">Minería: Litio<br>triángulo global.</h2>
+    <p class="text-gray-400 text-[13.5px] leading-relaxed max-w-md mb-8">Jujuy, Salta, Catamarca. Regalías estables, RIGI y off-take Asia. 55% de reservas mundiales de litio.</p>
+    <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+      <div><div class="font-serif text-2xl text-[#C8B090]">55%</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Litio mundial</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">RIGI</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">0% Retenciones</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">Off-take</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Contrato USD</div></div>
+    </div>
+  </div>
+  <div class="area-card">
+    <h3 class="font-serif text-[18px] text-white mb-8">Estructura tipo Minería SPV</h3>
+    <div class="space-y-6 text-[12px]">
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Vehículo</span><span class="text-white">S.A.U. Minera + RIGI</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Activo</span><span class="text-white">Salar Jujuy / Salta</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Beneficio</span><span class="text-[#C8B090]">Regalías fijas</span></div>
+      <div class="flex justify-between"><span class="text-gray-400">Salida</span><span class="text-white">Off-take + M&A</span></div>
+    </div>
+    <a href="#contacto" class="mt-10 block text-center bg-[#C8B090] text-[#0A1931] text-[10px] uppercase tracking-[0.2em] font-bold py-4">Solicitar Teaser Minería</a>
+  </div>
+</div>
+
+<!-- 04 PESCA - TU EJEMPLO ORIGINAL -->
+<div class="area-wrapper area-slide" data-area="pesca">
+  <div>
+    <span class="text-[10px] uppercase tracking-[0.35em] text-[#C8B090] font-semibold block mb-6">04 — EXCLUSIVO RGMA</span>
+    <h2 class="font-serif text-[38px] md:text-[46px] font-light leading-[0.95] text-white mb-6">Pesca: la última<br>frontera RIGI que<br>nadie mira.</h2>
+    <p class="text-gray-400 text-[13.5px] leading-relaxed max-w-md mb-8">SPVs pesqueros con cuota ITQ transferible, JV con armadores locales y plantas RIGI Mar del Plata / Madryn con 0% retenciones.</p>
+    <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+      <div><div class="font-serif text-2xl text-[#C8B090]">USD 2.1B</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Export 2024</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">0%</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Retenciones RIGI</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">ITQ</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Cuota</div></div>
+    </div>
+  </div>
+  <div class="area-card">
+    <h3 class="font-serif text-[18px] text-white mb-8">Estructura tipo Pesca SPV</h3>
+    <div class="space-y-6 text-[12px]">
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Vehículo</span><span class="text-white">S.A.U. + Fideicomiso Cuota</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Cuota</span><span class="text-white">Langostino / Merluza / Calamar</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Planta</span><span class="text-[#C8B090]">RIGI 30 años</span></div>
+      <div class="flex justify-between"><span class="text-gray-400">Salida</span><span class="text-white">Venta cuota + M&A</span></div>
+    </div>
+    <a href="#contacto" class="mt-10 block text-center bg-[#C8B090] text-[#0A1931] text-[10px] uppercase tracking-[0.2em] font-bold py-4">Solicitar Teaser Pesca</a>
+  </div>
+</div>
+
+<!-- 05 LOGISTICA -->
+<div class="area-wrapper area-slide" data-area="logistica">
+  <div>
+    <span class="text-[10px] uppercase tracking-[0.35em] text-[#C8B090] font-semibold block mb-6">05 — ÁREAS / LOGÍSTICA</span>
+    <h2 class="font-serif text-[38px] md:text-[46px] font-light leading-[0.95] text-white mb-6">Logística: hidrovía<br>y puertos RIGI.</h2>
+    <p class="text-gray-400 text-[13.5px] leading-relaxed max-w-md mb-8">Terminales en Río Paraná, depósitos fiscales y flota. 80% del comercio exterior argentino sale por agua.</p>
+    <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+      <div><div class="font-serif text-2xl text-[#C8B090]">80%</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Comercio por agua</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">RIGI</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Puertos</div></div>
+      <div><div class="font-serif text-2xl text-[#C8B090]">ZF LP</div><div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Zona Franca</div></div>
+    </div>
+  </div>
+  <div class="area-card">
+    <h3 class="font-serif text-[18px] text-white mb-8">Estructura tipo Logística SPV</h3>
+    <div class="space-y-6 text-[12px]">
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Vehículo</span><span class="text-white">S.A. + Concesión</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Activo</span><span class="text-white">Puerto / Depósito / Flota</span></div>
+      <div class="flex justify-between border-b border-white/10 pb-4"><span class="text-gray-400">Beneficio</span><span class="text-[#C8B090]">Canon + RIGI</span></div>
+      <div class="flex justify-between"><span class="text-gray-400">Salida</span><span class="text-white">Canon + Venta</span></div>
+    </div>
+    <a href="#contacto" class="mt-10 block text-center bg-[#C8B090] text-[#0A1931] text-[10px] uppercase tracking-[0.2em] font-bold py-4">Solicitar Teaser Logística</a>
+  </div>
+</div>
+
+<!-- DOTS NAVEGACION -->
+<div class="flex gap-3 justify-center mt-16">
+  <div class="area-dot active" onclick="goArea(0)"></div>
+  <div class="area-dot" onclick="goArea(1)"></div>
+  <div class="area-dot" onclick="goArea(2)"></div>
+  <div class="area-dot" onclick="goArea(3)"></div>
+  <div class="area-dot" onclick="goArea(4)"></div>
+</div>
+
+<script>
+let areaCurrent=0;
+const areaSlides=document.querySelectorAll('.area-slide');
+const areaDots=document.querySelectorAll('.area-dot');
+function goArea(n){
+  areaSlides[areaCurrent].classList.remove('active');
+  areaDots[areaCurrent].classList.remove('active');
+  areaCurrent=n;
+  areaSlides[areaCurrent].classList.add('active');
+  areaDots[areaCurrent].classList.add('active');
+  document.getElementById('areas').scrollIntoView({behavior:'smooth', block:'start'});
+}
+// Auto-slide lento cada 7 segundos
+setInterval(()=>{goArea((areaCurrent+1)%areaSlides.length)}, 7000);
+</script>
+</section>
 
     <!-- RIGI -->
     <section id="rigi" class="bg-[#f8f6f2] py-28"><div class="max-w-7xl mx-auto px-6">
