@@ -7,60 +7,126 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-       .font-serif { font-family: 'Playfair Display', serif; }
-       .bg-rgm-dark { background-color: #101828; }
-       .text-rgm-gold { color: #C8B090; }
-       .border-rgm-gold { border-color: #C8B090; }
-       .bg-rgm-gold { background-color: #C8B090; }
-        /* PRELOAD PREMIUM FIX */
-        #rgm-preload{position:fixed;inset:0;z-index:99999;width:100vw;height:100dvh;background:#101828;overflow:hidden;transition:opacity 1s ease}
+        body { font-family: 'Inter', sans-serif; background:#fcfcfc }
+      .font-serif { font-family: 'Playfair Display', serif; }
+      .bg-rgm-dark { background-color: #0A1931; }
+      .text-rgm-gold { color: #C8B090; }
+      .border-rgm-gold { border-color: #C8B090; }
+      .bg-rgm-gold { background-color: #C8B090; }
+
+        /* PREMIUM CINEMATIC PRELOAD */
+        #rgm-preload{position:fixed;inset:0;z-index:99999;background:#0A1931;overflow:hidden;transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1)}
         #rgm-preload.hide{opacity:0;pointer-events:none;visibility:hidden}
-       .rgm-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.9s ease;display:flex;align-items:center;justify-content:center;background:#101828}
-       .rgm-slide.active{opacity:1}
-       .rgm-slide img{width:100vw;height:100dvh;object-fit:cover;object-position:center;display:block}
-       .rgm-slide.logo img{object-fit:contain;padding:5vw;background:#101828}
-       .rgm-label{position:absolute;bottom:8vh;left:50%;transform:translateX(-50%);background:rgba(16,24,40,0.9);border:1px solid #C8B090;color:#C8B090;padding:10px 24px;font-size:11px;letter-spacing:3px;text-transform:uppercase;white-space:nowrap;z-index:10;backdrop-filter:blur(6px)}
-       .rgm-progress{position:absolute;bottom:0;left:0;height:3px;background:#C8B090;width:0%;z-index:30;transition:width 0.1s linear}
-       .rgm-skip{position:absolute;top:22px;right:22px;z-index:30;color:#C8B090;border:1px solid rgba(200,176,144,0.5);padding:8px 16px;font-size:10px;letter-spacing:2px;background:rgba(0,0,0,0.4);cursor:pointer}
-       .rgm-slide::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center, transparent 60%, rgba(16,24,40,0.5) 100%);pointer-events:none}
+      .rgm-slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity 1.2s ease}
+      .rgm-slide.active{opacity:1;pointer-events:auto}
+      .rgm-slide.img-wrap{position:absolute;inset:-8%;overflow:hidden;transform:scale(1);transition:transform 8s cubic-bezier(0.16,1,0.3,1)}
+      .rgm-slide.active.img-wrap{transform:scale(1.08)}
+      .rgm-slide img{width:100%;height:100%;object-fit:cover;filter:brightness(0.65) contrast(1.1) saturate(0.75) sepia(0.12)}
+      .rgm-slide::before{content:'';position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at 50% 45%, rgba(10,25,49,0.1) 0%, rgba(10,25,49,0.4) 60%, rgba(10,25,49,0.92) 100%), linear-gradient(0deg, rgba(10,25,49,0.95) 0%, transparent 30%, transparent 70%, rgba(10,25,49,0.3) 100%)}
+      .rgm-slide::after{content:'';position:absolute;inset:0;z-index:3;opacity:0.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");pointer-events:none}
+      .rgm-content{position:absolute;z-index:5;left:50%;top:54%;transform:translate(-50%,-50%);text-align:center;width:92%;max-width:860px}
+      .rgm-eyebrow{color:#C8B090;font-size:10px;letter-spacing:5px;text-transform:uppercase;opacity:0;transform:translateY(24px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s;display:block;margin-bottom:20px;font-weight:500}
+      .rgm-title{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(30px,5.5vw,58px);font-weight:300;line-height:1.05;letter-spacing:-1px;opacity:0;transform:translateY(36px);transition:all 1.1s cubic-bezier(0.16,1,0.3,1) 0.6s}
+      .rgm-title em{color:#C8B090;font-style:italic;font-weight:400}
+      .rgm-line{width:0;height:1px;background:linear-gradient(90deg, transparent, #C8B090, transparent);margin:30px auto;transition:width 1.4s ease 1s}
+      .rgm-sub{color:rgba(255,255,255,0.55);font-size:11px;letter-spacing:3.5px;text-transform:uppercase;opacity:0;transform:translateY(20px);transition:all 0.8s ease 1.2s;line-height:1.6}
+      .rgm-slide.active.rgm-eyebrow,.rgm-slide.active.rgm-title,.rgm-slide.active.rgm-sub{opacity:1;transform:translateY(0)}
+      .rgm-slide.active.rgm-line{width:100px}
+      .rgm-progress-wrap{position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(200,176,144,0.12);z-index:10}
+      .rgm-progress{height:100%;background:linear-gradient(90deg, #C8B090, #e8dcc8);width:0%;box-shadow:0 0 10px rgba(200,176,144,0.5)}
+      .rgm-counter{position:absolute;bottom:36px;right:36px;z-index:10;color:rgba(200,176,144,0.8);font-size:11px;letter-spacing:4px;font-weight:300}
+      .rgm-skip{position:absolute;top:36px;right:36px;z-index:10;color:rgba(255,255,255,0.4);font-size:10px;letter-spacing:3.5px;background:none;border:none;border-bottom:1px solid rgba(200,176,144,0.2);padding:0 0 6px 0;cursor:pointer;transition:all 0.3s;text-transform:uppercase}
+      .rgm-skip:hover{color:#C8B090;border-color:#C8B090}
+      .rgm-logo-final img{width:78vw;max-width:540px;height:auto;margin:0 auto 42px;display:block;object-fit:contain;filter:brightness(1.05)}
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="antialiased">
 
-    <!-- PRELOAD 7 IMAGENES - 100% PANTALLA -->
+    <!-- PRELOAD CINEMATIC PREMIUM 7 IMAGENES -->
     <div id="rgm-preload">
-        <div class="rgm-progress" id="rgm-progress"></div>
-        <button class="rgm-skip" onclick="skipPreload()">SKIP INTRO →</button>
+        <div class="rgm-progress-wrap"><div class="rgm-progress" id="rgm-progress"></div></div>
+        <div class="rgm-counter" id="rgm-counter">01 — 07</div>
+        <button class="rgm-skip" onclick="skipPreload()">Skip Intro</button>
 
-        <div class="rgm-slide active"><img src="pampa.jpg" alt="Pampa Humeda"><div class="rgm-label">01 — PAMPA HÚMEDA • 48% AGRO EXPORT</div></div>
-        <div class="rgm-slide"><img src="hornocal.webp" alt="Hornocal Litio"><div class="rgm-label">02 — HORNOCAL • 3RA RESERVA MUNDIAL DE LITIO</div></div>
-        <div class="rgm-slide"><img src="rosario.jpg" alt="Rosario Hidrovia"><div class="rgm-label">03 — ROSARIO • HIDROVÍA • 80% GRANOS</div></div>
-        <div class="rgm-slide"><img src="pesca.webp" alt="Pesca Altamar"><div class="rgm-label">04 — PESCA ALTAMAR • ZEE 200MN • ITQ 200.000 TON</div></div>
-        <div class="rgm-slide"><img src="vaca-muerta.webp" alt="Vaca Muerta Offshore"><div class="rgm-label">05 — VACA MUERTA • OFFSHORE PATAGONIA</div></div>
-        <div class="rgm-slide"><img src="puerto-madero.webp" alt="Puerto Madero"><div class="rgm-label">06 — PUERTO MADERO • WHERE INVESTMENT LANDS</div></div>
-        <div class="rgm-slide logo"><img src="argentina-desk.jpg" alt="RIGANTI GEILER MARQUEZ ALLURALDE ARGENTINA DESK"></div>
+        <div class="rgm-slide active">
+            <div class="img-wrap"><img src="pampa.jpg" alt="Pampa Humeda" onerror="this.parentElement.style.background='#0A1931'"></div>
+            <div class="rgm-content">
+                <span class="rgm-eyebrow">Argentina Investment Desk • Agro</span>
+                <h2 class="rgm-title">Pampa <em>Húmeda</em><br>48% del agro export</h2>
+                <div class="rgm-line"></div>
+                <span class="rgm-sub">Soja • Trigo • Maíz • 720 Has • Logística Rosario 250KM</span>
+            </div>
+        </div>
+
+        <div class="rgm-slide">
+            <div class="img-wrap"><img src="hornocal.webp" alt="Hornocal Litio"></div>
+            <div class="rgm-content">
+                <span class="rgm-eyebrow">Jujuy • 3ra Reserva Mundial</span>
+                <h2 class="rgm-title">Hornocal <em>Litio</em><br>14 colores • 4.350 msnm</h2>
+                <div class="rgm-line"></div>
+                <span class="rgm-sub">Salmuera rica 600-900 mg/L • Cuenca endorreica Puna</span>
+            </div>
+        </div>
+
+        <div class="rgm-slide">
+            <div class="img-wrap"><img src="rosario.jpg" alt="Rosario Hidrovia"></div>
+            <div class="rgm-content">
+                <span class="rgm-eyebrow">Santa Fe • Hidrovía Paraná-Paraguay</span>
+                <h2 class="rgm-title">Rosario <em>Hidrovía</em><br>80% granos del país</h2>
+                <div class="rgm-line"></div>
+                <span class="rgm-sub">30 terminales • 6.5 MT capacidad • Silos 120.000 TN</span>
+            </div>
+        </div>
+
+        <div class="rgm-slide">
+            <div class="img-wrap"><img src="pesca.webp" alt="Pesca Altamar"></div>
+            <div class="rgm-content">
+                <span class="rgm-eyebrow">Atlántico Sur • ZEE 200 Millas</span>
+                <h2 class="rgm-title">Pesca <em>Altamar</em><br>ITQ 200.000 TON</h2>
+                <div class="rgm-line"></div>
+                <span class="rgm-sub">Industrial • Congelador • 65M eslora • 20 cabinas</span>
+            </div>
+        </div>
+
+        <div class="rgm-slide">
+            <div class="img-wrap"><img src="vaca-muerta.webp" alt="Vaca Muerta"></div>
+            <div class="rgm-content">
+                <span class="rgm-eyebrow">Neuquén • Patagonia • Shale</span>
+                <h2 class="rgm-title">Vaca Muerta <em>Offshore</em><br>Shale oil & gas</h2>
+                <div class="rgm-line"></div>
+                <span class="rgm-sub">2800-3200M TVD • 450-600 bar • Frac 18 etapas</span>
+            </div>
+        </div>
+
+        <div class="rgm-slide">
+            <div class="img-wrap"><img src="puerto-madero.webp" alt="Puerto Madero"></div>
+            <div class="rgm-content">
+                <span class="rgm-eyebrow">Buenos Aires • Financial District</span>
+                <h2 class="rgm-title">Puerto Madero<br><em>Where Investment Lands</em></h2>
+                <div class="rgm-line"></div>
+                <span class="rgm-sub">170 HA • Dique 1-4 • Puente de la Mujer • 1992 Masterplan</span>
+            </div>
+        </div>
+
+        <div class="rgm-slide" style="background:#0A1931">
+            <div class="rgm-content rgm-logo-final" style="top:50%">
+                <img src="argentina-desk.jpg" alt="RIGANTI GEILER MARQUEZ ALLURALDE">
+                <div class="rgm-line" style="width:100px"></div>
+                <span class="rgm-sub" style="color:rgba(200,176,144,0.7);opacity:1;transform:none">Argentina Desk • Invirtiendo en Argentina<br><span style="letter-spacing:2px;opacity:0.6">Bufete Boutique • 2024 • Buenos Aires</span></span>
+            </div>
+        </div>
     </div>
 
-    <!-- 1. MENÚ -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <!-- 1. NAV -->
+    <nav class="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex flex-col">
-                <span class="font-serif font-semibold text-lg tracking-wider text-gray-900">RGM</span>
-                <span class="text-[9px] uppercase tracking-[0.25em] text-gray-500 font-medium -mt-1">Riganti, Geiler & Márquez</span>
-            </div>
+            <div class="flex flex-col"><span class="font-serif font-semibold text-lg tracking-wider text-gray-900">RGM</span><span class="text-[9px] uppercase tracking-[0.25em] text-gray-500 font-medium -mt-1">Riganti, Geiler & Márquez</span></div>
             <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium text-gray-600">
-                <a href="#" class="hover:text-gray-900">Inicio</a>
-                <a href="#" class="hover:text-gray-900">El Estudio</a>
-                <a href="#" class="hover:text-gray-900">Prácticas</a>
-                <a href="#" class="text-rgm-gold font-semibold border-b border-rgm-gold pb-1">Inversiones AR</a>
-                <a href="#contacto" class="hover:text-gray-900">Contacto</a>
+                <a href="#" class="hover:text-gray-900">Inicio</a><a href="#" class="hover:text-gray-900">El Estudio</a><a href="#" class="hover:text-gray-900">Prácticas</a><a href="#" class="text-rgm-gold font-semibold border-b border-rgm-gold pb-1">Inversiones AR</a><a href="#contacto" class="hover:text-gray-900">Contacto</a>
             </div>
-            <div class="flex items-center space-x-3 text-xs font-semibold tracking-wider text-gray-400">
-                <span class="text-gray-900">ESP</span><span>|</span><span>ENG</span>
-            </div>
+            <div class="flex items-center space-x-3 text-xs font-semibold tracking-wider text-gray-400"><span class="text-gray-900">ESP</span><span>|</span><span>ENG</span></div>
         </div>
     </nav>
 
@@ -69,114 +135,41 @@
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C8B090_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <span class="text-xs uppercase tracking-[0.3em] font-semibold text-rgm-gold block mb-4">Área de Práctica Internacional</span>
-            <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6 max-w-4xl">
-                Arquitectura jurídica para la protección y expansión de su capital en Argentina.
-            </h1>
-            <p class="text-gray-300 text-base md:text-lg max-w-2xl font-light leading-relaxed mb-10">
-                Traducimos la complejidad del entorno regulatorio y cambiario en una estrategia de desembarco clara, combinando la rigurosidad técnica del bufete clásico con la agilidad digital global.
-            </p>
-            <a href="#contacto" class="inline-block bg-rgm-gold text-[#101828] text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 transition-all hover:bg-white">
-                Agendar Auditoría de Inversión
-            </a>
+            <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">Arquitectura jurídica para la protección y expansión de su capital en Argentina.</h1>
+            <p class="text-gray-300 text-base md:text-lg max-w-2xl font-light leading-relaxed mb-10">Traducimos la complejidad del entorno regulatorio y cambiario en una estrategia de desembarco clara, combinando la rigurosidad técnica del bufete clásico con la agilidad digital global.</p>
+            <a href="#contacto" class="inline-block bg-rgm-gold text-[#0A1931] text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 hover:bg-white transition-all">Agendar Auditoría de Inversión</a>
         </div>
     </header>
 
     <!-- 3. FRASE -->
-    <section class="bg-white border-b border-gray-100 py-16">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="font-serif text-xl md:text-2xl text-[#101828] font-light italic leading-relaxed mb-4">
-                "Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas."
-            </p>
-            <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Filosofía Corporativa RGMA</span>
-        </div>
-    </section>
+    <section class="bg-white border-b border-gray-100 py-16"><div class="max-w-4xl mx-auto px-6 text-center"><p class="font-serif text-xl md:text-2xl text-[#0A1931] font-light italic leading-relaxed mb-4">"Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas."</p><span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Filosofía Corporativa RGMA</span></div></section>
 
     <!-- 4. TABLA -->
     <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="mb-12">
-            <h2 class="font-serif text-3xl text-gray-900 font-light mb-2">Vehículos Societarios y de Estructuración</h2>
-            <p class="text-gray-500 text-sm max-w-xl">Análisis comparativo para el establecimiento seguro de operaciones en jurisdicción argentina.</p>
-        </div>
+        <div class="mb-12"><h2 class="font-serif text-3xl text-gray-900 font-light mb-2">Vehículos Societarios y de Estructuración</h2><p class="text-gray-500 text-sm max-w-xl">Análisis comparativo para el establecimiento seguro de operaciones en jurisdicción argentina.</p></div>
         <div class="overflow-x-auto bg-white border border-gray-100 shadow-sm rounded-sm">
-            <table class="w-full text-left text-sm">
-                <thead>
-                    <tr class="bg-rgm-dark text-white uppercase text-[11px] tracking-wider">
-                        <th class="p-5 font-medium">Estructura Legal</th>
-                        <th class="p-5 font-medium">Atributos y Responsabilidad</th>
-                        <th class="p-5 font-medium">Gobernanza y Capital</th>
-                        <th class="p-5 font-medium">Idoneidad del Proyecto</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-100 text-gray-600">
-                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">Sociedad Anónima (S.A.)</td><td class="p-5">Responsabilidad circunscrita al capital suscrito. Personería jurídica independiente.</td><td class="p-5">Dirección a cargo de Directorio. Acciones transferibles.</td><td class="p-5 font-medium text-gray-900">Estructuras de escala mediana a grande.</td></tr>
-                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">S.R.L.</td><td class="p-5">Responsabilidad limitada. Constitución ágil y costos optimizados.</td><td class="p-5">Gerencia. Máximo 50 socios.</td><td class="p-5 font-medium text-gray-900">Filiales y empresas familiares.</td></tr>
-                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">Sucursal Extranjera</td><td class="p-5">No conforma nueva entidad. Responsabilidad en Casa Matriz.</td><td class="p-5">Representante legal apoderado en el país.</td><td class="p-5 font-medium text-gray-900">Multinacionales y licitaciones.</td></tr>
-                    <tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#101828] font-semibold">Vehículos Flex</td><td class="p-5">Fideicomisos, contratos asociativos y esquemas digitales.</td><td class="p-5">Gobernanza adaptativa y contratos inteligentes.</td><td class="p-5 font-medium text-gray-900">Real Estate tokenizado y Tech.</td></tr>
-                </tbody>
-            </table>
+            <table class="w-full text-left text-sm"><thead><tr class="bg-rgm-dark text-white uppercase text-[11px] tracking-wider"><th class="p-5 font-medium">Estructura Legal</th><th class="p-5 font-medium">Atributos y Responsabilidad</th><th class="p-5 font-medium">Gobernanza y Capital</th><th class="p-5 font-medium">Idoneidad del Proyecto</th></tr></thead><tbody class="divide-y divide-gray-100 text-gray-600"><tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#0A1931] font-semibold">Sociedad Anónima (S.A.)</td><td class="p-5">Responsabilidad circunscrita al capital suscrito.</td><td class="p-5">Directorio. Acciones transferibles.</td><td class="p-5 font-medium text-gray-900">Mediana a grande escala.</td></tr><tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#0A1931] font-semibold">S.R.L.</td><td class="p-5">Responsabilidad limitada. Constitución ágil.</td><td class="p-5">Gerencia. Máx 50 socios.</td><td class="p-5 font-medium text-gray-900">Filiales y familiares.</td></tr><tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#0A1931] font-semibold">Sucursal Extranjera</td><td class="p-5">No nueva entidad. Responsabilidad Casa Matriz.</td><td class="p-5">Representante legal local.</td><td class="p-5 font-medium text-gray-900">Multinacionales.</td></tr><tr class="hover:bg-gray-50/50"><td class="p-5 font-serif text-base text-[#0A1931] font-semibold">Vehículos Flex</td><td class="p-5">Fideicomisos, asociativos y digitales.</td><td class="p-5">Gobernanza adaptativa.</td><td class="p-5 font-medium text-gray-900">Real Estate tokenizado y Tech.</td></tr></tbody></table>
         </div>
     </section>
 
     <!-- 5. INCENTIVOS -->
-    <section class="bg-gray-100/60 py-24 border-y border-gray-200/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="font-serif text-3xl text-gray-900 font-light mb-2">Marcos Regulados con Incentivos Legales</h2>
-                <p class="text-gray-500 text-sm max-w-xl">Alta especialización para regímenes de promoción económica.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">⚡</div><h3 class="font-serif text-xl text-[#101828] font-semibold mb-4">Régimen RIGI</h3><p class="text-gray-600 text-sm leading-relaxed">Estabilidad fiscal de largo plazo, exenciones aduaneras y libre disponibilidad cambiaria para grandes capitales.</p></div>
-                <div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">🧠</div><h3 class="font-serif text-xl text-[#101828] font-semibold mb-4">Economía del Conocimiento</h3><p class="text-gray-600 text-sm leading-relaxed">Reducción en Ganancias y bonificación en contribuciones patronales para software y biociencias.</p></div>
-                <div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">🏢</div><h3 class="font-serif text-xl text-[#101828] font-semibold mb-4">Real Estate & Startups</h3><p class="text-gray-600 text-sm leading-relaxed">Due Diligence, fideicomisos, tokenización de activos y estructuración de Startups (SAFEs, Flips).</p></div>
-            </div>
-        </div>
-    </section>
+    <section class="bg-gray-100/60 py-24 border-y border-gray-200/50"><div class="max-w-7xl mx-auto px-6"><div class="mb-16"><h2 class="font-serif text-3xl text-gray-900 font-light mb-2">Marcos Regulados con Incentivos Legales</h2><p class="text-gray-500 text-sm max-w-xl">Alta especialización para regímenes de promoción económica.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">⚡</div><h3 class="font-serif text-xl text-[#0A1931] font-semibold mb-4">Régimen RIGI</h3><p class="text-gray-600 text-sm leading-relaxed">Estabilidad fiscal de largo plazo, exenciones aduaneras y libre disponibilidad cambiaria.</p></div><div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">🧠</div><h3 class="font-serif text-xl text-[#0A1931] font-semibold mb-4">Economía del Conocimiento</h3><p class="text-gray-600 text-sm leading-relaxed">Reducción en Ganancias y bonificación en contribuciones patronales.</p></div><div class="bg-white p-8 border border-gray-200/60 shadow-sm hover:-translate-y-1 transition-transform"><div class="text-rgm-gold text-2xl mb-6">🏢</div><h3 class="font-serif text-xl text-[#0A1931] font-semibold mb-4">Real Estate & Startups</h3><p class="text-gray-600 text-sm leading-relaxed">Due Diligence, fideicomisos, tokenización y estructuración de Startups.</p></div></div></div></section>
 
-    <!-- 6. CAMBIARIO -->
-    <section class="py-24 max-w-5xl mx-auto px-6">
-        <div class="border-l-2 border-rgm-gold pl-8 md:pl-12 py-2">
-            <h3 class="font-serif text-2xl md:text-3xl text-[#101828] font-light mb-6">Mitigación del Riesgo Cambiario y Estructura Fiscal</h3>
-            <p class="text-gray-600 text-base leading-relaxed mb-4">Diseñamos la ingeniería jurídica para optimizar el ingreso de fondos, el repago de financiamientos y la repatriación de utilidades bajo normativa BCRA.</p>
-            <p class="text-gray-500 text-sm italic">Aplicación de convenios para evitar doble imposición para blindar el rendimiento neto.</p>
-        </div>
-    </section>
+    <!-- 6. CONTACTO -->
+    <section id="contacto" class="bg-rgm-dark text-white py-24 border-t border-gray-800"><div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16"><div class="space-y-8"><div><span class="text-xs uppercase tracking-[0.3em] text-rgm-gold font-semibold block mb-2">Protocolo de Admisión</span><h3 class="font-serif text-3xl font-light">Vinculación Estratégica</h3><p class="text-gray-400 text-sm mt-3">Bufete boutique. Proceso de admisión riguroso.</p></div><div class="space-y-6"><div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">01</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Auditoría Diagnóstica</h4><p class="text-gray-400 text-xs mt-1">Factibilidad legal y cambiaria.</p></div></div><div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">02</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Confidencialidad Absoluta</h4><p class="text-gray-400 text-xs mt-1">Secreto profesional inquebrantable.</p></div></div><div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">03</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Evaluación Senior</h4><p class="text-gray-400 text-xs mt-1">Un socio revisa la sesión inicial.</p></div></div></div></div><div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-sm"><form class="space-y-6 text-sm" onsubmit="event.preventDefault(); alert('Enviado');"><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Nombre Completo</label><input type="text" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:border-rgm-gold focus:outline-none"></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Email Corporativo</label><input type="email" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:border-rgm-gold focus:outline-none"></div><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">País de Origen</label><input type="text" placeholder="Ej. España" class="w-full bg-white/5 border border-white/10 p-3 text-white placeholder-gray-600 focus:border-rgm-gold focus:outline-none"></div></div><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Resumen del Proyecto</label><textarea rows="4" class="w-full bg-white/5 border border-white/10 p-3 text-white placeholder-gray-600 focus:border-rgm-gold focus:outline-none"></textarea></div><button type="submit" class="w-full bg-rgm-gold text-[#0A1931] text-xs uppercase tracking-[0.2em] font-semibold py-4 hover:bg-white transition-all">Enviar Requerimiento</button></form></div></div></section>
 
-    <!-- 7. CONTACTO -->
-    <section id="contacto" class="bg-rgm-dark text-white py-24 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div class="space-y-8">
-                <div><span class="text-xs uppercase tracking-[0.3em] text-rgm-gold font-semibold block mb-2">Protocolo de Admisión</span><h3 class="font-serif text-3xl font-light">Vinculación Estratégica</h3><p class="text-gray-400 text-sm mt-3">Bufete boutique. No operamos consultas aisladas. Proceso de admisión riguroso.</p></div>
-                <div class="space-y-6">
-                    <div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">01</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Auditoría Diagnóstica</h4><p class="text-gray-400 text-xs mt-1">Factibilidad legal, regulatoria y cambiaria.</p></div></div>
-                    <div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">02</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Confidencialidad Absoluta</h4><p class="text-gray-400 text-xs mt-1">Secreto profesional inquebrantable.</p></div></div>
-                    <div class="flex gap-4"><span class="font-serif text-xl text-rgm-gold italic">03</span><div><h4 class="text-xs uppercase tracking-wider font-semibold text-gray-200">Evaluación Senior</h4><p class="text-gray-400 text-xs mt-1">Un socio revisa y coordina la sesión inicial.</p></div></div>
-                </div>
-            </div>
-            <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-sm">
-                <form class="space-y-6 text-sm" onsubmit="event.preventDefault(); alert('Enviado con éxito');">
-                    <div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Nombre Completo</label><input type="text" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:border-rgm-gold focus:outline-none"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Email Corporativo</label><input type="email" required class="w-full bg-white/5 border border-white/10 p-3 text-white focus:border-rgm-gold focus:outline-none"></div><div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">País de Origen</label><input type="text" placeholder="Ej. España" class="w-full bg-white/5 border border-white/10 p-3 text-white placeholder-gray-600 focus:border-rgm-gold focus:outline-none"></div></div>
-                    <div><label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Resumen del Proyecto</label><textarea rows="4" class="w-full bg-white/5 border border-white/10 p-3 text-white placeholder-gray-600 focus:border-rgm-gold focus:outline-none"></textarea></div>
-                    <button type="submit" class="w-full bg-rgm-gold text-[#101828] text-xs uppercase tracking-[0.2em] font-semibold py-4 hover:bg-white transition-all">Enviar Requerimiento</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-[#0f172a] text-gray-500 py-12 text-xs border-t border-white/5 text-center">
-        <p>&copy; 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — Todos los derechos reservados.</p>
-    </footer>
+    <footer class="bg-[#080F1F] text-gray-500 py-12 text-xs border-t border-white/5 text-center"><p>&copy; 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — Argentina Desk</p></footer>
 
 <script>
 const slides=document.querySelectorAll('.rgm-slide');
 const preload=document.getElementById('rgm-preload');
 const progress=document.getElementById('rgm-progress');
-let cur=0; const dur=2200; const total=slides.length*dur; let start=Date.now();
-function updateProg(){const e=Date.now()-start;const p=Math.min((e/total)*100,100);progress.style.width=p+'%';if(p<100&&!preload.classList.contains('hide'))requestAnimationFrame(updateProg);}
-updateProg();
-function next(){slides[cur].classList.remove('active');cur++;if(cur<slides.length){slides[cur].classList.add('active');if(cur===slides.length-1){setTimeout(()=>{preload.classList.add('hide');document.body.style.overflow='auto';},3500);}else{setTimeout(next,dur);}}}
+const counter=document.getElementById('rgm-counter');
+let cur=0; const dur=3400; const total=slides.length*dur; let start=Date.now(); let raf;
+function upd(){let e=Date.now()-start;let p=Math.min((e/total)*100,100);progress.style.width=p+'%';let n=(cur+1).toString().padStart(2,'0');let t=slides.length.toString().padStart(2,'0');counter.textContent=`${n} — ${t}`;if(p<100&&!preload.classList.contains('hide'))raf=requestAnimationFrame(upd);}upd();
+function next(){slides[cur].classList.remove('active');cur++;if(cur<slides.length){slides[cur].classList.add('active');setTimeout(next,cur===slides.length-1?5000:dur);}else{preload.classList.add('hide');document.body.style.overflow='auto';}}
 let timer=setTimeout(next,dur);
-function skipPreload(){clearTimeout(timer);preload.classList.add('hide');document.body.style.overflow='auto';}
+function skipPreload(){clearTimeout(timer);cancelAnimationFrame(raf);preload.classList.add('hide');document.body.style.overflow='auto';}
 document.body.style.overflow='hidden';
 </script>
 </body>
