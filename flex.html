@@ -4,129 +4,107 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RGMA FLEX — Fractional GC</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0; padding:0; box-sizing:border-box;}
-body{font-family:'Inter', sans-serif; background:#0F2A20; overflow-x:hidden; color:#fff;} 
+:root{--green:#0F2A20;--green2:#0A1410;--green3:#102821;--gold:#C8B090;--paper:#F7F3EB}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--green);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-.nav-link{
-  color:#fff; text-decoration:none; font-size:10px; letter-spacing:2.5px;
-  transition: color 0.25s ease; margin-left:32px; text-transform:uppercase;
-}
-.nav-link:hover{ color:#C8B090; }
-.nav-btn{
-  border:1px solid #C8B090; color:#fff; padding:9px 18px; 
-  text-decoration:none; font-size:10px; letter-spacing:2px;
-  transition: all 0.25s ease; margin-left:32px; text-transform:uppercase;
-}
-.nav-btn:hover{ background:#C8B090; color:#0A1410; }
-.nav-btn.activo{
-  border-color:rgba(200,176,144,.4); color:#C8B090;
-  opacity:0.7; pointer-events:none; cursor:default;
-}
+/* PRELOADER VERDE PREMIUM */
+#preloader-flex{position:fixed;inset:0;background:var(--green2);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s ease}
+#preloader-flex.oculto{opacity:0;pointer-events:none}
+.loader{width:48px;height:1px;background:rgba(200,176,144,.15);margin-top:24px;overflow:hidden;position:relative}
+.loader::after{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:var(--gold);transform:translateX(-100%);animation:load 1.2s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes load{to{transform:translateX(0)}}
 
-.hero-flex{
-  min-height:100vh;
-  background:#122A1F;
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:80px;
-  padding:110px 8% 90px 8%;
-  align-items:start;
-}
-.hero-flex > div:first-child{
-  padding-top:32px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  min-height: calc(100vh - 200px);
-}
+/* HEADER VERDE IDENTIDAD */
+.header-flex{position:fixed;top:0;left:0;width:100%;height:72px;background:rgba(10,20,16,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(200,176,144,.12);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:1000}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+.nav-link{color:rgba(255,255,255,.55);text-decoration:none;font-size:10px;letter-spacing:2.5px;padding:10px 14px;text-transform:uppercase;transition:.25s}
+.nav-link:hover{color:#fff}
+.nav-btn{border:1px solid rgba(200,176,144,.3);color:#fff;padding:10px 18px;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-left:10px;transition:.3s}
+.nav-btn:hover{background:var(--gold);color:var(--green2);border-color:var(--gold)}
+.nav-btn.activo{background:rgba(200,176,144,.1);border-color:rgba(200,176,144,.2);color:var(--gold);pointer-events:none}
 
-.eyebrow-mini{border:1px solid rgba(200,176,144,.4); color:#C8B090; font-size:9px; letter-spacing:4px; text-transform:uppercase; padding:8px 14px; display:inline-block; margin-bottom:28px;}
-.hero-flex h1{font-family:'Playfair Display'; font-size:62px; line-height:0.95; font-weight:300; color:#fff;}
-.hero-flex h1 i{color:#C8B090; font-style:italic; font-weight:300;}
-.sub-latam{margin-top:18px; display:flex; align-items:center; gap:14px; color:#fff; font-size:10px; letter-spacing:4px; text-transform:uppercase;}
-.sub-latam::before{content:''; width:32px; height:1px; background:#C8B090; display:block;}
-.hero-desc{margin-top:18px; margin-bottom:26px; color:rgba(255,255,255,.6); font-size:14px; line-height:1.7; max-width:420px;}
+/* HERO VERDE */
+.hero-flex{min-height:100vh;background:radial-gradient(130% 130% at 15% 10%,#143728 0%,var(--green) 50%,#06110d 100%);display:grid;grid-template-columns:1.05fr .95fr;gap:0;padding-top:72px}
+.hero-left{padding:70px 6% 60px 8%;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-left::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:linear-gradient(to bottom,transparent,rgba(200,176,144,.18),transparent)}
+.eyebrow-mini{border:1px solid rgba(200,176,144,.3);color:var(--gold);font-size:9px;letter-spacing:4px;text-transform:uppercase;padding:8px 14px;display:inline-block;margin-bottom:28px;background:rgba(200,176,144,.06)}
+.hero-flex h1{font-family:'Playfair Display';font-size:clamp(44px,5vw,62px);line-height:.92;font-weight:300}
+.hero-flex h1 i{color:var(--gold);font-style:italic;font-weight:300;position:relative}
+.hero-flex h1 i::after{content:'';position:absolute;left:0;right:0;bottom:5px;height:1px;background:rgba(200,176,144,.35)}
+.sub-latam{margin-top:20px;display:flex;align-items:center;gap:14px;color:rgba(255,255,255,.65);font-size:10px;letter-spacing:4px;text-transform:uppercase}
+.sub-latam::before{content:'';width:32px;height:1px;background:var(--gold)}
+.hero-desc{margin-top:20px;margin-bottom:32px;color:rgba(255,255,255,.55);font-size:14.5px;line-height:1.75;max-width:420px}
+.hero-right{background:var(--paper);padding:68px 7% 68px 6%;display:flex;flex-direction:column;justify-content:center}
 
-.sec-claro{background:#F7F3EB; padding:100px 8%; color:#102821;}
-.sec-claro .eyebrow{color:#C8B090; font-size:10px; letter-spacing:4px; text-transform:uppercase; display:block; margin-bottom:16px;}
-.titulo-sec{font-family:'Playfair Display'; font-size:42px; font-weight:300; line-height:1.1; margin-bottom:40px;}
-.titulo-sec.osc{color:#102821;}
-.titulo-sec.claro{color:#fff;}
+.eyebrow{color:var(--gold);font-size:10px;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:16px;font-weight:600}
+.titulo-sec{font-family:'Playfair Display';font-size:clamp(32px,3vw,42px);font-weight:300;line-height:1.1;margin-bottom:40px}
+.titulo-sec.osc{color:var(--green3)}
+.titulo-sec.claro{color:#fff}
 
-.grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:rgba(16,40,33,.1); border:1px solid rgba(16,40,33,.1);}
-.card{background:#fff; padding:36px 28px; transition: all 0.4s ease;}
-.card:hover{transform:translateY(-4px); box-shadow:0 12px 24px rgba(16,40,33,.08);}
-.card svg{width:32px; height:32px; stroke:#102821; stroke-width:1.3; fill:none; margin-bottom:22px; display:block;}
-.card h3{font-family:'Playfair Display'; font-size:19px; color:#102821; margin-bottom:12px;}
-.card p{font-size:13px; line-height:1.7; color:rgba(16,40,33,.7);}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(16,40,33,.08);border:1px solid rgba(16,40,33,.08)}
+.card{background:#fff;padding:34px 28px;transition:all .5s cubic-bezier(.16,1,.3,1);position:relative}
+.card::after{content:'';position:absolute;left:28px;right:28px;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.5s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 32px rgba(16,40,33,.08)}
+.card:hover::after{transform:scaleX(1)}
+.card svg{width:28px;height:28px;stroke:var(--green3);stroke-width:1.3;fill:none;margin-bottom:20px;display:block}
+.card h3{font-family:'Playfair Display';font-size:18px;color:var(--green3);margin-bottom:10px}
+.card p{font-size:13px;line-height:1.7;color:rgba(16,40,33,.65)}
 
-.sec-oscuro{background:#102821; padding:100px 8%;}
-.tabla-comp{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.1); margin-top:30px;}
-.col-comp{padding:36px;}
-.col-comp.trad{background:#0A1A15;}
-.col-comp.flex{background:#0F2A20; border:1px solid #C8B090;}
-.col-comp h4{font-size:12px; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px;}
-.col-comp.trad h4{color:rgba(255,255,255,.5);}
-.col-comp.flex h4{color:#C8B090;}
-.col-comp ul{list-style:none;}
-.col-comp li{font-size:13px; line-height:1.6; margin-bottom:12px; opacity:.7;}
-.col-comp.flex li{color:#fff; opacity:.9;}
+.sec-oscuro{background:var(--green3);padding:100px 8%;position:relative}
+.sec-oscuro::before{content:'';position:absolute;inset:0;background:radial-gradient(80% 70% at 80% 0%,rgba(200,176,144,.07),transparent 60%)}
+.tabla-comp{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);margin-top:30px}
+.col-comp{padding:36px}
+.col-comp.trad{background:#0A1A15}
+.col-comp.flex{background:linear-gradient(180deg,#112d21,#0f2a20);border:1px solid var(--gold)}
+.col-comp h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
+.col-comp.trad h4{color:rgba(255,255,255,.45)}
+.col-comp.flex h4{color:var(--gold)}
+.col-comp li{list-style:none;font-size:13px;line-height:1.6;margin-bottom:11px;opacity:.7;padding-left:16px;position:relative}
+.col-comp li::before{content:'—';position:absolute;left:0;opacity:.4}
+.col-comp.flex li{color:#fff;opacity:.9}
 
-.plans{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:rgba(16,40,33,.12); border:1px solid rgba(16,40,33,.12); margin-top:20px;}
-.plan{background:#fff; padding:40px 32px; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position:relative; top:0;}
-.plan:hover{transform:translateY(-8px); box-shadow:0 20px 40px rgba(16,40,33,.12); z-index:2;}
-.plan.destacado{background:#102821; color:#fff; border:1px solid #C8B090; transform:translateY(-4px); box-shadow:0 10px 30px rgba(16,40,33,.2);}
-.plan.destacado:hover{transform:translateY(-12px); box-shadow:0 25px 50px rgba(16,40,33,.25);}
-.plan h5{font-size:11px; letter-spacing:3px; text-transform:uppercase; margin-bottom:16px;}
-.plan .price{font-family:'Playfair Display'; font-size:28px; margin-bottom:14px;}
-.plan ul{list-style:none; margin-top:14px;}
-.plan li{font-size:12px; line-height:1.6; margin-bottom:8px; opacity:.7;}
-.plan.destacado li{opacity:.85;}
-.plan.destacado::after{content:''; position:absolute; inset:0; border:1px solid #C8B090; opacity:0.3; pointer-events:none; animation: bordePulse 2.5s infinite;}
+.sec-claro{background:var(--paper);padding:100px 8%}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(16,40,33,.12);border:1px solid rgba(16,40,33,.12);margin-top:20px}
+.plan{background:#fff;padding:40px 32px;transition:all .6s cubic-bezier(.16,1,.3,1)}
+.plan:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(16,40,33,.12);z-index:2}
+.plan.destacado{background:var(--green3);color:#fff;border:1px solid var(--gold);transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.25)}
+.plan.destacado:hover{transform:translateY(-12px)}
+.plan h5{font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:.6}
+.plan.destacado h5{color:var(--gold);opacity:1}
+.plan .price{font-family:'Playfair Display';font-size:28px;margin-bottom:14px}
+.plan li{list-style:none;font-size:12px;line-height:1.6;margin-bottom:8px;opacity:.7;padding-left:14px;position:relative}
+.plan li::before{content:'•';position:absolute;left:0;color:var(--gold)}
+.plan.destacado li{opacity:.85}
 
-.btn-flex{background:#C8B090; color:#102821; padding:16px 28px; text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; display:inline-block; font-weight:500; transition: all .25s ease;}
-.btn-flex:hover{background:#d6c2a3;}
+.btn-flex{background:var(--gold);color:var(--green3);padding:16px 28px;text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;display:inline-flex;gap:10px;font-weight:600;transition:.3s;border:1px solid var(--gold)}
+.btn-flex:hover{background:#d6c2a3;transform:translateY(-1px)}
+.btn-flex.dark{background:var(--green3);color:#fff;border-color:var(--green3)}
+.btn-flex.dark:hover{background:var(--green2)}
 
-#preloader-flex{position:fixed; inset:0; background:#0A1410; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:opacity .6s ease;}
-#preloader-flex.oculto{opacity:0; pointer-events:none;}
-footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,255,255,.4); font-size:11px; letter-spacing:2px;}
+footer{padding:30px 8%;background:var(--green2);text-align:center;color:rgba(255,255,255,.35);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;border-top:1px solid rgba(200,176,144,.08)}
 
-@keyframes fadeUp{from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}
-@keyframes bordePulse{0%,100%{opacity:0.3;} 50%{opacity:0.7;}}
-.plans .plan{animation: fadeUp 0.8s ease forwards; opacity:0;}
-.plans .plan:nth-child(1){animation-delay:0.1s;}
-.plans .plan:nth-child(2){animation-delay:0.25s;}
-.plans .plan:nth-child(3){animation-delay:0.4s;}
-
-@media(max-width:900px){
-.hero-flex{grid-template-columns:1fr; padding:110px 6% 60px 6%;}
-.hero-flex > div:first-child{min-height:auto;}
-.grid3, .plans, .tabla-comp{grid-template-columns:1fr;}
-.hero-flex h1{font-size:44px;}
-.plan.destacado, .plan:hover{transform:none;}
-}
+@media(max-width:900px){.header-flex{padding:0 20px}.hero-flex{grid-template-columns:1fr}.hero-left{padding:100px 24px 40px}.hero-left::after{display:none}.hero-right{padding:50px 24px}.grid3,.plans,.tabla-comp{grid-template-columns:1fr}.plan.destacado,.plan:hover{transform:none}}
 </style>
 </head>
 <body>
 
 <div id="preloader-flex">
-  <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:54px; width:auto; display:block;">
-  <span style="color:#C8B090; letter-spacing:6px; font-size:10px; font-family:'Inter',sans-serif; margin-top:22px; display:block; text-transform:uppercase;">RGMA FLEX</span>
-  <span style="width:32px; height:1px; background:#C8B090; display:block; margin-top:18px; opacity:0.6;"></span>
+  <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:48px;width:auto">
+  <span style="color:var(--gold);letter-spacing:6px;font-size:10px;margin-top:18px;text-transform:uppercase;font-weight:600">RGMA FLEX</span>
+  <div class="loader"></div>
 </div>
 
-<header style="position:fixed; top:0; left:0; width:100%; height:72px; background:#0A1410; display:flex; align-items:center; justify-content:space-between; padding:0 3%; z-index:1000; border-bottom:1px solid rgba(255,255,255,.08);">
-  <a href="index.html" style="display:flex; align-items:center; gap:16px; text-decoration:none;">
-    <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:34px; width:auto; display:block;">
-    <span style="width:1px; height:22px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
-    <span style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2.8px; line-height:1.5; color:#C8B090; text-transform:uppercase;">
-      <span style="display:block;">RIGANTI, GEILER</span>
-      <span style="display:block;">& MÁRQUEZ ALLURALDE</span>
-    </span>
+<header class="header-flex">
+  <a href="index.html" class="brand">
+    <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:32px;width:auto;display:block">
+    <span style="width:1px;height:22px;background:rgba(200,176,144,.25);display:inline-block"></span>
+    <span style="font-size:9.5px;letter-spacing:2.8px;line-height:1.4;color:var(--gold);text-transform:uppercase;font-weight:600"><span style="display:block">RIGANTI, GEILER</span><span style="display:block">& MÁRQUEZ ALLURALDE</span></span>
   </a>
-  <nav style="display:flex; align-items:center;">
+  <nav style="display:flex;align-items:center">
     <a href="index.html" class="nav-link">INICIO</a>
     <a href="index.html#estudio" class="nav-link">EL ESTUDIO</a>
     <a href="index.html#practicas" class="nav-link">PRÁCTICAS</a>
@@ -136,18 +114,17 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 </header>
 
 <section class="hero-flex">
-<div>
+<div class="hero-left">
 <span class="eyebrow-mini">Fractional GC • GCAAS</span>
 <h1>Tu departamento<br>legal externo.<br><i>Sin el costo<br>fijo.</i></h1>
 <div class="sub-latam">AHORA EN LATAM</div>
 <p class="hero-desc">Modelo probado en USA. Un socio senior de RGMA opera como tu Gerente Legal interno, dentro de tu Slack / Teams, con fee fijo y predecible.</p>
-<div style="margin-top:10px; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
-  <a href="index.html#contacto" class="btn-flex">Solicitá tu propuesta Flex →</a>
-  <span style="font-size:9px; letter-spacing:2px; color:rgba(255,255,255,.45); text-transform:uppercase;">Respuesta en 24hs</span>
+<div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+<a href="#planes" class="btn-flex">Solicitá tu propuesta Flex →</a>
+<span style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.4);text-transform:uppercase">Respuesta en 24hs</span>
 </div>
 </div>
-
-<div class="sec-claro" style="border-radius:2px;">
+<div class="hero-right">
 <span class="eyebrow">Modelo</span>
 <h2 class="titulo-sec osc">Legal operativo,<br>no solo consultivo.</h2>
 <div class="grid3">
@@ -159,11 +136,11 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 </section>
 
 <section class="sec-oscuro">
-<span class="eyebrow" style="color:#C8B090;">Diferencial</span>
+<span class="eyebrow" style="color:var(--gold)">Diferencial</span>
 <h2 class="titulo-sec claro">Estudio tradicional<br>vs RGMA FLEX</h2>
 <div class="tabla-comp">
-<div class="col-comp trad"><h4>Estudio Tradicional</h4><ul><li>✕ Facturación por hora impredecible</li><li>✕ Respuesta en 48/72hs</li><li>✕ Cada consulta es un presupuesto</li><li>✕ Sin contexto de tu negocio</li></ul></div>
-<div class="col-comp flex"><h4>RGMA FLEX</h4><ul><li>✓ Fee mensual fijo y predecible</li><li>✓ Slack / WhatsApp directo con tu GC</li><li>✓ Todo incluido en el plan</li><li>✓ Inmersión en tu compañía</li></ul></div>
+<div class="col-comp trad"><h4>Estudio Tradicional</h4><ul><li>Facturación por hora impredecible</li><li>Respuesta en 48/72hs</li><li>Cada consulta es un presupuesto</li><li>Sin contexto de tu negocio</li></ul></div>
+<div class="col-comp flex"><h4>RGMA FLEX</h4><ul><li>Fee mensual fijo y predecible</li><li>Slack / WhatsApp directo con tu GC</li><li>Todo incluido en el plan</li><li>Inmersión en tu compañía</li></ul></div>
 </div>
 </section>
 
@@ -171,22 +148,19 @@ footer{padding:30px 8%; background:#102821; text-align:center; color:rgba(255,25
 <span class="eyebrow">Planes</span>
 <h2 class="titulo-sec osc">Escalá sin contratar.</h2>
 <div class="plans">
-<div class="plan"><h5>Starter</h5><div class="price">Para validar</div><p style="font-size:13px; opacity:.7;">Hasta 15hs / mes. Ideal pre-seed / seed.</p><ul><li>— Contratos y NDAs ilimitados</li><li>— Consultas diarias</li><li>— 1 workshop mensual</li></ul></div>
-<div class="plan destacado"><h5>Growth — Más elegido</h5><div class="price">Para crecer</div><p style="font-size:13px; opacity:.8;">Hasta 35hs / mes. Ideal Serie A + contratación.</p><ul><li>— Todo de Starter +</li><li>— M&A / Due diligence light</li><li>— Políticas internas y RRHH</li><li>— Presencia en directorio (1x mes)</li></ul></div>
-<div class="plan"><h5>Scale</h5><div class="price">Para expandir</div><p style="font-size:13px; opacity:.7;">Hasta 60hs / mes. LATAM expansion.</p><ul><li>— Todo de Growth +</li><li>— Expansión Mercosur</li><li>— GC dedicado casi full-time</li><li>— Prioridad absoluta</li></ul></div>
+<div class="plan"><h5>Starter</h5><div class="price">Para validar</div><p style="font-size:13px;opacity:.7">Hasta 15hs / mes. Ideal pre-seed / seed.</p><ul><li>Contratos y NDAs ilimitados</li><li>Consultas diarias</li><li>1 workshop mensual</li></ul></div>
+<div class="plan destacado"><h5>Growth — Más elegido</h5><div class="price">Para crecer</div><p style="font-size:13px;opacity:.8">Hasta 35hs / mes. Ideal Serie A + contratación.</p><ul><li>Todo de Starter +</li><li>M&A / Due diligence light</li><li>Políticas internas y RRHH</li><li>Presencia en directorio (1x mes)</li></ul></div>
+<div class="plan"><h5>Scale</h5><div class="price">Para expandir</div><p style="font-size:13px;opacity:.7">Hasta 60hs / mes. LATAM expansion.</p><ul><li>Todo de Growth +</li><li>Expansión Mercosur</li><li>GC dedicado casi full-time</li><li>Prioridad absoluta</li></ul></div>
 </div>
-<div style="text-align:center; margin-top:40px;"><a href="index.html#contacto" class="btn-flex" style="background:#102821; color:#fff;">Cotizá tu plan Flex →</a></div>
+<div style="text-align:center;margin-top:40px"><a href="index.html#contacto" class="btn-flex dark">Cotizá tu plan Flex →</a></div>
 </section>
 
-<footer>© 2026 RGMA — Área FLEX | AHORA EN LATAM</footer>
+<footer>© 2026 RGMA — Área FLEX | AHORA EN LATAM — Identidad Verde Premium</footer>
 
 <script>
 window.addEventListener('load',()=>{
-  const pre = document.getElementById('preloader-flex');
-  setTimeout(()=>{
-    pre.classList.add('oculto');
-    setTimeout(()=> pre.style.display='none',600);
-  },900);
+  const pre=document.getElementById('preloader-flex');
+  setTimeout(()=>{pre.classList.add('oculto');setTimeout(()=>pre.style.display='none',700)},900);
 });
 </script>
 </body>
