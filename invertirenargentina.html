@@ -205,53 +205,39 @@ body{font-family:'Inter',sans-serif;background:#fcfcfc}
 <footer class="bg-[#080F1F] text-gray-500 py-10 text-[10px] text-center uppercase tracking-widest">&copy; 2026 RGM ARGENTINA DESK</footer>
 
 <script>
-// HERO SLIDER - FIX CON ESPACIO
-document.addEventListener('DOMContentLoaded', function(){
-let hCurrent=0;
-const hSlides=document.querySelectorAll('#heroSlider.slide');
-const dotsBox=document.getElementById('dots');
-const counter=document.getElementById('counter');
-let hTimer;
-function buildDots(){
-dotsBox.innerHTML='';
-hSlides.forEach((_,i)=>{
-let d=document.createElement('div');
-d.className='slider-dot'+(i===0?' active':'');
-d.onclick=()=>{showHero(i);restartH();};
-dotsBox.appendChild(d);
-});
-}
-function showHero(n){
-hSlides[hCurrent].classList.remove('active');
-if(dotsBox.children[hCurrent]) dotsBox.children[hCurrent].classList.remove('active');
-hCurrent=n;
-hSlides[hCurrent].classList.add('active');
-if(dotsBox.children[hCurrent]) dotsBox.children[hCurrent].classList.add('active');
-if(counter) counter.textContent=`0${hCurrent+1} — 0${hSlides.length}`;
-}
-window.nextSlide=()=>showHero((hCurrent+1)%hSlides.length);
-window.prevSlide=()=>showHero((hCurrent-1+hSlides.length)%hSlides.length);
-function restartH(){clearInterval(hTimer);hTimer=setInterval(window.nextSlide,5500);}
-if(hSlides.length){buildDots();showHero(0);restartH();}
+document.addEventListener('DOMContentLoaded', ()=>{
+  let current=0;
+  // FIX 1: CON ESPACIO
+  const slides=document.querySelectorAll('#heroSlider.slide');
+  const dotsContainer=document.getElementById('dots');
+  const counter=document.getElementById('counter');
+  let timer;
 
-// AREAS SLIDER - TODAS CON FORMATO PESCA
-let aCurrent=0;
-const aSlides=document.querySelectorAll('.area-slide');
-const aDots=document.querySelectorAll('.area-dot');
-let aTimer;
-window.showArea=function(n){
-aSlides[aCurrent].classList.remove('active');
-if(aDots[aCurrent]) aDots[aCurrent].classList.remove('active');
-aCurrent=n;
-aSlides[aCurrent].classList.add('active');
-if(aDots[aCurrent]) aDots[aCurrent].classList.add('active');
-};
-window.goArea=function(n){
-document.getElementById('areas').scrollIntoView({behavior:'smooth',block:'start'});
-setTimeout(()=>{showArea(n);restartA();},400);
-};
-function restartA(){clearInterval(aTimer);aTimer=setInterval(()=>showArea((aCurrent+1)%aSlides.length),7000);}
-if(aSlides.length){restartA();}
+  function renderDots(){
+    dotsContainer.innerHTML='';
+    slides.forEach((_,i)=>{
+      const d=document.createElement('div');
+      d.className='slider-dot'+(i===current?' active':'');
+      d.onclick=()=>goTo(i);
+      dotsContainer.appendChild(d);
+    });
+    counter.textContent=`0${current+1} — 0${slides.length}`;
+  }
+  function goTo(n){
+    slides[current].classList.remove('active');
+    current=(n+slides.length)%slides.length;
+    slides[current].classList.add('active');
+    renderDots();
+  }
+  window.nextSlide=()=>goTo(current+1);
+  window.prevSlide=()=>goTo(current-1);
+
+  renderDots();
+  timer=setInterval(()=>goTo(current+1), 5500);
+
+  // pausa al pasar mouse
+  document.getElementById('heroSlider').addEventListener('mouseenter',()=>clearInterval(timer));
+  document.getElementById('heroSlider').addEventListener('mouseleave',()=>timer=setInterval(()=>goTo(current+1), 5500));
 });
 </script>
 </body>
