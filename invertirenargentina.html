@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGMA Argentina Desk | Inversiones RIGI, Pesca ITQ, Energía</title>
+<title>RGMA Argentina Desk | RIGI Investments, ITQ Fishing, Energy</title>
+<meta id="meta-desc" name="description" content="RGMA Argentina Desk — Legal architecture for RIGI, ITQ fishing, Vaca Muerta energy, lithium and agribusiness. Delaware ↔ Argentina structure.">
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preload" as="image" href="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=75&auto=format&fit=crop">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,7 +15,10 @@ body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit
 .font-serif{font-family:'Playfair Display',serif}
 .hero{position:relative;height:92vh;min-height:640px;background:var(--navy);overflow:hidden;isolation:isolate}
 .top-bar{position:absolute;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;background:rgba(10,25,49,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,.15)}
-.slide{position:absolute;inset:0;display:flex;opacity:0;visibility:hidden;transition:opacity .9s cubic-bezier(.16,1,.3,1),visibility .9s;pointer-events:none}
+.lang-switch{display:flex;gap:8px;align-items:center}
+.lang-switch button{background:transparent;border:1px solid rgba(200,176,144,.25);color:#fff;font-size:9px;letter-spacing:2px;padding:6px 10px;cursor:pointer;transition:all.2s}
+.lang-switch button.active,.lang-switch button:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.slide{position:absolute;inset:0;display:flex;opacity:0;visibility:hidden;transition:opacity.9s cubic-bezier(.16,1,.3,1),visibility.9s;pointer-events:none}
 .slide.active{opacity:1;visibility:visible;pointer-events:auto;z-index:2}
 .s-left{width:42%;display:flex;flex-direction:column;justify-content:center;padding:0 5% 0 6%;background:var(--navy)}
 .s-right{width:58%;position:relative;overflow:hidden}
@@ -23,12 +27,12 @@ body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit
 .eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#8aa0c8;margin-bottom:28px}
 .title{font-family:'Playfair Display';font-size:clamp(32px,3.8vw,54px);line-height:.95;font-weight:300;color:#fff;margin-bottom:22px}
 .desc{font-size:14px;line-height:1.7;color:rgba(255,255,255,.62);max-width:380px;margin-bottom:32px;font-weight:300}
-.cta{display:inline-flex;align-items:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,176,144,.3);padding:14px 28px;text-decoration:none;transition:all .3s}
+.cta{display:inline-flex;align-items:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,176,144,.3);padding:14px 28px;text-decoration:none;transition:all.3s}
 .cta:hover{background:var(--gold);color:var(--navy)}
 .cta.gold{background:var(--gold);color:var(--navy)}
 .nav-hero{position:absolute;bottom:38px;left:6%;z-index:10;display:flex;align-items:center;gap:22px}
 .arr{width:44px;height:44px;background:var(--navy);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12);cursor:pointer;display:grid;place-items:center;font-size:18px}
-.dot{width:28px;height:2px;background:rgba(255,255,255,.15);border:0;cursor:pointer;transition:all .5s}
+.dot{width:28px;height:2px;background:rgba(255,255,255,.15);border:0;cursor:pointer;transition:all.5s}
 .dot.active{background:var(--gold);width:56px}
 .sticky-nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #eee}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
@@ -39,12 +43,12 @@ body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit
 .dropdown{position:relative;padding:24px 0}
 .dropdown-trigger{color:var(--gold)!important;font-weight:700;cursor:pointer}
 .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:none;min-width:220px;background:var(--navy);border-top:2px solid var(--gold);box-shadow:0 20px 40px rgba(0,0,0,.25)}
-.dropdown:hover .dropdown-menu,.dropdown:focus-within .dropdown-menu{display:block}
+.dropdown:hover.dropdown-menu,.dropdown:focus-within.dropdown-menu{display:block}
 .dropdown-menu a{display:block;padding:13px 22px;color:rgba(255,255,255,.7);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}
 .dropdown-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
 .areas{background:var(--navy);overflow:hidden}
-.a-slide{display:none;grid-template-columns:1.1fr .9fr;gap:80px;max-width:1280px;margin:0 auto;padding:88px 40px;align-items:center}
-.a-slide.active{display:grid;animation:fade .6s ease}
+.a-slide{display:none;grid-template-columns:1.1fr.9fr;gap:80px;max-width:1280px;margin:0 auto;padding:88px 40px;align-items:center}
+.a-slide.active{display:grid;animation:fade.6s ease}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:36px}
 .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(255,255,255,.12);padding-top:26px;margin-top:36px}
@@ -53,127 +57,195 @@ body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit
 .row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:14px;margin-bottom:14px;font-size:12px}
 .row span:first-child{color:rgba(255,255,255,.5)}
 .row span:last-child{color:#fff}
-.btn{display:block;text-align:center;background:var(--gold);color:var(--navy);font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none;margin-top:28px;transition:filter .2s}
+.btn{display:block;text-align:center;background:var(--gold);color:var(--navy);font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none;margin-top:28px;transition:filter.2s}
 .btn:hover{filter:brightness(1.08)}
 .a-dots{display:flex;gap:10px;justify-content:center;padding:0 0 56px}
 .a-dot{width:28px;height:2px;background:rgba(255,255,255,.18);border:0;cursor:pointer}
 .a-dot.active{background:var(--gold);width:48px}
-@media(max-width:1024px){.s-left{width:100%;padding:80px 24px 36px}.s-right{display:none}.a-slide{grid-template-columns:1fr;padding:48px 24px;gap:32px}.menu{display:none}}
+@media(max-width:1024px){.s-left{width:100%;padding:80px 24px 36px}.s-right{display:none}.a-slide{grid-template-columns:1fr;padding:48px 24px;gap:32px}.menu{display:none}.top-bar{padding:12px 16px;flex-wrap:wrap;gap:10px}}
 </style>
 </head>
 <body>
 
 <div class="hero" id="hero">
-<div class="top-bar"><div style="color:var(--gold);font-weight:600">RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK</div><div style="display:flex;gap:20px"><span>APP</span><span>OFICINAS</span><a href="#contacto" style="color:#fff;text-decoration:none">CONTACTO</a></div></div>
+<div class="top-bar"><div style="color:var(--gold);font-weight:600" data-i18n="top_brand">RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK</div><div style="display:flex;gap:20px;align-items:center"><div class="lang-switch"><button class="active" data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="pt">PT</button><button data-lang="zh">中文</button></div><span data-i18n="top_app">APP</span><span data-i18n="top_offices">OFFICES</span><a href="#contacto" style="color:#fff;text-decoration:none" data-i18n="top_contact">CONTACT</a></div></div>
 
-<div class="slide active"><div class="s-left"><div class="eyebrow">01 — Energía & RIGI</div><h1 class="title">Asesoramiento de<br>excelencia en<br>energía</h1><p class="desc">Vaca Muerta y Patagonia eólica bajo RIGI. 30 años estabilidad fiscal y estructura Delaware ↔ Neuquén.</p><a class="cta" href="#areas" data-go="0">Explorar RIGI →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=75&auto=format&fit=crop" alt="Energía Vaca Muerta" width="1200" height="800" fetchpriority="high"></div></div>
+<div class="slide active"><div class="s-left"><div class="eyebrow" data-i18n="s1_eye">01 — ENERGY & RIGI</div><h1 class="title" data-i18n="s1_title">Excellence<br>advisory in<br>energy</h1><p class="desc" data-i18n="s1_desc">Vaca Muerta and Patagonian wind under RIGI. 30 years fiscal stability and Delaware ↔ Neuquén structure.</p><a class="cta" href="#areas" data-go="0" data-i18n="s1_cta">Explore RIGI →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=75&auto=format&fit=crop" alt="Energía Vaca Muerta" width="1200" height="800" fetchpriority="high"></div></div>
 
-<div class="slide"><div class="s-left"><div class="eyebrow">02 — Agro & Real Assets</div><h1 class="title">De Delaware<br>a Rosario<br>en USD</h1><p class="desc">Fideicomisos agropecuarios, tokenización y blanqueo Ley 27.743. Due diligence 48hs.</p><a class="cta" href="#areas" data-go="1">Ver agro →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=75&auto=format&fit=crop" alt="Agro Rosario" loading="lazy" width="1200" height="800"></div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow" data-i18n="s2_eye">02 — AGRO & REAL ASSETS</div><h1 class="title" data-i18n="s2_title">From Delaware<br>to Rosario<br>in USD</h1><p class="desc" data-i18n="s2_desc">Agricultural trusts, tokenization and amnesty Law 27.743. 48hs due diligence.</p><a class="cta" href="#areas" data-go="1" data-i18n="s2_cta">View agro →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=75&auto=format&fit=crop" alt="Agro Rosario" loading="lazy" width="1200" height="800"></div></div>
 
-<div class="slide"><div class="s-left"><div class="eyebrow">03 — Litio & Minería</div><h1 class="title">Lithium Triangle<br>sin fricción<br>fiscal</h1><p class="desc">21% reservas globales. 0% retenciones bajo RIGI, regalías estables y SPV Jujuy-Salta en USD.</p><a class="cta" href="#areas" data-go="2">Ver minería →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&q=75&auto=format&fit=crop" alt="Litio" loading="lazy" width="1200" height="800"></div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow" data-i18n="s3_eye">03 — LITHIUM & MINING</div><h1 class="title" data-i18n="s3_title">Lithium Triangle<br>without fiscal<br>friction</h1><p class="desc" data-i18n="s3_desc">21% global reserves. 0% retentions under RIGI, stable royalties and Jujuy-Salta SPV in USD.</p><a class="cta" href="#areas" data-go="2" data-i18n="s3_cta">View mining →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&q=75&auto=format&fit=crop" alt="Litio" loading="lazy" width="1200" height="800"></div></div>
 
-<div class="slide"><div class="s-left"><div class="eyebrow" style="color:var(--gold)">04 — Pesca & Economía Azul ★</div><h1 class="title">Pesca y cuota<br>ITQ con<br>seguridad jurídica</h1><p class="desc">Flota, plantas y JV bajo Ley 24.922. Cuotas transferibles, RIGI procesamiento y reintegros.</p><a class="cta gold" href="#areas" data-go="3">Ver estructura pesquera →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=75&auto=format&fit=crop" alt="Pesca ITQ" loading="lazy" width="1200" height="800"></div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow" style="color:var(--gold)" data-i18n="s4_eye">04 — FISHING & BLUE ECONOMY ★</div><h1 class="title" data-i18n="s4_title">Fishing and ITQ<br>quota with<br>legal security</h1><p class="desc" data-i18n="s4_desc">Fleet, plants and JV under Law 24.922. Transferable quotas, RIGI processing and rebates.</p><a class="cta gold" href="#areas" data-go="3" data-i18n="s4_cta">View fishing structure →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=75&auto=format&fit=crop" alt="Pesca ITQ" loading="lazy" width="1200" height="800"></div></div>
 
-<div class="slide"><div class="s-left"><div class="eyebrow">05 — Logística & Puertos</div><h1 class="title">Hidrovía y puertos<br>RIGI con USD<br>libre</h1><p class="desc">Terminales Paraná, 80% del export. RIGI portuario con libre giro y tasa 0%.</p><a class="cta" href="#areas" data-go="4">Ver logística →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=75&auto=format&fit=crop" alt="Logística" loading="lazy" width="1200" height="800"></div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow" data-i18n="s5_eye">05 — LOGISTICS & PORTS</div><h1 class="title" data-i18n="s5_title">Waterway and ports<br>RIGI with free<br>USD</h1><p class="desc" data-i18n="s5_desc">Paraná terminals, 80% of exports. RIGI port with free FX and 0% rate.</p><a class="cta" href="#areas" data-go="4" data-i18n="s5_cta">View logistics →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=75&auto=format&fit=crop" alt="Logística" loading="lazy" width="1200" height="800"></div></div>
 
 <div class="nav-hero"><div style="display:flex;gap:1px;background:rgba(255,255,255,.1)"><button class="arr" data-action="prev" aria-label="Anterior">‹</button><button class="arr" data-action="next" aria-label="Siguiente">›</button></div><div id="dots" style="display:flex;gap:8px"></div><div id="counter" style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:3px">01 — 05</div></div>
 </div>
 
-<nav class="sticky-nav"><div class="nav-inner"><span class="logo">RGMA ARGENTINA DESK</span><div class="menu"><a class="m-link" href="#estudio">El Estudio</a><a class="m-link" href="#vehiculos">Vehículos</a><div class="dropdown"><span class="m-link dropdown-trigger">ÁREAS ▾</span><div class="dropdown-menu"><a href="#areas" data-go="0">Energía</a><a href="#areas" data-go="1">Agro</a><a href="#areas" data-go="2">Minería</a><a href="#areas" data-go="3">Pesca</a><a href="#areas" data-go="4">Logística</a></div></div><a class="m-link" href="#rigi">RIGI</a><a class="m-link" href="#contacto">Contacto</a></div></div></nav>
+<nav class="sticky-nav"><div class="nav-inner"><span class="logo">RGMA ARGENTINA DESK</span><div class="menu"><a class="m-link" href="#estudio" data-i18n="m_estudio">The Firm</a><a class="m-link" href="#vehiculos" data-i18n="m_vehiculos">Vehicles</a><div class="dropdown"><span class="m-link dropdown-trigger" data-i18n="m_areas">AREAS ▾</span><div class="dropdown-menu"><a href="#areas" data-go="0" data-i18n="m_energy">Energy</a><a href="#areas" data-go="1" data-i18n="m_agro">Agro</a><a href="#areas" data-go="2" data-i18n="m_mining">Mining</a><a href="#areas" data-go="3" data-i18n="m_fishing">Fishing</a><a href="#areas" data-go="4" data-i18n="m_logistics">Logistics</a></div></div><a class="m-link" href="#rigi">RIGI</a><a class="m-link" href="#contacto" data-i18n="m_contact">Contact</a></div></div></nav>
 
-<section style="background:#fff;border-bottom:1px solid #eee;padding:80px 24px;text-align:center"><div style="max-width:720px;margin:0 auto"><div style="width:40px;height:1px;background:var(--gold);margin:0 auto 28px"></div><p class="font-serif" style="font-size:26px;font-style:italic;color:var(--navy);line-height:1.4">“Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas.”</p><span style="font-size:10px;letter-spacing:.3em;color:#999;text-transform:uppercase;font-weight:600;margin-top:16px;display:block">Filosofía RGMA — Desde 1948</span></div></section>
+<section style="background:#fff;border-bottom:1px solid #eee;padding:80px 24px;text-align:center"><div style="max-width:720px;margin:0 auto"><div style="width:40px;height:1px;background:var(--gold);margin:0 auto 28px"></div><p class="font-serif" style="font-size:26px;font-style:italic;color:var(--navy);line-height:1.4" data-i18n="philosophy">"A good tailor keeps his client for life because, knowing his development, he knows how to better adapt his garments."</p><span style="font-size:10px;letter-spacing:.3em;color:#999;text-transform:uppercase;font-weight:600;margin-top:16px;display:block" data-i18n="philosophy_sub">RGMA Philosophy — Since 1948</span></div></section>
 
 <section id="areas" class="areas">
-<div class="a-slide active"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">01 — ENERGÍA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Energía: Vaca Muerta<br>con RIGI 30 años<br>que nadie estructura.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">SPVs con libre disponibilidad cambiaria y contratos USD.</p><div class="kpi"><div><b>USD 2B</b><span>Mínimo RIGI</span></div><div><b>30 años</b><span>Estabilidad</span></div><div><b>100%</b><span>Divisas libres</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Energía SPV</h3><div class="row"><span>Vehículo</span><span>S.A.U. + RIGI</span></div><div class="row"><span>Activo</span><span>Bloque VM</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>Off-take + M&A</span></div><a class="btn" href="#contacto">SOLICITAR TEASER ENERGÍA</a></div></div>
+<div class="a-slide active"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">01 — ENERGY</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px" data-i18n="a1_title">Energy: Vaca Muerta<br>with 30-year RIGI<br>no one structures.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7" data-i18n="a1_p">SPVs with free FX availability and USD contracts.</p><div class="kpi"><div><b>USD 2B</b><span data-i18n="a1_k1">RIGI Minimum</span></div><div><b>30 years</b><span data-i18n="a1_k2">Stability</span></div><div><b>100%</b><span data-i18n="a1_k3">Free FX</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px" data-i18n="a1_card">Energy SPV Structure</h3><div class="row"><span>Vehicle</span><span>S.A.U. + RIGI</span></div><div class="row"><span>Asset</span><span>VM Block</span></div><div class="row" style="border:0;margin:0"><span>Exit</span><span>Off-take + M&A</span></div><a class="btn" href="#contacto" data-i18n="a1_btn">REQUEST ENERGY TEASER</a></div></div>
 
-<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">02 — AGRO</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Agro: de Delaware<br>a Rosario<br>en USD.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">Fideicomisos agrícolas y forwards MATBA.</p><div class="kpi"><div><b>USD 50M</b><span>Ticket</span></div><div><b>12%</b><span>Yield USD</span></div><div><b>Fideicomiso</b><span>Vehículo</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Agro SPV</h3><div class="row"><span>Vehículo</span><span>Fideicomiso + S.A.</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>Venta tierra</span></div><a class="btn" href="#contacto">SOLICITAR TEASER AGRO</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">02 — AGRO</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px" data-i18n="a2_title">Agro: from Delaware<br>to Rosario<br>in USD.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7" data-i18n="a2_p">Agricultural trusts and MATBA forwards.</p><div class="kpi"><div><b>USD 50M</b><span>Ticket</span></div><div><b>12%</b><span>USD Yield</span></div><div><b>Trust</b><span>Vehicle</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px" data-i18n="a2_card">Agro SPV Structure</h3><div class="row"><span>Vehicle</span><span>Trust + S.A.</span></div><div class="row" style="border:0;margin:0"><span>Exit</span><span>Land sale</span></div><a class="btn" href="#contacto" data-i18n="a2_btn">REQUEST AGRO TEASER</a></div></div>
 
-<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">03 — MINERÍA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Minería: Litio<br>triángulo global<br>con off-take Asia.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">Jujuy, Salta, Catamarca. Regalías estables y off-take Asia.</p><div class="kpi"><div><b>21%</b><span>Reserva global</span></div><div><b>3%</b><span>Regalía</span></div><div><b>USD 2B</b><span>Mínimo RIGI</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Minería SPV</h3><div class="row"><span>Vehículo</span><span>S.A. + RIGI</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>IPO Toronto</span></div><a class="btn" href="#contacto">SOLICITAR TEASER MINERÍA</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">03 — MINING</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px" data-i18n="a3_title">Mining: Lithium<br>global triangle<br>with Asia off-take.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7" data-i18n="a3_p">Jujuy, Salta, Catamarca. Stable royalties and Asia off-take.</p><div class="kpi"><div><b>21%</b><span>Global Reserve</span></div><div><b>3%</b><span>Royalty</span></div><div><b>USD 2B</b><span>RIGI Minimum</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px" data-i18n="a3_card">Mining SPV Structure</h3><div class="row"><span>Vehicle</span><span>S.A. + RIGI</span></div><div class="row" style="border:0;margin:0"><span>Exit</span><span>Toronto IPO</span></div><a class="btn" href="#contacto" data-i18n="a3_btn">REQUEST MINING TEASER</a></div></div>
 
-<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">04 — EXCLUSIVO RGMA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Pesca: la última<br>frontera RIGI que<br>nadie mira.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">SPVs con cuota ITQ transferible y plantas RIGI Mar del Plata / Madryn 0% retenciones.</p><div class="kpi"><div><b>USD 2.1B</b><span>Export 2024</span></div><div><b>0%</b><span>Retenciones RIGI</span></div><div><b>ITQ</b><span>Cuota</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Pesca SPV</h3><div class="row"><span>Vehículo</span><span>S.A.U. + Fideicomiso Cuota</span></div><div class="row"><span>Cuota</span><span>Langostino / Merluza</span></div><div class="row" style="border:0;margin:0"><span>Planta</span><span>RIGI 30 años</span></div><a class="btn" href="#contacto">SOLICITAR TEASER PESCA</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px" data-i18n="a4_label">04 — EXCLUSIVE RGMA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px" data-i18n="a4_title">Fishing: the last<br>RIGI frontier<br>no one sees.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7" data-i18n="a4_p">SPVs with transferable ITQ quota and RIGI plants Mar del Plata / Madryn 0% retentions.</p><div class="kpi"><div><b>USD 2.1B</b><span>Export 2024</span></div><div><b>0%</b><span data-i18n="a4_k2">RIGI Retentions</span></div><div><b>ITQ</b><span>Quota</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px" data-i18n="a4_card">Fishing SPV Structure</h3><div class="row"><span>Vehicle</span><span>S.A.U. + Quota Trust</span></div><div class="row"><span>Quota</span><span>Shrimp / Hake</span></div><div class="row" style="border:0;margin:0"><span>Plant</span><span>RIGI 30 years</span></div><a class="btn" href="#contacto" data-i18n="a4_btn">REQUEST FISHING TEASER</a></div></div>
 
-<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">05 — LOGÍSTICA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Logística: hidrovía<br>y puertos RIGI<br>con USD libre.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">Terminales Paraná, depósitos fiscales y flota.</p><div class="kpi"><div><b>80%</b><span>Export por río</span></div><div><b>USD 300M</b><span>Capex puerto</span></div><div><b>RIGI</b><span>Puerto</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Logística SPV</h3><div class="row"><span>Vehículo</span><span>S.A. + RIGI</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>Concesión 30a</span></div><a class="btn" href="#contacto">SOLICITAR TEASER LOGÍSTICA</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">05 — LOGISTICS</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px" data-i18n="a5_title">Logistics: waterway<br>and RIGI ports<br>with free USD.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7" data-i18n="a5_p">Paraná terminals, fiscal warehouses and fleet.</p><div class="kpi"><div><b>80%</b><span>Export by river</span></div><div><b>USD 300M</b><span>Port Capex</span></div><div><b>RIGI</b><span>Port</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px" data-i18n="a5_card">Logistics SPV Structure</h3><div class="row"><span>Vehicle</span><span>S.A. + RIGI</span></div><div class="row" style="border:0;margin:0"><span>Exit</span><span>30y Concession</span></div><a class="btn" href="#contacto" data-i18n="a5_btn">REQUEST LOGISTICS TEASER</a></div></div>
 
 <div class="a-dots"><button class="a-dot active" data-go="0" aria-label="Energía"></button><button class="a-dot" data-go="1" aria-label="Agro"></button><button class="a-dot" data-go="2" aria-label="Minería"></button><button class="a-dot" data-go="3" aria-label="Pesca"></button><button class="a-dot" data-go="4" aria-label="Logística"></button></div>
 </section>
 
-<!-- ===================== SECCIÓN BLANCA DIVISORA - INSERTADA SEGÚN INDICACIÓN ===================== -->
 <section id="vehiculos" style="background:#FFFFFF;padding:0;margin:0;border-top:1px solid #EDE9E1;border-bottom:1px solid #EDE9E1;position:relative;z-index:3">
-  <!-- Bloque claim integrado y armonizado - fondo blanco -->
   <div style="max-width:1280px;margin:0 auto;padding:96px 40px 72px">
-    <span style="display:block;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:3.6px;text-transform:uppercase;color:#C8B090;font-weight:600;margin-bottom:28px">ÁREA DE PRÁCTICA INTERNACIONAL — RGMA</span>
-    <h2 class="font-serif" style="font-family:'Playfair Display',serif;font-size:clamp(32px,4.2vw,52px);line-height:0.98;font-weight:300;color:#0A1931;letter-spacing:-0.02em;margin-bottom:28px;max-width:680px">
-      Arquitectura jurídica para la<br>protección y expansión de<br>su capital en Argentina.
-    </h2>
-    <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.75;color:#5A6B82;max-width:520px;font-weight:300;margin-bottom:72px">
-      Traducimos la complejidad del entorno regulatorio y cambiario en una estrategia de desembarco clara, combinando la rigurosidad técnica del bufete clásico con la agilidad digital global. RGMA Argentina Desk — Riganti, Geiler & Márquez Alluralde.
-    </p>
-
-    <!-- Tabla vehículos -->
-    <p style="font-family:'Inter',sans-serif;font-size:11.5px;color:#8A9BB0;letter-spacing:0.2px;margin-bottom:18px">Todos compatibles con RIGI y blanqueo Ley 27.743. Estructura Delaware ↔ Argentina.</p>
+    <span style="display:block;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:3.6px;text-transform:uppercase;color:#C8B090;font-weight:600;margin-bottom:28px" data-i18n="veh_label">INTERNATIONAL PRACTICE AREA — RGMA</span>
+    <h2 class="font-serif" style="font-family:'Playfair Display',serif;font-size:clamp(32px,4.2vw,52px);line-height:0.98;font-weight:300;color:#0A1931;letter-spacing:-0.02em;margin-bottom:28px;max-width:680px" data-i18n="veh_title">Legal architecture for the<br>protection and expansion of<br>your capital in Argentina.</h2>
+    <p style="font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.75;color:#5A6B82;max-width:520px;font-weight:300;margin-bottom:72px" data-i18n="veh_desc">We translate the complexity of the regulatory and FX environment into a clear landing strategy, combining classic firm rigor with global digital agility. RGMA Argentina Desk — Riganti, Geiler & Márquez Alluralde.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:11.5px;color:#8A9BB0;letter-spacing:0.2px;margin-bottom:18px" data-i18n="veh_note">All compatible with RIGI and amnesty Law 27.743. Delaware ↔ Argentina structure.</p>
     <div style="background:#FFFFFF;border:1px solid #EAEAEA;overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;min-width:900px">
-        <thead>
-          <tr style="background:#121F3E;height:48px">
-            <th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:16%">ESTRUCTURA</th>
-            <th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:28%">RESPONSABILIDAD</th>
-            <th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:24%">GOBERNANZA</th>
-            <th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:16%">CAPITAL / TIEMPO</th>
-            <th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:16%">IDONEIDAD</th>
-          </tr>
-        </thead>
+        <thead><tr style="background:#121F3E;height:48px"><th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:16%" data-i18n="th1">STRUCTURE</th><th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:28%" data-i18n="th2">LIABILITY</th><th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:24%" data-i18n="th3">GOVERNANCE</th><th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:16%" data-i18n="th4">CAPITAL / TIME</th><th style="color:#FFFFFF;font-size:10px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;text-align:left;padding:0 24px;width:16%" data-i18n="th5">SUITABILITY</th></tr></thead>
         <tbody style="font-size:12.5px;line-height:1.4;color:#4A5A6F">
-          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.A.</td><td style="padding:0 24px">Limitada al capital. 48hs IGJ express.</td><td style="padding:0 24px">Directorio. Sindicatura opcional.</td><td style="padding:0 24px">$ 300.000 ARS</td><td style="padding:0 24px"><span style="display:inline-block;background:#121F3E;color:#FFFFFF;font-size:9px;font-weight:700;letter-spacing:1px;padding:5px 10px">GRANDE ESCALA</span></td></tr>
-          <tr style="background:#FAFAF8;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.A.U.</td><td style="padding:0 24px">Único socio. Ideal SPV RIGI.</td><td style="padding:0 24px">Directorio + Control total.</td><td style="padding:0 24px">USD 2B RIGI</td><td style="padding:0 24px"><span style="display:inline-block;background:#E9E0CE;color:#5C4A32;font-size:9px;font-weight:700;padding:5px 10px">RIGI RECOMENDADO</span></td></tr>
-          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.A.S.</td><td style="padding:0 24px">Limitada. 24hs digital. Sin sindicatura.</td><td style="padding:0 24px">Administrador único.</td><td style="padding:0 24px">2x SMVM</td><td style="padding:0 24px"><span style="display:inline-block;background:#F1F1F1;color:#8A8A8A;font-size:9px;font-weight:600;padding:5px 10px">STARTUP / TECH</span></td></tr>
-          <tr style="background:#FAFAF8;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.R.L.</td><td style="padding:0 24px">Limitada a cuotas. Familiar / JV chico.</td><td style="padding:0 24px">Gerencia.</td><td style="padding:0 24px">Sin mínimo</td><td style="padding:0 24px"><span style="display:inline-block;background:#F1F1F1;color:#8A8A8A;font-size:9px;font-weight:600;padding:5px 10px">PYME / FAMILIA</span></td></tr>
-          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-weight:600;color:#0A1931">Sucursal 118</td><td style="padding:0 24px">Casa matriz responde. Sin personalidad local.</td><td style="padding:0 24px">Representante legal.</td><td style="padding:0 24px">Sin capital asignado</td><td style="padding:0 24px"><span style="display:inline-block;background:#FFFFFF;border:1px solid #E0E0E0;color:#B0B0B0;font-size:9px;font-weight:600;padding:4px 9px">NO RECOMENDADO</span></td></tr>
-          <tr style="background:#FFFBF2;height:62px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">⚓ SPV Pesquero</td><td style="padding:0 24px;color:#0A1931"><b>Ley 24.922.</b> Cuota ITQ + RIGI planta Mar del Plata.</td><td style="padding:0 24px">Armador + Planta. Cuota transferible.</td><td style="padding:0 24px">USD 5M - 40M</td><td style="padding:0 24px"><span style="display:inline-block;background:#121F3E;color:#C8B090;font-size:9px;font-weight:700;padding:5px 10px">PESCA - EXCLUSIVO</span></td></tr>
-          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-weight:600;color:#0A1931">SPV Energía</td><td style="padding:0 24px">Vaca Muerta + RIGI 30 años. Libre giro.</td><td style="padding:0 24px">Directorio + Off-taker.</td><td style="padding:0 24px">USD 200M+</td><td style="padding:0 24px"><span style="display:inline-block;background:#121F3E;color:#FFFFFF;font-size:9px;font-weight:700;padding:5px 10px">ENERGÍA - RIGI</span></td></tr>
-          <tr style="background:#FAFAF8;height:56px"><td style="padding:0 24px;font-weight:600;color:#0A1931">Fideicomiso</td><td style="padding:0 24px">Patrimonio separado. Agro / Real Estate.</td><td style="padding:0 24px">Fiduciario profesional.</td><td style="padding:0 24px">Sin mínimo</td><td style="padding:0 24px"><span style="display:inline-block;background:#E9E0CE;color:#5C4A32;font-size:9px;font-weight:700;padding:5px 10px">AGRO / BLANQUEO</span></td></tr>
+          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.A.</td><td style="padding:0 24px" data-i18n="tr1_2">Limited to capital. 48hs IGJ express.</td><td style="padding:0 24px" data-i18n="tr1_3">Board. Optional statutory audit.</td><td style="padding:0 24px">$ 300.000 ARS</td><td style="padding:0 24px"><span style="display:inline-block;background:#121F3E;color:#FFFFFF;font-size:9px;font-weight:700;letter-spacing:1px;padding:5px 10px">LARGE SCALE</span></td></tr>
+          <tr style="background:#FAFAF8;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.A.U.</td><td style="padding:0 24px" data-i18n="tr2_2">Single shareholder. Ideal SPV RIGI.</td><td style="padding:0 24px" data-i18n="tr2_3">Board + Full control.</td><td style="padding:0 24px">USD 2B RIGI</td><td style="padding:0 24px"><span style="display:inline-block;background:#E9E0CE;color:#5C4A32;font-size:9px;font-weight:700;padding:5px 10px">RIGI RECOMMENDED</span></td></tr>
+          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.A.S.</td><td style="padding:0 24px" data-i18n="tr3_2">Limited. 24hs digital. No audit.</td><td style="padding:0 24px" data-i18n="tr3_3">Sole administrator.</td><td style="padding:0 24px">2x SMVM</td><td style="padding:0 24px"><span style="display:inline-block;background:#F1F1F1;color:#8A8A8A;font-size:9px;font-weight:600;padding:5px 10px">STARTUP / TECH</span></td></tr>
+          <tr style="background:#FAFAF8;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">S.R.L.</td><td style="padding:0 24px" data-i18n="tr4_2">Limited to quotas. Family / Small JV.</td><td style="padding:0 24px">Management.</td><td style="padding:0 24px" data-i18n="tr4_4">No minimum</td><td style="padding:0 24px"><span style="display:inline-block;background:#F1F1F1;color:#8A8A8A;font-size:9px;font-weight:600;padding:5px 10px">SME / FAMILY</span></td></tr>
+          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-weight:600;color:#0A1931">Branch 118</td><td style="padding:0 24px" data-i18n="tr5_2">Head office liable. No local personality.</td><td style="padding:0 24px" data-i18n="tr5_3">Legal representative.</td><td style="padding:0 24px" data-i18n="tr5_4">No assigned capital</td><td style="padding:0 24px"><span style="display:inline-block;background:#FFFFFF;border:1px solid #E0E0E0;color:#B0B0B0;font-size:9px;font-weight:600;padding:4px 9px">NOT RECOMMENDED</span></td></tr>
+          <tr style="background:#FFFBF2;height:62px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-family:'Playfair Display',serif;font-weight:700;color:#0A1931">⚓ Fishing SPV</td><td style="padding:0 24px;color:#0A1931" data-i18n="tr6_2"><b>Law 24.922.</b> ITQ + RIGI plant Mar del Plata.</td><td style="padding:0 24px">Shipowner + Plant. Transferable quota.</td><td style="padding:0 24px">USD 5M - 40M</td><td style="padding:0 24px"><span style="display:inline-block;background:#121F3E;color:#C8B090;font-size:9px;font-weight:700;padding:5px 10px">FISHING - EXCLUSIVE</span></td></tr>
+          <tr style="background:#FFFFFF;height:56px;border-bottom:1px solid #F0F0F0"><td style="padding:0 24px;font-weight:600;color:#0A1931">Energy SPV</td><td style="padding:0 24px">Vaca Muerta + RIGI 30y. Free FX.</td><td style="padding:0 24px">Board + Off-taker.</td><td style="padding:0 24px">USD 200M+</td><td style="padding:0 24px"><span style="display:inline-block;background:#121F3E;color:#FFFFFF;font-size:9px;font-weight:700;padding:5px 10px">ENERGY - RIGI</span></td></tr>
+          <tr style="background:#FAFAF8;height:56px"><td style="padding:0 24px;font-weight:600;color:#0A1931">Trust</td><td style="padding:0 24px">Separate estate. Agro / Real Estate.</td><td style="padding:0 24px">Professional trustee.</td><td style="padding:0 24px">No minimum</td><td style="padding:0 24px"><span style="display:inline-block;background:#E9E0CE;color:#5C4A32;font-size:9px;font-weight:700;padding:5px 10px">AGRO / AMNESTY</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p style="font-family:'Inter',sans-serif;font-size:9.5px;color:#A0AEC0;letter-spacing:0.8px;text-transform:uppercase;margin-top:14px">* TODOS LOS VEHÍCULOS PERMITEN CUENTA USD OFFSHORE Y TRATADO DE DOBLE IMPOSICIÓN USA ↔ AR. ASESORAMIENTO BAJO NY LAW + LEY ARGENTINA. RGMA</p>
+    <p style="font-family:'Inter',sans-serif;font-size:9.5px;color:#A0AEC0;letter-spacing:0.8px;text-transform:uppercase;margin-top:14px" data-i18n="veh_foot">* ALL VEHICLES ALLOW USD OFFSHORE ACCOUNT AND USA ↔ AR DOUBLE TAX TREATY. ADVICE UNDER NY LAW + ARGENTINE LAW. RGMA</p>
   </div>
 </section>
-<!-- FIN SECCIÓN BLANCA DIVISORA -->
 
-<section id="contacto" style="background:var(--navy);padding:88px 24px"><div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px"><div><span style="font-size:10px;letter-spacing:.35em;color:var(--gold);font-weight:600;text-transform:uppercase">Protocolo Boutique</span><h3 class="font-serif" style="font-size:36px;color:#fff;font-weight:300;line-height:.95;margin-top:12px">Vinculación<br>estratégica</h3></div><div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:32px"><form onsubmit="event.preventDefault();this.innerHTML='<p style=color:#fff>Enviado. Respuesta en 24hs.</p>'" style="display:grid;gap:16px"><input required placeholder="Nombre completo" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:14px;color:#fff"><input required type="email" placeholder="Email corporativo" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:14px;color:#fff"><button style="background:var(--gold);color:var(--navy);border:0;padding:16px;font-size:11px;letter-spacing:2px;font-weight:700;cursor:pointer">ENVIAR REQUERIMIENTO</button></form></div></div></section>
+<section id="contacto" style="background:var(--navy);padding:88px 24px"><div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px"><div><span style="font-size:10px;letter-spacing:.35em;color:var(--gold);font-weight:600;text-transform:uppercase" data-i18n="c_label">Boutique Protocol</span><h3 class="font-serif" style="font-size:36px;color:#fff;font-weight:300;line-height:.95;margin-top:12px" data-i18n="c_title">Strategic<br>linkage</h3></div><div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:32px"><form onsubmit="event.preventDefault();this.innerHTML='<p style=color:#fff>Sent. Reply in 24hs.</p>'" style="display:grid;gap:16px"><input required placeholder="Full name" data-i18n-ph="c_name" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:14px;color:#fff"><input required type="email" placeholder="Corporate email" data-i18n-ph="c_email" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:14px;color:#fff"><button style="background:var(--gold);color:var(--navy);border:0;padding:16px;font-size:11px;letter-spacing:2px;font-weight:700;cursor:pointer" data-i18n="c_btn">SEND REQUEST</button></form></div></div></section>
+
 <footer style="background:#080F1F;color:#666;padding:32px;text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase">© 2026 RGMA — ARGENTINA DESK · RIGANTI, GEILER & MÁRQUEZ ALLURALDE</footer>
+
 <script>
+const i18n = {
+en: {
+meta_title:"RGMA Argentina Desk | RIGI Investments, ITQ Fishing, Energy",
+meta_desc:"RGMA Argentina Desk — Legal architecture for RIGI, ITQ fishing, Vaca Muerta energy, lithium and agribusiness. Delaware ↔ Argentina structure.",
+top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",top_app:"APP",top_offices:"OFFICES",top_contact:"CONTACT",
+s1_eye:"01 — ENERGY & RIGI",s1_title:"Excellence<br>advisory in<br>energy",s1_desc:"Vaca Muerta and Patagonian wind under RIGI. 30 years fiscal stability and Delaware ↔ Neuquén structure.",s1_cta:"Explore RIGI →",
+s2_eye:"02 — AGRO & REAL ASSETS",s2_title:"From Delaware<br>to Rosario<br>in USD",s2_desc:"Agricultural trusts, tokenization and amnesty Law 27.743. 48hs due diligence.",s2_cta:"View agro →",
+s3_eye:"03 — LITHIUM & MINING",s3_title:"Lithium Triangle<br>without fiscal<br>friction",s3_desc:"21% global reserves. 0% retentions under RIGI, stable royalties and Jujuy-Salta SPV in USD.",s3_cta:"View mining →",
+s4_eye:"04 — FISHING & BLUE ECONOMY ★",s4_title:"Fishing and ITQ<br>quota with<br>legal security",s4_desc:"Fleet, plants and JV under Law 24.922. Transferable quotas, RIGI processing and rebates.",s4_cta:"View fishing structure →",
+s5_eye:"05 — LOGISTICS & PORTS",s5_title:"Waterway and ports<br>RIGI with free<br>USD",s5_desc:"Paraná terminals, 80% of exports. RIGI port with free FX and 0% rate.",s5_cta:"View logistics →",
+m_estudio:"The Firm",m_vehiculos:"Vehicles",m_areas:"AREAS ▾",m_energy:"Energy",m_agro:"Agro",m_mining:"Mining",m_fishing:"Fishing",m_logistics:"Logistics",m_contact:"Contact",
+philosophy:"“A good tailor keeps his client for life because, knowing his development, he knows how to better adapt his garments.”",philosophy_sub:"RGMA Philosophy — Since 1948",
+a1_title:"Energy: Vaca Muerta<br>with 30-year RIGI<br>no one structures.",a1_p:"SPVs with free FX availability and USD contracts.",a1_k1:"RIGI Minimum",a1_k2:"Stability",a1_k3:"Free FX",a1_card:"Energy SPV Structure",a1_btn:"REQUEST ENERGY TEASER",
+a2_title:"Agro: from Delaware<br>to Rosario<br>in USD.",a2_p:"Agricultural trusts and MATBA forwards.",a2_card:"Agro SPV Structure",a2_btn:"REQUEST AGRO TEASER",
+a3_title:"Mining: Lithium<br>global triangle<br>with Asia off-take.",a3_p:"Jujuy, Salta, Catamarca. Stable royalties and Asia off-take.",a3_card:"Mining SPV Structure",a3_btn:"REQUEST MINING TEASER",
+a4_label:"04 — EXCLUSIVE RGMA",a4_title:"Fishing: the last<br>RIGI frontier<br>no one sees.",a4_p:"SPVs with transferable ITQ quota and RIGI plants Mar del Plata / Madryn 0% retentions.",a4_k2:"RIGI Retentions",a4_card:"Fishing SPV Structure",a4_btn:"REQUEST FISHING TEASER",
+a5_title:"Logistics: waterway<br>and RIGI ports<br>with free USD.",a5_p:"Paraná terminals, fiscal warehouses and fleet.",a5_card:"Logistics SPV Structure",a5_btn:"REQUEST LOGISTICS TEASER",
+veh_label:"INTERNATIONAL PRACTICE AREA — RGMA",veh_title:"Legal architecture for the<br>protection and expansion of<br>your capital in Argentina.",veh_desc:"We translate the complexity of the regulatory and FX environment into a clear landing strategy, combining classic firm rigor with global digital agility. RGMA Argentina Desk — Riganti, Geiler & Márquez Alluralde.",veh_note:"All compatible with RIGI and amnesty Law 27.743. Delaware ↔ Argentina structure.",th1:"STRUCTURE",th2:"LIABILITY",th3:"GOVERNANCE",th4:"CAPITAL / TIME",th5:"SUITABILITY",tr1_2:"Limited to capital. 48hs IGJ express.",tr1_3:"Board. Optional statutory audit.",tr2_2:"Single shareholder. Ideal SPV RIGI.",tr2_3:"Board + Full control.",tr3_2:"Limited. 24hs digital. No audit.",tr3_3:"Sole administrator.",tr4_2:"Limited to quotas. Family / Small JV.",tr4_4:"No minimum",tr5_2:"Head office liable. No local personality.",tr5_3:"Legal representative.",tr5_4:"No assigned capital",tr6_2:"<b>Law 24.922.</b> ITQ + RIGI plant Mar del Plata.",veh_foot:"* ALL VEHICLES ALLOW USD OFFSHORE ACCOUNT AND USA ↔ AR DOUBLE TAX TREATY. ADVICE UNDER NY LAW + ARGENTINE LAW. RGMA",
+c_label:"Boutique Protocol",c_title:"Strategic<br>linkage",c_btn:"SEND REQUEST",c_name:"Full name",c_email:"Corporate email"
+},
+es: {
+meta_title:"RGMA Argentina Desk | Inversiones RIGI, Pesca ITQ, Energía",
+meta_desc:"RGMA Argentina Desk — Arquitectura jurídica para RIGI, pesca ITQ, energía Vaca Muerta, litio y agro. Estructura Delaware ↔ Argentina.",
+top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",top_app:"APP",top_offices:"OFICINAS",top_contact:"CONTACTO",
+s1_eye:"01 — ENERGÍA & RIGI",s1_title:"Asesoramiento de<br>excelencia en<br>energía",s1_desc:"Vaca Muerta y Patagonia eólica bajo RIGI. 30 años estabilidad fiscal y estructura Delaware ↔ Neuquén.",s1_cta:"Explorar RIGI →",
+s2_eye:"02 — AGRO & REAL ASSETS",s2_title:"De Delaware<br>a Rosario<br>en USD",s2_desc:"Fideicomisos agropecuarios, tokenización y blanqueo Ley 27.743. Due diligence 48hs.",s2_cta:"Ver agro →",
+s3_eye:"03 — LITIO & MINERÍA",s3_title:"Lithium Triangle<br>sin fricción<br>fiscal",s3_desc:"21% reservas globales. 0% retenciones bajo RIGI, regalías estables y SPV Jujuy-Salta en USD.",s3_cta:"Ver minería →",
+s4_eye:"04 — PESCA & ECONOMÍA AZUL ★",s4_title:"Pesca y cuota<br>ITQ con<br>seguridad jurídica",s4_desc:"Flota, plantas y JV bajo Ley 24.922. Cuotas transferibles, RIGI procesamiento y reintegros.",s4_cta:"Ver estructura pesquera →",
+s5_eye:"05 — LOGÍSTICA & PUERTOS",s5_title:"Hidrovía y puertos<br>RIGI con USD<br>libre",s5_desc:"Terminales Paraná, 80% del export. RIGI portuario con libre giro y tasa 0%.",s5_cta:"Ver logística →",
+m_estudio:"El Estudio",m_vehiculos:"Vehículos",m_areas:"ÁREAS ▾",m_energy:"Energía",m_agro:"Agro",m_mining:"Minería",m_fishing:"Pesca",m_logistics:"Logística",m_contact:"Contacto",
+philosophy:"“Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas.”",philosophy_sub:"Filosofía RGMA — Desde 1948",
+a1_title:"Energía: Vaca Muerta<br>con RIGI 30 años<br>que nadie estructura.",a1_p:"SPVs con libre disponibilidad cambiaria y contratos USD.",a1_k1:"Mínimo RIGI",a1_k2:"Estabilidad",a1_k3:"Divisas libres",a1_card:"Estructura tipo Energía SPV",a1_btn:"SOLICITAR TEASER ENERGÍA",
+a2_title:"Agro: de Delaware<br>a Rosario<br>en USD.",a2_p:"Fideicomisos agrícolas y forwards MATBA.",a2_card:"Estructura tipo Agro SPV",a2_btn:"SOLICITAR TEASER AGRO",
+a3_title:"Minería: Litio<br>triángulo global<br>con off-take Asia.",a3_p:"Jujuy, Salta, Catamarca. Regalías estables y off-take Asia.",a3_card:"Estructura tipo Minería SPV",a3_btn:"SOLICITAR TEASER MINERÍA",
+a4_label:"04 — EXCLUSIVO RGMA",a4_title:"Pesca: la última<br>frontera RIGI que<br>nadie mira.",a4_p:"SPVs con cuota ITQ transferible y plantas RIGI Mar del Plata / Madryn 0% retenciones.",a4_k2:"Retenciones RIGI",a4_card:"Estructura tipo Pesca SPV",a4_btn:"SOLICITAR TEASER PESCA",
+a5_title:"Logística: hidrovía<br>y puertos RIGI<br>con USD libre.",a5_p:"Terminales Paraná, depósitos fiscales y flota.",a5_card:"Estructura tipo Logística SPV",a5_btn:"SOLICITAR TEASER LOGÍSTICA",
+veh_label:"ÁREA DE PRÁCTICA INTERNACIONAL — RGMA",veh_title:"Arquitectura jurídica para la<br>protección y expansión de<br>su capital en Argentina.",veh_desc:"Traducimos la complejidad del entorno regulatorio y cambiario en una estrategia de desembarco clara, combinando la rigurosidad técnica del bufete clásico con la agilidad digital global. RGMA Argentina Desk — Riganti, Geiler & Márquez Alluralde.",veh_note:"Todos compatibles con RIGI y blanqueo Ley 27.743. Estructura Delaware ↔ Argentina.",th1:"ESTRUCTURA",th2:"RESPONSABILIDAD",th3:"GOBERNANZA",th4:"CAPITAL / TIEMPO",th5:"IDONEIDAD",tr1_2:"Limitada al capital. 48hs IGJ express.",tr1_3:"Directorio. Sindicatura opcional.",tr2_2:"Único socio. Ideal SPV RIGI.",tr2_3:"Directorio + Control total.",tr3_2:"Limitada. 24hs digital. Sin sindicatura.",tr3_3:"Administrador único.",tr4_2:"Limitada a cuotas. Familiar / JV chico.",tr4_4:"Sin mínimo",tr5_2:"Casa matriz responde. Sin personalidad local.",tr5_3:"Representante legal.",tr5_4:"Sin capital asignado",tr6_2:"<b>Ley 24.922.</b> Cuota ITQ + RIGI planta Mar del Plata.",veh_foot:"* TODOS LOS VEHÍCULOS PERMITEN CUENTA USD OFFSHORE Y TRATADO DE DOBLE IMPOSICIÓN USA ↔ AR. ASESORAMIENTO BAJO NY LAW + LEY ARGENTINA. RGMA",
+c_label:"Protocolo Boutique",c_title:"Vinculación<br>estratégica",c_btn:"ENVIAR REQUERIMIENTO",c_name:"Nombre completo",c_email:"Email corporativo"
+},
+pt: {
+meta_title:"RGMA Argentina Desk | Investimentos RIGI, Pesca ITQ, Energia",
+meta_desc:"RGMA Argentina Desk — Arquitetura jurídica para RIGI, pesca ITQ, energia Vaca Muerta, lítio e agro. Estrutura Delaware ↔ Argentina.",
+top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",top_app:"APP",top_offices:"ESCRITÓRIOS",top_contact:"CONTATO",
+s1_eye:"01 — ENERGIA & RIGI",s1_title:"Assessoria de<br>excelência em<br>energia",s1_desc:"Vaca Muerta e Patagônia eólica sob RIGI. 30 anos de estabilidade fiscal e estrutura Delaware ↔ Neuquén.",s1_cta:"Explorar RIGI →",
+s2_eye:"02 — AGRO & REAL ASSETS",s2_title:"De Delaware<br>a Rosário<br>em USD",s2_desc:"Trusts agrícolas, tokenização e anistia Lei 27.743. Due diligence 48hs.",s2_cta:"Ver agro →",
+s3_eye:"03 — LÍTIO & MINERAÇÃO",s3_title:"Triângulo de Lítio<br>sem fricção<br>fiscal",s3_desc:"21% das reservas globais. 0% retenções sob RIGI, royalties estáveis e SPV Jujuy-Salta em USD.",s3_cta:"Ver mineração →",
+s4_eye:"04 — PESCA & ECONOMIA AZUL ★",s4_title:"Pesca e quota<br>ITQ com<br>segurança jurídica",s4_desc:"Frota, plantas e JV sob Lei 24.922. Quotas transferíveis, processamento RIGI e reembolsos.",s4_cta:"Ver estrutura pesqueira →",
+s5_eye:"05 — LOGÍSTICA & PORTOS",s5_title:"Hidrovia e portos<br>RIGI com USD<br>livre",s5_desc:"Terminais Paraná, 80% da exportação. Porto RIGI com livre câmbio e taxa 0%.",s5_cta:"Ver logística →",
+m_estudio:"O Escritório",m_vehiculos:"Veículos",m_areas:"ÁREAS ▾",m_energy:"Energia",m_agro:"Agro",m_mining:"Mineração",m_fishing:"Pesca",m_logistics:"Logística",m_contact:"Contato",
+philosophy:"“Um bom alfaiate mantém seu cliente por toda a vida porque, conhecendo seu desenvolvimento, sabe como melhor adaptar suas peças.”",philosophy_sub:"Filosofia RGMA — Desde 1948",
+a1_title:"Energia: Vaca Muerta<br>com RIGI 30 anos<br>que ninguém estrutura.",a1_p:"SPVs com livre disponibilidade cambial e contratos em USD.",a1_k1:"Mínimo RIGI",a1_k2:"Estabilidade",a1_k3:"Câmbio livre",a1_card:"Estrutura tipo Energia SPV",a1_btn:"SOLICITAR TEASER ENERGIA",
+a2_title:"Agro: de Delaware<br>a Rosário<br>em USD.",a2_p:"Trusts agrícolas e forwards MATBA.",a2_card:"Estrutura tipo Agro SPV",a2_btn:"SOLICITAR TEASER AGRO",
+a3_title:"Mineração: Lítio<br>triângulo global<br>com off-take Ásia.",a3_p:"Jujuy, Salta, Catamarca. Royalties estáveis e off-take Ásia.",a3_card:"Estrutura tipo Mineração SPV",a3_btn:"SOLICITAR TEASER MINERAÇÃO",
+a4_label:"04 — EXCLUSIVO RGMA",a4_title:"Pesca: a última<br>fronteira RIGI que<br>ninguém vê.",a4_p:"SPVs com quota ITQ transferível e plantas RIGI Mar del Plata / Madryn 0% retenções.",a4_k2:"Retenções RIGI",a4_card:"Estrutura tipo Pesca SPV",a4_btn:"SOLICITAR TEASER PESCA",
+a5_title:"Logística: hidrovia<br>e portos RIGI<br>com USD livre.",a5_p:"Terminais Paraná, depósitos fiscais e frota.",a5_card:"Estrutura tipo Logística SPV",a5_btn:"SOLICITAR TEASER LOGÍSTICA",
+veh_label:"ÁREA DE PRÁTICA INTERNACIONAL — RGMA",veh_title:"Arquitetura jurídica para a<br>proteção e expansão do<br>seu capital na Argentina.",veh_desc:"Traduzimos a complexidade do ambiente regulatório e cambial em uma estratégia clara de desembarque, combinando o rigor técnico do escritório clássico com a agilidade digital global.",veh_note:"Todos compatíveis com RIGI e anistia Lei 27.743. Estrutura Delaware ↔ Argentina.",th1:"ESTRUTURA",th2:"RESPONSABILIDADE",th3:"GOVERNANÇA",th4:"CAPITAL / TEMPO",th5:"IDONEIDADE",tr1_2:"Limitada ao capital. 48hs IGJ express.",tr1_3:"Diretoria. Auditoria opcional.",tr2_2:"Sócio único. Ideal SPV RIGI.",tr2_3:"Diretoria + Controle total.",tr3_2:"Limitada. 24hs digital. Sem auditoria.",tr3_3:"Administrador único.",tr4_2:"Limitada a quotas. Familiar / JV pequeno.",tr4_4:"Sem mínimo",tr5_2:"Matriz responde. Sem personalidade local.",tr5_3:"Representante legal.",tr5_4:"Sem capital atribuído",tr6_2:"<b>Lei 24.922.</b> Quota ITQ + RIGI planta Mar del Plata.",veh_foot:"* TODOS OS VEÍCULOS PERMITEM CONTA USD OFFSHORE E TRATADO DE DUPLA TRIBUTAÇÃO USA ↔ AR. ASSESSORIA SOB NY LAW + LEI ARGENTINA. RGMA",
+c_label:"Protocolo Boutique",c_title:"Vinculação<br>estratégica",c_btn:"ENVIAR REQUISIÇÃO",c_name:"Nome completo",c_email:"Email corporativo"
+},
+zh: {
+meta_title:"RGMA 阿根廷服务台 | RIGI投资, ITQ渔业, 能源",
+meta_desc:"RGMA 阿根廷服务台 — RIGI、ITQ渔业、Vaca Muerta能源、锂和农业的法律架构。特拉华 ↔ 阿根廷结构。",
+top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — 阿根廷服务台",top_app:"应用",top_offices:"办事处",top_contact:"联系",
+s1_eye:"01 — 能源 & RIGI",s1_title:"卓越的<br>能源咨询<br>服务",s1_desc:"Vaca Muerta 和巴塔哥尼亚风能在 RIGI 下。30年财政稳定性和 Delaware ↔ Neuquén 结构。",s1_cta:"探索 RIGI →",
+s2_eye:"02 — 农业 & 实物资产",s2_title:"从特拉华州<br>到罗萨里奥<br>美元结算",s2_desc:"农业信托、代币化和 27.743 法赦免。48小时尽职调查。",s2_cta:"查看农业 →",
+s3_eye:"03 — 锂 & 矿业",s3_title:"锂三角<br>无财政<br>摩擦",s3_desc:"全球21%储量。RIGI下0%预扣，稳定特许权使用费和 Jujuy-Salta SPV 美元。",s3_cta:"查看矿业 →",
+s4_eye:"04 — 渔业 & 蓝色经济 ★",s4_title:"渔业和 ITQ<br>配额与<br>法律保障",s4_desc:"船队、工厂和合资企业，依据 24.922 法。可转让配额，RIGI加工和退税。",s4_cta:"查看渔业结构 →",
+s5_eye:"05 — 物流 & 港口",s5_title:"水道和港口<br>RIGI 自由<br>美元",s5_desc:"巴拉那码头，80%出口。RIGI港口自由换汇，0%税率。",s5_cta:"查看物流 →",
+m_estudio:"律所",m_vehiculos:"载体",m_areas:"领域 ▾",m_energy:"能源",m_agro:"农业",m_mining:"矿业",m_fishing:"渔业",m_logistics:"物流",m_contact:"联系",
+philosophy:"“一个好的裁缝能留住客户一生，因为了解其发展，才能更好地调整服装。”",philosophy_sub:"RGMA 理念 — 自1948年起",
+a1_title:"能源：Vaca Muerta<br>30年RIGI<br>无人构建。",a1_p:"具有自由外汇可用性和美元合同的SPV。",a1_k1:"RIGI最低",a1_k2:"稳定性",a1_k3:"自由外汇",a1_card:"能源SPV结构",a1_btn:"索取能源资料",
+a2_title:"农业：从特拉华<br>到罗萨里奥<br>美元。",a2_p:"农业信托和MATBA远期。",a2_card:"农业SPV结构",a2_btn:"索取农业资料",
+a3_title:"矿业：锂<br>全球三角<br>亚洲包销。",a3_p:"胡胡伊、萨尔塔、卡塔马卡。稳定版税和亚洲包销。",a3_card:"矿业SPV结构",a3_btn:"索取矿业资料",
+a4_label:"04 — RGMA 独家",a4_title:"渔业：最后的<br>RIGI前沿<br>无人关注。",a4_p:"具有可转让ITQ配额和RIGI工厂 Mar del Plata / Madryn 0%预扣的SPV。",a4_k2:"RIGI预扣",a4_card:"渔业SPV结构",a4_btn:"索取渔业资料",
+a5_title:"物流：水道<br>和RIGI港口<br>自由美元。",a5_p:"巴拉那码头、保税仓库和船队。",a5_card:"物流SPV结构",a5_btn:"索取物流资料",
+veh_label:"国际业务领域 — RGMA",veh_title:"保护和扩展您<br>在阿根廷资本的<br>法律架构。",veh_desc:"我们将监管和外汇环境的复杂性转化为清晰的落地战略，将经典律所的技术严谨性与全球数字敏捷性相结合。",veh_note:"均兼容RIGI和27.743法赦免。特拉华 ↔ 阿根廷结构。",th1:"结构",th2:"责任",th3:"治理",th4:"资本/时间",th5:"适用性",tr1_2:"以资本为限。48小时IGJ快速。",tr1_3:"董事会。可选审计。",tr2_2:"单一股东。理想SPV RIGI。",tr2_3:"董事会+完全控制。",tr3_2:"有限。24小时数字化。无审计。",tr3_3:"唯一管理员。",tr4_2:"以配额为限。家族/小型合资。",tr4_4:"无最低",tr5_2:"总部负责。无本地人格。",tr5_3:"法定代表人。",tr5_4:"无指定资本",tr6_2:"<b>法律 24.922。</b> ITQ + RIGI工厂 Mar del Plata。",veh_foot:"* 所有载体均允许离岸美元账户和美国↔阿根廷双重征税协定。纽约法+阿根廷法咨询。RGMA",
+c_label:"精品协议",c_title:"战略<br>对接",c_btn:"发送请求",c_name:"全名",c_email:"企业邮箱"
+}
+};
+
+function setLang(l){
+ localStorage.setItem('rgma_lang',l);
+ document.documentElement.lang=l;
+ document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+ document.querySelectorAll('[data-i18n]').forEach(el=>{
+   const k=el.getAttribute('data-i18n');
+   if(i18n[l] && i18n[l][k]) el.innerHTML=i18n[l][k];
+ });
+ document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+   const k=el.getAttribute('data-i18n-ph');
+   if(i18n[l] && i18n[l][k]) el.placeholder=i18n[l][k];
+ });
+ if(i18n[l].meta_title) document.title = i18n[l].meta_title;
+ const md = document.getElementById('meta-desc');
+ if(md && i18n[l].meta_desc) md.setAttribute('content', i18n[l].meta_desc);
+}
+
 (() => {
   const hero = document.getElementById('hero');
-  const slides = [...hero.querySelectorAll(':scope > .slide')];
+  const slides = [...hero.querySelectorAll(':scope >.slide')];
   const dots = document.getElementById('dots');
   const counter = document.getElementById('counter');
   let cur = 0, tHero = null;
-
   const renderHero = () => {
     slides.forEach((s,i)=>s.classList.toggle('active', i===cur));
-    if(dots){
-      dots.innerHTML='';
-      slides.forEach((_,i)=>{
-        const b=document.createElement('button');
-        b.className='dot'+(i===cur?' active':'');
-        b.setAttribute('aria-label','Slide '+(i+1));
-        b.onclick=()=>goHero(i);
-        dots.appendChild(b);
-      });
-    }
+    if(dots){dots.innerHTML='';slides.forEach((_,i)=>{const b=document.createElement('button');b.className='dot'+(i===cur?' active':'');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=()=>goHero(i);dots.appendChild(b);});}
     if(counter) counter.textContent=`0${cur+1} — 0${slides.length}`;
   };
   const goHero = (n) => { cur=(n+slides.length)%slides.length; renderHero(); restartHero(); };
   const restartHero = () => { clearInterval(tHero); if(document.hidden) return; tHero=setInterval(()=>goHero(cur+1),5500); };
-  
   hero.querySelector('[data-action="prev"]').addEventListener('click', ()=>goHero(cur-1));
   hero.querySelector('[data-action="next"]').addEventListener('click', ()=>goHero(cur+1));
   hero.addEventListener('mouseenter', ()=>clearInterval(tHero));
   hero.addEventListener('mouseleave', restartHero);
   document.addEventListener('visibilitychange', restartHero);
   renderHero(); restartHero();
-
-  // AREAS
   const aSlides=[...document.querySelectorAll('.a-slide')];
   const aDots=[...document.querySelectorAll('.a-dot')];
   let aCur=0, tArea=null;
@@ -182,7 +254,9 @@ body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit
   aDots.forEach(d=>d.addEventListener('click',()=>goArea(+d.dataset.go)));
   document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',(e)=>{e.preventDefault();goArea(+el.dataset.go);}));
   tArea=setInterval(()=>{aCur=(aCur+1)%aSlides.length;renderArea();},7000);
-  window.goArea=goArea;
+  document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  const saved = localStorage.getItem('rgma_lang') || 'en';
+  setLang(saved);
 })();
 </script>
 </body>
