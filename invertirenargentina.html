@@ -309,41 +309,74 @@ areasEl.addEventListener('mouseleave', restartAreaAuto);
 </script>
 
 <script>
-// ===== HERO FIX - AHORA SI PASA SLIDES =====
-let heroCurrent=0;
-const heroSlides=document.querySelectorAll('.hero-slider.slide');
-const heroDotsContainer=document.getElementById('dots');
-const heroCounter=document.getElementById('counter');
-let heroInterval;
+// FIX HERO + AREAS - VERSION FINAL QUE SI FUNCIONA
+document.addEventListener('DOMContentLoaded', () => {
+  // HERO
+  let heroCurrent = 0;
+  const heroSlides = document.querySelectorAll('#heroSlider.slide');
+  const dotsContainer = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  let heroInterval;
 
-function buildHeroDots(){
-  heroDotsContainer.innerHTML='';
-  heroSlides.forEach((_,i)=>{
-    const d=document.createElement('div');
-    d.className='slider-dot'+(i===0?' active':'');
-    d.onclick=()=>{ showHero(i); restartHero(); };
-    heroDotsContainer.appendChild(d);
-  });
-}
-function showHero(n){
-  heroSlides[heroCurrent].classList.remove('active');
-  heroCurrent=n;
-  heroSlides[heroCurrent].classList.add('active');
-  document.querySelectorAll('#dots.slider-dot').forEach((dot,i)=>dot.classList.toggle('active', i===heroCurrent));
-  if(heroCounter) heroCounter.textContent=`0${heroCurrent+1} — 0${heroSlides.length}`;
-}
-function nextSlide(){ showHero((heroCurrent+1)%heroSlides.length); }
-function prevSlide(){ showHero((heroCurrent-1+heroSlides.length)%heroSlides.length); }
-function restartHero(){
-  clearInterval(heroInterval);
-  heroInterval=setInterval(nextSlide, 6000);
-}
-buildHeroDots();
-showHero(0);
-restartHero();
-document.getElementById('heroSlider').addEventListener('mouseenter', ()=>clearInterval(heroInterval));
-document.getElementById('heroSlider').addEventListener('mouseleave', restartHero);
+  if (heroSlides.length && dotsContainer) {
+    dotsContainer.innerHTML = '';
+    heroSlides.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'slider-dot' + (i === 0? ' active' : '');
+      d.onclick = () => { showHero(i); restartHero(); };
+      dotsContainer.appendChild(d);
+    });
+
+    window.showHero = function(n) {
+      heroSlides[heroCurrent].classList.remove('active');
+      const allDots = dotsContainer.querySelectorAll('.slider-dot');
+      allDots[heroCurrent]?.classList.remove('active');
+      heroCurrent = n;
+      heroSlides[heroCurrent].classList.add('active');
+      allDots[heroCurrent]?.classList.add('active');
+      if (counter) counter.textContent = `0${heroCurrent+1} — 0${heroSlides.length}`;
+    }
+    window.nextSlide = () => showHero((heroCurrent + 1) % heroSlides.length);
+    window.prevSlide = () => showHero((heroCurrent - 1 + heroSlides.length) % heroSlides.length);
+    function restartHero() {
+      clearInterval(heroInterval);
+      heroInterval = setInterval(window.nextSlide, 5500);
+    }
+    showHero(0);
+    restartHero();
+    document.getElementById('heroSlider')?.addEventListener('mouseenter', () => clearInterval(heroInterval));
+    document.getElementById('heroSlider')?.addEventListener('mouseleave', restartHero);
+  }
+
+  // AREAS - NO hace scroll solo
+  let areaCurrent = 0;
+  const areaSlides = document.querySelectorAll('.area-slide');
+  const areaDots = document.querySelectorAll('.area-dot');
+  let areaInterval;
+
+  window.showArea = function(n) {
+    if (!areaSlides.length) return;
+    areaSlides[areaCurrent]?.classList.remove('active');
+    areaDots[areaCurrent]?.classList.remove('active');
+    areaCurrent = n;
+    areaSlides[areaCurrent]?.classList.add('active');
+    areaDots[areaCurrent]?.classList.add('active');
+  }
+  window.goArea = function(n) {
+    document.getElementById('areas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => { showArea(n); restartArea(); }, 400);
+  }
+  function restartArea() {
+    clearInterval(areaInterval);
+    areaInterval = setInterval(() => showArea((areaCurrent + 1) % areaSlides.length), 7000);
+  }
+  if (areaSlides.length) {
+    showArea(0);
+    restartArea();
+    document.getElementById('areas')?.addEventListener('mouseenter', () => clearInterval(areaInterval));
+    document.getElementById('areas')?.addEventListener('mouseleave', restartArea);
+  }
+});
 </script>
-
 </body>
 </html>
