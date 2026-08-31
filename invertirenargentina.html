@@ -373,40 +373,6 @@ setInterval(()=>{goArea((areaCurrent+1)%areaSlides.length)}, 7000);
 
     <footer class="bg-[#080F1F] text-gray-500 py-10 text-[10px] text-center uppercase tracking-widest">&copy; 2026 RGM — Argentina Desk · La Plata · CABA · Mar del Plata</footer>
 
-<script>
-let current=0;
-const slides=document.querySelectorAll('.slide');
-const dotsContainer=document.getElementById('dots');
-const counter=document.getElementById('counter');
-function renderDots(){
-  dotsContainer.innerHTML='';
-  slides.forEach((_,i)=>{
-    const d=document.createElement('div');
-    d.className='slider-dot'+(i===current?' active':'');
-    d.onclick=()=>goTo(i);
-    dotsContainer.appendChild(d);
-  });
-  counter.textContent=`0${current+1} — 0${slides.length}`;
-}
-function goTo(n){
-  slides[current].classList.remove('active');
-  current=(n+slides.length)%slides.length;
-  slides[current].classList.add('active');
-  renderDots();
-}
-function nextSlide(){ goTo(current+1); }
-function prevSlide(){ goTo(current-1); }
-renderDots();
-setInterval(nextSlide, 5500);
-</script>
-<script>
-function goArea(index){
-  document.getElementById('areas')?.scrollIntoView({behavior:'smooth'});
-  setTimeout(()=>{
-    if(typeof showArea === 'function') showArea(index);
-    if(typeof currentArea!== 'undefined'){ currentArea = index; }
-  }, 400);
-}
-</script>
+
 </body>
 </html>
