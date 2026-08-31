@@ -3,155 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inversiones en Argentina | RGM Argentina Desk</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>RGM Argentina Desk | Inversiones RIGI, Pesca ITQ, Energía</title>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=75&auto=format&fit=crop">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body{font-family:'Inter',sans-serif;background:#fcfcfc}
+:root{--navy:#0A1931;--gold:#C8B090;--paper:#fcfcfc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit-font-smoothing:antialiased}
 .font-serif{font-family:'Playfair Display',serif}
-.bg-rgm-dark{background:#0A1931}
-.text-rgm-gold{color:#C8B090}
-.bg-rgm-gold{background:#C8B090}
-.hero-slider{position:relative;height:92vh;min-height:680px;background:#0A1931;overflow:hidden}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;display:flex;pointer-events:none}
-.slide.active{opacity:1;z-index:2;pointer-events:auto}
-.slide-left{width:42%;background:#0A1931;display:flex;flex-direction:column;justify-content:center;padding:0 5% 0 6%}
-.slide-right{width:58%;position:relative;overflow:hidden}
-.slide-right img{width:100%;height:100%;object-fit:cover}
-.slide-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0A1931 0%,transparent 18%)}
-.slide-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#8aa0c8;margin-bottom:28px}
-.slide-title{font-family:'Playfair Display',serif;font-size:clamp(32px,3.8vw,54px);line-height:0.95;font-weight:300;color:white;margin-bottom:24px}
-.slide-desc{font-size:14px;line-height:1.7;color:rgba(255,255,255,0.65);max-width:380px;margin-bottom:36px}
-.slide-cta{display:inline-flex;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C8B090;border:1px solid rgba(200,176,144,0.3);padding:14px 28px;text-decoration:none;transition:all.3s}
-.slide-cta:hover{background:#C8B090;color:#0A1931}
-.slider-nav{position:absolute;bottom:42px;left:6%;z-index:10;display:flex;align-items:center;gap:24px}
-.slider-arrow{width:44px;height:44px;background:#0A1931;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);cursor:pointer}
-.slider-dot{width:32px;height:2px;background:rgba(255,255,255,0.15);cursor:pointer;transition:all 0.5s}
-.slider-dot.active{background:#C8B090;width:64px}
-.top-bar{position:absolute;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;padding:18px 40px;font-size:10px;letter-spacing:3px;color:#fff;background:rgba(10,25,49,0.88)}
-.nav-link{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;text-decoration:none;padding:24px 0;display:inline-block}
-.nav-link:hover{color:#0A1931}
-/* FIX 1: ESTE ES EL QUE FALTABA - CON ESPACIO */
-.dropdown{position:relative;display:inline-block;padding:24px 0}
-.dropdown-trigger{cursor:pointer;color:#C8B090!important;font-weight:700}
-.dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#0A1931;min-width:210px;border-top:2px solid #C8B090;z-index:100}
-.dropdown-menu a{display:block;padding:13px 22px;color:rgba(255,255,255,0.7)!important;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.07)}
-.dropdown-menu a:hover{background:rgba(255,255,255,0.06);color:#C8B090!important}
-.dropdown:hover.dropdown-menu{display:block!important}
-.area-slider{position:relative;background:#0A1931;overflow:hidden}
-.area-slide{display:none;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;padding:90px 40px}
-.area-slide.active{display:grid;animation:fadeArea 0.8s ease}
-@keyframes fadeArea{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.area-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);padding:40px;backdrop-filter:blur(8px)}
-.area-dot{width:32px;height:2px;background:rgba(255,255,255,0.18);cursor:pointer;transition:all 0.5s}
-.area-dot.active{background:#C8B090;width:52px}
-@media(max-width:1024px){.area-slide{grid-template-columns:1fr;gap:40px;padding:60px 24px}.slide-left{width:100%}.slide-right{display:none}}
+.hero{position:relative;height:92vh;min-height:640px;background:var(--navy);overflow:hidden;isolation:isolate}
+.top-bar{position:absolute;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;background:rgba(10,25,49,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,.15)}
+.slide{position:absolute;inset:0;display:flex;opacity:0;visibility:hidden;transition:opacity .9s cubic-bezier(.16,1,.3,1),visibility .9s;pointer-events:none}
+.slide.active{opacity:1;visibility:visible;pointer-events:auto;z-index:2}
+.s-left{width:42%;display:flex;flex-direction:column;justify-content:center;padding:0 5% 0 6%;background:var(--navy)}
+.s-right{width:58%;position:relative;overflow:hidden}
+.s-right img{width:100%;height:100%;object-fit:cover;display:block}
+.s-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,transparent 20%)}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#8aa0c8;margin-bottom:28px}
+.title{font-family:'Playfair Display';font-size:clamp(32px,3.8vw,54px);line-height:.95;font-weight:300;color:#fff;margin-bottom:22px}
+.desc{font-size:14px;line-height:1.7;color:rgba(255,255,255,.62);max-width:380px;margin-bottom:32px;font-weight:300}
+.cta{display:inline-flex;align-items:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,176,144,.3);padding:14px 28px;text-decoration:none;transition:all .3s}
+.cta:hover{background:var(--gold);color:var(--navy)}
+.cta.gold{background:var(--gold);color:var(--navy)}
+.nav-hero{position:absolute;bottom:38px;left:6%;z-index:10;display:flex;align-items:center;gap:22px}
+.arr{width:44px;height:44px;background:var(--navy);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12);cursor:pointer;display:grid;place-items:center;font-size:18px}
+.dot{width:28px;height:2px;background:rgba(255,255,255,.15);border:0;cursor:pointer;transition:all .5s}
+.dot.active{background:var(--gold);width:56px}
+.sticky-nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #eee}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display';font-weight:700;font-size:13px;letter-spacing:.5px;color:var(--navy)}
+.menu{display:flex;gap:32px;align-items:center}
+.m-link{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;text-decoration:none;padding:24px 0}
+.m-link:hover{color:var(--navy)}
+.dropdown{position:relative;padding:24px 0}
+.dropdown-trigger{color:var(--gold)!important;font-weight:700;cursor:pointer}
+.dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:none;min-width:220px;background:var(--navy);border-top:2px solid var(--gold);box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.dropdown:hover .dropdown-menu,.dropdown:focus-within .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:13px 22px;color:rgba(255,255,255,.7);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}
+.dropdown-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
+.areas{background:var(--navy);overflow:hidden}
+.a-slide{display:none;grid-template-columns:1.1fr .9fr;gap:80px;max-width:1280px;margin:0 auto;padding:88px 40px;align-items:center}
+.a-slide.active{display:grid;animation:fade .6s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:36px}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(255,255,255,.12);padding-top:26px;margin-top:36px}
+.kpi b{font-family:'Playfair Display';font-size:22px;color:var(--gold);font-weight:400;display:block}
+.kpi span{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.4);text-transform:uppercase}
+.row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:14px;margin-bottom:14px;font-size:12px}
+.row span:first-child{color:rgba(255,255,255,.5)}
+.row span:last-child{color:#fff}
+.btn{display:block;text-align:center;background:var(--gold);color:var(--navy);font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none;margin-top:28px;transition:filter .2s}
+.btn:hover{filter:brightness(1.08)}
+.a-dots{display:flex;gap:10px;justify-content:center;padding:0 0 56px}
+.a-dot{width:28px;height:2px;background:rgba(255,255,255,.18);border:0;cursor:pointer}
+.a-dot.active{background:var(--gold);width:48px}
+@media(max-width:1024px){.s-left{width:100%;padding:80px 24px 36px}.s-right{display:none}.a-slide{grid-template-columns:1fr;padding:48px 24px;gap:32px}.menu{display:none}}
 </style>
 </head>
-<body class="antialiased">
-<div class="hero-slider" id="heroSlider">
-<div class="top-bar"><div style="color:#C8B090;font-weight:600">RIGANTI, GEILER & MÁRQUEZ — ARGENTINA DESK</div><div style="display:flex;gap:24px"><a href="#" style="color:#fff;text-decoration:none">APP</a><a href="#" style="color:#fff;text-decoration:none">OFICINAS</a><a href="#contacto" style="color:#fff;text-decoration:none">CONTACTO</a></div></div>
+<body>
 
-<div class="slide active"><div class="slide-left"><div class="slide-eyebrow">01 — Energía & RIGI</div><h1 class="slide-title">Asesoramiento de<br>excelencia en<br>energía</h1><p class="slide-desc">Vaca Muerta y Patagonia eólica bajo RIGI. 30 años estabilidad fiscal.</p><a href="#areas" onclick="goArea(0)" class="slide-cta">Explorar RIGI →</a></div><div class="slide-right"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80"></div></div>
+<div class="hero" id="hero">
+<div class="top-bar"><div style="color:var(--gold);font-weight:600">RIGANTI, GEILER & MÁRQUEZ — ARGENTINA DESK</div><div style="display:flex;gap:20px"><span>APP</span><span>OFICINAS</span><a href="#contacto" style="color:#fff;text-decoration:none">CONTACTO</a></div></div>
 
-<div class="slide"><div class="slide-left"><div class="slide-eyebrow">02 — Agro & Real Assets</div><h1 class="slide-title">De Delaware<br>a Rosario<br>en USD</h1><p class="slide-desc">Fideicomisos agropecuarios y tokenización. Blanqueo Ley 27.743.</p><a href="#areas" onclick="goArea(1)" class="slide-cta">Ver agro →</a></div><div class="slide-right"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80"></div></div>
+<div class="slide active"><div class="s-left"><div class="eyebrow">01 — Energía & RIGI</div><h1 class="title">Asesoramiento de<br>excelencia en<br>energía</h1><p class="desc">Vaca Muerta y Patagonia eólica bajo RIGI. 30 años estabilidad fiscal y estructura Delaware ↔ Neuquén.</p><a class="cta" href="#areas" data-go="0">Explorar RIGI →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=75&auto=format&fit=crop" alt="Energía Vaca Muerta" width="1200" height="800" fetchpriority="high"></div></div>
 
-<div class="slide"><div class="slide-left"><div class="slide-eyebrow">03 — Litio & Minería</div><h1 class="slide-title">Lithium Triangle<br>sin fricción<br>fiscal</h1><p class="slide-desc">21% reservas globales. 0% retenciones bajo RIGI.</p><a href="#areas" onclick="goArea(2)" class="slide-cta">Ver estructura minera →</a></div><div class="slide-right"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1600&q=80"></div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow">02 — Agro & Real Assets</div><h1 class="title">De Delaware<br>a Rosario<br>en USD</h1><p class="desc">Fideicomisos agropecuarios, tokenización y blanqueo Ley 27.743. Due diligence 48hs.</p><a class="cta" href="#areas" data-go="1">Ver agro →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=75&auto=format&fit=crop" alt="Agro Rosario" loading="lazy" width="1200" height="800"></div></div>
 
-<div class="slide"><div class="slide-left"><div class="slide-eyebrow" style="color:#C8B090">04 — Pesca & Economía Azul ★</div><h1 class="slide-title">Pesca y cuota<br>ITQ con<br>seguridad jurídica</h1><p class="slide-desc">Flota, plantas y JV bajo Ley 24.922. Cuotas transferibles.</p><a href="#areas" onclick="goArea(3)" class="slide-cta" style="background:#C8B090;color:#0A1931">Ver estructura pesquera →</a></div><div class="slide-right"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&q=80"></div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow">03 — Litio & Minería</div><h1 class="title">Lithium Triangle<br>sin fricción<br>fiscal</h1><p class="desc">21% reservas globales. 0% retenciones bajo RIGI, regalías estables y SPV Jujuy-Salta en USD.</p><a class="cta" href="#areas" data-go="2">Ver minería →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&q=75&auto=format&fit=crop" alt="Litio" loading="lazy" width="1200" height="800"></div></div>
 
-<div class="slide"><div class="slide-left"><div class="slide-eyebrow">05 — Logística & Puertos</div><h1 class="slide-title">Hidrovía y puertos<br>RIGI con USD<br>libre</h1><p class="slide-desc">Terminales Paraná. 80% export. RIGI portuario tasa 0%.</p><a href="#areas" onclick="goArea(4)" class="slide-cta">Ver logística →</a></div><div class="slide-right"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"></div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow" style="color:var(--gold)">04 — Pesca & Economía Azul ★</div><h1 class="title">Pesca y cuota<br>ITQ con<br>seguridad jurídica</h1><p class="desc">Flota, plantas y JV bajo Ley 24.922. Cuotas transferibles, RIGI procesamiento y reintegros.</p><a class="cta gold" href="#areas" data-go="3">Ver estructura pesquera →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=75&auto=format&fit=crop" alt="Pesca ITQ" loading="lazy" width="1200" height="800"></div></div>
 
-<div class="slider-nav"><div style="display:flex;gap:1px;background:rgba(255,255,255,0.1)"><button class="slider-arrow" onclick="prevSlide()">‹</button><button class="slider-arrow" onclick="nextSlide()">›</button></div><div id="dots" style="display:flex;gap:8px;margin-left:24px"></div><div id="counter" style="color:rgba(255,255,255,0.3);font-size:10px;letter-spacing:3px;margin-left:16px">01 — 05</div></div>
+<div class="slide"><div class="s-left"><div class="eyebrow">05 — Logística & Puertos</div><h1 class="title">Hidrovía y puertos<br>RIGI con USD<br>libre</h1><p class="desc">Terminales Paraná, 80% del export. RIGI portuario con libre giro y tasa 0%.</p><a class="cta" href="#areas" data-go="4">Ver logística →</a></div><div class="s-right"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=75&auto=format&fit=crop" alt="Logística" loading="lazy" width="1200" height="800"></div></div>
+
+<div class="nav-hero"><div style="display:flex;gap:1px;background:rgba(255,255,255,.1)"><button class="arr" data-action="prev" aria-label="Anterior">‹</button><button class="arr" data-action="next" aria-label="Siguiente">›</button></div><div id="dots" style="display:flex;gap:8px"></div><div id="counter" style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:3px">01 — 05</div></div>
 </div>
 
-<nav class="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-100">
-<div class="max-w-7xl mx-auto px-6 h-[64px] flex items-center justify-between">
-<div class="flex items-center"><span class="font-serif font-bold text-[13px] tracking-[0.5px] text-[#0A1931]">RGM ARGENTINA DESK</span></div>
-<div class="hidden md:flex gap-8 items-center">
-<a href="#estudio" class="nav-link">El Estudio</a>
-<a href="#vehiculos" class="nav-link">Vehículos</a>
-<div class="dropdown"><span class="nav-link dropdown-trigger">ÁREAS ▾</span><div class="dropdown-menu"><a href="javascript:void(0)" onclick="goArea(0)">Energía</a><a href="javascript:void(0)" onclick="goArea(1)">Agro</a><a href="javascript:void(0)" onclick="goArea(2)">Minería</a><a href="javascript:void(0)" onclick="goArea(3)">Pesca</a><a href="javascript:void(0)" onclick="goArea(4)">Logística</a></div></div>
-<a href="#rigi" class="nav-link">RIGI</a>
-<a href="#contacto" class="nav-link">Contacto</a>
-</div>
-</div>
-</nav>
+<nav class="sticky-nav"><div class="nav-inner"><span class="logo">RGM ARGENTINA DESK</span><div class="menu"><a class="m-link" href="#estudio">El Estudio</a><a class="m-link" href="#vehiculos">Vehículos</a><div class="dropdown"><span class="m-link dropdown-trigger">ÁREAS ▾</span><div class="dropdown-menu"><a href="#areas" data-go="0">Energía</a><a href="#areas" data-go="1">Agro</a><a href="#areas" data-go="2">Minería</a><a href="#areas" data-go="3">Pesca</a><a href="#areas" data-go="4">Logística</a></div></div><a class="m-link" href="#rigi">RIGI</a><a class="m-link" href="#contacto">Contacto</a></div></div></nav>
 
-<section class="bg-white border-b border-gray-100 py-20"><div class="max-w-4xl mx-auto px-6 text-center"><div style="width:40px;height:1px;background:#C8B090;margin:0 auto 32px"></div><p class="font-serif text-[24px] md:text-[28px] text-[#0A1931] font-light italic">"Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas."</p><span class="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-semibold">Filosofía RGMA — Desde 1948</span></div></section>
+<section style="background:#fff;border-bottom:1px solid #eee;padding:80px 24px;text-align:center"><div style="max-width:720px;margin:0 auto"><div style="width:40px;height:1px;background:var(--gold);margin:0 auto 28px"></div><p class="font-serif" style="font-size:26px;font-style:italic;color:var(--navy);line-height:1.4">“Un buen sastre conserva a su cliente a lo largo de la vida porque, al conocer su desarrollo, sabe cómo adaptar mejor sus prendas.”</p><span style="font-size:10px;letter-spacing:.3em;color:#999;text-transform:uppercase;font-weight:600;margin-top:16px;display:block">Filosofía RGMA — Desde 1948</span></div></section>
 
-<section id="vehiculos" class="py-28 max-w-7xl mx-auto px-6"><div class="mb-14"><h2 class="font-serif text-[32px] text-gray-900 font-light mb-3">Vehículos societarios para capital extranjero</h2><p class="text-gray-500 text-[13px] max-w-xl">Todos compatibles con RIGI y blanqueo Ley 27.743.</p></div><div class="bg-white border border-gray-200 overflow-hidden"><table class="w-full text-left text-[13px]"><thead><tr class="bg-rgm-dark text-white uppercase text-[10px] tracking-widest"><th class="p-6">Estructura</th><th class="p-6">Responsabilidad</th><th class="p-6">Gobernanza</th><th class="p-6">Idoneidad</th></tr></thead><tbody class="divide-y divide-gray-100 text-gray-600"><tr><td class="p-6 font-serif text-[#0A1931] font-semibold">S.A.</td><td class="p-6">Limitada al capital. 48hs IGJ express.</td><td class="p-6">Directorio.</td><td class="p-6"><span class="bg-gray-900 text-white text-[9px] px-2.5 py-1 uppercase">Grande escala</span></td></tr><tr><td class="p-6 font-serif text-[#0A1931] font-semibold">⚓ SPV Pesquero</td><td class="p-6">Ley 24.922. Cuota ITQ + RIGI planta.</td><td class="p-6">Armador + Planta.</td><td class="p-6"><span class="bg-[#0A1931] text-[#C8B090] text-[9px] px-2.5 py-1 uppercase">Pesca - Recomendado</span></td></tr></tbody></table></div></section>
+<section id="areas" class="areas">
+<div class="a-slide active"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">01 — ENERGÍA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Energía: Vaca Muerta<br>con RIGI 30 años<br>que nadie estructura.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">SPVs con libre disponibilidad cambiaria y contratos USD.</p><div class="kpi"><div><b>USD 2B</b><span>Mínimo RIGI</span></div><div><b>30 años</b><span>Estabilidad</span></div><div><b>100%</b><span>Divisas libres</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Energía SPV</h3><div class="row"><span>Vehículo</span><span>S.A.U. + RIGI</span></div><div class="row"><span>Activo</span><span>Bloque VM</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>Off-take + M&A</span></div><a class="btn" href="#contacto">SOLICITAR TEASER ENERGÍA</a></div></div>
 
-<section id="areas" class="area-slider">
-<div class="area-slide active"><div><span style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C8B090;font-weight:600;display:block;margin-bottom:32px">01 — EXCLUSIVO RGM</span><h2 class="font-serif" style="font-size:clamp(32px,3.2vw,44px);line-height:1.05;color:white;margin-bottom:24px">Energía: Vaca Muerta<br>con RIGI 30 años<br>que nadie estructura.</h2><p style="font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.6);max-width:420px;margin-bottom:40px">SPVs energéticos con libre disponibilidad cambiaria, midstream propio y contratos de exportación en USD bajo RIGI.</p><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;border-top:1px solid rgba(255,255,255,0.12);padding-top:28px"><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">USD 2B</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:6px">MÍNIMO RIGI</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">30 años</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:6px">ESTABILIDAD</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">100%</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:6px">DIVISAS LIBRES</div></div></div></div><div class="area-card"><h3 class="font-serif" style="font-size:18px;color:white;margin-bottom:32px">Estructura tipo Energía SPV</h3><div style="font-size:12px"><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:16px"><span style="color:rgba(255,255,255,0.5)">Vehículo</span><span style="color:white">S.A.U. + RIGI</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:16px"><span style="color:rgba(255,255,255,0.5)">Activo</span><span style="color:white">Bloque VM / Gasoducto</span></div><div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,0.5)">Salida</span><span style="color:white">Off-take + M&A</span></div></div><a href="#contacto" style="margin-top:32px;display:block;text-align:center;background:#C8B090;color:#0A1931;font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none">SOLICITAR TEASER ENERGÍA</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">02 — AGRO</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Agro: de Delaware<br>a Rosario<br>en USD.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">Fideicomisos agrícolas y forwards MATBA.</p><div class="kpi"><div><b>USD 50M</b><span>Ticket</span></div><div><b>12%</b><span>Yield USD</span></div><div><b>Fideicomiso</b><span>Vehículo</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Agro SPV</h3><div class="row"><span>Vehículo</span><span>Fideicomiso + S.A.</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>Venta tierra</span></div><a class="btn" href="#contacto">SOLICITAR TEASER AGRO</a></div></div>
 
-<div class="area-slide"><div><span style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C8B090;font-weight:600;display:block;margin-bottom:32px">02 — REAL ASSETS</span><h2 class="font-serif" style="font-size:clamp(32px,3.2vw,44px);line-height:1.05;color:white;margin-bottom:24px">Agro: de Delaware<br>a Rosario<br>en USD.</h2><p style="font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.6);max-width:420px;margin-bottom:40px">Fideicomisos agrícolas, acopio en zona portuaria y forwards con cobertura.</p><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;border-top:1px solid rgba(255,255,255,0.12);padding-top:28px"><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">USD 50M</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:6px">TICKET</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">12%</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:6px">YIELD USD</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">Fideicomiso</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:6px">VEHÍCULO</div></div></div></div><div class="area-card"><h3 class="font-serif" style="font-size:18px;color:white;margin-bottom:32px">Estructura tipo Agro SPV</h3><div style="font-size:12px"><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:16px"><span style="color:rgba(255,255,255,0.5)">Vehículo</span><span style="color:white">Fideicomiso + S.A.</span></div><div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,0.5)">Salida</span><span style="color:white">Venta tierra + Flujo</span></div></div><a href="#contacto" style="margin-top:32px;display:block;text-align:center;background:#C8B090;color:#0A1931;font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none">SOLICITAR TEASER AGRO</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">03 — MINERÍA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Minería: Litio<br>triángulo global<br>con off-take Asia.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">Jujuy, Salta, Catamarca. Regalías estables y off-take Asia.</p><div class="kpi"><div><b>21%</b><span>Reserva global</span></div><div><b>3%</b><span>Regalía</span></div><div><b>USD 2B</b><span>Mínimo RIGI</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Minería SPV</h3><div class="row"><span>Vehículo</span><span>S.A. + RIGI</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>IPO Toronto</span></div><a class="btn" href="#contacto">SOLICITAR TEASER MINERÍA</a></div></div>
 
-<div class="area-slide"><div><span style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C8B090;font-weight:600;display:block;margin-bottom:32px">03 — LITIO TRIÁNGULO</span><h2 class="font-serif" style="font-size:clamp(32px,3.2vw,44px);line-height:1.05;color:white;margin-bottom:24px">Minería: Litio<br>triángulo global<br>con off-take Asia.</h2><p style="font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.6);max-width:420px;margin-bottom:40px">Jujuy, Salta, Catamarca. Regalías estables, RIGI y contratos off-take con Asia.</p><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;border-top:1px solid rgba(255,255,255,0.12);padding-top:28px"><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">21%</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">RESERVA GLOBAL</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">3%</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">REGALÍA</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">USD 2B</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">MÍNIMO RIGI</div></div></div></div><div class="area-card"><h3 class="font-serif" style="font-size:18px;color:white;margin-bottom:32px">Estructura tipo Minería SPV</h3><div style="font-size:12px"><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:16px"><span style="color:rgba(255,255,255,0.5)">Vehículo</span><span style="color:white">S.A. + RIGI Minero</span></div><div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,0.5)">Salida</span><span style="color:white">IPO Toronto / M&A</span></div></div><a href="#contacto" style="margin-top:32px;display:block;text-align:center;background:#C8B090;color:#0A1931;font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none">SOLICITAR TEASER MINERÍA</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">04 — EXCLUSIVO RGM</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Pesca: la última<br>frontera RIGI que<br>nadie mira.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">SPVs con cuota ITQ transferible y plantas RIGI Mar del Plata / Madryn 0% retenciones.</p><div class="kpi"><div><b>USD 2.1B</b><span>Export 2024</span></div><div><b>0%</b><span>Retenciones RIGI</span></div><div><b>ITQ</b><span>Cuota</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Pesca SPV</h3><div class="row"><span>Vehículo</span><span>S.A.U. + Fideicomiso Cuota</span></div><div class="row"><span>Cuota</span><span>Langostino / Merluza</span></div><div class="row" style="border:0;margin:0"><span>Planta</span><span>RIGI 30 años</span></div><a class="btn" href="#contacto">SOLICITAR TEASER PESCA</a></div></div>
 
-<div class="area-slide"><div><span style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C8B090;font-weight:600;display:block;margin-bottom:32px">04 — EXCLUSIVO RGM</span><h2 class="font-serif" style="font-size:clamp(32px,3.2vw,44px);line-height:1.05;color:white;margin-bottom:24px">Pesca: la última<br>frontera RIGI que<br>nadie mira.</h2><p style="font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.6);max-width:420px;margin-bottom:40px">SPVs pesqueros con cuota ITQ transferible, JV con armadores locales y plantas RIGI Mar del Plata / Madryn con 0% retenciones.</p><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;border-top:1px solid rgba(255,255,255,0.12);padding-top:28px"><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">USD 2.1B</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">EXPORT 2024</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">0%</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">RETENCIONES RIGI</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">ITQ</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">CUOTA</div></div></div></div><div class="area-card"><h3 class="font-serif" style="font-size:18px;color:white;margin-bottom:32px">Estructura tipo Pesca SPV</h3><div style="font-size:12px"><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:16px"><span style="color:rgba(255,255,255,0.5)">Vehículo</span><span style="color:white">S.A.U. + Fideicomiso Cuota</span></div><div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,0.5)">Salida</span><span style="color:white">Venta cuota + M&A</span></div></div><a href="#contacto" style="margin-top:32px;display:block;text-align:center;background:#C8B090;color:#0A1931;font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none">SOLICITAR TEASER PESCA</a></div></div>
+<div class="a-slide"><div><span style="font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600;text-transform:uppercase;display:block;margin-bottom:28px">05 — LOGÍSTICA</span><h2 class="font-serif" style="font-size:clamp(28px,3vw,42px);color:#fff;line-height:1.05;margin-bottom:20px">Logística: hidrovía<br>y puertos RIGI<br>con USD libre.</h2><p style="font-size:13px;color:rgba(255,255,255,.6);max-width:420px;line-height:1.7">Terminales Paraná, depósitos fiscales y flota.</p><div class="kpi"><div><b>80%</b><span>Export por río</span></div><div><b>USD 300M</b><span>Capex puerto</span></div><div><b>RIGI</b><span>Puerto</span></div></div></div><div class="card"><h3 class="font-serif" style="color:#fff;margin-bottom:24px">Estructura tipo Logística SPV</h3><div class="row"><span>Vehículo</span><span>S.A. + RIGI</span></div><div class="row" style="border:0;margin:0"><span>Salida</span><span>Concesión 30a</span></div><a class="btn" href="#contacto">SOLICITAR TEASER LOGÍSTICA</a></div></div>
 
-<div class="area-slide"><div><span style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C8B090;font-weight:600;display:block;margin-bottom:32px">05 — LOGÍSTICA / HIDROVÍA</span><h2 class="font-serif" style="font-size:clamp(32px,3.2vw,44px);line-height:1.05;color:white;margin-bottom:24px">Logística: hidrovía<br>y puertos RIGI<br>con USD libre.</h2><p style="font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.6);max-width:420px;margin-bottom:40px">Terminales en Río Paraná, depósitos fiscales y flota. RIGI portuario con libre giro.</p><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;border-top:1px solid rgba(255,255,255,0.12);padding-top:28px"><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">80%</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">EXPORT POR RÍO</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">USD 300M</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">CAPEX PUERTO</div></div><div><div style="font-family:'Playfair Display';font-size:22px;color:#C8B090">RIGI</div><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4)">PUERTO</div></div></div></div><div class="area-card"><h3 class="font-serif" style="font-size:18px;color:white;margin-bottom:32px">Estructura tipo Logística SPV</h3><div style="font-size:12px"><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:16px"><span style="color:rgba(255,255,255,0.5)">Vehículo</span><span style="color:white">S.A. + RIGI Logística</span></div><div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,0.5)">Salida</span><span style="color:white">Concesión 30 años</span></div></div><a href="#contacto" style="margin-top:32px;display:block;text-align:center;background:#C8B090;color:#0A1931;font-size:10px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none">SOLICITAR TEASER LOGÍSTICA</a></div></div>
-
-<div style="display:flex;gap:12px;justify-content:center;padding-bottom:60px"><div class="area-dot active" onclick="goArea(0)"></div><div class="area-dot" onclick="goArea(1)"></div><div class="area-dot" onclick="goArea(2)"></div><div class="area-dot" onclick="goArea(3)"></div><div class="area-dot" onclick="goArea(4)"></div></div>
+<div class="a-dots"><button class="a-dot active" data-go="0" aria-label="Energía"></button><button class="a-dot" data-go="1" aria-label="Agro"></button><button class="a-dot" data-go="2" aria-label="Minería"></button><button class="a-dot" data-go="3" aria-label="Pesca"></button><button class="a-dot" data-go="4" aria-label="Logística"></button></div>
 </section>
 
-<section id="rigi" class="bg-[#f8f6f2] py-28"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-gray-200 border border-gray-200"><div class="bg-white p-10"><h3 class="font-serif text-[20px] text-[#0A1931]">Régimen RIGI</h3><p class="text-gray-600 text-[13px] mt-3">Estabilidad 30 años.</p></div><div class="bg-white p-10"><h3 class="font-serif text-[20px] text-[#0A1931]">Economía Conocimiento</h3><p class="text-gray-600 text-[13px] mt-3">60% reducción Ganancias.</p></div><div class="bg-white p-10"><h3 class="font-serif text-[20px] text-[#0A1931]">Pesca + RIGI Planta</h3><p class="text-gray-600 text-[13px] mt-3">Ley 24.922 + RIGI 0%.</p></div></div></div></section>
-<section id="contacto" class="bg-rgm-dark text-white py-28"><div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20"><div><span class="text-[10px] uppercase tracking-[0.35em] text-[#C8B090] font-semibold block mb-4">Protocolo Boutique</span><h3 class="font-serif text-[36px] font-light leading-[0.95]">Vinculación<br>estratégica</h3></div><div class="bg-white/[0.04] border border-white/10 p-8"><form class="space-y-6 text-[13px]" onsubmit="event.preventDefault(); alert('Enviado');"><input type="text" placeholder="Nombre" required class="w-full bg-white/[0.03] border border-white/10 p-3.5 text-white"><button type="submit" class="w-full bg-[#C8B090] text-[#0A1931] text-[11px] uppercase font-bold py-4">Enviar Requerimiento</button></form></div></div></section>
-<footer class="bg-[#080F1F] text-gray-500 py-10 text-[10px] text-center uppercase tracking-widest">&copy; 2026 RGM ARGENTINA DESK</footer>
+<section id="contacto" style="background:var(--navy);padding:88px 24px"><div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px"><div><span style="font-size:10px;letter-spacing:.35em;color:var(--gold);font-weight:600;text-transform:uppercase">Protocolo Boutique</span><h3 class="font-serif" style="font-size:36px;color:#fff;font-weight:300;line-height:.95;margin-top:12px">Vinculación<br>estratégica</h3></div><div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:32px"><form onsubmit="event.preventDefault();this.innerHTML='<p style=color:#fff>Enviado. Respuesta en 24hs.</p>'" style="display:grid;gap:16px"><input required placeholder="Nombre completo" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:14px;color:#fff"><input required type="email" placeholder="Email corporativo" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:14px;color:#fff"><button style="background:var(--gold);color:var(--navy);border:0;padding:16px;font-size:11px;letter-spacing:2px;font-weight:700;cursor:pointer">ENVIAR REQUERIMIENTO</button></form></div></div></section>
+
+<footer style="background:#080F1F;color:#666;padding:32px;text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase">© 2026 RGM — Argentina Desk · La Plata · CABA · Mar del Plata</footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', ()=>{
-  // HERO SLIDER - FIX DEFINITIVO
-  const heroEl = document.getElementById('heroSlider');
-  const heroSlides = heroEl.querySelectorAll('.slide'); // AHORA CON ESPACIO IMPLICITO
-  const dotsBox = document.getElementById('dots');
+(() => {
+  const hero = document.getElementById('hero');
+  const slides = [...hero.querySelectorAll(':scope > .slide')];
+  const dots = document.getElementById('dots');
   const counter = document.getElementById('counter');
-  let hCurrent = 0;
-  let hTimer;
+  let cur = 0, tHero = null;
 
-  function renderHero(){
-    dotsBox.innerHTML='';
-    heroSlides.forEach((_,i)=>{
-      const d=document.createElement('div');
-      d.className='slider-dot'+(i===hCurrent?' active':'');
-      d.onclick=()=>{goHero(i);restartHero();};
-      dotsBox.appendChild(d);
-    });
-    counter.textContent=`0${hCurrent+1} — 0${heroSlides.length}`;
-  }
-  function goHero(n){
-    heroSlides[hCurrent].classList.remove('active');
-    hCurrent=(n+heroSlides.length)%heroSlides.length;
-    heroSlides[hCurrent].classList.add('active');
-    renderHero();
-  }
-  window.nextSlide=()=>{goHero(hCurrent+1);restartHero();};
-  window.prevSlide=()=>{goHero(hCurrent-1);restartHero();};
-  function restartHero(){clearInterval(hTimer);hTimer=setInterval(()=>goHero(hCurrent+1),5500);}
-  renderHero();
-  hTimer=setInterval(()=>goHero(hCurrent+1),5500);
-
-  // AREAS SLIDER
-  let aCurrent=0;
-  const aSlides=document.querySelectorAll('.area-slide');
-  const aDots=document.querySelectorAll('.area-dot');
-  let aTimer;
-  function renderArea(){
-    aSlides.forEach(s=>s.classList.remove('active'));
-    aDots.forEach(d=>d.classList.remove('active'));
-    aSlides[aCurrent].classList.add('active');
-    aDots[aCurrent].classList.add('active');
-  }
-  window.goArea=(n)=>{
-    aCurrent=n%aSlides.length;
-    renderArea();
-    document.getElementById('areas').scrollIntoView({behavior:'smooth'});
-    clearInterval(aTimer);
-    aTimer=setInterval(()=>{aCurrent=(aCurrent+1)%aSlides.length;renderArea();},7000);
+  const renderHero = () => {
+    slides.forEach((s,i)=>s.classList.toggle('active', i===cur));
+    if(dots){
+      dots.innerHTML='';
+      slides.forEach((_,i)=>{
+        const b=document.createElement('button');
+        b.className='dot'+(i===cur?' active':'');
+        b.setAttribute('aria-label','Slide '+(i+1));
+        b.onclick=()=>goHero(i);
+        dots.appendChild(b);
+      });
+    }
+    if(counter) counter.textContent=`0${cur+1} — 0${slides.length}`;
   };
-  aTimer=setInterval(()=>{aCurrent=(aCurrent+1)%aSlides.length;renderArea();},7000);
-});
+  const goHero = (n) => { cur=(n+slides.length)%slides.length; renderHero(); restartHero(); };
+  const restartHero = () => { clearInterval(tHero); if(document.hidden) return; tHero=setInterval(()=>goHero(cur+1),5500); };
+  
+  hero.querySelector('[data-action="prev"]').addEventListener('click', ()=>goHero(cur-1));
+  hero.querySelector('[data-action="next"]').addEventListener('click', ()=>goHero(cur+1));
+  hero.addEventListener('mouseenter', ()=>clearInterval(tHero));
+  hero.addEventListener('mouseleave', restartHero);
+  document.addEventListener('visibilitychange', restartHero);
+  renderHero(); restartHero();
+
+  // AREAS
+  const aSlides=[...document.querySelectorAll('.a-slide')];
+  const aDots=[...document.querySelectorAll('.a-dot')];
+  let aCur=0, tArea=null;
+  const renderArea=()=>{aSlides.forEach((s,i)=>s.classList.toggle('active',i===aCur));aDots.forEach((d,i)=>d.classList.toggle('active',i===aCur));};
+  const goArea=(n)=>{aCur=(n+aSlides.length)%aSlides.length;renderArea();document.getElementById('areas').scrollIntoView({behavior:'smooth',block:'start'});clearInterval(tArea);tArea=setInterval(()=>{aCur=(aCur+1)%aSlides.length;renderArea();},7000);};
+  aDots.forEach(d=>d.addEventListener('click',()=>goArea(+d.dataset.go)));
+  document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',(e)=>{e.preventDefault();goArea(+el.dataset.go);}));
+  tArea=setInterval(()=>{aCur=(aCur+1)%aSlides.length;renderArea();},7000);
+  window.goArea=goArea; // solo para compat
+})();
 </script>
 </body>
 </html>
